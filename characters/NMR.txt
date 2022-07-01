@@ -1,0 +1,60 @@
+characters={
+	
+	BOM_rajaram_iii_d = { 
+		name = "Rajaram III"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/RAJ/Portrait_Rajaram_iii.dds"
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+	}
+	
+	BOM_rajaram_iii_f = { 
+		name = "Rajaram III"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/RAJ/Portrait_Rajaram_iii.dds"
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+	}
+	
+	BOM_rajaram_iii_n = { 
+		name = "Rajaram III"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/RAJ/Portrait_Rajaram_iii.dds"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

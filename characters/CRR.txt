@@ -1,0 +1,1024 @@
+characters={
+
+	CRR_yakov_sverdlov = {
+		
+		name = "Yakov Sverdlov"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/RUS/Portrait_Yakov_Sverdlov.dds"
+			}
+		}
+
+		country_leader = {
+			ideology = marxism 
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+
+	}
+	
+	CRR_vyacheslav_molotov = {
+		
+		name = "Vyacheslav Skryabin"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/RUS/Portrait_Vyacheslav_Skryabin.dds"
+			}
+		}
+
+		country_leader = {
+			ideology = anti_revisionism 
+			traits = { political_dancer economist }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+
+	}
+	
+	CRR_elena_stasova = {
+		
+		name = "Elena Stasova"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/RUS/Portrait_Elena_Stasova.dds"
+			}
+		}
+
+		country_leader = {
+			ideology = leninism 
+			traits = { charity_personality editor }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+
+	}
+	
+	
+	
+	### THEORIST ###
+	
+	CRR_alekander_novikov = { 
+		name = "Alexander Novikov"
+		portraits={
+			army={
+				small="GFX_idea_SOV_generic_land_1"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = CRR_alekander_novikov
+			allowed = {
+				original_tag = CRR
+			}
+			traits = {
+				air_warfare_theorist     
+			}
+		}		
+	}
+	
+	CRR_pyotr_shirshov = { 
+		name = "Pyotr Shirshov"
+		portraits={
+			army={
+				small="GFX_idea_south_america_generic_navy_3"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = CRR_pyotr_shirshov
+			allowed = {
+				original_tag = CRR
+			}
+			traits = {
+				naval_theorist      
+			}
+		}		
+	}
+	
+	CRR_igor_kurchatov = { 
+		name = "Igor Kurchatov"
+		portraits={
+			army={
+				small="GFX_idea_ITA_generic_land_5"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = CRR_igor_kurchatov
+			allowed = {
+				original_tag = CRR
+			}
+			research_bonus = {
+				nuclear = 0.150
+			}
+			traits = {
+				nuclear_scientist      
+			}
+		}		
+	}
+	
+	### CHIEF OF ARMY ###
+	
+	CRR_vasily_blyukher = { 
+		name = "Vasily Blyukher"
+		portraits={
+			army={
+				small="GFX_idea_europe_generic_land_19"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = CRR_vasily_blyukher
+			allowed = {
+				original_tag = CRR
+			}
+			traits = {
+				army_chief_offensive_2  
+			}
+		}	
+	}
+	
+	CRR_ivan_konev = { 
+		name = "Ivan Konev"
+		portraits={
+			army={
+				small="GFX_idea_ENG_generic_land_3"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = CRR_ivan_konev
+			allowed = {
+				original_tag = CRR
+			}
+			
+			available = {
+				has_completed_focus = CRR_army_reform
+			}
+			
+			traits = {
+				army_chief_drill_1   
+			}
+		}	
+	}
+	
+	CRR_nikita_khrushchyov = { 
+		name = "Nikita Khrushchyov"
+		portraits = {
+			army = {
+				small = "GFX_idea_nikita_khrushchev"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = CRR_nikita_khrushchyov
+			allowed = {
+				original_tag = CRR
+			}
+			traits = {
+				army_chief_morale_3    
+			}
+		}	
+	}
+	
+	CRR_mikhail_khozin = { 
+		name = "Mikhail Khozin"
+		portraits={
+			army={
+				small="GFX_idea_SOV_rodion_malinovsky"
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = CRR_mikhail_khozin
+			allowed = {
+				original_tag = CRR
+			}
+			
+			available = {
+				has_completed_focus = CRR_army_reform
+			}
+			
+			traits = {
+				army_chief_reform_1    
+			}
+		}	
+	}
+	
+	### CHIEF OF NAVY ###
+	
+	CRR_eduard_pantserzhanskiy = { 
+		name = "Eduard Pantserzhanskiy"
+		portraits={
+			army={
+				small="GFX_idea_SOV_generic_navy_3"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = CRR_eduard_pantserzhanskiy
+			allowed = {
+				original_tag = CRR
+			}
+			
+			available = {
+				any_owned_state = {
+					is_coastal = yes
+				}
+			}
+			
+			traits = {
+				navy_chief_maneuver_3 
+			}
+		}	
+	}
+	
+	
+	
+	### CHIEF OF AIR ###
+	
+	CRR_sergey_gritsevets = { 
+		name = "Sergey Gritsevets"
+		portraits={
+			army={
+				small="GFX_idea_SOV_generic_navy_2"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = CRR_sergey_gritsevets
+			allowed = {
+				original_tag = CRR
+			}
+			
+			available = {
+				has_completed_focus = CRR_red_airforce
+			}
+			
+			traits = {
+				air_chief_reform_2 
+			}
+		}	
+	}
+	
+	CRR_kirill_yevstigneyev = { 
+		name = "Kirill Yevstigneyev"
+		portraits={
+			army={
+				small="GFX_idea_SOV_generic_land_5"
+			}
+		}
+		advisor={
+			available = {
+				date > 1940.4.1
+			}
+			slot = air_chief
+			idea_token = CRR_kirill_yevstigneyev
+			allowed = {
+				original_tag = CRR
+			}
+			traits = {
+				air_chief_all_weather_1  
+			}
+		}	
+	}
+	
+	CRR_yevdokiya_bershanskaya = { 
+		name = "Yevdokiya Bershanskaya"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_female_europe"
+			}
+		}
+		gender = female
+		advisor={
+			slot = air_chief
+			idea_token = CRR_yevdokiya_bershanskaya
+			allowed = {
+				original_tag = CRR
+			}
+			traits = {
+				air_chief_night_operations_3   
+			}
+		}	
+	}
+	
+	CRR_pavel_rychagov = { 
+		name = "Pavel Rychagov"
+		portraits={
+			army={
+				small="GFX_idea_SOV_generic_land_3"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = CRR_pavel_rychagov
+			allowed = {
+				original_tag = CRR
+			}
+			traits = {
+				air_chief_safety_1    
+			}
+		}	
+	}
+	
+	CRR_yakov_smushkevich = { 
+		name = "Yakov Smushkevich"
+		portraits={
+			army={
+				small="GFX_idea_SOV_generic_land_2"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = CRR_yakov_smushkevich
+			allowed = {
+				original_tag = CRR
+			}
+			
+			available = {
+				has_completed_focus = CRR_cas_bomber
+			}
+			
+			traits = {
+				air_chief_ground_support_2     
+			}
+		}	
+	}
+	
+	### HIGH COMMAND ###
+	
+	CRR_mikhail_sholokhov = { 
+		name = "Mikhail Sholokhov"
+		portraits={
+			army={
+				small="GFX_idea_SOV_generic_land_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CRR_mikhail_sholokhov
+			ledger = army
+			allowed = {
+				original_tag = CRR
+			}
+			available = {
+				NOT = {
+					has_completed_focus = CRR_motorization
+				}
+			}
+			
+			traits = {
+				army_cavalry_1      
+			}
+		}	
+	}
+	
+	CRR_andrei_shkuro = { 
+		name = "Andrei Shkuro"
+		portraits={
+			army={
+				small="GFX_idea_south_america_generic_land_5"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CRR_andrei_shkuro
+			ledger = army
+			allowed = {
+				original_tag = CRR
+			}
+			
+			available = {
+				has_completed_focus = CRR_unwavering_loyalty
+			}
+			
+			traits = {
+				army_regrouping_3       
+			}
+		}	
+	}
+	
+	CRR_konstantin_vershinin = { 
+		name = "Konstantin Vershinin"
+		portraits={
+			army={
+				small="GFX_idea_south_america_generic_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CRR_konstantin_vershinin
+			ledger = air
+			allowed = {
+				original_tag = CRR
+			}
+			traits = {
+				air_air_superiority_2     
+			}
+		}	
+	}
+	
+	CRR_mikhail_vodopyanov = { 
+		name = "Mikhail Vodopyanov"
+		portraits={
+			army={
+				small="GFX_idea_FRA_generic_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CRR_mikhail_vodopyanov
+			ledger = air
+			allowed = {
+				original_tag = CRR
+			}
+			
+			available = {
+				has_completed_focus = CRR_next_generation_fighter
+			}
+			
+			traits = {
+				air_air_combat_training_3     
+			}
+		}	
+	}
+	
+	CRR_dmitry_verderevsky = { 
+		name = "Dmitry Verderevsky"
+		portraits={
+			army={
+				small="GFX_idea_europe_generic_4"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CRR_dmitry_verderevsky
+			ledger = air
+			allowed = {
+				original_tag = CRR
+			}
+			traits = {
+				air_naval_strike_1    
+			}
+		}	
+	}
+	
+	CRR_boris_malinin = { 
+		name = "Boris Malinin"
+		portraits={
+			army={
+				small="GFX_idea_ITA_generic_navy_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			ledger = navy
+			idea_token = CRR_boris_malinin
+			allowed = {
+				original_tag = CRR
+			}
+			
+			available = {
+				any_owned_state = {
+					is_coastal = yes
+				}
+			}
+			
+			traits = {
+				navy_submarine_2    
+			}
+		}	
+	}
+	
+	CRR_aleksey_krylov = { 
+		name = "Aleksey Krylov"
+		portraits={
+			army={
+				small="GFX_idea_ITA_generic_navy_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CRR_aleksey_krylov
+			ledger = navy
+			allowed = {
+				original_tag = CRR
+			}
+			
+			available = {
+				any_owned_state = {
+					is_coastal = yes
+				}
+			}
+			
+			traits = {
+				navy_capital_ship_1     
+			}
+		}	
+	}
+	
+	CRR_aleksandr_nemits = { 
+		name = "Aleksandr Nemits"
+		portraits={
+			army={
+				small="GFX_idea_south_america_generic_navy_3"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CRR_aleksandr_nemits
+			ledger = navy
+			allowed = {
+				original_tag = CRR
+			}
+			traits = {
+				navy_fleet_logistics_1      
+			}
+		}	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	### GENERALS ###
+	
+	CRR_aleksandr_vasilevsky = {
+		name = SOV_aleksandr_vasilevsky
+		portraits = {
+			army = {
+				small = "GFX_idea_SOV_aleksandr_vasilevsky"
+				large = "GFX_portrait_SOV_aleksandr_vasilevsky"
+			}
+		}
+		corps_commander = {
+			traits = { armor_officer politically_connected }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 2
+			legacy_id = 407
+		}
+	}
+	
+	CRR_nikolay_vatutin = {
+		name = SOV_nikolay_vatutin
+		portraits = {
+			army = {
+				large = GFX_portrait_SOV_nikolay_vatutin
+				small=GFX_portrait_SOV_nikolay_vatutin_small
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CRR_nikolay_vatutin
+			ledger = army
+			allowed = {
+				original_tag = CRR
+			}
+			traits = {
+				army_infantry_2  
+			}
+		}
+		corps_commander = {
+			traits = { trait_reckless infantry_officer }
+			skill = 3
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = 0
+		}
+	}
+	
+	CRR_nikandr_chibisov = {
+		name = SOV_nikandr_chibisov
+		portraits = {
+			army = {
+				large = GFX_portrait_SOV_nikandr_chibisov
+				small=GFX_portrait_SOV_nikandr_chibisov_small
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = CRR_nikandr_chibisov
+			ledger = army
+			allowed = {
+				original_tag = CRR
+			}
+			traits = {
+				army_logistics_1 
+			}
+		}
+		corps_commander = {
+			traits = { trickster }
+			skill = 3
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+			legacy_id = 0
+		}
+	}
+	
+	CRR_nikolay_berzarin = {
+		name = SOV_nikolay_berzarin
+		portraits = {
+			army = {
+				large = GFX_portrait_SOV_nikolay_berzarin
+				small=GFX_portrait_SOV_nikolay_berzarin_small
+			}
+		}
+		
+		advisor={
+			cost = 150
+			slot = theorist
+			idea_token = CRR_nikolay_berzarin
+			allowed = {
+				original_tag = CRR
+			}
+			traits = {
+				military_theorist 
+			}
+		}
+		
+		corps_commander = {
+			traits = { infantry_officer }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = 0
+		}
+	}
+	
+	CRR_markian_popov = {
+		name = SOV_markian_popov
+		portraits = {
+			army = {
+				large = GFX_portrait_SOV_markian_popov
+				small=GFX_portrait_SOV_markian_popov_small
+			}
+		}
+		corps_commander = {
+			traits = { brilliant_strategist infantry_officer winter_specialist }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+			legacy_id = 0
+		}
+	}
+	
+	CRR_rodion_malinovsky = {
+		name = SOV_rodion_malinovsky
+		portraits = {
+			army = {
+				large = GFX_portrait_SOV_rodion_malinovsky
+				small=GFX_portrait_SOV_rodion_malinovsky_small
+			}
+		}
+		
+		advisor={
+			slot = high_command
+			idea_token = CRR_rodion_malinovsky
+			ledger = air
+			allowed = {
+				original_tag = CRR
+			}
+			traits = {
+				air_bomber_interception_1        
+			}
+		}
+		
+		corps_commander = {
+			traits = { old_guard career_officer trait_cautious politically_connected }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = 0
+		}
+	}
+	
+	CRR_aleksandr_yegorov = {
+		name = SOV_aleksandr_yegorov
+		portraits = {
+			army = {
+				small = "GFX_idea_aleksandr_yegorov"
+				large = "GFX_portrait_SOV_aleksandr_yegorov"
+			}
+		}
+		
+		advisor={
+			slot = army_chief
+			idea_token = CRR_aleksandr_yegorov
+			allowed = {
+				original_tag = CRR
+			}
+			traits = {
+				army_chief_defensive_2 
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+
+		field_marshal = {
+			traits = { career_officer inflexible_strategist trait_reckless }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 2
+			legacy_id = 0
+		}	
+	}
+	
+	CRR_semyon_budyonny = {
+		name = SOV_semyon_budyonny
+		portraits = {
+			army = {
+				large = "GFX_portrait_SOV_semyon_budyonny"
+				small=GFX_portrait_SOV_semyon_budyonny_small
+			}
+		}
+		field_marshal = {
+			traits = { old_guard inflexible_strategist politically_connected }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+			legacy_id = 0
+		}
+	}
+	
+	
+	
+	### ADMIRALS ###
+	
+	CRR_arseny_golovko = {
+		
+		name = "Arseny Golovko"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV/Portrait_Soviet_Arseniy_Golovko.dds"
+				small="GFX_idea_south_america_generic_navy_3"
+			}
+		}
+	}
+	
+	CRR_filipp_oktyabrsky = {
+		
+		name = "Filipp Oktyabrsky"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV/Portrait_Soviet_Filipp_Oktyabrsky.dds"
+				small="GFX_idea_south_america_generic_navy_3"
+			}
+		}
+		advisor={
+			slot = navy_chief
+			idea_token = CRR_filipp_oktyabrsky
+			allowed = {
+				original_tag = CRR
+			}
+			
+			available = {
+				any_owned_state = {
+					is_coastal = yes
+				}
+			}
+			
+			traits = {
+				navy_chief_commerce_raiding_2 
+			}
+		}
+	}
+	
+	CRR_vladimir_kasatonov = {
+		
+		name = "Vladimir Kasatonov"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV/Portrait_Soviet_Vladimir_Kasatonov.dds"
+				small="GFX_idea_south_america_generic_navy_3"
+			}
+		}
+	}
+	
+	CRR_nikolay_kuznetsov = {
+		
+		name = "Nikolai Kuznetsov"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV/Portrait_SOV_aleksandr_vasilevsky.dds"
+				small="GFX_idea_south_america_generic_navy_3"
+			}
+		}
+	}
+	
+	CRR_gordey_levchenko = {
+		
+		name = "Gordey Levchenko"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV/Portrait_Soviet_Gordey_Levchenko.dds"
+				small="GFX_idea_south_america_generic_navy_3"
+			}
+		}
+	}
+	
+	CRR_sergey_gorshkov = {
+		
+		name = "Sergey Gorshkov"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SOV/Portrait_Soviet_Sergey_Gorshkov.dds"
+				small="GFX_idea_south_america_generic_navy_3"
+			}
+		}
+	}
+	
+	CRR_mikhail_viktorov = {
+		
+		name = "Mikhail_Viktorov"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/Europe/Portrait_Europe_Generic_navy_3.dds"
+				small="GFX_idea_south_america_generic_navy_3"
+			}
+		}
+	}
+	
+	### POLITICAL ADVISORS ###
+	
+	CRR_nikolai_bryukhanov = { 
+		name = "Nikolai Bryukhanov"
+		portraits={
+			army={
+				small="GFX_idea_ENG_generic_land_5"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRR_nikolai_bryukhanov
+			allowed = {
+				original_tag = CRR
+			}
+			traits = {
+				captain_of_industry  
+			}
+		}		
+	}
+	
+	CRR_lev_kamenev = { 
+		name = "Lev Kamenev"
+		portraits={
+			army={
+				small="GFX_idea_ENG_generic_land_4"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRR_lev_kamenev
+			allowed = {
+				original_tag = CRR
+			}
+			traits = {
+				communist_theorist   
+			}
+		}		
+	}
+	
+	CRR_mikhail_kaganovich = { 
+		name = "Mikhail Kaganovich"
+		portraits={
+			army={
+				small="GFX_idea_RAJ_political_leader_generic_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRR_mikhail_kaganovich
+			allowed = {
+				original_tag = CRR
+			}
+			traits = {
+				war_industrialist    
+			}
+		}		
+	}
+	
+	CRR_isidor_lyubimov = { 
+		name = "Isidor Lyubimov"
+		portraits={
+			army={
+				small="GFX_idea_USA_generic_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRR_isidor_lyubimov
+			allowed = {
+				original_tag = CRR
+			}
+			cost = 75
+			traits = {
+				fortification_armchair_general     
+			}
+		}		
+	}
+	
+	CRR_pavel_yudin = { 
+		name = "Pavel Yudin"
+		portraits={
+			army={
+				small="GFX_idea_SOV_generic_land_4"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRR_pavel_yudin
+			allowed = {
+				original_tag = CRR
+			}
+			
+			available = {
+				has_completed_focus = CRR_celebrate_war_heroes
+			}
+			
+			traits = {
+				popular_figurehead      
+			}
+		}		
+	}
+	
+	CRR_mikhail_pokrovsky= { 
+		name = "Mikhail Pokrovsky"
+		portraits={
+			army={
+				small="GFX_idea_SOV_generic_land_3"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRR_mikhail_pokrovsky
+			allowed = {
+				original_tag = CRR
+			}
+			
+			available = {
+				has_completed_focus = CRR_government_reform
+			}
+			
+			traits = {
+				marxist_philosopher    
+			}
+		}		
+	}
+	
+	CRR_aleksandr_yefremov = { 
+		name = "Aleksandr Yefremov"
+		portraits={
+			army={
+				small="GFX_idea_SOV_generic_land_2"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CRR_aleksandr_yefremov
+			allowed = {
+				original_tag = CRR
+			}
+			traits = {
+				quartermaster_general     
+			}
+		}		
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

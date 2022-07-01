@@ -1,0 +1,51 @@
+characters={
+
+	PRM_georgy_zhukov = {
+		
+		name = "Georgy Zhukov"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/RUS/Portrait_Georgy_Zhukov.dds"
+			}
+			army = {
+				small = "GFX_idea_georgy_zhukov"
+				large = GFX_portrait_SOV_georgy_zhukov
+			}
+		}
+
+		country_leader = {
+			ideology = stalinism 
+			traits = { generallissimo }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+		
+		field_marshal = {
+			traits = { media_personality war_hero winter_specialist }
+			skill = 5
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 5
+			legacy_id = 410
+		}
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,22 @@
+characters = {
+
+	AZR_nariman_narimanov = {
+		name = "Nariman Narimanov" 
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/RUS/Portrait_Nariman_Narimanov.dds"
+			}
+		}
+		country_leader = {
+			ideology = conservatism
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+	
+	
+	
+	
+	
+	
+}

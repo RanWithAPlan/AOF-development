@@ -1,0 +1,16 @@
+characters={
+	LOM_tommaso_scotti = {
+		name = "Tommaso Gallarati Scotti"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/LOM/Portrait_Tommaso_Scotti.dds"
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+	}
+}

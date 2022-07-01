@@ -1,0 +1,37 @@
+characters={
+
+	GCO_semyon_budyonny = {
+		
+		name = "Semyon Budyonny"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/RUS/Portrait_Semyon_Budyonny.dds"
+			}
+		}
+
+		country_leader = {
+			ideology = fascism_ideology  
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

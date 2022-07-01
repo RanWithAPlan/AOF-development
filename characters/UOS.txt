@@ -1,0 +1,37 @@
+characters={
+
+	UOS_boris_shumyatsky = {
+		
+		name = "Boris Shumyatsky"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/RUS/Portrait_Boris_Shumyatsky.dds"
+			}
+		}
+
+		country_leader = {
+			ideology = marxism 
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,16 @@
+characters={
+	SAN_giovanni_ponti = {
+		name = "Giovanni Ponti"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/SAN/Portrait_Giovanni_Ponti.dds"
+			}
+		}
+		country_leader = {
+			ideology = conservatism
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+	}
+}

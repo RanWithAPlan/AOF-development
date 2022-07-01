@@ -1,0 +1,37 @@
+characters={
+
+	MOS_alexei_rykov = {
+		
+		name = "Alexei Ivanovich Rykov"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/RUS/Portrait_Alexei_Rykov.dds"
+			}
+		}
+
+		country_leader = {
+			ideology = liberalism 
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
