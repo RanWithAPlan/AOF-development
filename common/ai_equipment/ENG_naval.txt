@@ -1,4 +1,4 @@
-# AI Ship Designs for His Majesty the King
+# AI Ship Designs for the Union
 
 ENG_destroyers = {
 	category = naval
