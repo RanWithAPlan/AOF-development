@@ -1,0 +1,28 @@
+capital = 427
+
+set_rule = {
+	can_join_factions = no
+}
+
+oob = "HYD"
+
+set_technology = {
+	infantry_weapons = 1
+	gw_artillery = 1
+	tech_engineers = 1
+	basic_train = 1
+}
+
+recruit_character = HYD_osman_ali_d
+recruit_character = HYD_osman_ali_f
+recruit_character = HYD_osman_ali_n
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1933.6.8"
+	election_frequency = 36
+	elections_allowed = no
+}
+set_popularities = {
+	neutrality = 100
+}

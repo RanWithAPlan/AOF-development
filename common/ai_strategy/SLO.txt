@@ -1,0 +1,14 @@
+	
+our_only_desire = {
+
+	enable = {
+		has_completed_focus = SLO_secret_weapon
+		country_exists = HUN
+	}
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "HUN"
+		value = 1000
+	}
+}

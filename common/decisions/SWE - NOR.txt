@@ -1,0 +1,353 @@
+SWE_NOR_factions = {
+
+	SWE_join_germany = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		allowed = {
+			original_tag = SWE
+		}
+		
+		available = {
+			GER = { is_faction_leader = yes }
+			NOT = { has_country_flag = SWE_join_faction }
+		}
+		
+		cost = 40
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			GER = {
+				add_to_faction = SWE
+			}
+			hidden_effect = {
+				set_country_flag = SWE_join_faction
+			}
+		}
+		
+		ai_will_do = {
+			factor = 25
+		}
+		
+	}
+	
+	SWE_join_denmark = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		allowed = {
+			original_tag = SWE
+		}
+		
+		available = {
+			country_exists = ICE
+			NOT = { has_country_flag = SWE_join_faction }
+		}
+		
+		cost = 40
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			ICE = {
+				country_event = { id = mod_minors.1 days = 2 }
+			}
+			hidden_effect = {
+				set_country_flag = SWE_join_faction
+			}
+		}
+		
+		ai_will_do = {
+			factor = 25
+		}
+		
+	}
+	
+	SWE_restore_denmark = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		allowed = {
+			original_tag = SWE
+		}
+		
+		visible = {
+			country_exists = ICE
+			ICE = { is_in_faction_with = SWE }
+		}
+		
+		available = {
+			country_exists = ICE
+			ICE = { is_in_faction_with = SWE }
+			OR = {
+				ICE = { controls_state = 37 }
+				any_other_country = {
+					is_in_faction_with = ICE
+					controls_state = 37
+				}
+			}
+			OR = {
+				ICE = { controls_state = 99 }
+				any_other_country = {
+					is_in_faction_with = ICE
+					controls_state = 99
+				}
+			}
+		}
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			ICE = {
+				transfer_state = 99
+				add_state_core = 99
+				transfer_state = 37
+				add_state_core = 37
+			}
+			puppet = ICE
+			
+		}
+		
+		ai_will_do = {
+			factor = 25
+		}
+		
+	}
+
+
+	NOR_join_britain = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		allowed = {
+			original_tag = NOR
+		}
+		
+		available = {
+			ENG = { is_faction_leader = yes }
+		}
+		
+		cost = 40
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			ENG = {
+				add_to_faction = NOR
+			}
+		}
+		
+		ai_will_do = {
+			factor = 25
+		}
+		
+	}
+
+
+
+
+
+
+}
+
+
+SWE_NOR_unification_war = {
+
+	SWE_uni_war = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		allowed = {
+			original_tag = SWE
+		}
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+		
+			hidden_effect = {
+				NOR = {
+					every_core_state = {
+						add_claim_by = SWE
+					}
+				}
+				SWE = {
+					every_core_state = {
+						add_claim_by = NOR
+					}
+				}
+			}
+			add_stability = 0.02
+			add_threat = 1
+		}
+		
+		war_with_on_remove = NOR
+		
+		days_remove = 60
+		remove_effect = {
+			declare_war_on = {
+				target = NOR
+				type = annex_everything
+			}
+		}
+		
+		modifier = {
+			war_support_weekly_factor = 0.02
+		}
+		
+		ai_will_do = {
+			factor = 25
+		}
+		
+	}
+	
+	NOR_uni_war = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		allowed = {
+			original_tag = NOR
+		}
+		
+		fire_only_once = yes
+		
+		available = {
+			date > 1938.5.1
+		}
+		
+		complete_effect = {
+		
+			hidden_effect = {
+				NOR = {
+					every_core_state = {
+						add_claim_by = SWE
+					}
+				}
+				SWE = {
+					every_core_state = {
+						add_claim_by = NOR
+					}
+				}
+			}
+			add_stability = 0.05
+			add_threat = 1
+		}
+		
+		war_with_on_remove = SWE
+		
+		days_remove = 60
+		remove_effect = {
+			declare_war_on = {
+				target = SWE
+				type = annex_everything
+			}
+		}
+		
+		modifier = {
+			war_support_weekly_factor = 0.01
+		}
+		
+		ai_will_do = {
+			factor = 25
+		}
+		
+	}
+	
+	SWE_unification = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		allowed = {
+			original_tag = SWE
+		}
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		available = {
+			OR = {
+				NOR = { is_subject_of = SWE }
+				AND = {
+					NOT = { 
+						country_exists = NOR
+					}
+					NOR = {
+						all_core_state = {
+							is_owned_by = SWE
+						}
+					}
+				}
+			}
+		}
+		
+		complete_effect = {
+			NOR = {
+				every_core_state = {
+					add_core_of = SWE
+				}
+			}
+			hidden_effect = {
+				set_cosmetic_tag = SWE_unified
+				annex_country = {
+					target = NOR
+					transfer_troops = yes
+				}
+				set_country_flag = SWE_sweden_won 
+			}
+		}
+	}
+	
+	
+	
+	NOR_unification = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		allowed = {
+			original_tag = NOR
+		}
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			factor = 1000
+		}
+		
+		available = {
+			OR = {
+				SWE = { is_subject_of  = NOR }
+				AND = {
+					NOT = { 
+						country_exists = SWE
+					}
+					SWE = {
+						all_core_state = {
+							is_owned_by = NOR
+						}
+					}
+				}
+			}
+		}
+		
+		complete_effect = {
+			SWE = {
+				every_core_state = {
+					add_core_of = NOR
+				}
+			}
+			hidden_effect = {
+				set_cosmetic_tag = NOR_unified
+				annex_country = {
+					target = SWE
+					transfer_troops = yes
+				}
+				set_country_flag = NOR_norway_won
+			}
+		}
+	
+	}
+}

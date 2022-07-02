@@ -1,0 +1,110 @@
+German_historical = {
+	name = "German historical plan"
+	desc = "Essentially historical behaviour for Germany"
+
+	allowed = {
+		original_tag = GER
+	}
+	enable = {
+		is_historical_focus_on = yes
+	}
+
+	ai_national_focuses = {
+		#1936
+		GER_anniversary
+		GER_may_election
+		GER_heuss_reelection
+		GER_german_legion
+		GER_five_year_plan
+		GER_civs_rhineland
+		GER_import_knowledge
+		GER_copy_france
+		GER_tax_surplus
+		GER_48_division_programm
+		GER_rubber_for_planes
+		#1937
+		GER_reform_election_system
+		GER_invest_bremen
+		GER_sub_experiments
+		GER_mils_saxony
+		GER_appease_schleswig
+		GER_expand_art_school
+		GER_reinforce_kiel_accords
+		GER_looking_north
+		GER_help_sweden
+		GER_prepare_railroad
+		GER_retool_weapons
+		#1938
+		GER_class_of_1938
+		GER_crack_tanks
+		GER_walk_mountains
+		GER_africa_railroad
+		GER_nigeria_rubber
+		GER_request_tanzania
+		GER_economy_connection
+		#1939
+		GER_italian_guns 
+		GER_italian_bunkers
+		GER_build_for_allies
+		GER_deepen_eco_relations
+		GER_enough_empire
+		GER_colonial_resources
+		GER_reallign_finland
+		GER_fulfill_pan_germanic_dream
+		GER_bundesbanner
+		#1940
+		GER_train_trenches
+		GER_edelweiss_regiments
+		GER_optimal_economy
+		GER_tac_bonus
+		GER_protect_bomber
+		GER_direct_fire_sup
+		GER_end_pseudo_democracy
+		GER_bundesfestungen
+		#1941
+		GER_continue_carrier
+		GER_gap_filler
+		GER_colonial_harbours
+		GER_crownjewel_hong_kong
+		GER_colonia_army
+		GER_finish_italy
+		GER_sun_power
+		GER_marines
+		GER_fuel_preparation
+	}
+
+	research = {
+		infantry_weapons = 50.0
+		infantry_tech = 15.0
+		artillery = 8.0
+		support_tech = 6.5
+	}
+
+	ideas = {
+		hjalmar_schacht = 10
+	}
+
+	traits = {
+		captain_of_industry = 5
+	}
+
+	# Keep small, as it is used as a factor for some things (such as research needs)
+	# Recommended around 1.0. Useful for relation between plans
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+
+	ai_strategy = {
+		type = template_prio
+		id = medium_armor
+		value = 111
+	}
+
+	focus_factors = {
+		
+	}
+
+}

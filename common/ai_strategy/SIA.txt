@@ -1,0 +1,13 @@
+
+french_wants_laos = {
+
+	enable = {
+		741 = { is_claimed_by = SIA }
+	}
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "FRA"
+		value = 1000
+	}
+}

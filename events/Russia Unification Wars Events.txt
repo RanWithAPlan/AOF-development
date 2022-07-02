@@ -1,0 +1,972 @@
+#################################
+# 1848 Russian Nation Events		#
+#################################
+
+add_namespace = mod_russians
+
+
+country_event = {
+	id = mod_russians.1
+	title = mod_russians.1.t
+	desc = mod_russians.1.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		
+	}
+
+	option = {
+		name = mod_russians.1.a 
+		ai_chance = {
+			factor = 10
+		}	
+		
+	}
+}
+
+country_event = {
+	id = mod_russians.2
+	title = mod_russians.2.t
+	desc = mod_russians.2.d
+	picture = GFX_report_event_generic_factory
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_russians.2.a # allowed
+		ai_chance = {
+			factor = 10
+		}	
+		add_ideas = idea_child_labor_allowed
+	}
+	option = {
+		name = mod_russians.2.b # forbidden
+		ai_chance = {
+			factor = 10
+		}	
+		add_ideas = idea_child_labor_forbidden
+	}
+}
+
+country_event = {
+	id = mod_russians.3
+	title = mod_russians.3.t
+	desc = mod_russians.3.d
+	picture = GFX_report_event_soviet_purge_officers_02
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_russians.3.a # puppet
+		ai_chance = {
+			factor = 67
+		}	
+		remove_ideas = idea_uneasyness
+		CRR = {
+			puppet = PRM
+		}
+	}
+	option = {
+		name = mod_russians.3.b # stay alone
+		ai_chance = {
+			factor = 33
+		}	
+		add_political_power = 15
+	}
+}
+
+country_event = {
+	id = mod_russians.4
+	title = mod_russians.4.t
+	desc = mod_russians.4.d
+	picture = GFX_report_event_soldiers_marching
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_russians.4.a # remove
+		ai_chance = {
+			factor = 10
+		}	
+		remove_ideas = idea_frozen_war_army
+		add_political_power = -25
+	}
+	option = {
+		name = mod_russians.4.b # reform
+		ai_chance = {
+			factor = 10
+		}	
+		swap_ideas = {
+			remove_idea = idea_frozen_war_army
+			add_idea = idea_thawed_war_army
+		}
+		add_political_power = 75
+	}
+}
+
+country_event = {
+	id = mod_russians.5
+	title = mod_russians.5.t
+	desc = mod_russians.5.d
+	picture = GFX_report_event_soldiers_marching
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_russians.5.a # mass assault
+		ai_chance = {
+			factor = 10
+		}	
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.99
+			uses = 1
+			category = cat_mass_assault 
+		}
+	}
+	option = {
+		name = mod_russians.5.b # firepower
+		ai_chance = {
+			factor = 10
+		}	
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.99
+			uses = 1
+			category = cat_superior_firepower 
+		}
+	}
+}
+
+country_event = {
+	id = mod_russians.6
+	title = mod_russians.6.t
+	desc = mod_russians.6.d
+	picture = GFX_report_event_molotov_ribbentrop_stalin_pact
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_russians.6.a # get annex
+		ai_chance = {
+			factor = 10
+		}	
+		trigger = {
+			NOT = { 
+				PRM = {
+					is_puppet_of = CRR 
+				}
+			}
+		}
+		CRR = {
+			annex_country = {
+				target = PRM
+				transfer_troops = yes
+			}
+		}
+	}
+	option = {
+		name = mod_russians.6.b # we won't give up without a fight
+		ai_chance = {
+			factor = 10
+		}	
+		trigger = {
+			NOT = { 
+				PRM = {
+					is_puppet_of = CRR 
+				}
+			}
+		}
+		CRR = {
+			create_wargoal = {
+				type = annex_everything 
+				target = PRM
+			}
+		}
+	}
+	option = {
+		name = mod_russians.6.c # We don't have a choice
+		ai_chance = {
+			factor = 10
+		}	
+		trigger = {
+			PRM = {
+				is_puppet_of = CRR
+			}
+		}
+		CRR = {
+			annex_country = {
+				target = PRM
+				transfer_troops = yes
+			}
+		}
+		PRM = {
+			every_core_state = {
+				add_core_of = CRR
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_russians.7
+	title = mod_russians.7.t
+	desc = mod_russians.7.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_russians.7.a # they can buy it
+		ai_chance = {
+			factor = 20
+		}	
+		CRR = { country_event = { id = mod_russians.8 days = 4 } }
+		add_political_power = 150
+	}
+	option = {
+		name = mod_russians.7.b # we won't support commies
+		ai_chance = {
+			factor = 10
+		}	
+		CRR = { country_event = { id = mod_russians.9 days = 4 } }
+	}
+}
+
+country_event = {
+	id = mod_russians.8
+	title = mod_russians.8.t
+	desc = mod_russians.8.d
+	picture = GFX_report_event_generic_sign_treaty2
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_russians.8.a 
+		ai_chance = {
+			factor = 20
+		}	
+		swap_ideas = {
+			remove_idea = idea_donativum
+			add_idea = idea_wheat_purchases
+		}
+		diplomatic_relation = {
+			country = UKR
+			relation = guarantee
+			active = yes
+		}
+		diplomatic_relation = {
+			country = UKR
+			relation = non_aggression_pact
+			active = yes
+		}
+	}
+}
+
+country_event = {
+	id = mod_russians.9
+	title = mod_russians.9.t
+	desc = mod_russians.9.d
+	#picture = GFX_report_event_generic_sign_treaty2
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_russians.9.a 
+		ai_chance = {
+			factor = 20
+		}	
+		add_political_power = -10
+	}
+}
+
+country_event = {
+	id = mod_russians.10
+	title = mod_russians.10.t
+	desc = mod_russians.10.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_russians.10.a # yes please
+		ai_chance = {
+			factor = 10
+		}	
+		CRR = { country_event = { id = mod_russians.11 days = 4 } }
+	}
+	option = {
+		name = mod_russians.10.b # no thank you
+		ai_chance = {
+			factor = 10
+		}	
+		CRR = { country_event = { id = mod_russians.12 days = 4 } }
+	}
+}
+
+country_event = {
+	id = mod_russians.11
+	title = mod_russians.11.t
+	desc = mod_russians.11.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_russians.11.a # get annex
+		ai_chance = {
+			factor = 10
+		}
+		CRR = {
+			annex_country = {
+				target = CEC
+				transfer_troops = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_russians.12
+	title = mod_russians.12.t
+	desc = mod_russians.12.d
+	picture = GFX_report_event_generic_sign_treaty1
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = mod_russians.12.a # we won't give up without a fight
+		ai_chance = {
+			factor = 10
+		}
+		CRR = {
+			create_wargoal = {
+				type = annex_everything 
+				target = CEC
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_russians.13 #Arkhangelsk Admirals
+	title = mod_russians.13.t
+	desc = mod_russians.13.d
+	picture = GFX_report_event_merchant_ship_01
+
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	immediate = {
+		hidden_effect = {
+			country_event = { id = mod_russians.14 days = 5 }
+		}
+	}
+	
+	trigger = {
+		tag = CRR
+		has_completed_focus = CRR_fund_naval_academies
+		OR = {
+			controls_state = 214
+		}
+	}
+
+
+	option = {
+		name = mod_russians.13.a 
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	id = mod_russians.14
+	title = mod_russians.14.t
+	desc = mod_russians.14.d
+	picture = GFX_report_event_merchant_ship_01
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = mod_russians.14.a 
+		ai_chance = {
+			factor = 10
+		}
+		add_naval_commander_role = {
+		  Character = CRR_arseny_golovko
+		  traits = { spotter arctic_water_expert }
+		  skill = 2
+		  attack_skill = 2
+		  defense_skill = 1
+		  maneuvering_skill = 4
+		  coordination_skill = 2
+		}
+	}
+}
+
+country_event = {
+	id = mod_russians.15 #Rostov Admirals
+	title = mod_russians.15.t
+	desc = mod_russians.15.d
+	picture = GFX_report_event_merchant_ship_01
+
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	immediate = {
+		hidden_effect = {
+			country_event = { id = mod_russians.16 days = 5 }
+		}
+	}
+	
+	trigger = {
+		tag = CRR
+		has_completed_focus = CRR_fund_naval_academies
+		OR = {
+			controls_state = 218
+		}
+	}
+
+
+	option = {
+		name = mod_russians.15.a 
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	id = mod_russians.16
+	title = mod_russians.16.t
+	desc = mod_russians.16.d
+	picture = GFX_report_event_merchant_ship_01
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = mod_russians.16.a
+		ai_chance = {
+			factor = 10
+		}
+		add_naval_commander_role = {
+		  Character = CRR_filipp_oktyabrsky
+		  traits = { ironside ground_pounder }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+		add_naval_commander_role = {
+		  Character = CRR_vladimir_kasatonov
+		  traits = { seawolf }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 2
+		}
+	}
+}
+
+country_event = {
+	id = mod_russians.17 #Petrograd Admirals
+	title = mod_russians.17.t
+	desc = mod_russians.17.d
+	picture = GFX_report_event_merchant_ship_01
+
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	immediate = {
+		hidden_effect = {
+			country_event = { id = mod_russians.18 days = 5 }
+		}
+	}
+	
+	trigger = {
+		tag = CRR
+		has_completed_focus = CRR_fund_naval_academies
+		OR = {
+			controls_state = 195
+		}
+	}
+
+
+	option = {
+		name = mod_russians.17.a 
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	id = mod_russians.18
+	title = mod_russians.18.t
+	desc = mod_russians.18.d
+	picture = GFX_report_event_merchant_ship_01
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = mod_russians.18.a 
+		ai_chance = {
+			factor = 10
+		}
+		add_naval_commander_role = {
+		  Character = CRR_nikolay_kuznetsov
+		  traits = { navy_career_officer ironside superior_tactician }
+		  skill = 5
+		  attack_skill = 3
+		  defense_skill = 4
+		  maneuvering_skill = 4
+		  coordination_skill = 5
+		}
+		add_naval_commander_role = {
+		  Character = CRR_gordey_levchenko
+		  traits = { green_water_expert  }
+		  skill = 2
+		  attack_skill = 2
+		  defense_skill = 2
+		  maneuvering_skill = 1
+		  coordination_skill = 2
+		}
+		add_naval_commander_role = {
+		  Character = CRR_sergey_gorshkov
+		  traits = { bold navy_career_officer }
+		  skill = 3
+		  attack_skill = 3
+		  defense_skill = 2
+		  maneuvering_skill = 3
+		  coordination_skill = 2
+		}
+	}
+}
+
+country_event = {
+	id = mod_russians.19 #Vladivostok Admirals
+	title = mod_russians.19.t
+	desc = mod_russians.19.d
+	picture = GFX_report_event_merchant_ship_01
+
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	immediate = {
+		hidden_effect = {
+			country_event = { id = mod_russians.20 days = 5 }
+		}
+	}
+	
+	trigger = {
+		tag = CRR
+		has_completed_focus = CRR_fund_naval_academies
+		OR = {
+			controls_state = 408
+		}
+	}
+
+
+	option = {
+		name = mod_russians.19.a 
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	id = mod_russians.20
+	title = mod_russians.20.t
+	desc = mod_russians.20.d
+	picture = GFX_report_event_merchant_ship_01
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = mod_russians.20.a 
+		ai_chance = {
+			factor = 10
+		}
+		add_naval_commander_role = {
+		  Character = CRR_mikhail_viktorov
+		  traits = { blue_water_expert crisis_magician }
+		  skill = 2
+		  attack_skill = 1
+		  defense_skill = 4
+		  maneuvering_skill = 3
+		  coordination_skill = 3
+		}
+	}
+}
+
+country_event = {
+	id = mod_russians.21 #Kronstadt Fleet Deserts
+	title = mod_russians.21.t
+	desc = mod_russians.21.d
+
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	immediate = {
+		hidden_effect = {
+			country_event = { id = mod_russians.22 days = 1 }
+			KRO = {
+				transfer_navy = {
+					target = CRR
+				}
+			}
+		}
+	}
+	
+	trigger = {
+		original_tag = CRR
+		KRO = {
+			NOT = {
+				has_full_control_of_state = 195
+			}
+		}
+	}
+
+
+	option = {
+		name = mod_russians.21.a 
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	id = mod_russians.22 #Kronstadt Fleet Arrives 
+	title = mod_russians.22.t
+	desc = mod_russians.22.d
+	picture = GFX_report_event_sailors_in_working_rig
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = mod_russians.22.a 
+		ai_chance = {
+			factor = 10
+		}
+		KRO = {
+			transfer_navy = {
+				target = CRR
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_russians.23 # Cossack War starts soon; Raids
+	title = mod_russians.23.t
+	desc = mod_russians.23.d
+	picture = GFX_report_event_SOV_cossack_cavalry
+
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			country_event = { id = mod_russians.24 days = 14 }
+			country_event = { id = mod_russians.25 days = 32 }
+		}
+	}
+	
+	trigger = {
+		tag = RCO
+		date > 1938.06.22
+	}
+
+
+	option = {
+		name = mod_russians.23.a 
+		ai_chance = {
+			factor = 10
+		}
+		set_war_support = 0.6
+		add_manpower = -21
+		GCO = {
+			set_war_support = 0.4
+			add_manpower = -7
+		}
+	}
+}
+
+country_event = {
+	id = mod_russians.24 # We need to prepare for war; Counter Raid
+	title = mod_russians.24.t
+	desc = mod_russians.24.d
+	picture = GFX_report_event_SOV_cossack_cavalry
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = mod_russians.24.a 
+		ai_chance = {
+			factor = 10
+		}
+		RCO = {
+			add_manpower = -46
+			every_core_state = {
+				add_core_of = GCO
+			}
+		}
+		GCO = {
+			every_core_state = {
+				add_core_of = RCO
+			}
+			add_manpower = -105
+		}
+		hidden_effect = {
+			add_ai_strategy = {
+				type = prepare_for_war
+				id = GCO
+				value = 200
+			}
+			GCO = {
+				add_ai_strategy = {
+					type = prepare_for_war
+					id = RCO
+					value = 200
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_russians.25
+	title = mod_russians.25.t
+	desc = mod_russians.25.d
+	picture = GFX_report_event_SOV_cossack_cavalry
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = mod_russians.25.a 
+		ai_chance = {
+			factor = 10
+		}
+		declare_war_on = {
+			target = GCO
+			type = annex_everything
+		}
+	}
+	
+}
+
+country_event = {
+	id = mod_russians.26
+	title = mod_russians.26.t
+	desc = mod_russians.26.d
+	picture = GFX_report_event_spr_captured_republican
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+
+	option = { #confiscate church possessions
+		name = mod_russians.26.a 
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = -0.05
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex  
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex  
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex  
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex  
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex  
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	
+	option = { #integrate church
+		name = mod_russians.26.b 
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = 0.15
+	}
+}
+
+country_event = {
+	id = mod_russians.27
+	title = mod_russians.27.t
+	desc = mod_russians.27.d
+	picture = GFX_report_event_bul_making_bricks_for_school
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = mod_russians.27.a # football 
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = 0.01
+	}
+	option = {
+		name = mod_russians.27.b # bandy
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = 0.01
+	}
+	option = {
+		name = mod_russians.27.c # basketball
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = 0.01
+	}
+}
+
+country_event = {
+	id = mod_russians.28
+	title = mod_russians.28.t
+	desc = mod_russians.28.d
+	picture = GFX_report_event_lithuanian_ultimatum
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = mod_russians.28.a # puppet with Caucasus aspirations
+		ai_chance = {
+			factor = 10
+		}
+		CRR = { puppet = RCO }
+		RCO = {
+			add_state_core = 232
+			add_state_core = 821
+			add_state_core = 828
+			add_state_core = 827
+			add_state_core = 233
+			add_state_core = 826
+			set_cosmetic_tag = RCO_caucasus_republic
+		}
+		
+	}
+	option = {
+		name = mod_russians.28.b # direct annexation
+		ai_chance = {
+			factor = 10
+		}
+		CRR = { 
+			annex_country = {
+				target = RCO
+				transfer_troops = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_russians.29
+	title = mod_russians.29.t
+	desc = mod_russians.29.d
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = mod_russians.29.a # same as before 
+		ai_chance = {
+			factor = 10
+		}
+		add_country_leader_trait = veteran_communist 
+		add_political_power = 20
+	}
+	option = {
+		name = mod_russians.29.b # Molotov aka Skryabin
+		ai_chance = {
+			factor = 10
+		}
+		promote_character = CRR_vyacheslav_molotov
+	}
+	option = {
+		name = mod_russians.29.c # elena stasova
+		ai_chance = {
+			factor = 30
+		}
+		promote_character = CRR_elena_stasova
+	}
+}
+
+
+
+
+

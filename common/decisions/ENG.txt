@@ -1,0 +1,1954 @@
+special_projects = {
+
+	ENG_nighttime_bombing = {
+	
+		icon = GFX_decision_generic_decision
+		
+		cost = 125
+		
+		available = {
+			has_war = yes
+			has_completed_focus = ENG_follow_harris_plan
+			NOT = { has_completed_focus = ENG_abandon_harris_plan }
+		}
+		
+		visible = {
+			has_completed_focus = ENG_follow_harris_plan
+			NOT = { has_completed_focus = ENG_abandon_harris_plan }
+		}
+
+		complete_effect = {
+			add_ideas = idea_nighttime_bombing
+		}
+		
+	}
+
+}
+
+ENG_build_fortress_calais = {
+
+	### LAND BUNKER ###
+	
+	ENG_bunker_line1 = {
+	
+		icon = GFX_decision_generic_construction
+		
+		cost = 5
+		
+		available = {
+			has_completed_focus = ENG_fortress_calais
+		}
+		
+		visible = {
+			has_completed_focus = ENG_fortress_calais
+		}
+		
+		modifier = {
+			civilian_factory_use = 2
+		}
+		
+		cancel_trigger = {
+			NOT = { 29 = { is_controlled_by = ENG } }
+		}
+		fire_only_once = yes
+		days_remove = 45
+		
+		remove_effect = {
+			29 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 9500
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 3476
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 6504
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 11606
+				}
+			}
+			set_country_flag = ENG_bunkerbuilding1
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	ENG_bunker_line2 = {
+	
+		icon = GFX_decision_generic_construction
+		
+		cost = 5
+		
+		available = {
+			has_completed_focus = ENG_fortress_calais
+			has_country_flag = ENG_bunkerbuilding1
+		}
+		
+		visible = {
+			has_completed_focus = ENG_fortress_calais
+			has_country_flag = ENG_bunkerbuilding1
+		}
+		
+		modifier = {
+			civilian_factory_use = 2
+		}
+		
+		cancel_trigger = {
+			NOT = { 29 = { is_controlled_by = ENG } }
+		}
+		fire_only_once = yes
+		days_remove = 45
+		
+		remove_effect = {
+			29 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 9500
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 3476
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 6504
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 11606
+				}
+			}
+			set_country_flag = ENG_bunkerbuilding2
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	ENG_bunker_line3 = {
+	
+		icon = GFX_decision_generic_construction
+		
+		cost = 10
+		
+		available = {
+			has_completed_focus = ENG_fortress_calais
+			has_country_flag = ENG_bunkerbuilding1
+			has_country_flag = ENG_bunkerbuilding2
+		}
+		
+		visible = {
+			has_completed_focus = ENG_fortress_calais
+			has_country_flag = ENG_bunkerbuilding1
+			has_country_flag = ENG_bunkerbuilding2
+		}
+		
+		modifier = {
+			civilian_factory_use = 3
+		}
+		
+		cancel_trigger = {
+			NOT = { 29 = { is_controlled_by = ENG } }
+		}
+		fire_only_once = yes
+		days_remove = 60
+		
+		remove_effect = {
+			29 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 9500
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3476
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6504
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 11606
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 15
+		}
+	}
+	
+	### COASTAL BUNKER ###
+	
+	ENG_coastalbunker_line1 = {
+	
+		icon = GFX_decision_generic_construction
+		
+		cost = 5
+		
+		available = {
+			has_completed_focus = ENG_fortress_calais
+		}
+		
+		visible = {
+			has_completed_focus = ENG_fortress_calais
+		}
+		
+		modifier = {
+			civilian_factory_use = 2
+		}
+		
+		cancel_trigger = {
+			NOT = { 29 = { is_controlled_by = ENG } }
+		}
+		fire_only_once = yes
+		days_remove = 25
+		
+		remove_effect = {
+			29 = {
+				add_building_construction = {
+					type = coastal_bunker 
+					level = 5
+					instant_build = yes
+					province = 575
+				}
+			}
+			set_country_flag = ENG_coastalbunkerbuilding1
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	ENG_coastalbunker_line2 = {
+	
+		icon = GFX_decision_generic_construction
+		
+		cost = 10
+		
+		available = {
+			has_completed_focus = ENG_fortress_calais
+			has_country_flag = ENG_coastalbunkerbuilding1
+		}
+		
+		visible = {
+			has_completed_focus = ENG_fortress_calais
+			has_country_flag = ENG_coastalbunkerbuilding1
+		}
+		
+		modifier = {
+			civilian_factory_use = 2
+		}
+		
+		cancel_trigger = {
+			NOT = { 29 = { is_controlled_by = ENG } }
+		}
+		fire_only_once = yes
+		days_remove = 35
+		
+		remove_effect = {
+			29 = {
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					instant_build = yes
+					province = 11548
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					level = 2
+					instant_build = yes
+					province = 9500
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	### AA SITES ###
+	
+	ENG_aa_line1 = {
+	
+		icon = GFX_decision_generic_construction
+		
+		cost = 5
+		
+		available = {
+			has_completed_focus = ENG_fortress_calais
+		}
+		
+		visible = {
+			has_completed_focus = ENG_fortress_calais
+		}
+		
+		modifier = {
+			civilian_factory_use = 2
+		}
+		
+		cancel_trigger = {
+			NOT = { 29 = { is_controlled_by = ENG } }
+		}
+		fire_only_once = yes
+		days_remove = 25
+		
+		remove_effect = {
+			29 = {
+				add_building_construction = {
+					type = anti_air_building 
+					level = 2
+					instant_build = yes
+				}
+			}
+			set_country_flag = ENG_aabuilding1
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	ENG_aa_line2 = {
+	
+		icon = GFX_decision_generic_construction
+		
+		cost = 10
+		
+		available = {
+			has_completed_focus = ENG_fortress_calais
+			has_country_flag = ENG_aabuilding1
+		}
+		
+		visible = {
+			has_completed_focus = ENG_fortress_calais
+			has_country_flag = ENG_aabuilding1
+		}
+		
+		modifier = {
+			civilian_factory_use = 2
+		}
+		
+		cancel_trigger = {
+			NOT = { 29 = { is_controlled_by = ENG } }
+		}
+		fire_only_once = yes
+		days_remove = 30
+		
+		remove_effect = {
+			29 = {
+				add_building_construction = {
+					type = anti_air_building 
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	### RADAR SITES (both sides) ### 
+	
+	ENG_radar_line1 = {
+	
+		icon = GFX_decision_generic_construction
+		
+		cost = 20
+		
+		available = {
+			has_completed_focus = ENG_fortress_calais
+		}
+		
+		visible = {
+			has_completed_focus = ENG_fortress_calais
+		}
+		
+		modifier = {
+			civilian_factory_use = 2
+		}
+		
+		cancel_trigger = {
+			NOT = { 29 = { is_controlled_by = ENG } }
+		}
+		fire_only_once = yes
+		days_remove = 25
+		
+		remove_effect = {
+			29 = {
+				add_building_construction = {
+					type = radar_station  
+					level = 1
+					instant_build = yes
+				}
+			}
+			set_country_flag = ENG_radarbuilding1
+		}
+		
+		ai_will_do = {
+			factor = 15
+		}
+	}
+	
+	ENG_radar_line2 = {
+	
+		icon = GFX_decision_generic_construction
+		
+		cost = 10
+		
+		available = {
+			has_completed_focus = ENG_fortress_calais
+			has_country_flag = ENG_radarbuilding1
+		}
+		
+		visible = {
+			has_completed_focus = ENG_fortress_calais
+			has_country_flag = ENG_radarbuilding1
+		}
+		
+		modifier = {
+			civilian_factory_use = 2
+		}
+		
+		cancel_trigger = {
+			NOT = { 29 = { is_controlled_by = ENG } }
+		}
+		fire_only_once = yes
+		days_remove = 30
+		
+		remove_effect = {
+			123 = {
+				add_building_construction = {
+					type = radar_station  
+					level = 1
+					instant_build = yes
+				}
+			}
+			127 = {
+				add_building_construction = {
+					type = radar_station  
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	### CALAIS-BELGIAN-THEATER ###
+	
+	
+
+
+
+
+
+}
+
+ENG_cowardly_lion = {
+
+	### SPEECHES ###
+
+	ENG_cowardly_lion_speech1 = {
+	
+		icon = GFX_decision_generic_form_nation
+		
+		cost = 15
+		
+		available = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+			NOT = { has_country_flag = ENG_brockway_betterment }
+		}
+		
+		visible = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+		}
+		
+		days_remove = 15
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_country_flag = ENG_brockway_betterment
+		}
+		
+		remove_effect = {
+			if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_1 
+				}
+				remove_country_leader_trait = champion_of_peace_1 
+				add_country_leader_trait = champion_of_peace_2 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_2 
+				}
+				remove_country_leader_trait = champion_of_peace_2 
+				add_country_leader_trait = champion_of_peace_3 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_3 
+				}
+				remove_country_leader_trait = champion_of_peace_3
+				add_country_leader_trait = champion_of_peace_4 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_4 
+				}
+				remove_country_leader_trait = champion_of_peace_4
+				add_country_leader_trait = champion_of_peace_5
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_5 
+				}
+				remove_country_leader_trait = champion_of_peace_5
+				add_war_support = 0.15
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+					remove_ideas = idea_opposed_to_armament
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	ENG_cowardly_lion_speech2 = {
+	
+		icon = GFX_decision_generic_form_nation
+		
+		cost = 20
+		
+		available = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+			NOT = { has_country_flag = ENG_brockway_betterment }
+		}
+		
+		visible = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+		}
+		
+		days_remove = 15
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_country_flag = ENG_brockway_betterment
+		}
+		
+		remove_effect = {
+			if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_1 
+				}
+				remove_country_leader_trait = champion_of_peace_1 
+				add_country_leader_trait = champion_of_peace_2 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_2 
+				}
+				remove_country_leader_trait = champion_of_peace_2 
+				add_country_leader_trait = champion_of_peace_3 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_3 
+				}
+				remove_country_leader_trait = champion_of_peace_3
+				add_country_leader_trait = champion_of_peace_4 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_4 
+				}
+				remove_country_leader_trait = champion_of_peace_4
+				add_country_leader_trait = champion_of_peace_5
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+			}
+			else_if  = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_5 
+				}
+				remove_country_leader_trait = champion_of_peace_5
+				add_war_support = 0.15
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+					remove_ideas = idea_opposed_to_armament
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	ENG_cowardly_lion_speech3 = {
+	
+		icon = GFX_decision_generic_form_nation
+		
+		cost = 30
+		
+		available = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+			NOT = { has_country_flag = ENG_brockway_betterment }
+		}
+		
+		visible = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+		}
+		
+		days_remove = 5
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_country_flag = ENG_brockway_betterment
+		}
+		
+		remove_effect = {
+			if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_1 
+				}
+				remove_country_leader_trait = champion_of_peace_1 
+				add_country_leader_trait = champion_of_peace_2 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_2 
+				}
+				remove_country_leader_trait = champion_of_peace_2 
+				add_country_leader_trait = champion_of_peace_3 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_3 
+				}
+				remove_country_leader_trait = champion_of_peace_3
+				add_country_leader_trait = champion_of_peace_4 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_4 
+				}
+				remove_country_leader_trait = champion_of_peace_4
+				add_country_leader_trait = champion_of_peace_5
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_5 
+				}
+				remove_country_leader_trait = champion_of_peace_5
+				add_war_support = 0.15
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+					remove_ideas = idea_opposed_to_armament
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	ENG_cowardly_lion_speech4 = {
+	
+		icon = GFX_decision_generic_form_nation
+		
+		cost = 5
+		
+		available = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+			NOT = { has_country_flag = ENG_brockway_betterment }
+		}
+		
+		visible = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+		}
+		
+		days_remove = 30
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_country_flag = ENG_brockway_betterment
+		}
+		
+		remove_effect = {
+			if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_1 
+				}
+				remove_country_leader_trait = champion_of_peace_1 
+				add_country_leader_trait = champion_of_peace_2 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_2 
+				}
+				remove_country_leader_trait = champion_of_peace_2 
+				add_country_leader_trait = champion_of_peace_3 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_3 
+				}
+				remove_country_leader_trait = champion_of_peace_3
+				add_country_leader_trait = champion_of_peace_4 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_4 
+				}
+				remove_country_leader_trait = champion_of_peace_4
+				add_country_leader_trait = champion_of_peace_5
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_5 
+				}
+				remove_country_leader_trait = champion_of_peace_5
+				add_war_support = 0.15
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+					remove_ideas = idea_opposed_to_armament
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	ENG_cowardly_lion_speech5 = {
+	
+		icon = GFX_decision_generic_form_nation
+		
+		cost = 25
+		
+		available = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+			NOT = { has_country_flag = ENG_brockway_betterment }
+		}
+		
+		visible = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+		}
+		
+		days_remove = 20
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_country_flag = ENG_brockway_betterment
+		}
+		
+		remove_effect = {
+			if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_1 
+				}
+				remove_country_leader_trait = champion_of_peace_1 
+				add_country_leader_trait = champion_of_peace_2 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_2 
+				}
+				remove_country_leader_trait = champion_of_peace_2 
+				add_country_leader_trait = champion_of_peace_3 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_3 
+				}
+				remove_country_leader_trait = champion_of_peace_3
+				add_country_leader_trait = champion_of_peace_4 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_4 
+				}
+				remove_country_leader_trait = champion_of_peace_4
+				add_country_leader_trait = champion_of_peace_5
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_5 
+				}
+				remove_country_leader_trait = champion_of_peace_5
+				add_war_support = 0.15
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+					remove_ideas = idea_opposed_to_armament
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	### MOVIES ###
+
+	ENG_cowardly_lion_movie1 = {
+	
+		icon = GFX_decision_generic_decision
+		
+		available = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+			NOT = { has_country_flag = ENG_brockway_betterment }
+		}
+		
+		visible = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+		}
+		
+		days_remove = 25
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_country_flag = ENG_brockway_betterment
+			add_ideas = idea_brockway_movie_time
+		}
+		
+		remove_effect = {
+			if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_1 
+				}
+				remove_country_leader_trait = champion_of_peace_1 
+				add_country_leader_trait = champion_of_peace_2 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_2 
+				}
+				remove_country_leader_trait = champion_of_peace_2 
+				add_country_leader_trait = champion_of_peace_3 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_3 
+				}
+				remove_country_leader_trait = champion_of_peace_3
+				add_country_leader_trait = champion_of_peace_4 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_4 
+				}
+				remove_country_leader_trait = champion_of_peace_4
+				add_country_leader_trait = champion_of_peace_5
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_5 
+				}
+				remove_country_leader_trait = champion_of_peace_5
+				add_war_support = 0.15
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+					remove_ideas = idea_opposed_to_armament
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	ENG_cowardly_lion_movie2 = {
+	
+		icon = GFX_decision_generic_decision
+		
+		
+		available = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+			NOT = { has_country_flag = ENG_brockway_betterment }
+		}
+		
+		visible = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+		}
+		
+		days_remove = 30
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_country_flag = ENG_brockway_betterment
+			add_ideas = idea_brockway_movie_time
+		}
+		
+		remove_effect = {
+			if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_1 
+				}
+				remove_country_leader_trait = champion_of_peace_1 
+				add_country_leader_trait = champion_of_peace_2 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_2 
+				}
+				remove_country_leader_trait = champion_of_peace_2 
+				add_country_leader_trait = champion_of_peace_3 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_3 
+				}
+				remove_country_leader_trait = champion_of_peace_3
+				add_country_leader_trait = champion_of_peace_4 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_4 
+				}
+				remove_country_leader_trait = champion_of_peace_4
+				add_country_leader_trait = champion_of_peace_5
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_5 
+				}
+				remove_country_leader_trait = champion_of_peace_5
+				add_war_support = 0.15
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+					remove_ideas = idea_opposed_to_armament
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	ENG_cowardly_lion_movie3 = {
+	
+		icon = GFX_decision_generic_decision
+		
+		
+		available = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+			NOT = { has_country_flag = ENG_brockway_betterment }
+		}
+		
+		visible = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+		}
+		
+		days_remove = 12
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_country_flag = ENG_brockway_betterment
+			add_ideas = idea_brockway_movie_time
+		}
+		
+		remove_effect = {
+			if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_1 
+				}
+				remove_country_leader_trait = champion_of_peace_1 
+				add_country_leader_trait = champion_of_peace_2 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_2 
+				}
+				remove_country_leader_trait = champion_of_peace_2 
+				add_country_leader_trait = champion_of_peace_3 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_3 
+				}
+				remove_country_leader_trait = champion_of_peace_3
+				add_country_leader_trait = champion_of_peace_4 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_4 
+				}
+				remove_country_leader_trait = champion_of_peace_4
+				add_country_leader_trait = champion_of_peace_5
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_5 
+				}
+				remove_country_leader_trait = champion_of_peace_5
+				add_war_support = 0.15
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+					remove_ideas = idea_opposed_to_armament
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	ENG_cowardly_lion_movie4 = {
+	
+		icon = GFX_decision_generic_decision
+		
+		
+		available = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+			NOT = { has_country_flag = ENG_brockway_betterment }
+		}
+		
+		visible = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+		}
+		
+		days_remove = 32
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_country_flag = ENG_brockway_betterment
+			add_ideas = idea_brockway_movie_time
+		}
+		
+		remove_effect = {
+			if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_1 
+				}
+				remove_country_leader_trait = champion_of_peace_1 
+				add_country_leader_trait = champion_of_peace_2 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_2 
+				}
+				remove_country_leader_trait = champion_of_peace_2 
+				add_country_leader_trait = champion_of_peace_3 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_3 
+				}
+				remove_country_leader_trait = champion_of_peace_3
+				add_country_leader_trait = champion_of_peace_4 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_4 
+				}
+				remove_country_leader_trait = champion_of_peace_4
+				add_country_leader_trait = champion_of_peace_5
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_5 
+				}
+				remove_country_leader_trait = champion_of_peace_5
+				add_war_support = 0.15
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+					remove_ideas = idea_opposed_to_armament
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	ENG_cowardly_lion_movie5 = {
+	
+		icon = GFX_decision_generic_decision
+		
+		
+		available = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+			NOT = { has_country_flag = ENG_brockway_betterment }
+		}
+		
+		visible = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+		}
+		
+		days_remove = 45
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_country_flag = ENG_brockway_betterment
+			add_ideas = idea_brockway_movie_time
+		}
+		
+		remove_effect = {
+			if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_1 
+				}
+				remove_country_leader_trait = champion_of_peace_1 
+				add_country_leader_trait = champion_of_peace_2 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_2 
+				}
+				remove_country_leader_trait = champion_of_peace_2 
+				add_country_leader_trait = champion_of_peace_3 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_3 
+				}
+				remove_country_leader_trait = champion_of_peace_3
+				add_country_leader_trait = champion_of_peace_4 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_4 
+				}
+				remove_country_leader_trait = champion_of_peace_4
+				add_country_leader_trait = champion_of_peace_5
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_5 
+				}
+				remove_country_leader_trait = champion_of_peace_5
+				add_war_support = 0.15
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+					remove_ideas = idea_opposed_to_armament
+				}
+				remove_ideas = idea_brockway_movie_time
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	### RADIOS ###
+
+	ENG_cowardly_lion_radio1 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		available = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+			NOT = { has_country_flag = ENG_brockway_betterment }
+		}
+		
+		visible = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+		}
+		
+		days_remove = 16
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_country_flag = ENG_brockway_betterment
+			add_ideas = idea_brockway_radio_time
+		}
+		
+		remove_effect = {
+			if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_1 
+				}
+				remove_country_leader_trait = champion_of_peace_1 
+				add_country_leader_trait = champion_of_peace_2 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_2 
+				}
+				remove_country_leader_trait = champion_of_peace_2 
+				add_country_leader_trait = champion_of_peace_3 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_3 
+				}
+				remove_country_leader_trait = champion_of_peace_3
+				add_country_leader_trait = champion_of_peace_4 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_4 
+				}
+				remove_country_leader_trait = champion_of_peace_4
+				add_country_leader_trait = champion_of_peace_5
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_5 
+				}
+				remove_country_leader_trait = champion_of_peace_5
+				add_war_support = 0.15
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+					remove_ideas = idea_opposed_to_armament
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	ENG_cowardly_lion_radio2 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		
+		available = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+			NOT = { has_country_flag = ENG_brockway_betterment }
+		}
+		
+		visible = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+		}
+		
+		days_remove = 26
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_country_flag = ENG_brockway_betterment
+			add_ideas = idea_brockway_radio_time
+		}
+		
+		remove_effect = {
+			if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_1 
+				}
+				remove_country_leader_trait = champion_of_peace_1 
+				add_country_leader_trait = champion_of_peace_2 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_2 
+				}
+				remove_country_leader_trait = champion_of_peace_2 
+				add_country_leader_trait = champion_of_peace_3 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_3 
+				}
+				remove_country_leader_trait = champion_of_peace_3
+				add_country_leader_trait = champion_of_peace_4 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_4 
+				}
+				remove_country_leader_trait = champion_of_peace_4
+				add_country_leader_trait = champion_of_peace_5
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_5 
+				}
+				remove_country_leader_trait = champion_of_peace_5
+				add_war_support = 0.15
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+					remove_ideas = idea_opposed_to_armament
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	ENG_cowardly_lion_radio3 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		
+		available = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+			NOT = { has_country_flag = ENG_brockway_betterment }
+		}
+		
+		visible = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+		}
+		
+		days_remove = 19
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_country_flag = ENG_brockway_betterment
+			add_ideas = idea_brockway_radio_time
+		}
+		
+		remove_effect = {
+			if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_1 
+				}
+				remove_country_leader_trait = champion_of_peace_1 
+				add_country_leader_trait = champion_of_peace_2 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_2 
+				}
+				remove_country_leader_trait = champion_of_peace_2 
+				add_country_leader_trait = champion_of_peace_3 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_3 
+				}
+				remove_country_leader_trait = champion_of_peace_3
+				add_country_leader_trait = champion_of_peace_4 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_4 
+				}
+				remove_country_leader_trait = champion_of_peace_4
+				add_country_leader_trait = champion_of_peace_5
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_5 
+				}
+				remove_country_leader_trait = champion_of_peace_5
+				add_war_support = 0.15
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+					remove_ideas = idea_opposed_to_armament
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	ENG_cowardly_lion_radio4 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		
+		available = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+			NOT = { has_country_flag = ENG_brockway_betterment }
+		}
+		
+		visible = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+		}
+		
+		days_remove = 7
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_country_flag = ENG_brockway_betterment
+			add_ideas = idea_brockway_radio_time
+		}
+		
+		remove_effect = {
+			if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_1 
+				}
+				remove_country_leader_trait = champion_of_peace_1 
+				add_country_leader_trait = champion_of_peace_2 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_2 
+				}
+				remove_country_leader_trait = champion_of_peace_2 
+				add_country_leader_trait = champion_of_peace_3 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_3 
+				}
+				remove_country_leader_trait = champion_of_peace_3
+				add_country_leader_trait = champion_of_peace_4 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_4 
+				}
+				remove_country_leader_trait = champion_of_peace_4
+				add_country_leader_trait = champion_of_peace_5
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_5 
+				}
+				remove_country_leader_trait = champion_of_peace_5
+				add_war_support = 0.15
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+					remove_ideas = idea_opposed_to_armament
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	ENG_cowardly_lion_radio5 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		
+		available = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+			NOT = { has_country_flag = ENG_brockway_betterment }
+		}
+		
+		visible = {
+			OR = {
+				has_country_leader_with_trait = champion_of_peace_1
+				has_country_leader_with_trait = champion_of_peace_2
+				has_country_leader_with_trait = champion_of_peace_3
+				has_country_leader_with_trait = champion_of_peace_4
+				has_country_leader_with_trait = champion_of_peace_5
+			}
+		}
+		
+		days_remove = 39
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			set_country_flag = ENG_brockway_betterment
+			add_ideas = idea_brockway_radio_time
+		}
+		
+		remove_effect = {
+			if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_1 
+				}
+				remove_country_leader_trait = champion_of_peace_1 
+				add_country_leader_trait = champion_of_peace_2 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_2 
+				}
+				remove_country_leader_trait = champion_of_peace_2 
+				add_country_leader_trait = champion_of_peace_3 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_3 
+				}
+				remove_country_leader_trait = champion_of_peace_3
+				add_country_leader_trait = champion_of_peace_4 
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_4 
+				}
+				remove_country_leader_trait = champion_of_peace_4
+				add_country_leader_trait = champion_of_peace_5
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+			else_if = { 
+				limit = { 
+					has_country_leader_with_trait = champion_of_peace_5 
+				}
+				remove_country_leader_trait = champion_of_peace_5
+				add_war_support = 0.15
+				hidden_effect = {
+					clr_country_flag = ENG_brockway_betterment
+					remove_ideas = idea_opposed_to_armament
+				}
+				remove_ideas = idea_brockway_radio_time
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+}

@@ -1,0 +1,2559 @@
+﻿### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+
+focus_tree = {
+	id = council_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 20
+			tag = CRR
+		}
+	}
+	
+	default = no
+	
+	focus = {
+		id = CRR_new_five_year_plan
+		icon = GFX_goal_generic_construct_civ_factory
+		available = {
+			date > 1936.1.1
+		}
+		x = 16
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex  
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex  
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex  
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_government_reform
+		icon = GFX_focus_generic_soviet_politics
+		prerequisite = {
+			focus = CRR_new_five_year_plan
+		}
+		relative_position_id = CRR_new_five_year_plan
+		x = 4
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = 75
+		}
+	}
+	
+	focus = {
+		id = CRR_army_reform
+		icon = GFX_focus_generic_manpower
+		prerequisite = {
+			focus = CRR_government_reform
+		}
+		relative_position_id = CRR_government_reform
+		x = 5
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			country_event = { id = mod_russians.4 }
+		}
+	}
+	
+	focus = {
+		id = CRR_doctrine_effort
+		icon = GFX_focus_SOV_the_supreme_soviet
+		prerequisite = {
+			focus = CRR_army_reform
+		}
+		relative_position_id = CRR_army_reform
+		x = 0
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = idea_uniform_reformed
+			add_research_slot = 1
+			country_event = { id = mod_russians.5 }
+		}
+	}
+	
+	focus = {
+		id = CRR_firepower
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = {
+			focus = CRR_doctrine_effort
+		}
+		relative_position_id = CRR_doctrine_effort
+		mutually_exclusive = {
+			focus = CRR_mass_assault
+		}
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = idea_artillery_build_speed
+		}
+	}
+	
+	focus = {
+		id = CRR_mass_assault
+		icon = GFX_goal_generic_small_arms
+		prerequisite = {
+			focus = CRR_doctrine_effort
+		}
+		relative_position_id = CRR_doctrine_effort
+		mutually_exclusive = {
+			focus = CRR_firepower
+		}
+		
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = idea_guns_build_speed
+		}
+	}
+	
+	focus = {
+		id = CRR_recruit_old_generals
+		icon = GFX_focus_generic_military_mission
+		prerequisite = {
+			focus = CRR_firepower
+			focus = CRR_mass_assault
+		}
+		relative_position_id = CRR_mass_assault
+		
+		
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = idea_recruited_old_generals
+		}
+	}
+	
+	focus = {
+		id = CRR_ministry_logistics_railroad
+		icon = GFX_focus_POL_warsaw_main_station
+		prerequisite = {
+			focus = CRR_firepower
+			focus = CRR_mass_assault
+		}
+		relative_position_id = CRR_mass_assault
+		
+		
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = idea_logist_railroad_ministry
+		}
+	}
+	
+	focus = {
+		id = CRR_unwavering_loyalty
+		icon = GFX_focus_SOV_mobilization_plan
+		prerequisite = {
+			focus = CRR_ministry_logistics_railroad
+		}
+		relative_position_id = CRR_ministry_logistics_railroad
+		
+		
+		x = -2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = idea_unwavering_loyalty
+		}
+	}
+	
+	focus = {
+		id = CRR_true_red_army
+		icon = GFX_focus_SOV_builder_of_the_red_army
+		prerequisite = {
+			focus = CRR_ministry_logistics_railroad
+		}
+		relative_position_id = CRR_ministry_logistics_railroad
+		
+		available = {
+			has_army_manpower = {
+				size > 1000000
+			}
+		}
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = idea_true_red_army
+		}
+	}
+	
+	focus = {
+		id = CRR_prepare_infiltration
+		icon = GFX_focus_ger_strike_at_the_source
+		prerequisite = {
+			focus = CRR_government_reform
+		}
+		available = {
+			MOS = { exists = yes }
+			NOT = {
+				CRR = { has_war_with = MOS }
+			}
+		}
+		relative_position_id = CRR_government_reform
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			create_intelligence_agency = yes
+			
+			add_ideas = idea_crr_infiltration
+		}
+	}
+	
+	
+	
+	focus = {
+		id = CRR_ratlines
+		icon = GFX_focus_SOV_organize_wreckers
+		prerequisite = {
+			focus = CRR_prepare_infiltration
+		}
+		available = {
+			MOS = { exists = yes }
+			NOT = {
+				CRR = { has_war_with = MOS }
+			}
+		}
+		relative_position_id = CRR_prepare_infiltration
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = ratlines_into_moscow
+			MOS = { add_ideas = idea_uneasyness }
+			
+			hidden_effect = {
+				if = {
+					limit = {
+							255 = {
+								is_controlled_by = CRR
+							}
+						}
+					255 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+							257 = {
+								is_controlled_by = CRR
+							}
+						}
+					257 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+							258 = {
+								is_controlled_by = CRR
+							}
+						}
+					258 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+							222 = {
+								is_controlled_by = CRR
+							}
+						}
+					222 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+							224 = {
+								is_controlled_by = CRR
+							}
+						}
+					224 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+							243 = {
+								is_controlled_by = CRR
+							}
+						}
+					243 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+							242 = {
+								is_controlled_by = CRR
+							}
+						}
+					242 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+							246 = {
+								is_controlled_by = CRR
+							}
+						}
+					246 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+							247 = {
+								is_controlled_by = CRR
+							}
+						}
+					247 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+							253 = {
+								is_controlled_by = CRR
+							}
+						}
+					253 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+							252 = {
+								is_controlled_by = CRR
+							}
+						}
+					252 = {
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_extraordinary_espionage
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = {
+			focus = CRR_ratlines
+		}
+		relative_position_id = CRR_ratlines
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = idea_positive_brain_drain
+			random_list = {
+				20 = {
+					add_tech_bonus = {
+						bonus = 0.5
+						uses = 2
+						category = industry
+					}
+				}
+				20 = {
+					add_tech_bonus = {
+						bonus = 0.5
+						uses = 2
+						category = electronics
+					}
+				}
+				20 = {
+					add_tech_bonus = {
+						bonus = 0.5
+						uses = 2
+						category = armor
+					}
+				}
+				20 = {
+					add_tech_bonus = {
+						bonus = 0.5
+						uses = 2
+						category = infantry_tech
+					}
+				}
+				20 = {
+					add_tech_bonus = {
+						bonus = 0.5
+						uses = 2
+						category = artillery
+					}
+				}
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = CRR_infiltrate_perm
+		icon = GFX_focus_SOV_the_last_purge
+		prerequisite = {
+			focus = CRR_extraordinary_espionage
+		}
+		available = {
+			PRM = { exists = yes }
+			NOT = {
+				CRR = { has_war_with = PRM }
+			}
+		}
+		relative_position_id = CRR_extraordinary_espionage
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			PRM = { add_ideas = idea_uneasyness }
+			hidden_effect = {
+				country_event = { id = mod_russians.2 days = 120 }
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_infiltrate_finland
+		icon = GFX_focus_generic_attack_finland
+		prerequisite = {
+			focus = CRR_extraordinary_espionage
+		}
+		available = {
+			FIN = { exists = yes }
+			NOT = {
+				CRR = { has_war_with = FIN }
+			}
+		}
+		relative_position_id = CRR_extraordinary_espionage
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			FIN = {
+				add_popularity = {
+					ideology = communism
+					popularity = 0.1
+				}
+			}
+			custom_effect_tooltip = CRR_finish_war_tt
+		}
+	}
+	
+	focus = {
+		id = CRR_red_airforce
+		icon = GFX_focus_YUG_rogozarski
+		prerequisite = {
+			focus = CRR_army_reform
+		}
+		relative_position_id = CRR_army_reform
+		x = 4
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			random_controlled_state = {
+				add_building_construction = {
+					type = air_base 
+					level = 4
+					instant_build = yes
+				}
+			}
+			random_controlled_state = {
+				add_building_construction = {
+					type = air_base 
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_controlled_state = {
+				add_building_construction = {
+					type = air_base 
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_controlled_state = {
+				add_building_construction = {
+					type = air_base 
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_a_soldier_a_plane_scheme
+		icon = GFX_goal_generic_air_production
+		prerequisite = {
+			focus = CRR_red_airforce
+		}
+		relative_position_id = CRR_red_airforce
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = idea_soldier_plane_scheme1
+		}
+	}
+	
+	focus = {
+		id = CRR_next_generation_fighter
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = {
+			focus = CRR_a_soldier_a_plane_scheme
+		}
+		relative_position_id = CRR_a_soldier_a_plane_scheme
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = idea_soldier_plane_scheme1
+				add_idea = idea_soldier_plane_scheme2
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = light_fighter
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = CRR_cas_bomber
+		icon = GFX_goal_generic_CAS
+		prerequisite = {
+			focus = CRR_next_generation_fighter
+		}
+		relative_position_id = CRR_next_generation_fighter
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = idea_soldier_plane_scheme2
+				add_idea = idea_soldier_plane_scheme3
+			}
+			add_tech_bonus = {
+				name = CAS_bonus
+				bonus = 1
+				uses = 1
+				category = cas_bomber
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = CRR_naval_bomber
+		icon = GFX_goal_generic_air_naval_bomber
+		prerequisite = {
+			focus = CRR_cas_bomber
+		}
+		relative_position_id = CRR_cas_bomber
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = idea_soldier_plane_scheme3
+				add_idea = idea_soldier_plane_scheme4
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = naval_bomber
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = CRR_air_doctrine_effort
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = {
+			focus = CRR_a_soldier_a_plane_scheme
+		}
+		relative_position_id = CRR_a_soldier_a_plane_scheme
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	focus = {
+		id = CRR_reopen_puplic_schools
+		icon = GFX_focus_generic_military_academy
+		prerequisite = {
+			focus = CRR_government_reform
+		}
+		relative_position_id = CRR_government_reform
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = idea_reopened_schools
+		}
+	}
+	
+	focus = {
+		id = CRR_childlabor
+		icon = GFX_goal_generic_production
+		prerequisite = {
+			focus = CRR_reopen_puplic_schools 
+		}
+		prerequisite = {
+			focus = CRR_new_five_year_plan_2
+		}
+		relative_position_id = CRR_reopen_puplic_schools
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			country_event = { id = mod_russians.2 }
+		}
+	}
+	
+	focus = {
+		id = CRR_ukrainian_wheat
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = {
+			focus = CRR_childlabor
+			focus = CRR_ratlines
+		}
+		relative_position_id = CRR_childlabor
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			UKR = { country_event = { id = mod_russians.7 } }
+		}
+	}
+	
+	focus = {
+		id = CRR_new_five_year_plan_2
+		icon = GFX_focus_generic_industry_1
+		prerequisite = {
+			focus = CRR_new_five_year_plan
+		}
+		relative_position_id = CRR_new_five_year_plan
+		available = {
+			date > 1937.1.1
+		}
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex  
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex  
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_new_five_year_plan_3
+		icon = GFX_focus_generic_industry_2
+		prerequisite = {
+			focus = CRR_new_five_year_plan_2
+		}
+		relative_position_id = CRR_new_five_year_plan_2
+		available = {
+			date > 1938.1.1
+		}
+		x = 0
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex  
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory  
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_tank_plant
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = {
+			focus = CRR_new_five_year_plan_3
+		}
+		relative_position_id = CRR_new_five_year_plan_3
+		
+		available = {
+			has_full_control_of_state = 572
+		}
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = idea_tank_plant
+		}
+	}
+	
+	focus = {
+		id = CRR_tank_plant_super_heavy
+		icon = GFX_focus_generic_tank_production
+		prerequisite = {
+			focus = CRR_tank_plant
+		}
+		relative_position_id = CRR_tank_plant
+		
+		available = {
+			has_full_control_of_state = 195
+			has_full_control_of_state = 571
+		}
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = idea_superheavy_tank_plant
+		}
+	}
+	
+	focus = {
+		id = CRR_motorization
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = {
+			focus = CRR_new_five_year_plan_3
+		}
+		relative_position_id = CRR_new_five_year_plan_3
+		
+		available = {
+			has_full_control_of_state = 252
+		}
+		
+		x = -3
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = idea_gorky_truck_plant
+		}
+	}
+	
+	focus = {
+		id = CRR_new_five_year_plan_4
+		icon = GFX_focus_generic_industry_3
+		prerequisite = {
+			focus = CRR_new_five_year_plan_3
+		}
+		relative_position_id = CRR_new_five_year_plan_3
+		mutually_exclusive = {
+			focus = CRR_new_five_year_plan_change_plan
+		}
+		available = {
+			date > 1939.1.1
+		}
+		x = -1
+		y = 3
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex  
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex  
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory  
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory  
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_new_five_year_plan_change_plan
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = {
+			focus = CRR_new_five_year_plan_3
+		}
+		relative_position_id = CRR_new_five_year_plan_3
+		mutually_exclusive = {
+			focus = CRR_new_five_year_plan_4
+		}
+		available = {
+			date > 1939.1.1
+		}
+		x = 1
+		y = 3
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory  
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory  
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory  
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory  
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_token_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = {
+			focus = CRR_government_reform
+		}
+		relative_position_id = CRR_government_reform
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		
+		x = 12
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 5
+				category = naval_equipment
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_fund_naval_academies
+		icon = GFX_focus_generic_military_academy
+		prerequisite = {
+			focus = CRR_token_navy
+		}
+		relative_position_id = CRR_token_navy
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+			OR = {
+				owns_state = 214
+				owns_state = 218
+				owns_state = 195
+				owns_state = 408
+			}
+		}
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = CRR_navy_academies_tt
+		}
+	}
+	
+	focus = {
+		id = CRR_eurasian_marines
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = {
+			focus = CRR_token_navy
+		}
+		relative_position_id = CRR_token_navy
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		
+		x = 2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = marine_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = tp_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_red_sailors
+		icon = GFX_focus_spr_anarchism_knows_no_borders
+		prerequisite = {
+			focus = CRR_eurasian_marines
+		}
+		relative_position_id = CRR_eurasian_marines
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = idea_red_sailors
+		}
+	}
+	
+	focus = {
+		id = CRR_old_glory
+		icon = GFX_focus_generic_navy_battleship2
+		prerequisite = {
+			focus = CRR_fund_naval_academies
+		}
+		relative_position_id = CRR_fund_naval_academies
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = bb_tech
+				category = shbb_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_cut_supply_lines
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = {
+			focus = CRR_old_glory
+		}
+		relative_position_id = CRR_old_glory
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = ss_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_submarine_kings
+		icon = GFX_goal_generic_wolf_pack
+		prerequisite = {
+			focus = CRR_old_glory
+		}
+		prerequisite = {
+			focus = CRR_cut_supply_lines
+		}
+		available = {
+			has_navy_experience > 99
+		}
+		relative_position_id = CRR_old_glory
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		
+		x = 1
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = idea_underwater_kings
+		}
+	}
+	
+	focus = {
+		id = CRR_modernize_agriculture
+		icon = GFX_focus_SOV_breadbasket_of_the_union
+		prerequisite = {
+			focus = CRR_new_five_year_plan
+		}
+		relative_position_id = CRR_new_five_year_plan
+		x = -2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = idea_modern_russian_agriculture
+		}
+	}
+	
+	focus = {
+		id = CRR_resource_rich_ground
+		icon = GFX_goal_generic_construction2
+		prerequisite = {
+			focus = CRR_new_five_year_plan_2
+		}
+		prerequisite = {
+			focus = CRR_modernize_agriculture
+		}
+		relative_position_id = CRR_modernize_agriculture
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = idea_use_what_we_have
+		}
+	}
+	
+	focus = {
+		id = CRR_capital_steel
+		icon = GFX_focus_generic_steel
+		prerequisite = {
+			focus = CRR_resource_rich_ground
+		}
+		relative_position_id = CRR_resource_rich_ground
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			capital_scope = {
+				add_resource = {
+					type = steel
+					amount = 24
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_first_okb
+		icon = GFX_focus_research2
+		prerequisite = {
+			focus = CRR_new_five_year_plan_4
+			focus = CRR_new_five_year_plan_change_plan
+		}
+		relative_position_id = CRR_new_five_year_plan_4
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	focus = {
+		id = CRR_nuclear
+		icon = GFX_focus_wonderweapons
+		prerequisite = {
+			focus = CRR_first_okb
+		}
+		relative_position_id = CRR_first_okb
+		mutually_exclusive = { focus = CRR_rocket }
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = nuclear
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_rocket
+		icon = GFX_focus_rocketry
+		prerequisite = {
+			focus = CRR_first_okb
+		}
+		relative_position_id = CRR_first_okb
+		mutually_exclusive = { focus = CRR_nuclear }
+		x = 1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 3
+				category = rocketry
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_finally_end_this_war
+		icon = GFX_focus_por_workers_of_iberia
+		x = 38
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_war_support = 0.15
+		}
+	}
+	
+	focus = {
+		id = CRR_white_russia
+		icon = GFX_goal_generic_major_war
+		prerequisite = {
+			focus = CRR_finally_end_this_war
+		}
+		relative_position_id = CRR_finally_end_this_war
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			WHR = {
+				every_core_state = {
+					add_claim_by = CRR
+				}
+			}
+			create_wargoal = {
+				type = annex_everything 
+				target = WHR
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_core_white_russia
+		icon = GFX_goal_generic_national_unity
+		prerequisite = {
+			focus = CRR_white_russia
+		}
+		relative_position_id = CRR_white_russia
+		
+		available = {
+			WHR = {
+				all_core_state = {
+					is_controlled_by = CRR
+				}
+			}
+		}
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			WHR = {
+				every_core_state = {
+					add_core_of = CRR
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_go_west
+		icon = GFX_focus_usa_focus_on_europe
+		prerequisite = {
+			focus = CRR_core_white_russia
+		}
+		relative_position_id = CRR_core_white_russia
+		
+		available = {
+			
+		}
+		
+		x = -2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			PRM = {
+				every_core_state = {
+					add_claim_by = CRR
+				}
+			}
+			DAM = {
+				every_core_state = {
+					add_claim_by = CRR
+				}
+			}
+			GAR = {
+				every_core_state = {
+					add_claim_by = CRR
+				}
+			}
+			KRO = {
+				every_core_state = {
+					add_claim_by = CRR
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_green_militia
+		icon = GFX_goal_generic_major_war
+		prerequisite = {
+			focus = CRR_go_west
+		}
+		relative_position_id = CRR_go_west
+		
+		available = {
+			
+		}
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything 
+				target = GAR
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_end_the_damned_suffering
+		icon = GFX_goal_generic_attack_allies
+		prerequisite = {
+			focus = CRR_green_militia
+		}
+		relative_position_id = CRR_green_militia
+		
+		available = {
+			NOT = { has_war_with = GAR }
+		}
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything 
+				target = DAM
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_demand_perm_subjugation
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = {
+			focus = CRR_end_the_damned_suffering
+		}
+		relative_position_id = CRR_end_the_damned_suffering
+		
+		available = {
+			NOT = { has_war_with = DAM }
+		}
+		
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			PRM = { country_event = { id = mod_russians.6 } }
+		}
+	}
+	
+	focus = {
+		id = CRR_counterrevolutionaries
+		icon = GFX_goal_generic_major_war
+		prerequisite = {
+			focus = CRR_demand_perm_subjugation
+		}
+		relative_position_id = CRR_demand_perm_subjugation
+		
+		available = {
+			NOT = { has_war_with = PRM }
+		}
+		
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything 
+				target = KRO
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_eastern_route
+		icon = GFX_focus_SOV_reinforce_eastern_naval_bases
+		prerequisite = {
+			focus = CRR_core_white_russia
+		}
+		relative_position_id = CRR_core_white_russia
+		
+		available = {
+			
+		}
+		
+		x = 2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			URA = {
+				every_core_state = {
+					add_claim_by = CRR
+				}
+			}
+			RAS = {
+				every_core_state = {
+					add_claim_by = CRR
+				}
+			}
+			UOS = {
+				every_core_state = {
+					add_claim_by = CRR
+				}
+			}
+			TRS = {
+				every_core_state = {
+					add_claim_by = CRR
+				}
+			}
+			CEC = {
+				every_core_state = {
+					add_claim_by = CRR
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_ural_war
+		icon = GFX_goal_generic_major_war
+		prerequisite = {
+			focus = CRR_eastern_route
+		}
+		relative_position_id = CRR_eastern_route
+		
+		available = {
+			
+		}
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything 
+				target = URA
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_siberian_war
+		icon = GFX_goal_generic_major_war
+		prerequisite = {
+			focus = CRR_ural_war
+		}
+		relative_position_id = CRR_ural_war
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available = {
+			NOT = { has_war_with = URA }
+		}
+		
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything 
+				target = UOS
+			}
+			create_wargoal = {
+				type = annex_everything 
+				target = TRS
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_demand_anarchist_subjugation
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = {
+			focus = CRR_siberian_war
+		}
+		relative_position_id = CRR_siberian_war
+		
+		x = -2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		
+		completion_reward = {
+			CEC = { country_event = { id = mod_russians.10 } }
+		}
+	}
+	
+	focus = {
+		id = CRR_grant_siberian_autonomy
+		icon = GFX_focus_generic_concessions
+		prerequisite = {
+			focus = CRR_demand_anarchist_subjugation
+		}
+		relative_position_id = CRR_demand_anarchist_subjugation
+		
+		available = {
+			URA = {
+				all_core_state = {
+					is_owned_by  = CRR
+				}
+			}
+			RAS = {
+				all_core_state = {
+					is_owned_by  = CRR
+				}
+			}
+			UOS = {
+				all_core_state = {
+					is_owned_by  = CRR
+				}
+			}
+			TRS = {
+				all_core_state = {
+					is_owned_by  = CRR
+				}
+			}
+			CEC = {
+				all_core_state = {
+					is_owned_by  = CRR
+				}
+			}
+		}
+		
+		x = -2
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			URA = {
+				every_core_state = {
+					add_core_of = CRR
+				}
+			}
+			RAS = {
+				every_core_state = {
+					add_core_of = CRR
+				}
+			}
+			UOS = {
+				every_core_state = {
+					add_core_of = CRR
+				}
+			}
+			TRS = {
+				every_core_state = {
+					add_core_of = CRR
+				}
+			}
+			CEC = {
+				every_core_state = {
+					add_core_of = CRR
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_shared_past
+		icon = GFX_focus_YUG_pan_slavic_congress
+		prerequisite = {
+			focus = CRR_counterrevolutionaries
+		}
+		relative_position_id = CRR_counterrevolutionaries
+		
+		available = {
+			PRM = {
+				all_core_state = {
+					is_owned_by  = CRR
+				}
+			}
+			DAM = {
+				all_core_state = {
+					is_owned_by  = CRR
+				}
+			}
+			GAR = {
+				all_core_state = {
+					is_owned_by  = CRR
+				}
+			}
+			KRO = {
+				all_core_state = {
+					is_owned_by  = CRR
+				}
+			}
+		}
+		
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			PRM = {
+				every_core_state = {
+					add_core_of = CRR
+				}
+			}
+			DAM = {
+				every_core_state = {
+					add_core_of = CRR
+				}
+			}
+			GAR = {
+				every_core_state = {
+					add_core_of = CRR
+				}
+			}
+			KRO = {
+				every_core_state = {
+					add_core_of = CRR
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_cossacks_to_the_south
+		icon = GFX_goal_generic_cavalry
+		prerequisite = {
+			focus = CRR_shared_past
+			focus = CRR_grant_siberian_autonomy
+		}
+		relative_position_id = CRR_shared_past
+		
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						country_exists = RCO 
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = GCO
+				}
+			}
+			else = {
+				RCO = {
+					country_event = { id = mod_russians.28 days = 2 }
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_russian_unity
+		icon = GFX_focus_SOV_socialism_in_one_country
+		prerequisite = {
+			focus = CRR_cossacks_to_the_south
+		}
+		prerequisite = {
+			focus = CRR_true_red_army
+		}
+		relative_position_id = CRR_shared_past
+		
+		x = -6
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_stability = -0.3
+			add_war_support = -0.2
+			create_faction = CRR_greater_council_republics
+			hidden_effect = {
+				set_cosmetic_tag = CRR_russian_union
+				219 = {
+					add_core_of = CRR
+				}
+				205 = {
+					add_core_of = CRR
+				}
+				254 = {
+					add_core_of = CRR
+				}
+				223 = {
+					add_core_of = CRR
+				}
+				add_state_claim = 146
+				add_state_claim = 147
+				add_state_claim = 722
+				add_state_claim = 813
+				add_state_claim = 812
+				add_state_claim = 811
+				add_state_claim = 13
+				add_state_claim = 191
+				add_state_claim = 810
+				add_state_claim = 12
+				add_state_claim = 808
+				add_state_claim = 96
+				add_state_claim = 784
+				add_state_claim = 95
+				add_state_claim = 225
+				add_state_claim = 221
+				add_state_claim = 228
+				add_state_claim = 227
+				add_state_claim = 200
+				add_state_claim = 196
+				add_state_claim = 137
+				add_state_claim = 233
+				add_state_claim = 826
+				add_state_claim = 231
+				add_state_claim = 232
+				add_state_claim = 821
+				add_state_claim = 828
+				add_state_claim = 827
+				add_state_claim = 229
+				KAZ = {
+					every_core_state = {
+						add_claim_by = CRR
+					}
+				}
+				UZB = {
+					every_core_state = {
+						add_claim_by = CRR
+					}
+				}
+				add_state_claim = 822
+				add_state_claim = 562
+				add_state_claim = 637
+				add_state_claim = 560
+				add_state_claim = 657
+				add_state_claim = 409
+				add_state_claim = 408
+				add_state_claim = 655
+				add_state_claim = 537
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_female_sufferage_nationwide
+		icon = GFX_focus_SOV_womens_fascist_movement
+		prerequisite = {
+			focus = CRR_russian_unity
+		}
+		relative_position_id = CRR_russian_unity
+		
+		x = 2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = idea_nationwide_sufferage
+		}
+	}
+	
+	focus = {
+		id = CRR_international_regiments
+		icon = GFX_focus_spr_class_war
+		prerequisite = {
+			focus = CRR_female_sufferage_nationwide
+		}
+		relative_position_id = CRR_female_sufferage_nationwide
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = idea_international_regiments
+		}
+	}
+	
+	focus = {
+		id = CRR_celebrate_war_heroes
+		icon = GFX_focus_por_workers_of_iberia
+		prerequisite = {
+			focus = CRR_russian_unity
+		}
+		relative_position_id = CRR_russian_unity
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.1
+		}
+	}
+	
+	focus = {
+		id = CRR_make_movies
+		icon = GFX_goal_generic_propaganda
+		prerequisite = {
+			focus = CRR_celebrate_war_heroes
+		}
+		relative_position_id = CRR_celebrate_war_heroes
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = idea_russian_war_movies
+				days = 400
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_orthodox_church
+		icon = GFX_focus_SOV_patriarch_of_all_russia
+		prerequisite = {
+			focus = CRR_russian_unity
+		}
+		relative_position_id = CRR_russian_unity
+		
+		x = -2
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			country_event = { id = mod_russians.26 }
+		}
+	}
+	
+	focus = {
+		id = CRR_factory_sport
+		icon = GFX_focus_prc_infiltration
+		prerequisite = {
+			focus = CRR_orthodox_church
+		}
+		relative_position_id = CRR_orthodox_church
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			add_ideas = idea_russian_factory_sport
+			country_event = { id = mod_russians.27 days = 7 }
+		}
+	}
+	
+	focus = {
+		id = CRR_first_unified_election
+		icon = GFX_goal_support_communism
+		prerequisite = {
+			focus = CRR_factory_sport
+		}
+		prerequisite = {
+			focus = CRR_make_movies
+		}
+		prerequisite = {
+			focus = CRR_international_regiments
+		}
+		relative_position_id = CRR_make_movies
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			country_event = { id = mod_russians.29 }
+		}
+	}
+	
+	focus = {
+		id = CRR_add_the_great_steppes 
+		icon = GFX_goal_generic_major_war
+		prerequisite = {
+			focus = CRR_first_unified_election
+		}
+		relative_position_id = CRR_first_unified_election
+		will_lead_to_war_with = KAZ
+		will_lead_to_war_with = UZB
+		
+		x = 4
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = KAZ
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = UZB
+			}
+			KAZ = {
+				every_core_state = {
+					add_claim_by = CRR
+				}
+			}
+			UZB = {
+				every_core_state = {
+					add_claim_by = CRR
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_national_delimitation  ### maybe at sometime series of decisions about ethnical boundaries, renaming states, migration ###
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = {
+			focus = CRR_add_the_great_steppes
+		}
+		relative_position_id = CRR_add_the_great_steppes
+		available = {
+			KAZ = {
+				all_core_state = {
+					is_owned_by  = CRR
+				}
+			}
+			UZB = {
+				all_core_state = {
+					is_owned_by  = CRR
+				}
+			}
+		}
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			KAZ = {
+				every_core_state = {
+					add_core_of = CRR
+				}
+			}
+			UZB = {
+				every_core_state = {
+					add_core_of = CRR
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_old_traitors
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		prerequisite = {
+			focus = CRR_national_delimitation
+		}
+		relative_position_id = CRR_national_delimitation
+		will_lead_to_war_with = AFG
+		will_lead_to_war_with = PER
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = AFG
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = PER
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_clean_up_the_caucasus
+		icon = GFX_focus_GRE_a_land_of_mountains
+		prerequisite = {
+			focus = CRR_first_unified_election
+		}
+		relative_position_id = CRR_first_unified_election
+		will_lead_to_war_with = DAG
+		will_lead_to_war_with = PER
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					RCO = {
+						is_puppet_of = CRR
+					}
+				}
+				RCO = {
+					declare_war_on = {
+						target = DAG
+						type = annex_everything
+					}
+				}
+				RCO = {
+					declare_war_on = {
+						target = PER
+						type = annex_everything
+					}
+				}
+			}
+			else = {
+				create_wargoal = {
+					type = annex_everything
+					target = DAG
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = GEO
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_ottoman_caucasus
+		icon = GFX_focus_generic_attack_turkey
+		prerequisite = {
+			focus = CRR_clean_up_the_caucasus
+		}
+		relative_position_id = CRR_clean_up_the_caucasus
+		will_lead_to_war_with = ARM
+		will_lead_to_war_with = AZR
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			137 = {
+				add_core_of = CRR
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = ARM
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = AZR
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_return_moscow
+		icon = GFX_focus_ger_strike_at_the_source
+		prerequisite = {
+			focus = CRR_first_unified_election
+		}
+		relative_position_id = CRR_first_unified_election
+		will_lead_to_war_with = MOS
+		
+		x = -4
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			219 = {
+				add_core_of = CRR
+			}
+			254 = {
+				add_core_of = CRR
+			}
+			223 = {
+				add_core_of = CRR
+			}
+			205 = {
+				add_core_of = CRR
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = MOS
+			}
+		}
+	}
+	
+	focus = {
+		id = CRR_far_east
+		icon = GFX_focus_SOV_reinforce_eastern_naval_bases
+		prerequisite = {
+			focus = CRR_return_moscow
+		}
+		relative_position_id = CRR_return_moscow
+		will_lead_to_war_with = JAP
+		
+		x = 0
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			822 = {
+				add_core_of = CRR
+			}
+			637 = {
+				add_core_of = CRR
+			}
+			562 = {
+				add_core_of = CRR
+			}
+			560 = {
+				add_core_of = CRR
+			}
+			657 = {
+				add_core_of = CRR
+			}
+			409 = {
+				add_core_of = CRR
+			}
+			408 = {
+				add_core_of = CRR
+			}
+			717 = {
+				add_claim_by = CRR
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = JAP
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	focus = {
+		id = CRR_radartech
+		icon = GFX_goal_generic_radar
+		prerequisite = {
+			focus = CRR_air_doctrine_effort
+		}
+		relative_position_id = CRR_air_doctrine_effort
+		
+		available = {
+			has_tech = radio
+		}
+		
+		x = 0
+		y = 2
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		
+		completion_reward = {
+			capital_scope = {
+				add_building_construction = {
+					type = radar_station 
+					level = 2
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = CRR_radar_advancements_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						has_tech = radio
+						NOT = { has_tech = radio_detection }
+					}
+					set_technology = { radio_detection = 1 }
+				}
+				else_if = {
+					limit = {
+						has_tech = radio_detection 
+						NOT = { has_tech = decimetric_radar }
+					}
+					set_technology = { decimetric_radar = 1 }
+				}
+				else_if = {
+					limit = {
+						has_tech = decimetric_radar 
+						NOT = { has_tech = improved_decimetric_radar }
+					}
+					set_technology = { improved_decimetric_radar = 1 }
+				}
+				else_if = {
+					limit = {
+						has_tech = improved_decimetric_radar 
+						NOT = { has_tech = centimetric_radar }
+					}
+					set_technology = { centimetric_radar = 1 }
+				}	
+				else_if = {
+					limit = {
+						has_tech = centimetric_radar 
+						NOT = { has_tech = improved_centimetric_radar }
+					}
+					set_technology = { improved_centimetric_radar = 1 }
+				}
+				else_if = {
+					limit = {
+						has_tech = improved_centimetric_radar 
+						NOT = { has_tech = advanced_centimetric_radar }
+					}
+					set_technology = { advanced_centimetric_radar = 1 }
+				}
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

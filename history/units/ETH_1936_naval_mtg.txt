@@ -1,0 +1,14 @@
+units = {
+
+	##### Naval OOB #####
+	fleet = {
+		name = "Royal Ethiopian Navy"			
+		naval_base = 12766 # Sydney
+		task_force = {
+			name = "Royal Ethiopian Coastal Squadron"
+			location = 12766 # Asmara
+			ship = { name = "Aksum" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ETH version_name = "Aksum Class" } } }
+			ship = { name = "Ezana" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ETH version_name = "Aksum Class" } } }
+		}				
+	}
+}

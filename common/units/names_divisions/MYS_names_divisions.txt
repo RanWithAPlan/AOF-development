@@ -1,0 +1,36 @@
+MYS_GAR_01 = {
+
+	name = "Infantry Brigade"
+
+	for_countries = { MYS }
+
+	can_use = { always = yes }
+
+	division_types = { "infantry" }
+
+	fallback_name = "%d. Infantry Brigade"
+
+	ordered = {
+		1 = { "%d. Infantry Brigade" }
+		2 = { "%d. Infantry Brigade" }
+	}
+}
+
+MYS_CAV_01 = {
+
+	name = "Cavalry Brigade"
+
+	for_countries = { MYS }
+
+	can_use = { always = yes }
+
+	division_types = { "cavalry"  }
+
+	fallback_name = "%d. Cavalry Brigade"
+
+	ordered = {
+		1 = { "%d. Cavalry Brigade" }
+		2 = { "%d. Cavalry Brigade" }
+	}
+}
+

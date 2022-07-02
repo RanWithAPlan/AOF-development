@@ -1,0 +1,94 @@
+
+division_template = {
+	name = "Mercenary Regiment"			# Infantry Division
+
+	division_names_group = SOV_INF_01 
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+		
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+}
+
+
+units = {
+	
+	division = {
+		division_name = {    
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 7835
+		division_template = "Mercenary Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.75
+
+	}
+	
+	division = {
+		division_name = {    
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 7835
+		division_template = "Mercenary Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.75
+
+	}
+	
+	division = {
+		division_name = {    
+			is_name_ordered = yes
+			name_order = 3
+		}
+		location = 7786
+		division_template = "Mercenary Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.75
+
+	}
+	
+	division = {
+		division_name = {    
+			is_name_ordered = yes
+			name_order = 4
+		}
+		location = 7757
+		division_template = "Mercenary Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.75
+
+	}
+	
+	division = {
+		division_name = {    
+			is_name_ordered = yes
+			name_order = 5
+		}
+		location = 654
+		division_template = "Mercenary Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.75
+
+	}
+	
+	division = {
+		division_name = {    
+			is_name_ordered = yes
+			name_order = 6
+		}
+		location = 10627
+		division_template = "Mercenary Regiment"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.75
+
+	}
+	
+
+}

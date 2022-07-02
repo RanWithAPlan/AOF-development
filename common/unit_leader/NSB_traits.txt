@@ -1,0 +1,403 @@
+leader_traits = {
+
+	
+##################################
+# Common Traits
+##################################
+
+	artillery_officer = {
+		type = corps_commander
+		trait_type = personality_trait
+
+		trait_xp_factor = {
+			artillery_specialist = 1	#+100%
+		}
+	}
+
+	artillery_specialist = {
+		type = corps_commander
+		gain_xp = {
+			set_temp_variable = { temp = num_units }
+			multiply_temp_variable = { temp = 0.3 }
+			check_variable = { num_artillery > temp }
+		}
+		custom_gain_xp_trigger_tooltip = artillery_ratio_over_30
+
+		cost = 1000
+		modifier = {
+			army_artillery_attack_factor = 0.1
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		gui_row = 16
+	}
+
+	artillery_expert = {
+		type = corps_commander
+		gain_xp = {
+			always = no # not gainable
+		}
+		cost = 500
+		modifier = {
+			army_artillery_attack_factor = 0.1
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		trait_type = assignable_trait
+		parent = artillery_specialist
+		gui_row = 16
+	}
+
+	exiled_uperclass_eng = { 
+		type = all
+		trait_type = corps_commander	#personality_trait
+		
+		attack_skill = 1
+		planning_skill = 1
+		
+		attack_skill_factor = 1
+		planning_skill_factor = 1
+		
+		gain_xp = {
+			always = no # not gainable
+		}
+		allowed = {
+			FROM = {
+				tag = FRA
+			}
+		}
+		modifier = {
+			promote_cost_factor = 5
+			reassignment_duration_factor = 1
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+	
+	exiled_uperclass_bel = { 
+		type = all
+		trait_type = corps_commander	#personality_trait
+		
+		attack_skill = 1
+		planning_skill = 1
+		
+		attack_skill_factor = 1
+		planning_skill_factor = 1
+		
+		gain_xp = {
+			always = no # not gainable
+		}
+		allowed = {
+			FROM = {
+				tag = FRA
+			}
+		}
+		modifier = {
+			promote_cost_factor = 5
+			reassignment_duration_factor = 1
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	BALTIC_ex_russian = { 
+		type = all
+		trait_type = personality_trait
+		gain_xp = {
+			always = no # not gainable
+		}
+		allowed = {
+			FROM = {
+				tag = LIT
+			}
+		}
+		modifier = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+
+	BALTIC_anti_bolshevik = { 
+		type = all
+		trait_type = personality_trait
+		gain_xp = {
+			always = no # not gainable
+		}
+		allowed = {
+			FROM = {
+				tag = LIT
+			}
+		}
+		modifier = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+
+	POL_sanation_left_leader = { 
+		type = all
+		trait_type = personality_trait
+		gain_xp = {
+			always = no # not gainable
+		}
+		allowed = {
+			FROM = {
+				tag = POL
+			}
+		}
+		modifier = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+
+	POL_sanation_right_leader = { 
+		type = all
+		trait_type = personality_trait
+		gain_xp = {
+			always = no # not gainable
+		}
+		allowed = {
+			FROM = {
+				tag = POL
+			}
+		}
+		modifier = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+
+	peasant_sympathiser = { 
+		type = all
+		trait_type = personality_trait
+		gain_xp = {
+			always = no # not gainable
+		}
+		allowed = {
+			FROM = {
+				tag = POL
+			}
+		}
+		modifier = {
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+
+	trait_SOV_cowed_by_stalin_army = {
+
+		type = { land }
+		trait_type = personality_trait
+
+		allowed = {
+			FROM = { original_tag = SOV }
+		}
+
+		new_commander_weight = {
+			factor = 0
+		}
+
+		attack_skill = -2
+		defense_skill = -2
+		
+		modifier = {
+			custom_modifier_tooltip = SOV_cowed_by_stalin_trait_tt
+			army_morale_factor = -0.1
+			land_reinforce_rate = -0.02
+		}
+	}
+
+	trait_SOV_cowed_by_stalin_navy = {
+
+		type = { navy }
+		trait_type = personality_trait
+
+		allowed = {
+			FROM = { original_tag = SOV }
+		}
+
+		new_commander_weight = {
+			factor = 0
+		}
+
+		attack_skill = -2
+		defense_skill = -2
+		
+		modifier = {
+			naval_retreat_chance = -0.25
+		}
+	}
+
+	trait_SOV_determined = {
+
+		type = { land navy }
+		trait_type = status_trait
+
+		attack_skill = 1
+		defense_skill = 1
+	}
+
+	trait_SOV_monarchist_sympathizer = {
+
+		type = { land navy }
+		trait_type = personality_trait
+
+		allowed = {
+			FROM = { original_tag = SOV }
+		}
+
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+
+	trait_SOV_stalinist = {
+
+		type = { land navy }
+		trait_type = personality_trait
+
+		allowed = {
+			FROM = { original_tag = SOV }
+		}
+
+		new_commander_weight = {
+			factor = 0
+			modifier = {
+				add = 1
+				FROM = { has_country_flag = SOV_stalinist_military_flag } #New Generals have more chances of being Stalinists after this
+			}
+		}
+	}
+
+	trait_SOV_trotskyist = {
+
+		type = { land navy }
+		trait_type = personality_trait
+
+		allowed = {
+			FROM = { original_tag = SOV }
+		}
+
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+
+	trait_SOV_bukharinist = {
+
+		type = { land navy }
+		trait_type = personality_trait
+
+		allowed = {
+			FROM = { original_tag = SOV }
+		}
+
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+
+
+	trait_SOV_foreign_military_advisor = {
+
+		type = { land navy }
+		trait_type = personality_trait
+
+		allowed = {
+			always = yes 
+		}
+
+		new_commander_weight = {
+			factor = 0
+		}
+	}
+}
+
+##################################
+# Field Marshal traits.
+##################################
+	
+##################################
+# Corps Commander traits.
+##################################
+	
+##################################
+# Corps Commander assignabme traits.
+##################################
+
+##################################
+# Naval traits.
+##################################

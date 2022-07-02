@@ -1,0 +1,49 @@
+characters = {
+	ICE_christian_x = {
+		name = "King Christian X"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ICE/Portrait_Christian_x.dds"
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+	}
+
+	ICE_christian_x_f = {
+		name = "King Christian X"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ICE/Portrait_Christian_x.dds"
+			}
+		}
+		country_leader = {
+			ideology = fascism_ideology
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+	}
+
+	ICE_christian_x_d = {
+		name = "King Christian X"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ICE/Portrait_Christian_x.dds"
+			}
+		}
+		country_leader = {
+			ideology = conservatism
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+	}
+
+
+
+}

@@ -1,0 +1,353 @@
+political_actions = {
+
+	FRA_mex_exchange = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = FRA_mex_arms
+		}
+		
+		cost = 50
+		
+		available = {
+			has_completed_focus = FRA_mex_arms
+			num_of_civilian_factories_available_for_projects > 2
+			MEX = {
+				is_in_faction_with = FRA
+				has_manpower > 15000
+			}
+		}
+		
+		days_remove = 50
+		remove_effect = {
+			14 = {
+				create_unit = { 
+					division = "name = \"Mexican Foreign Legion\" division_template = \"Mexican Foreign Legion\" start_experience_factor = 0.2" 
+					owner = ROOT
+				}
+			}
+			MEX = {
+				random_owned_controlled_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+		
+		modifier = {
+			civilian_factory_use = 3
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	
+	
+	
+	
+	
+}
+
+FRA_rif_war_category = {
+
+	FRA_fight_rif_war1 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = FRA_victory_eth
+			290 = {
+				has_dynamic_modifier = { modifier = rif_war1 }
+			}
+		}
+		
+		cost = 50
+		
+		days_remove = 56
+		remove_effect = {
+			290 = {
+				remove_dynamic_modifier = { modifier = rif_war1 }
+				add_dynamic_modifier = { modifier = rif_war2 }
+			}
+		}
+		
+		modifier = {
+			weekly_manpower = -250
+			stability_weekly = -0.01
+		}
+		
+		ai_will_do = {
+			factor = 15
+		}
+	}
+	
+	FRA_fight_rif_war2 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = FRA_victory_eth
+			290 = {
+				has_dynamic_modifier = { modifier = rif_war2 }
+			}
+		}
+		
+		available = {
+			has_full_control_of_state = 290
+			290 = {
+				has_dynamic_modifier = { modifier = rif_war2 }
+			}
+		}
+		
+		cost = 50
+		
+		days_remove = 56
+		remove_effect = {
+			290 = {
+			remove_dynamic_modifier = { modifier = rif_war2 }
+			add_dynamic_modifier = { modifier = rif_war3 }
+			}
+		}
+		
+		modifier = {
+			weekly_manpower = -550
+			stability_weekly = -0.01
+		}
+		
+		ai_will_do = {
+			factor = 15
+		}
+	}
+	
+	FRA_fight_rif_war3 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = FRA_victory_eth
+			290 = {
+				has_dynamic_modifier = { modifier = rif_war3 }
+			}
+		}
+		
+		available = {
+			has_full_control_of_state = 290
+			290 = {
+				has_dynamic_modifier = { modifier = rif_war3 }
+			}
+		}
+		
+		cost = 50
+		
+		days_remove = 56
+		remove_effect = {
+			290 = {
+			remove_dynamic_modifier = { modifier = rif_war3 }
+			add_dynamic_modifier = { modifier = rif_war4 }
+			}
+		}
+		
+		modifier = {
+			weekly_manpower = -250
+			stability_weekly = -0.01
+		}
+		
+		ai_will_do = {
+			factor = 15
+		}
+	}
+	
+	FRA_fight_rif_war4 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = FRA_victory_eth
+			290 = {
+				has_dynamic_modifier = { modifier = rif_war4 }
+			}
+		}
+		
+		available = {
+			has_full_control_of_state = 290
+			290 = {
+				has_dynamic_modifier = { modifier = rif_war4 }
+			}
+		}
+		
+		cost = 50
+		
+		days_remove = 56
+		remove_effect = {
+			290 = {
+				remove_dynamic_modifier = { modifier = rif_war4 }
+				create_unit = { 
+					division = "name = \"1st Army of the Rif\" division_template = \"Division Colonial\" start_experience_factor = 1" 
+					owner = ROOT
+				}
+				create_unit = { 
+					division = "name = \"2nd Army of the Rif\" division_template = \"Division Colonial\" start_experience_factor = 1" 
+					owner = ROOT
+				}
+				create_unit = { 
+					division = "name = \"3rd Army of the Rif\" division_template = \"Division Colonial\" start_experience_factor = 1" 
+					owner = ROOT
+				}
+			}
+		}
+		
+		modifier = {
+			weekly_manpower = -250
+			stability_weekly = -0.01
+		}
+		
+		ai_will_do = {
+			factor = 15
+		}
+	}
+}
+
+
+
+
+FRA_east_indian_exploits = {
+	
+	FRA_laos_war = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = FRA_victory_eth
+		}
+		
+		fire_only_once = yes
+		
+		cost = 40
+		
+		complete_effect = {
+			add_state_claim = 670
+			SIA = {
+				add_state_claim = 741
+			}
+		}
+		
+		days_remove = 40
+		remove_effect = {
+			SIA = {
+				country_event = { id = mod_france.13 }
+			}
+		}
+		
+		ai_will_do = {
+			factor = 5
+		}
+	}
+	
+	FRA_laos_war_losing = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		activation = {
+			has_war_with = SIA
+		}
+		
+		available = {
+			OR = {
+				SIA = { has_capitulated = yes }
+				has_full_control_of_state = 670
+				controls_state = 289
+			}
+		}
+		
+		is_good = no
+		
+		days_mission_timeout = 200
+		
+		timeout_effect = {
+			country_event = { id = mod_france.16 }
+			add_war_support = -0.1
+		}
+		
+		complete_effect = {
+			transfer_state = 670
+			white_peace = SIA
+		}
+	}
+	
+	FRA_dutch_gamble = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = FRA_victory_eth
+		}
+		
+		fire_only_once = yes
+		
+		available = {
+			HOL = {
+				NOT = {
+					is_puppet = yes
+				}
+			}
+		}
+		
+		complete_effect = {
+			transfer_state = 668
+			HOL = {
+				create_wargoal = {	
+					type = topple_government
+					target = FRA
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	FRA_buy_aru = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = FRA_victory_eth
+		}
+		
+		fire_only_once = yes
+		
+		available = {
+			POR = {
+				controls_state = 738
+			}
+		}
+		
+		days_remove = 30
+		remove_effect = {
+			POR = {
+				country_event = { id = mod_france.17 }
+			}
+		}
+		
+
+		ai_will_do = {
+			factor = 25
+		}
+	}
+	
+
+	
+	
+	
+	
+	
+	
+}

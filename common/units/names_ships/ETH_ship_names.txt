@@ -1,0 +1,21 @@
+
+ETH_DD_HISTORICAL = {
+
+	name = NAME_THEME_HISTORICAL_DESTROYERS
+
+	for_countries = { ETH }
+
+	type = ship
+	ship_types = { ship_hull_light destroyer }
+
+	fallback_name = "HQS %d"
+
+	ordered = {
+		1 = {"Aksum"}
+		2 = {"Ezana"}
+		3 = {"Dawit"}
+		4 = {"Tewodros"}
+		5 = {"Menelik"}
+		6 = {"Yohannes"}
+	}
+}

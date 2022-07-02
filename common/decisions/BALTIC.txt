@@ -1,0 +1,65 @@
+economy_decisions = {
+
+	drop_out_of_hansa = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			OR = {
+				tag = SWE
+				tag = FIN
+				tag = LAT
+				tag = HOL
+				tag = DEN
+			}
+			has_idea = idea_hansa_league
+		}
+		
+		cost = 100
+		
+		available = {
+			has_idea = idea_hansa_league
+		}
+		
+		complete_effect = {
+			remove_ideas = idea_hansa_league
+			custom_effect_tooltip = consequences_of_hansa_dropout_tt
+			hidden_effect = {
+				
+				diplomatic_relation = {
+					country = SWE
+					relation = non_aggression_pact
+					active = no
+				}
+				diplomatic_relation = {
+					country = DEN
+					relation = non_aggression_pact
+					active = no
+				}
+				diplomatic_relation = {
+					country = HOL
+					relation = non_aggression_pact
+					active = no
+				}
+				diplomatic_relation = {
+					country = LAT
+					relation = non_aggression_pact
+					active = no
+				}
+				diplomatic_relation = {
+					country = FIN
+					relation = non_aggression_pact
+					active = no
+				}
+			}
+		}
+
+
+		ai_will_do = {
+			factor = 0
+		}
+
+
+
+
+}

@@ -1,0 +1,26 @@
+characters={
+
+	 BAY_ernst_toller = {
+		name = "Ernst Toller"
+		portraits={
+			civilian={
+				large = "gfx/leaders/GER/Portrait_Ernst_Toller.dds"
+			}
+		}
+		country_leader={
+			ideology = marxism
+			traits = { cornered_fox }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+
+
+
+
+
+
+
+
+
+}

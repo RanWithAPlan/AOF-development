@@ -1,0 +1,64 @@
+#########################
+#  1848 USA Events	#
+#########################
+
+add_namespace = mod_usa
+
+country_event = { # Death of Long / Valentines Day
+	id = mod_usa.1
+	title = mod_usa.1.t
+	desc = mod_usa.1.d
+	picture = GFX_report_event_usa_funeral
+	
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	trigger = {
+		tag = USA
+		date > "1936.2.10"
+	}
+	
+	immediate = {
+		country_event = { id = mod_usa.2 days = 1 }
+	}
+	
+	option = {
+		name = mod_usa.1.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = { # Death of Long / Valentines Day
+	id = mod_usa.2
+	title = mod_usa.2.t
+	desc = mod_usa.2.d
+	picture = GFX_report_event_usa_funeral
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.2.a
+		kill_country_leader = yes
+		hidden_effect = {
+			news_event = { id = 1848_news.1 days = 2 }
+			add_threat = 1
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
