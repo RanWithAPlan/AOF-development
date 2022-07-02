@@ -1,0 +1,227 @@
+﻿
+units= {
+	##### NAVAL UNITS #####
+	
+	fleet = {
+		name = "Nordseeflotte"			
+		naval_base = 241  # Wilhemshaven
+		task_force = {				
+			name = "Nordseeflotte"
+			location = 241  # Wilhemshaven
+			ship = { name = "Deutschland" definition = heavy_cruiser start_experience_factor = 0.3 equipment = { ship_hull_cruiser_panzerschiff = { amount = 1 owner = GER version_name = "Deutschland Class" } } }	
+			ship = { name = "Admiral Bromme" pride_of_the_fleet = yes definition = heavy_cruiser start_experience_factor = 0.5 equipment = { ship_hull_cruiser_panzerschiff = { amount = 1 owner = GER version_name = "Deutschland Class" } } }
+
+			ship = { name = "Strelitz" definition = battleship start_experience_factor = 0.3 equipment = { ship_hull_heavy_2 = { amount = 1 owner = GER version_name = "Scharnhorst Class" } } }
+			ship = { name = "Schwaben" definition = battleship start_experience_factor = 0.2 equipment = { ship_hull_heavy_2 = { amount = 1 owner = GER version_name = "Scharnhorst Class" } } }
+			ship = { name = "Helgoland" definition = battleship start_experience_factor = 0.2 equipment = { ship_hull_heavy_2 = { amount = 1 owner = GER version_name = "Scharnhorst Class" } } }			
+
+			ship = { name = "Nürnberg" definition = light_cruiser start_experience_factor = 0.3 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = GER version_name = "Leipzig Class" } } } 		
+			ship = { name = "Leipzig" definition = light_cruiser start_experience_factor = 0.3 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = GER version_name = "Leipzig Class" } } }		
+			ship = { name = "Königsberg" definition = light_cruiser start_experience_factor = 0.3 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = GER version_name = "Königsberg Class" } } }			
+			ship = { name = "Karlsruhe" definition = light_cruiser start_experience_factor = 0.3 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = GER version_name = "Königsberg Class" } } }	
+			ship = { name = "Köln" definition = light_cruiser start_experience_factor = 0.3 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = GER version_name = "Königsberg Class" } } }			
+			ship = { name = "Emden" definition = light_cruiser start_experience_factor = 0.2 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = GER version_name = "Emden Class" } } }
+			
+			ship = { name = "Jaguar" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }
+			ship = { name = "Leopard" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }
+			ship = { name = "Luchs" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }
+			ship = { name = "Tiger" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }
+			ship = { name = "Panther" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }
+			ship = { name = "Bär" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GER version_name = "Type 24 Class" } } }
+			ship = { name = "Löwe" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GER version_name = "Type 24 Class" } } }
+			ship = { name = "Bodensee" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GER version_name = "Type 24 Class" } } }
+		}
+	}
+	
+	fleet = {
+		name = "Ostseeflotte"			
+		naval_base = 362  # Danzig
+		task_force = {
+			name = "Ostseeflotte"
+			location = 362  # Danzig
+			ship = { name = "Schleswig-Holstein" definition = battleship start_experience_factor = 0.2 equipment = { ship_hull_heavy_2 = { amount = 1 owner = GER version_name = "Scharnhorst Class" } } }
+			ship = { name = "Sachsen" definition = battleship start_experience_factor = 0.2 equipment = { ship_hull_heavy_2 = { amount = 1 owner = GER version_name = "Scharnhorst Class" } } }			
+			
+			ship = { name = "Danzig" definition = light_cruiser start_experience_factor = 0.3 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = GER version_name = "Leipzig Class" } } }
+			ship = { name = "Stralsund" definition = light_cruiser start_experience_factor = 0.3 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = GER version_name = "Leipzig Class" } } }
+			ship = { name = "Rostock" definition = light_cruiser start_experience_factor = 0.3 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = GER version_name = "Leipzig Class" } } }
+
+
+			ship = { name = "Möwe" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }
+			ship = { name = "Albatros" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }
+			ship = { name = "Seeadler" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }
+			ship = { name = "Greif" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GER version_name = "Type 24 Class" } } }
+			ship = { name = "Falke" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GER version_name = "Type 24 Class" } } }
+			ship = { name = "Kondor" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GER version_name = "Type 24 Class" } } }
+			ship = { name = "Wolf" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GER version_name = "Type 24 Class" } } }
+			ship = { name = "Iltis" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GER version_name = "Type 24 Class" } } }
+		}
+		task_force = {
+			name = "Marineschule Kiel"
+			location = 6389 	# Kiel
+			ship = { name = "Brummer" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = GER version_name = "Bremse Class" } } }			
+			ship = { name = "Bremse" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = GER version_name = "Bremse Class" } } }
+			ship = { name = "Niobe" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = GER version_name = "Bremse Class" } } }
+		}
+	}
+	fleet = {
+		name = "Unterseeboots-Flotte"			
+		naval_base = 6325
+		task_force = {
+			name = "I. U-Boot-Erprobungs-Flottille"
+			location = 6325
+
+			ship = { name = "U-1" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = GER version_name = "Type II Class" } } }
+			ship = { name = "U-2" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = GER version_name = "Type II Class" } } }
+			ship = { name = "U-3" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = GER version_name = "Type II Class" } } }
+			ship = { name = "U-5" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = GER version_name = "Type II Class" } } }
+		}
+	}
+	fleet = {
+		name = "Fern-Ost Geschwader"			
+		naval_base = 10062
+		task_force = {
+			name = "Hong Kong Geschwader"
+			location = 10062
+
+			ship = { name = "Europa" definition = carrier equipment = { ship_hull_carrier_conversion_bb = { amount = 1 owner = GER version_name = "Europa Class" } } 
+				air_wings = {
+					cv_fighter_equipment_0 = { owner = "GER" amount = 32 }
+				}
+			}
+			
+			ship = { name = "Schneeleopard" definition = light_cruiser start_experience_factor = 0.2 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = GER version_name = "Leipzig Class" } } }			
+			ship = { name = "Luchs" definition = light_cruiser start_experience_factor = 0.2 equipment = { ship_hull_cruiser_2 = { amount = 1 owner = GER version_name = "Leipzig Class" } } }
+			
+			ship = { name = "Adler" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }
+			ship = { name = "Eule" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }
+			ship = { name = "Lachs" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }
+			ship = { name = "Forelle" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }
+			ship = { name = "Sardine" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }	
+		}
+		task_force = {
+			name = "Indochina Geschwader"
+			location = 7381
+
+			ship = { name = "Wrangel" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = GER version_name = "Admiral Bromme Class" } } }
+			ship = { name = "Herta" definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = GER version_name = "Admiral Bromme Class" } } }
+				
+		}
+	}
+	fleet = {
+		name = "Afrikanische Flotte"			
+		naval_base = 5210
+		task_force = {
+			name = "Ostafrikanisches Geschwader"
+			location = 5210
+
+			ship = { name = "Kiel" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = GER version_name = "Leipzig Class" } } }			
+			ship = { name = "Heidelberg" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = GER version_name = "Leipzig Class" } } }
+
+			ship = { name = "Linz" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }
+			ship = { name = "Jena" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }
+			ship = { name = "Nürnberg" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }
+			ship = { name = "Seezunge" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GER version_name = "Type 24 Class" } } }
+		}
+		task_force = {
+			name = "Westafrikanisches Geschwader"
+			location = 2050
+
+			ship = { name = "Württemberg" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = GER version_name = "Leipzig Class" } } }			
+
+			ship = { name = "Flensburg" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = GER version_name = "Zerstörer 1934A Class" } } }
+			ship = { name = "Stör" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GER version_name = "Type 24 Class" } } }
+			ship = { name = "Schleie" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GER version_name = "Type 24 Class" } } }
+		}
+		task_force = {
+			name = "Marroko Geschwader"
+			location = 12857
+			
+			ship = { name = "Republik" definition = heavy_cruiser start_experience_factor = 0.6 equipment = { ship_hull_cruiser_panzerschiff = { amount = 1 owner = GER version_name = "Deutschland Class" } } }	
+		}
+	}
+}
+
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+
+instant_effect = {
+
+	### Ships Under Contruction ###
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_submarine_1
+			creator = "GER" 
+			version_name = "Type II Class"
+		}
+		requested_factories = 2
+		progress = 0.75
+		amount = 4
+	}
+	# DD: 1934 class (x4) ("Z1" "Z2" "Z3" "Z4")
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "GER"
+			version_name = "Zerstörer 1934 Class"
+		}
+		requested_factories = 2
+		progress = 0.75
+		amount = 2
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "GER"
+			version_name = "Zerstörer 1934 Class"
+		}
+		requested_factories = 2
+		progress = 0.65
+		amount = 2
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_panzerschiff
+			creator = "GER"
+			version_name = "Deutschland Class"
+		}
+		requested_factories = 2
+		progress = 0.95
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_heavy_2
+			creator = "GER"
+			version_name = "Scharnhorst Class"
+		}
+		requested_factories = 3
+		progress = 0.65
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "GER"
+			version_name = "Admiral Bromme Class"
+		}
+		requested_factories = 1
+		progress = 0.1
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "GER"
+			version_name = "Zerstörer 1934A Class"
+		}
+		requested_factories = 2
+		progress = 0.25
+		amount = 6
+	}
+}
+
+#####################

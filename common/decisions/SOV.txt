@@ -1,0 +1,39 @@
+operations = {
+	CRR_finland_civilwar = {
+		priority = 10
+
+		icon = GFX_decision_generic_nationalism
+
+		visible = {
+			has_completed_focus = CRR_infiltrate_finland
+		}
+
+		cost = 50
+
+		fire_only_once = yes
+
+		available = {
+			has_completed_focus = CRR_infiltrate_finland
+			has_war_with = FIN
+		}
+
+		complete_effect = {
+			FIN = {
+				start_civil_war = {
+					ruling_party = neutrality
+					ideology = communism
+					size = 0.3
+					capital = 146
+					states = { 
+						146 150 148 147 13 
+					}
+					keep_political_leader = yes
+					keep_political_party_members = yes
+				}
+			}
+        }
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}

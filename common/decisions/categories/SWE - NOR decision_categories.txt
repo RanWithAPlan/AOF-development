@@ -1,0 +1,38 @@
+SWE_NOR_unification_war = {
+	icon = power_struggle
+	allowed = {
+		OR = {
+			original_tag = SWE
+			original_tag = NOR
+		}
+	}
+	
+	available = {
+		date > 1937.6.22
+	}
+}
+
+SWE_NOR_factions = {
+	icon = power_struggle
+	allowed = {
+		OR = {
+			original_tag = SWE
+			original_tag = NOR
+		}
+	}
+	
+	visible = {
+		OR = {
+			has_country_flag = SWE_sweden_won
+			has_country_flag = NOR_norway_won
+		}
+		NOT = { is_in_faction = yes }
+	}
+	
+	available = {
+		OR = {
+			has_country_flag = SWE_sweden_won
+			has_country_flag = NOR_norway_won
+		}
+	}
+}

@@ -1,0 +1,256 @@
+﻿l_english:
+ DECISIONVIEW_TITLE:0 "Events and Decisions"
+ DECISIONSVIEW_EVENT_HEADER:0 "Events"
+ POPUP_NEWS:0 "News Popup"
+ POPUP_EVENTS:0 "Event Popup"
+ CATEGORY_COLLAPSE_DESC:0 "§GClick§! to collapse"
+ CATEGORY_EXPAND_DESC:0 "§GClick§! to expand"
+ DECISION_KEEP_NOTIFIED:1 "§HNotify§!\n\n§GClick§! to §Rnot be notified§! when it is possible to take this decision.\n"
+ DECISION_NOT_KEEP_NOTIFIED:1 "§HNotify§!\n\n§GClick§! to §Gbe notified§! when it is possible to take this decision.\n"
+ TAKE_DECISION_HEADER:0 "§HTake decision§!\n\n"
+ NEWS_POPUP_CHECKBOX_TOOLTIP:0 "§GClick§! to toggle News notifications."
+ EVENT_POPUP_CHECKBOX_TOOLTIP:0 "§GClick§! to toggle Event notifications."
+ DECISION_COST_DESC:0 "It costs £pol_power $VAL|H0$ to take the decision"
+ DECISION_COST_NOT_ENOUGH:0 "It costs £pol_power $VAL|HR0$ to take the decision"
+ ON_MAP_DECISION_NAME_DEFAULT:0 "Find decisions on the map."
+ ADD_DAYS_TO_DECISION:0 "Add $DAYS|H$ days to Decision $DECISION|H$"
+ REMOVE_DAYS_TO_DECISION:0 "Remove $DAYS|H$ days from Decision $DECISION|H$"
+ ADD_DAYS_TO_MISSION:0 "Add $DAYS|H$ days to Mission $MISSION|H$"
+ REMOVE_DAYS_TO_MISSION:0 "Remove $DAYS|H$ days from Mission $MISSION|H$"
+ CLICK_TO_TOGGLE_ALL_CATEGORY_DECISION_TRACKING:0 "§GClick§! to toggle notification status for all decisions under this category."
+ banned_communism_flag:0 "Has banned communist parties"
+ FRA_civil_unrest_category:0 "Civil Unrest"
+ FRA_communist_civil_war_decision:0 "Imminent Communist Uprising"
+ FRA_communist_civil_war_decision_desc:0 "The rising furore of radical politics is becoming harder to appease - eventually we must confront it one way or another."
+ FRA_fascist_civil_war_decision:0 "Imminent Fascist Uprising"
+ FRA_fascist_civil_war_decision_desc:0 "The rising populist sentiment is proving to be an unstoppable tide. There is no avoiding the inevitable."
+ ETH_defeat_italy:0 "Defeat the Colonizers"
+ ETH_defeat_italy_category:0 "The Second Italian-Ethiopian War"
+ ETH_defeat_italy_category_desc:0 "Italy once again seeks to see Ethiopia subjugated into a mere colony. We defeated these invaders last time, and we can defeat them again if only we can remove them from our border for good!"
+ seize_some_trains_woo:0 "Commandeer Civilian Trains"
+ seize_some_trains_woo_desc:0 "The merchant rail companies hold sway over our infrastructure. With war looming, we are well within our rights to commandeer equipment for state use."
+ random_general_monarchy_tt:0 "A random [FROM.GetAdjective] general will gain secret monarchist sympathies."
+
+ 
+ 
+ #GERMAN DECISIONS
+ GER_indian_crown1:0 "Break of a Piece of the Crown"
+ GER_indian_crown1_desc:0 "The Indian subcontinent is fractured; unable to resist a colonial expedition by our hand. The time has come to start our advance into the Crown jewel of the world."
+ GER_indian_crown2:0 "Bend the Metal into Shape"
+ GER_indian_crown2_desc:0 "The New Mahartha Empire has made it clear, that they aren't willing to relinquish their influence over the Western and Northern parts of the continent. This puts Delhi outside our reach. The ancient city won't be left to uncivilized people, unable to appreciate its beauty."
+ GER_indian_crown3:0 "Place the Jewel"
+ GER_indian_crown3_desc:0 "The Sikhs fought bravely against the British, being only briefly occupied by the East India Company, till their retreat. Now they will face a true opponent and test their legendary status against a soon to be legendary world-power."
+ GER_indian_crown4:0 "Forge a Crown"
+ GER_indian_crown4_desc:0 "Our recent conquests have been great successes, but with all those small, decentralized princedoms and states inside our territory, Western India will never be able to support Germany. We need to fix this error, by consolidating our conquests into one, centralized state, backed by German industry and might."
+ GER_annex_dahomey:0 "Direct Control over Dahomey"
+ GER_annex_cameroon:0 "Direct Control over Cameroon"
+ GER_annex_austria:0 "Peaceful Unity"
+ GER_annex_austria_desc:0 "Working together has shown that Germans and Austrian really aren't more different than Southern Germans and Northern Germans. People from both countries have begun to demand a far closer union than previously discussed. As the perfect moment for this kind of political action has passed, it will take some effort to fulfill the wishes of the people."
+ GER_ally_finland:0 "Ally Finland"
+ GER_polish_peace:0 "Peace with Poland"
+ GER_polish_peace_desc:0 "We do not intend to conquer all of Poland, neither do we want to take over their government. Once we have taken what's ours, Peace shall break out again."
+ GER_konigsberg_core:0 "Core Königsberg"
+ GER_katowice_core:0 "Core Kattowitz"
+ GER_ermland_core:0 "Core Ermland-Masuren"
+ GER_austrian_capital:0 "Build Capital Ship for Austria"
+ GER_austrian_lcruiser:0 "Build Light Cruiser for Austria"
+ GER_austrian_destroyer:0 "Build Destroyers for Austria"
+ GER_venetian_capital:0 "Build Capital Ship for Venice"
+ GER_venetian_lcruiser:0 "Build Light Cruiser for Venice"
+ GER_venetian_destroyer:0 "Build Destroyers for Venice"
+ 
+ 
+ 
+ #FRANCE DECISIONS
+ 
+ FRA_mex_exchange:0 "French Guns for Mexican Muscle"
+ FRA_mex_exchange_desc:0 "We have struck a deal with our closest ally, Mexico, to support their minuscule arms industry in exchange for 'volunteers' for our Foreign Legions. This exchange will ensure our survival in the coming times."
+ FRA_rif_war_category:0 "The Rif War"
+ FRA_fight_rif_war1:0 "Operation in Jebala"
+ FRA_fight_rif_war2:0 "Battle of Annual"
+ FRA_fight_rif_war3:0 "Pacify the Countryside"
+ FRA_fight_rif_war4:0 "Landing in Alhucemas"
+ FRA_east_indian_exploits:0 "French East Indian Exploits"
+ FRA_laos_war:0 "Looming War over Laos"
+ FRA_laos_war_desc:0 "Laos has long been in the sights of our colonial prospects. Garnier and de Lagree explored it, but nothing really came of it. After the success in other parts of Indochina and the Siamese weaker than ever, the time has come to take this piece of valuable earth."
+ FRA_laos_war_losing:0 "French-Siamese War"
+ FRA_laos_war_losing_desc:0 "The people expect a quick victory and will lose faith if we don't manage."
+ FRA_dutch_gamble:0 "The Dutch Gamble"
+ FRA_dutch_gamble_desc:0 "The Dutch have freed themselves from their German overlords and with it their protection. The Netherlands and more interestingly the Dutch East Indies lie wide open. By landing from Sulawesi and Papua we will quickly take over the last piece standing in our immediate way."
+ FRA_buy_aru:0 "Purchase of Aru?"
+ FRA_buy_aru_desc:0 "For a long time the Portuguese island colony of Aru has been a costly thorn in the Portuguese Empire, the trouble being less every day. We shall buy the island and incorporate it into the French East Indies."
+ 
+ 
+ #CZECH DECISIONS
+ 
+ 
+ CZE_arms_sale_category:0 "Czech Arms Industry"
+ CZE_weapon_sales:0 "Subsidize Arms Sales"
+ CZE_weapon_sales_desc:0 "Some of our Weapons Manufacturers have been overzealous in promising weapon deliveries and need government subsidies. To keep the reputation of our industry we need to give them a hand, in exchange for the profits, may they be §Ggood§! or §Rbad§!."
+ CZE_stop_arms_exports:0 "§RStop Arms Exports§!"
+ CZE_stop_arms_exports_desc:0 "We have to stop exporting this many weapons. This will keep us from having to subsidize the exports, but we also won't get the rewards."
+ CZE_resume_arms_exports:0 "§GResume Arms Exports§!"
+ CZE_resume_arms_exports_desc:0 "Our situation has improved enough, so we can resume our extensive arms exports."
+ CZE_core_hun_155:0 "Core Transdanubia"
+ CZE_core_hun_154:0 "Core Alföld"
+ CZE_core_hun_43:0 "Core Northern Hungary"
+ ###TRANSYLVANIAN ISSUE
+ CZE_transylvania_category:0 "§YRebellion in Transylvania§!"
+ CZE_transylvania_category_desc:0 "Our decision to fund nationalists in Transylvania has maybe been a mistake. Although they certainly distracted the Hungarians, now they've become a great nuisance to us and it is feared the whole region might slip away from our control."
+ 
+ CZE_north_trans_breakaway:0 "§gNorth Transylvania breaks away§!"
+ CZE_north_trans_breakaway_1:0 "§gSmall Increase in Police Presence in North Transylvania§!"
+ CZE_north_trans_breakaway_2:0 "§gMedium Increase in Police Presence in North Transylvania§!"
+ CZE_north_trans_breakaway_3:0 "§gHuge Increase in Police Presence in North Transylvania§!"
+ CZE_north_trans_stop_breakaway_1:0 "§gAllow Voting for Local Mayors & Village in North Transylvania§!"
+ CZE_north_trans_stop_breakaway_2:0 "§gSet-up Romanian Language Primary Schools in North Transylvania§!"
+ CZE_north_trans_stop_breakaway_3:0 "§gAllow Independent Regional Parliaments in North Transylvania§!"
+ 
+ CZE_trans_breakaway:0 "§1Transylvania breaks away§!"
+ CZE_trans_breakaway_1:0 "§1Small Increase in Police Presence in Transylvania§!"
+ CZE_trans_breakaway_2:0 "§1Medium Increase in Police Presence in Transylvania§!"
+ CZE_trans_breakaway_3:0 "§1Huge Increase in Police Presence in Transylvania§!"
+ CZE_trans_stop_breakaway_1:0 "§1Allow Voting for Local Mayors & Village in Transylvania§!"
+ CZE_trans_stop_breakaway_2:0 "§1Set-up Romanian Language Primary Schools in Transylvania§!"
+ CZE_trans_stop_breakaway_3:0 "§1Allow Independent Regional Parliaments in Transylvania§!"
+ 
+ CZE_crisana_breakaway:0 "§OCrisana breaks away§!"
+ CZE_crisana_breakaway_1:0 "§OSmall Increase in Police Presence in Crisana§!"
+ CZE_crisana_breakaway_2:0 "§OMedium Increase in Police Presence in Crisana§!"
+ CZE_crisana_breakaway_3:0 "§OHuge Increase in Police Presence in Crisana§!"
+ CZE_crisana_stop_breakaway_1:0 "§OAppeal to Shared Austrian History§!"
+ CZE_crisana_stop_breakaway_2:0 "§OBuild literal Bridges between Romanian & Hungarian Speakers§!"
+ CZE_crisana_stop_breakaway_3:0 "§OFinance 'Independent' Romanian Speaking Newspaper§!"
+ 
+ CZE_banat_breakaway:0 "§5Banat breaks away§!"
+ CZE_banat_breakaway_1:0 "§5Small Increase in Police Presence in Banat§!"
+ CZE_banat_breakaway_2:0 "§5Medium Increase in Police Presence in Banat§!"
+ CZE_banat_breakaway_3:0 "§5Huge Increase in Police Presence in Banat§!"
+ CZE_banat_stop_breakaway_1:0 "§5Push German Speakers into Political Offices§!"
+ CZE_banat_stop_breakaway_2:0 "§5Form Regional Multi-Ethnic Football Leagues§!"
+ CZE_banat_stop_breakaway_3:0 "§5Finance 'Independent' Romanian Speaking Newspaper§!"
+ 
+ CZE_westbanat_breakaway:0 "§7West Banat breaks away§!"
+ CZE_west_banat_breakaway_1:0 "§7Small Increase in Police Presence in West Banat§!"
+ CZE_west_banat_breakaway_2:0 "§7Medium Increase in Police Presence in West Banat§!"
+ CZE_west_banat_breakaway_3:0 "§7Huge Increase in Police Presence in West Banat§!"
+ CZE_west_banat_stop_breakaway_1:0 "§7Play Ethnicities off against each other§!"
+ CZE_west_banat_stop_breakaway_2:0 "§7Finance 'Independent' Romanian Speaking Newspaper§!"
+ CZE_west_banat_stop_breakaway_3:0 "§7Allow Autonomous Parliaments for non-German speakers§!"
+ CZE_west_banat_stop_breakaway_4:0 "§7Give West Banat to Serbia-Croatia, for now§!"
+ CZE_west_banat_stop_breakaway_4_desc:0 "§7We weren't able to keep West Banat from slipping away. There is one last desperate gamble, to keep the Romanians from gaining the state. We could give the state to [SER.GetName] for now. We will be back later anyway.§!"
+ 
+ CZE_combine_spainish_crown1:0 "Revive Faith in Monarchy in Spain"
+ CZE_combine_spainish_crown2:0 "Publicise Habsburg-Bourbon Family connection pamphlets"
+ CZE_combine_spainish_crown3:0 "Transform the Personal Union into a Real Union"
+ 
+ 
+ #CZECH ARMS TRADE DECISIONS
+ 
+ international_arms_trade:0 "§gInternational Arms Trade§!"
+ arms_trade_small_arms_0:0 "§gBuy Outdated [CZE.GetAdjective] Guns§!"
+ arms_trade_small_arms_1:0 "§gBuy Slightly Outdated [CZE.GetAdjective] Guns§!"
+ arms_trade_small_arms_2:0 "§gBuy Decent [CZE.GetAdjective] Guns§!"
+ arms_trade_small_arms_3:0 "§gBuy Modern [CZE.GetAdjective] Guns§!"
+ arms_trade_artillery_0:0 "§gBuy Surplus [CZE.GetAdjective] Artillery§!"
+ arms_trade_artillery_1:0 "§gBuy Modern [CZE.GetAdjective] Artillery§!"
+ arms_trade_armored_car:0 "§gBuy [CZE.GetAdjective] Armored Cars§!"
+ 
+ 
+ #MINOR NATIONS DECISIONS
+ 
+ 
+ SWE_NOR_unification_war:0 "Restore the Union of §4Sweden§! & §tNorway§!"
+ SWE_NOR_unification_war_desc:0 "The United Kingdom of Sweden & Norway broke apart in 1914, just about 20 years ago. Most people in those two Nations were born in this Union. Now both Nations might want to restore the Union.\nOne fighting to Restore the Throne; the other to Free the People."
+ SWE_uni_war:0 "Restore our Throne"
+ SWE_uni_war_desc:0 "The last King of a unified Sweden-Norway was Oscar II, the father of [SWE.GetLeader]. He should have passed the crown to his son, but the Revolutionaries in the West broke away with such Violence, that the noble [SWE.GetLeader] allowed them to split, to stop further deaths. Now the time has come to Restore our Rightful Claim and purge the Reds from Scandinavia."
+ SWE_unification:0 "Combine the People"
+ SWE_unification_desc:0 "The Red Garrote, choking the good people of the World, has been broken in Norway. The streets are filled with euphoric people, waving the old flags, hidden away since 1914. Blue and Red flowers are placed in the guns and helmets of our brave soldiers. Nothing stands in the way of unification."
+ NOR_uni_war:0 "Free the People"
+ NOR_uni_war_desc:0 "When the tyrant Oscar II finally kicked the bucket, it seemed like his son Gustav V was to continue the oppression. Our people rose up, focused with the ideas of the Thrance movement, the father and daughter team Adam Egede-Nissen & Aud Egede-Nissen leading the charge. After a short, but hard fight we won. Now the time has come to free our brothers and sisters just across the border."
+ NOR_unification:0 "Break the Chains."
+ NOR_unification_desc:0 "The ancient, cruel regime of Monarchy in Sweden has been swept away. Just as we did in 1914, both our people did so in [GetYear]. The people are celebrating across Sweden & Norway. Spontaneous parties erupted and were focused in Stockholm and Drottningholm Palace, the palaces of the House of Bernadotte, smashing furniture and windows in excitement. With the parties dying down, nothing stands in the way of unification."
+ SWE_NOR_factions:0 "Join an Alliance"
+ SWE_join_germany:0 "Join Germany"
+ SWE_join_denmark:0 "Propose Alliance with the Danish King"
+ NOR_join_britain:0 "Join Britain"
+ drop_out_of_hansa:0 "Drop out of the §tNew Hansa League§!"
+ drop_out_of_hansa_desc:0 "Our government has decided to stop participating in the New Hansa League and to pursue other economic ventures. On the flip-side the contracts signed by all members, state that there will be an trade embargo as a deterrent for leaving."
+ 
+ 
+ #RUSSIAN DECISIONS
+ 
+ 
+ CRR_finland_civilwar:0 "Start Finish Civil War"
+ CRR_finland_civilwar_desc:0 "Our infiltration was a success and with war having been declared, our agents may be able to destroy the Finish army from within."
+ 
+ 
+ 
+ #BRITISH DECISIONS
+ 
+ ENG_cowardly_lion:0 "Brockwayly Lion"
+ ENG_cowardly_lion_desc:0 "Ever since L. Frank Baum published 'The Wonderful Wizard of Oz' the British people have compared Fenner Brockway to the cowardly lion, believing in him to be a great chairman, but lacking the will or drive to defend the country. Having finally accepted his flaws, there should be ways of proving himself to be willing to stand up for his countrymen."
+ ENG_cowardly_lion_speech1:0 "§3Prepare to speak at Hyde Park§!"
+ ENG_cowardly_lion_speech1_desc:0 "[ENG.GetLeader] has prepared a public speech, speaking about capitalism and its role in the evils of colonialism."
+ ENG_cowardly_lion_speech2:0 "§3Prepare to speak on the Steps of St Paul's Cathedral§!"
+ ENG_cowardly_lion_speech2_desc:0 "[ENG.GetLeader] has prepared a public speech, speaking about the church and the teachings of Jesus as a proto-socialist."
+ ENG_cowardly_lion_speech3:0 "§3Prepare to speak at Kensington Gardens§!"
+ ENG_cowardly_lion_speech3_desc:0 "[ENG.GetLeader] has prepared a public speech, speaking about the wars in Russia and the brave peasants wanting to free themselves from the shackles of authoritarianism, just as the Brits did it in 1848."
+ ENG_cowardly_lion_speech4:0 "§3Prepare to speak at Birmingham Botanical Gardens§!"
+ ENG_cowardly_lion_speech4_desc:0 "[ENG.GetLeader] has prepared a public speech, speaking about redundancy of nationalism in an equal, socialist state, directed at Scots, Welsh and the Irish."
+ ENG_cowardly_lion_speech5:0 "§3Prepare to speak at Nelson's Column in Trafalgar Square§!"
+ ENG_cowardly_lion_speech5_desc:0 "[ENG.GetLeader] has invited veterans from the French conquest of Ethiopia to speak about their experiences in the International Legions. Speaking only as the Introduction, the main part of the speech was given by Eric Blair, reading two chapters from his manuscript 'Homage to Tigray'."
+ 
+ ENG_cowardly_lion_movie1:0 "§8Prepare to appear in the movie 'A Colour Box'§!"
+ ENG_cowardly_lion_movie1_desc:0 "[ENG.GetLeader] has arranged to appear as a voice-over in the film 'A Colour Box', promoting the General Post Office, along with the general idea of public institutions."
+ ENG_cowardly_lion_movie2:0 "§8Prepare to appear in the movie 'The Children's Story'§!"
+ ENG_cowardly_lion_movie2_desc:0 "[ENG.GetLeader] has arranged to appear in the dystopian film 'The Children's Story', in which he plays the father of one of the kids. The story in general criticizes empty patriotism and false freedom."
+ ENG_cowardly_lion_movie3:0 "§8Prepare to appear in the movie 'Listen to Britain§!"
+ ENG_cowardly_lion_movie3_desc:0 "[ENG.GetLeader] has been invited to say the foreword for the short documentary movie, about life in the British Isles & the lost which may come from a lost war."
+ ENG_cowardly_lion_movie4:0 "§8Prepare to appear in the movie 'The 39 Steps'§!"
+ ENG_cowardly_lion_movie4_desc:0 "[ENG.GetLeader] has been invited to appear as Sheriff Watson in Alfred Hitchcocks newest movie 'The 39 Steps' about a spy ring, trying to undermine [ENG.GetNameDef]."
+ ENG_cowardly_lion_movie5:0 "§8Prepare to direct the movie 'Purple Plague' in secret§!"
+ ENG_cowardly_lion_movie5_desc:0 "[ENG.GetLeader] has written multiple novels before and during his time in office. One of which includes the science fiction novel 'Purple Plague', a story about a equal society emerging after a sea liner is quarantined. His work as director should only be revealed, if the movie is a success."
+ 
+ ENG_cowardly_lion_radio1:0 "§7Prepare a radio address about the Industrial Revolution§!"
+ ENG_cowardly_lion_radio1_desc:0 "[ENG.GetLeader] has prepared an evening radio address about the Industrial Revolution, before and after the revolution and the improvements it brought to the common man."
+ ENG_cowardly_lion_radio2:0 "§7Prepare a radio address about the repression of Women outside Britain§!"
+ ENG_cowardly_lion_radio2_desc:0 "[ENG.GetLeader] has prepared an evening radio address about women outside of Britain and the necessity of freeing women to achieve true worker solidarity."
+ ENG_cowardly_lion_radio3:0 "§7Prepare a radio address about the Irish Famine§!"
+ ENG_cowardly_lion_radio3_desc:0 "[ENG.GetLeader] has prepared an evening radio address about the Irish Famine and how British capitalist sacrificed Irish families to the market and nearly let laissez-faire wipe out a Island, if the revolution hadn't put an end to it."
+ ENG_cowardly_lion_radio4:0 "§7Prepare a radio address about the Arsenal of Socialism§!"
+ ENG_cowardly_lion_radio4_desc:0 "[ENG.GetLeader] has prepared an evening radio address about the need for international solidarity beyond words. For sending aid, civilian and military, to stand against reactionary & authoritarian enemies of workers everywhere."
+ ENG_cowardly_lion_radio5:0 "§7Prepare a radio address about the Friends in Africa§!"
+ ENG_cowardly_lion_radio5_desc:0 "[ENG.GetLeader] has prepared an evening radio address about the History of the [SIE.GetName] and how it shows the success of national liberation, supported by the strength of European Socialism."
+ 
+ ENG_nighttime_bombing:0 "Escalate to Night Time Bombing"
+ ENG_nighttime_bombing_desc:0 "The enemy can't be allowed to feel save under the cover of darkness. We need to escalate our bombing raids into the night, turning the cities of our enemies into burning timbers."
+ 
+ ENG_build_fortress_calais:0 "Construct Fortress Calais"
+ ENG_build_fortress_calais_desc:0 "When the French come and try to conquer Calais we need to be ready. A sizable fortification effort has to be made."
+ ENG_bunker_line1:0 "Bunker Line - Phase 1"
+ ENG_bunker_line1_desc:0 "A first simple series of bunkers will stop light attacks."
+ ENG_bunker_line2:0 "Bunker Line - Phase 2"
+ ENG_bunker_line2_desc:0 "A second more advanced series of bunkers will stop medium attacks."
+ ENG_bunker_line3:0 "Bunker Line - Final Phase"
+ ENG_bunker_line3_desc:0 "The last advanced series of bunkers will stop heavy attacks."
+ ENG_coastalbunker_line1:0 "Coastal Fortification - Dunkerque"
+ ENG_coastalbunker_line1_desc:0 "We need to protect our main harbour in the region, based in Dunkerque, with a strong coastal bunker battery."
+ ENG_coastalbunker_line2:0 "Coastal Fortification - Minor Coastal Holdings"
+ ENG_coastalbunker_line2_desc:0 "Now that the harbour is protected, we need to protect the rest of the coast the same."
+ ENG_aa_line1:0 "Anti Air Installation - Phase 1"
+ ENG_aa_line1_desc:0 "Even the greatest fortifications can be blown up by bombers flying overhead. We need a certain amount of AA sites to protect ourselves."
+ ENG_aa_line2:0 "Anti Air Installation - Phase 2"
+ ENG_aa_line2_desc:0 "Phase 1 was a success and we shall build them up even more."
+ ENG_radar_line1:0 "RADAR - Calais"
+ ENG_radar_line1_desc:0 "Radar will help our planes and AA installations to shot them down over Calais."
+ ENG_radar_line2:0 "RADAR - Channel"
+ ENG_radar_line2_desc:0 "If we build Radar sites also in Britain, we can help the units in Calais."
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

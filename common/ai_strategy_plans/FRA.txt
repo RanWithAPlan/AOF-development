@@ -1,0 +1,91 @@
+French_historical = {
+	name = "French historical plan"
+	desc = "Essentially historical behaviour for France"
+
+	allowed = {
+		original_tag = FRA
+	}
+	enable = {
+		is_historical_focus_on = yes
+	}
+
+	ai_national_focuses = {
+		#1936
+		FRA_finish_autoroutes
+		FRA_address_nation
+		FRA_car_contract
+		FRA_world_fair_ideas
+		FRA_economic_path
+		FRA_victory_eth
+		FRA_lessions_from_ETH
+		FRA_fan_colonial_fever
+		FRA_energy_policy
+		#1937
+		FRA_president_for_life
+		FRA_contain_free_speech
+		FRA_hotchkiss_expansion
+		FRA_no_fuel_problems
+		FRA_north_afr_infra
+		FRA_cotton_industry
+		FRA_indian_path
+		#1938
+		FRA_old_guard
+		FRA_mysore_war
+		FRA_drill_oil
+		FRA_hyderabad_war
+		FRA_tank_inventor
+		FRA_tank_kings
+		FRA_proclaim_state_religion
+		FRA_colonial_gold
+		#1939
+		FRA_med_dockyards
+		FRA_lucklow_war
+		FRA_destroyer
+		FRA_foreign_marines
+		FRA_fabricate_scandals
+		FRA_connect_colonial_unis
+		FRA_help_mex
+		#1940
+		FRA_mex_arms
+		FRA_lease_baja
+		FRA_triple_bb_project
+		FRA_south_am_tourism
+		FRA_bomber_plant
+		FRA_demand_sri_lanka
+		FRA_from_middle_india
+		#1941
+		FRA_african_path
+		FRA_stop_western_berber
+		FRA_aa_cruisers
+		FRA_stop_eastern_tuareg
+		FRA_jewish_resettlement
+		FRA_african_cores
+		FRA_calais_revenge
+		FRA_last_african_piece
+		FRA_strategic_bomber
+		FRA_breakup_EIC
+		FRA_rocket
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+}

@@ -1,0 +1,38 @@
+capital = 51
+
+set_rule = {
+	can_join_factions = no
+}
+
+oob = "RHI_1936"
+
+set_research_slots = 3
+
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_recon = 1
+	tech_engineers = 1
+	tech_support = 1
+	tech_mountaineers = 1
+	early_fighter = 1
+	basic_train = 1
+}
+
+recruit_character = RHI_konrad_adenauer
+
+
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1930.11.9"
+	election_frequency = 48
+	elections_allowed = yes
+}
+
+set_popularities = {
+	fascism = 33
+	democratic = 34
+	communism = 33
+}
+

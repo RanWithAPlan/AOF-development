@@ -1,0 +1,821 @@
+ideas = {
+
+	country = {
+	
+		idea_robin_hood_project = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = MEX_revolutionary_army
+
+			removal_cost = -1
+
+			modifier = {
+				communism_drift = 0.01
+				political_power_gain = 0.05
+				conscription = 0.003
+				max_command_power = 5
+			}
+		}
+		
+		idea_robin_hood_project1 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = MEX_revolutionary_army
+
+			removal_cost = -1
+
+			modifier = {
+				communism_drift = 0.02
+				political_power_gain = 0.1
+				conscription = 0.006
+				max_command_power = 10
+			}
+		}
+		
+		idea_robin_hood_project2 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = MEX_revolutionary_army
+
+			removal_cost = -1
+
+			modifier = {
+				communism_drift = 0.02
+				political_power_gain = 0.08
+				conscription = 0.008
+				max_command_power = 12
+			}
+		}
+		
+		idea_robin_hood_project3 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = MEX_revolutionary_army
+
+			removal_cost = -1
+
+			modifier = {
+				communism_drift = 0.05
+				political_power_gain = 0.15
+				conscription = 0.012
+				max_command_power = 20
+			}
+		}
+		
+		idea_robin_hood_project4 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = MEX_revolutionary_army
+
+			removal_cost = -1
+
+			modifier = {
+				communism_drift = 0.05
+				political_power_gain = 0.2
+				conscription = 0.02
+				max_command_power = 30
+			}
+		}
+		
+		idea_expanded_politburo = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = saf_soviet_advisers
+
+			removal_cost = -1
+
+			modifier = {
+				communism_drift = 0.05
+				max_command_power = 15
+				drift_defence_factor = 0.1
+				defensive_war_stability_factor = 0.5
+				economy_cost_factor = -0.2
+				mobilization_laws_cost_factor = -0.1
+				trade_laws_cost_factor = 0.25
+			}
+		}
+		
+		idea_legendary_revolutionary_brits = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = hol_caved_to_the_british
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.012
+				war_support_factor = 0.05
+			}
+		}
+		
+		idea_bbc = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = usa_magic
+
+			removal_cost = -1
+
+			modifier = {
+				communism_drift = 0.1
+				war_support_factor = 0.15
+				political_power_factor = 0.1
+			}
+		}
+		
+		idea_regional_parliaments = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_pp_unity_bonus
+
+			removal_cost = -1
+
+			modifier = {
+				communism_drift = 0.05
+				political_power_factor = -0.1
+				stability_weekly = 0.005
+				war_support_weekly = 0.005
+			}
+		}
+		
+		idea_regional_construction = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_build_infrastructure
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = 0.1
+			}
+		}
+		
+		idea_interracial_marriage = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = usa_desegregation_2
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.1
+				monthly_population = 0.15
+			}
+		}
+		
+		idea_international_modernism = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = chi_wargaming_division
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_gain = 0.05
+				research_speed_factor = 0.02
+				fascism_acceptance = -50
+				communism_acceptance = 50
+			}
+		}
+		
+		idea_freedom_of_research = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = jap_supremacy_of_technology
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor = 0.05
+			}
+		}
+		
+		idea_colossus = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = SOV_scientist_defect
+
+			removal_cost = -1
+
+			modifier = {
+				crypto_strength = 1
+				decryption_power = 1
+				encryption = 10
+				agency_upgrade_time = -0.15
+			}
+		}
+		
+		idea_dismantle_castles = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_production_bonus
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = 0.2
+			}
+		}
+		
+		idea_freedom_to_roam = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = chi_army_corruption
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.15
+			}
+		}
+		
+		
+		#### PLAGUES ####
+		
+		idea_typhoid_plague = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = ENG_the_war_to_end_all_wars 
+
+			removal_cost = -1
+
+			modifier = {
+				weekly_manpower = -25
+				communism_drift = -0.01
+				stability_factor = -0.1
+			}
+		}
+		
+		idea_parrot_fever = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = chi_war_of_resistance
+
+			removal_cost = -1
+
+			modifier = {
+				weekly_manpower = -8
+				communism_drift = -0.01
+				stability_factor = -0.04
+			}
+		}
+		
+		idea_typhoid_vaccine = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_goods_red_bonus
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = 0.2
+			}
+		}
+		
+		idea_john_snow_society = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = raj_indian_gentlemen_officers
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor = 0.015
+				monthly_population = 0.05
+			}
+		}
+		
+		idea_enforced_parrot_ban = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = saf_history_of_segregation
+
+			removal_cost = -1
+
+			modifier = {
+				war_support_factor = -0.25
+				army_morale_factor = -0.2
+				army_org_factor = -0.25
+				training_time_factor = 0.45
+			}
+		}
+		
+		idea_british_zoos = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = tur_sectarian_woes
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.05
+				industry_repair_factor = 0.05
+				industrial_capacity_dockyard = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+		
+		idea_rural_community = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_agrarian_society
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = -0.05
+				monthly_population = 0.05
+			}
+		}
+		
+		idea_opposed_to_armament = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = SOV_organize_wreckers
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_arms_factory_factor = -0.25
+			}
+		}
+		
+		idea_brockway_movie_time = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = anti_soviet_pact
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.05
+			}
+		}
+		
+		idea_brockway_radio_time = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = anti_soviet_pact
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor = -0.05
+			}
+		}
+		
+		idea_ambivalent_naval_commitment = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = SOV_shipyard_staff_purged
+
+			removal_cost = -1
+
+			modifier = {
+				industrial_capacity_dockyard = -0.5
+				repair_speed_factor = -0.3
+			}
+		}
+		
+		idea_ENG_militia = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = YUG_yugoslavian_general_staff
+
+			removal_cost = -1
+
+			modifier = {
+				army_org_factor = 0.1
+				planning_speed = 0.2
+				experience_gain_army_unit_factor = 0.15
+			}
+		}
+		
+		idea_ENG_army = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = SOV_war_heroes
+
+			removal_cost = -1
+
+			modifier = {
+				army_org_factor = 0.15
+				max_planning_factor = 0.1
+				experience_loss_factor = -0.1
+				experience_gain_army_factor = 0.1
+			}
+		}
+		
+		idea_british_merchant_fleet = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_coastal_navy
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				convoy = { build_cost_ic = -0.1 instant = yes }
+			}
+		}
+		
+		idea_quick_cruisers = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_navy_bonus
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				light_cruiser = { build_cost_ic = -0.15 instant = yes }
+			}
+		}
+		
+		idea_strong_cruisers = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_navy_bonus
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				heavy_cruiser = { build_cost_ic = -0.15 instant = yes }
+			}
+		}
+		
+		idea_missile_cruisers = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = MTG_naval_treaty_adherent_reduced
+
+			removal_cost = -1
+
+			modifier = {
+				navy_anti_air_attack_factor = 0.15
+				naval_speed_factor = 0.05
+				screening_efficiency = 0.2
+				experience_gain_light_cruiser_combat_factor = 0.15
+				experience_gain_heavy_cruiser_combat_factor = 0.15
+			}
+		}
+		
+		idea_british_horsies = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = hol_shell_shocked_spectator
+
+			removal_cost = -1
+
+			modifier = {
+				cavalry_attack_factor = 0.05
+				cavalry_defence_factor = 0.1
+				supply_consumption_factor = -0.05
+			}
+		}
+		
+		idea_train_at_home = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = eng_imperial_conscription
+
+			removal_cost = -1
+
+			modifier = {
+				minimum_training_level = -0.15
+				special_forces_training_time_factor = -0.05
+			}
+		}
+		
+		idea_expand_sandhurst_model_training = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_infantry_bonus
+
+			removal_cost = -1
+
+			modifier = {
+				training_time_factor = -0.12
+			}
+		}
+		
+		idea_harris_plan = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = strategic_bombing_focus
+
+			removal_cost = -1
+			
+			equipment_bonus = {
+				cat_strategic_bomber = { build_cost_ic = -0.1 instant = yes }
+			}
+
+			modifier = {
+				air_strategic_bomber_bombing_factor = 0.1
+			}
+		}
+		
+		idea_nighttime_bombing = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_air_research
+
+			removal_cost = -1
+
+			modifier = {
+				air_strategic_bomber_night_penalty = -0.15
+				strategic_bomb_visibility = -0.2
+			}
+		}
+		
+		idea_victory_airpower = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = man_five_year_plan_air
+
+			removal_cost = -1
+			
+			equipment_bonus = {
+				light_fighter = { build_cost_ic = 0.1 instant = yes }
+				tactical_bomber = { build_cost_ic = 0.1 instant = yes }
+				cas_bomber = { build_cost_ic = 0.1 instant = yes }
+				cat_scout_plane = { build_cost_ic = 0.1 instant = yes }
+			}
+		}
+		
+		
+		
+		
+	}
+}

@@ -1,0 +1,1116 @@
+#########################
+#  1848 British British Events	#
+#########################
+
+add_namespace = mod_calais_struggles
+
+country_event = {
+	id = mod_calais_struggles.1
+	title = mod_calais_struggles.1.t
+	desc = mod_calais_struggles.1.d
+	picture = GFX_report_event_usa_election_generic
+	
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	trigger = {
+		tag = ENG
+		date > "1936.1.2"
+	}
+	
+	immediate = {
+		country_event = { id = mod_calais_struggles.2 days = 1 }
+	}
+	
+	option = {
+		name = mod_calais_struggles.1.a
+		ai_chance = {
+			factor = 10
+		}
+		29 = {
+			add_resistance = 1
+			add_dynamic_modifier = { modifier = ENG_struggles }
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.2 # Calais Situation
+	title = mod_calais_struggles.2.t
+	desc = mod_calais_struggles.2.d
+	picture = GFX_report_event_spr_anarchists2
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.2.a
+		ai_chance = {
+			factor = 10
+		}
+		29 = {
+			add_resistance = 1
+			add_dynamic_modifier = { modifier = ENG_struggles }
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.3 # Operation Reaper
+	title = mod_calais_struggles.3.t
+	desc = mod_calais_struggles.3.d
+	picture = GFX_report_event_spr_anarchist_uprising2
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.3.a 
+		ai_chance = {
+			factor = 10
+		}
+		add_manpower = -11
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -125
+			producer = ENG
+		}
+		29 = {
+			add_resistance = 3
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.4 # CR won't accept bridge
+	title = mod_calais_struggles.4.t
+	desc = mod_calais_struggles.4.d
+	picture = GFX_report_event_canada_army
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.4.a
+		ai_chance = {
+			factor = 10
+		}
+		add_manpower = -3
+		ai_strategy = {
+			type = prepare_for_war
+			id = FRA
+			value = 200
+		}
+		FRA = {
+			ai_strategy = {
+			type = prepare_for_war
+			id = ENG
+			value = 200
+			}
+		}
+		hidden_effect = {
+			country_event = { id = mod_calais_struggles.5 days = 9 }
+			FRA = {
+				country_event = { id = mod_calais_struggles.35 days = 2 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.5 # Border war with France
+	title = mod_calais_struggles.5.t
+	desc = mod_calais_struggles.5.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.5.a
+		ai_chance = {
+			factor = 10
+		}
+		start_border_war = {
+			change_state_after_war = no
+			attacker = {
+				state = 785
+				num_provinces = 3
+				on_win = mod_calais_struggles.6 # FRA wins
+				on_lose = mod_calais_struggles.7 # ENG wins
+				on_cancel = mod_calais_struggles.8
+			}
+			defender = {
+				state = 29
+				num_provinces = 3
+				on_win = mod_calais_struggles.7 # ENG wins
+				on_lose = mod_calais_struggles.6 # FRA wins
+				on_cancel = mod_calais_struggles.8
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.6 # FRA wins Border Conflict
+	title = mod_calais_struggles.6.t
+	desc = mod_calais_struggles.6.d
+	picture = GFX_report_event_gre_city_devastated
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.6.a
+		ai_chance = {
+			factor = 10
+		}
+		FRA = {
+			army_experience = 15
+		}
+		army_experience = 10
+		29 = {
+			add_resistance = 10
+			remove_building = {
+				type = infrastructure
+				level = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.7 # ENG wins Border Conflict
+	title = mod_calais_struggles.7.t
+	desc = mod_calais_struggles.7.d
+	picture = GFX_report_event_chinese_soldiers_city_ruin
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.7.a
+		ai_chance = {
+			factor = 10
+		}
+		FRA = {
+			army_experience = 10
+		}
+		army_experience = 15
+		29 = {
+			add_resistance = -10
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.8 # ENG-FRA canceled Border Conflict
+	title = mod_calais_struggles.8.t
+	desc = mod_calais_struggles.8.d
+	picture = GFX_report_event_chinese_soldiers_city_ruin
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.8.a
+		ai_chance = {
+			factor = 10
+		}
+		FRA = {
+			army_experience = 5
+		}
+		army_experience = 5
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.9 # Calais Airport Bombing
+	title = mod_calais_struggles.9.t
+	desc = mod_calais_struggles.9.d
+	picture = GFX_report_event_generic_bombers
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.9.a
+		ai_chance = {
+			factor = 10
+		}
+		damage_building = {
+			type = air_base
+			damage = 0.4
+		}
+		add_manpower = -5
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.10 # Calais-Lille Railroad Bombing
+	title = mod_calais_struggles.10.t
+	desc = mod_calais_struggles.10.d
+	picture = GFX_report_event_generic_train
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.10.a
+		ai_chance = {
+			factor = 10
+		}
+		add_manpower = -27
+		add_equipment_to_stockpile = {
+			type = train_equipment_1
+			amount = -1
+			producer = ENG
+		}
+		29 = {
+			damage_building = {
+				type = rail_way 
+				damage = 2
+				province = 3536
+			}
+			add_resistance = -4
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.11 # Lens Mine Destruction
+	title = mod_calais_struggles.11.t
+	desc = mod_calais_struggles.11.d
+	picture = GFX_report_event_gre_city_devastated
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.11.a
+		ai_chance = {
+			factor = 10
+		}
+		add_resource = {
+			type = steel
+			amount = -4
+			state = 29
+		}
+		29 = {
+			add_resistance = -1
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.12 # Dunkerque Harbour Bombing
+	title = mod_calais_struggles.12.t
+	desc = mod_calais_struggles.12.d
+	picture = GFX_report_event_panay_incident
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.12.a
+		ai_chance = {
+			factor = 10
+		}
+		add_manpower = -11
+		29 = {
+			damage_building = {
+				type = naval_base 
+				damage = 3
+				province = 575
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.13 # Lille Airport Attack
+	title = mod_calais_struggles.13.t
+	desc = mod_calais_struggles.13.d
+	picture = GFX_report_event_airplane_crash
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.13.a
+		ai_chance = {
+			factor = 10
+		}
+		add_manpower = -4
+		29 = {
+			remove_building = {
+				type = air_base 
+				level = 2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.14 # Bonduelle Distillery Factory Bombing
+	title = mod_calais_struggles.14.t
+	desc = mod_calais_struggles.14.d
+	picture = GFX_report_event_airplane_factory
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.14.a
+		ai_chance = {
+			factor = 10
+		}
+		add_manpower = -1
+		29 = {
+			damage_building = {
+				type = industrial_complex  
+				damage = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.15 # Poperinge Factory Fire
+	title = mod_calais_struggles.15.t
+	desc = mod_calais_struggles.15.d
+	picture = GFX_report_event_physics_lab_02
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.15.a
+		ai_chance = {
+			factor = 10
+		}
+		6 = {
+			damage_building = {
+				type = industrial_complex  
+				damage = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.16 # Lille Hotel de Ville Bombing
+	title = mod_calais_struggles.16.t
+	desc = mod_calais_struggles.16.d
+	picture = GFX_report_event_spr_falange_troops
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.16.a
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = -0.02
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.17 # Street Battle of Cambrai
+	title = mod_calais_struggles.17.t
+	desc = mod_calais_struggles.17.d
+	picture = GFX_report_event_ger_civil_war
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.17.a
+		ai_chance = {
+			factor = 10
+		}
+		add_manpower = -57
+		add_stability = -0.03
+		add_war_support = -0.01
+		29 = {
+			add_resistance = -15
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.18 # Gladiator downing
+	title = mod_calais_struggles.18.t
+	desc = mod_calais_struggles.18.d
+	picture = GFX_report_event_spr_plane_crash
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.18.a
+		ai_chance = {
+			factor = 10
+		}
+		add_equipment_to_stockpile = {
+			type = fighter_equipment_0
+			amount = -1
+			producer = ENG
+		}
+		add_equipment_to_stockpile = {
+			type = fighter_equipment_1
+			amount = -1
+			producer = ENG
+		}
+		add_manpower = -2
+	}
+}
+
+#### PARACHUTE REGIMENTS EVENT CHAIN ####
+
+country_event = {
+	id = mod_calais_struggles.19 # Place Charles Valentin Shooting
+	title = mod_calais_struggles.19.t
+	desc = mod_calais_struggles.19.d
+	picture = GFX_report_event_ast_paras
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.19.a # Keep Unit
+		ai_chance = {
+			factor = 10
+		}
+		29 = {
+			add_resistance = 5
+		}
+		add_manpower = -4
+		hidden_effect = {
+			country_event = { id = mod_calais_struggles.20 days = 25 random_days = 25 }
+		}
+	}
+	option = {
+		name = mod_calais_struggles.19.b # Pull out Unit
+		ai_chance = {
+			factor = 10
+		}
+		29 = {
+			add_resistance = 2
+		}
+		add_manpower = -4
+		29 = {
+			remove_dynamic_modifier = {
+				modifier = ENG_deployed_parachute_regiment
+			}
+		}
+		division_template = {
+			name = "Parachute Regiment"
+			division_names_group = ENG_PAR_02
+			regiments = {
+				paratrooper = { x = 0 y = 0 }
+				paratrooper = { x = 0 y = 1 }
+				paratrooper = { x = 0 y = 2 }
+				paratrooper = { x = 1 y = 0 }
+				paratrooper = { x = 1 y = 1 }
+				paratrooper = { x = 1 y = 2 }
+			}
+			support = {
+				recon = { x = 0 y = 0 }
+			}
+		}
+		random_owned_controlled_state = {
+			prioritize = { 125 }
+			create_unit = {
+			division = "division_name = { is_name_ordered = yes name_order = 1 } division_template = \"Parachute Regiment\"  start_experience_factor = 0.1"
+			owner = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.20 # Changing of the Lille Flag
+	title = mod_calais_struggles.20.t
+	desc = mod_calais_struggles.20.d
+	picture = GFX_report_event_ast_paras
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.20.a # Keep Unit
+		ai_chance = {
+			factor = 10
+		}
+		29 = {
+			add_resistance = 6
+		}
+		hidden_effect = {
+			country_event = { id = mod_calais_struggles.21 days = 25 random_days = 25 }
+		}
+	}
+	option = {
+		name = mod_calais_struggles.20.b # Pull out Unit
+		ai_chance = {
+			factor = 10
+		}
+		29 = {
+			add_resistance = 3
+		}
+		29 = {
+			remove_dynamic_modifier = {
+				modifier = ENG_deployed_parachute_regiment
+			}
+		}
+		division_template = {
+			name = "Parachute Regiment"
+			division_names_group = ENG_PAR_02
+			regiments = {
+				paratrooper = { x = 0 y = 0 }
+				paratrooper = { x = 0 y = 1 }
+				paratrooper = { x = 0 y = 2 }
+				paratrooper = { x = 1 y = 0 }
+				paratrooper = { x = 1 y = 1 }
+				paratrooper = { x = 1 y = 2 }
+			}
+			support = {
+				recon = { x = 0 y = 0 }
+			}
+		}
+		random_owned_controlled_state = {
+			prioritize = { 125 }
+			create_unit = {
+			division = "division_name = { is_name_ordered = yes name_order = 1 } division_template = \"Parachute Regiment\"  start_experience_factor = 0.15"
+			owner = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.21 # Agincourt Massacre
+	title = mod_calais_struggles.21.t
+	desc = mod_calais_struggles.21.d
+	picture = GFX_report_event_ast_paras
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.21.a # Keep Unit
+		ai_chance = {
+			factor = 10
+		}
+		29 = {
+			add_resistance = 10
+		}
+		add_manpower = -15
+		hidden_effect = {
+			country_event = { id = mod_calais_struggles.22 days = 25 random_days = 25 }
+		}
+	}
+	option = {
+		name = mod_calais_struggles.21.b # Pull out Unit
+		ai_chance = {
+			factor = 10
+		}
+		29 = {
+			add_resistance = 9
+		}
+		29 = {
+			remove_dynamic_modifier = {
+				modifier = ENG_deployed_parachute_regiment
+			}
+		}
+		add_manpower = -15
+		division_template = {
+			name = "Parachute Regiment"
+			division_names_group = ENG_PAR_02
+			regiments = {
+				paratrooper = { x = 0 y = 0 }
+				paratrooper = { x = 0 y = 1 }
+				paratrooper = { x = 0 y = 2 }
+				paratrooper = { x = 1 y = 0 }
+				paratrooper = { x = 1 y = 1 }
+				paratrooper = { x = 1 y = 2 }
+			}
+			support = {
+				recon = { x = 0 y = 0 }
+			}
+		}
+		random_owned_controlled_state = {
+			prioritize = { 125 }
+			create_unit = {
+			division = "division_name = { is_name_ordered = yes name_order = 1 } division_template = \"Parachute Regiment\"  start_experience_factor = 0.2"
+			owner = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.22 # Scrape Bridge Shooting
+	title = mod_calais_struggles.22.t
+	desc = mod_calais_struggles.22.d
+	picture = GFX_report_event_ast_paras
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.22.a # Keep Unit
+		ai_chance = {
+			factor = 10
+		}
+		29 = {
+			add_resistance = 5
+		}
+		add_manpower = -3
+		hidden_effect = {
+			country_event = { id = mod_calais_struggles.23 days = 25 random_days = 25 }
+		}
+	}
+	option = {
+		name = mod_calais_struggles.22.b # Pull out Unit
+		ai_chance = {
+			factor = 10
+		}
+		29 = {
+			add_resistance = 3
+		}
+		29 = {
+			remove_dynamic_modifier = {
+				modifier = ENG_deployed_parachute_regiment
+			}
+		}
+		add_manpower = -3
+		division_template = {
+			name = "Parachute Regiment"
+			division_names_group = ENG_PAR_02
+			regiments = {
+				paratrooper = { x = 0 y = 0 }
+				paratrooper = { x = 0 y = 1 }
+				paratrooper = { x = 0 y = 2 }
+				paratrooper = { x = 1 y = 0 }
+				paratrooper = { x = 1 y = 1 }
+				paratrooper = { x = 1 y = 2 }
+			}
+			support = {
+				recon = { x = 0 y = 0 }
+			}
+		}
+		random_owned_controlled_state = {
+			prioritize = { 125 }
+			create_unit = {
+			division = "division_name = { is_name_ordered = yes name_order = 1 } division_template = \"Parachute Regiment\"  start_experience_factor = 0.25"
+			owner = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.23 # Anvin Church Incident
+	title = mod_calais_struggles.23.t
+	desc = mod_calais_struggles.23.d
+	picture = GFX_report_event_ast_paras
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.23.a # Keep Unit
+		ai_chance = {
+			factor = 10
+		}
+		29 = {
+			add_resistance = 8
+		}
+		add_manpower = -2
+		hidden_effect = {
+			country_event = { id = mod_calais_struggles.24 days = 25 random_days = 25 }
+		}
+	}
+	option = {
+		name = mod_calais_struggles.23.b # Pull out Unit
+		ai_chance = {
+			factor = 10
+		}
+		29 = {
+			add_resistance = 5
+		}
+		29 = {
+			remove_dynamic_modifier = {
+				modifier = ENG_deployed_parachute_regiment
+			}
+		}
+		add_manpower = -2
+		division_template = {
+			name = "Parachute Regiment"
+			division_names_group = ENG_PAR_02
+			regiments = {
+				paratrooper = { x = 0 y = 0 }
+				paratrooper = { x = 0 y = 1 }
+				paratrooper = { x = 0 y = 2 }
+				paratrooper = { x = 1 y = 0 }
+				paratrooper = { x = 1 y = 1 }
+				paratrooper = { x = 1 y = 2 }
+			}
+			support = {
+				recon = { x = 0 y = 0 }
+			}
+		}
+		random_owned_controlled_state = {
+			prioritize = { 125 }
+			create_unit = {
+			division = "division_name = { is_name_ordered = yes name_order = 1 } division_template = \"Parachute Regiment\"  start_experience_factor = 0.35"
+			owner = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.24 # Marck & Coulongé Internment
+	title = mod_calais_struggles.24.t
+	desc = mod_calais_struggles.24.d
+	picture = GFX_report_event_ast_paras
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.24.a # Keep Unit
+		ai_chance = {
+			factor = 10
+		}
+		29 = {
+			add_resistance = 14
+		}
+		hidden_effect = {
+			country_event = { id = mod_calais_struggles.25 days = 25 random_days = 25 }
+		}
+	}
+	option = {
+		name = mod_calais_struggles.24.b # Pull out Unit
+		ai_chance = {
+			factor = 10
+		}
+		29 = {
+			add_resistance = 10
+		}
+		29 = {
+			remove_dynamic_modifier = {
+				modifier = ENG_deployed_parachute_regiment
+			}
+		}
+		division_template = {
+			name = "Parachute Regiment"
+			division_names_group = ENG_PAR_02
+			regiments = {
+				paratrooper = { x = 0 y = 0 }
+				paratrooper = { x = 0 y = 1 }
+				paratrooper = { x = 0 y = 2 }
+				paratrooper = { x = 1 y = 0 }
+				paratrooper = { x = 1 y = 1 }
+				paratrooper = { x = 1 y = 2 }
+			}
+			support = {
+				recon = { x = 0 y = 0 }
+			}
+		}
+		random_owned_controlled_state = {
+			prioritize = { 125 }
+			create_unit = {
+			division = "division_name = { is_name_ordered = yes name_order = 1 } division_template = \"Parachute Regiment\"  start_experience_factor = 0.5"
+			owner = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.25 # Bierne Checkpoint Bombing
+	title = mod_calais_struggles.25.t
+	desc = mod_calais_struggles.25.d
+	picture = GFX_report_event_ast_paras
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.25.a # Keep Unit
+		ai_chance = {
+			factor = 10
+		}
+		29 = {
+			add_resistance = 6
+		}
+		add_manpower = -7
+		hidden_effect = {
+			country_event = { id = mod_calais_struggles.26 days = 25 random_days = 25 }
+		}
+	}
+	option = {
+		name = mod_calais_struggles.25.b # Pull out Unit
+		ai_chance = {
+			factor = 10
+		}
+		29 = {
+			add_resistance = 4
+		}
+		29 = {
+			remove_dynamic_modifier = {
+				modifier = ENG_deployed_parachute_regiment
+			}
+		}
+		add_manpower = -7
+		division_template = {
+			name = "Parachute Regiment"
+			division_names_group = ENG_PAR_02
+			regiments = {
+				paratrooper = { x = 0 y = 0 }
+				paratrooper = { x = 0 y = 1 }
+				paratrooper = { x = 0 y = 2 }
+				paratrooper = { x = 1 y = 0 }
+				paratrooper = { x = 1 y = 1 }
+				paratrooper = { x = 1 y = 2 }
+			}
+			support = {
+				recon = { x = 0 y = 0 }
+			}
+		}
+		random_owned_controlled_state = {
+			prioritize = { 125 }
+			create_unit = {
+			division = "division_name = { is_name_ordered = yes name_order = 1 } division_template = \"Parachute Regiment\"  start_experience_factor = 0.75"
+			owner = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.26 # Calais Bloody Sunday
+	title = mod_calais_struggles.26.t
+	desc = mod_calais_struggles.26.d
+	picture = GFX_report_event_generic_riot
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.26.a # Pull out Unit, but too late
+		ai_chance = {
+			factor = 10
+		}
+		29 = {
+			add_resistance = 20
+		}
+		add_manpower = -26
+		29 = {
+			remove_dynamic_modifier = {
+				modifier = ENG_deployed_parachute_regiment
+			}
+		}
+		hidden_effect = {
+			country_event = { id = mod_calais_struggles.27 days = 14 }
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.27 # Dunkerque Ferry Bombing
+	title = mod_calais_struggles.27.t
+	desc = mod_calais_struggles.27.d
+	picture = GFX_report_event_merchant_ship_01
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.27.a # Pull out Unit, but too late
+		ai_chance = {
+			factor = 10
+		}
+		29 = {
+			add_resistance = -2
+		}
+		add_manpower = -1867
+	}
+}
+
+#### PARACHUTE REGIMENTS EVENT CHAIN ENDING ####
+
+country_event = {
+	id = mod_calais_struggles.28 # Pollitt Letter Bombing
+	title = mod_calais_struggles.28.t
+	desc = mod_calais_struggles.28.d
+	picture = GFX_report_event_gre_city_devastated
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.28.a 
+		ai_chance = {
+			factor = 10
+		}
+		retire_character = ENG_harry_pollitt
+		add_stability = -0.03
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.29 # Downing Street knife attack
+	title = mod_calais_struggles.29.t
+	desc = mod_calais_struggles.29.d
+	picture = GFX_report_event_spr_falange_troops
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.29.a  
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = -0.01
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.30 # Brussels bombing
+	title = mod_calais_struggles.30.t
+	desc = mod_calais_struggles.30.d
+	picture = GFX_report_event_gre_city_devastated
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.30.a  
+		ai_chance = {
+			factor = 10
+		}
+		BEL = {
+			add_stability = -0.02
+		}
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.31 # Norwich pub bombings
+	title = mod_calais_struggles.31.t
+	desc = mod_calais_struggles.31.d
+	picture = GFX_report_event_gre_city_devastated
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.31.a  
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = -0.05
+		add_manpower = -17
+	}
+}
+
+country_event = {
+	id = mod_calais_struggles.32 # The Convent Attack
+	title = mod_calais_struggles.32.t
+	desc = mod_calais_struggles.32.d
+	picture = GFX_report_event_spr_solidify_the_frontlines
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = mod_calais_struggles.32.a  
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = -0.02
+		add_manpower = -2
+		118 = {
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+		}
+		118 = {
+			damage_units = {
+				province = 4135
+				damage = 0.05
+				#org_damage = 0.5
+				#str_damage = 0.5
+				ratio = yes
+				army = yes
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = mod_calais_struggles.35
+	title = mod_calais_struggles.35.t
+	desc = mod_calais_struggles.35.d
+	picture = GFX_report_event_spr_nationalists_capture_tank
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_calais_struggles.35.a
+		ai_chance = {
+			factor = 10
+		}
+		
+	}
+}
+
+
+
+
+
+
+
+
+

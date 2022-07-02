@@ -1,0 +1,842 @@
+#Category only allowed for GER
+operations = {
+	GER_indian_crown1 = {
+		priority = 10
+
+		icon = GFX_decision_generic_nationalism
+
+		visible = {
+			has_completed_focus = GER_indian_crownjewel
+			NOT = {
+				BOM = {
+					exists = no
+				}
+			}
+		}
+
+		cost = 25
+
+		fire_only_once = yes
+
+		available = {
+			has_completed_focus = GER_indian_crownjewel
+			BOM = {
+				is_subject = no
+			}
+			NOT = {
+				BOM = {
+					exists = no
+				}
+			}
+		}
+
+		war_with_on_remove = BOM
+
+		days_remove = 30
+		remove_effect = {
+			create_wargoal = {
+				type = annex_everything
+				target = BOM
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	GER_indian_crown2 = {
+		priority = 10
+
+		icon = GFX_decision_generic_nationalism
+
+		visible = {
+			OR = {
+				BOM = {
+					is_subject_of = GER
+				}
+				AND = {
+					BOM = { exists = no }
+					GER = { controls_state = 429 }
+				}
+			}
+			NOT = {
+				NMR = {
+					exists = no
+				}
+			}
+		}
+
+		cost = 25
+
+		fire_only_once = yes
+
+		available = {
+			has_completed_focus = GER_indian_crownjewel
+			NOT = {
+				NMR = {
+					exists = no
+				}
+			}
+			NMR = {
+				is_subject = no
+			}
+		}
+
+		war_with_on_remove = NMR
+
+		days_remove = 30
+		remove_effect = {
+			create_wargoal = {
+				type = annex_everything
+				target = NMR
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	GER_indian_crown3 = {
+		priority = 10
+
+		icon = GFX_decision_generic_nationalism
+
+		visible = {
+			OR = {
+				NMR = {
+					is_subject_of = GER
+				}
+				AND = {
+					NMR = { exists = no }
+					GER = { controls_state = 439 }
+				}
+			}
+			NOT = {
+				SKE = {
+					exists = no
+				}
+			}
+		}
+
+		cost = 25
+
+		fire_only_once = yes
+
+		available = {
+			has_completed_focus = GER_indian_crownjewel
+			SKE = {
+				is_subject = no
+			}
+			NOT = {
+				SKE = {
+					exists = no
+				}
+			}
+		}
+
+		war_with_on_remove = SKE
+
+		days_remove = 30
+		remove_effect = {
+			create_wargoal = {
+				type = annex_everything
+				target = SKE
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
+	GER_indian_crown4 = {
+		priority = 25
+
+		icon = GFX_decision_generic_nationalism
+
+		visible = {
+			has_completed_focus = GER_indian_crownjewel
+		}
+
+		cost = 25
+
+		fire_only_once = yes
+
+		available = {
+			has_completed_focus = GER_indian_crownjewel
+			OR = {
+				AND = {
+					BOM = {
+						is_subject_of = GER
+					}
+					NMR = {
+						is_subject_of = GER
+					}
+					SKE = {
+						is_subject_of = GER
+					}
+				}
+				AND = {
+					controls_state = 429
+					controls_state = 439
+					controls_state = 440
+				}
+			}
+		}
+
+		days_remove = 100
+		remove_effect = {
+			GER = {
+				set_autonomy = { target = BOM autonomy_state = autonomy_integrated_puppet }
+			}
+			hidden_effect = {
+				BOM = {
+					create_country_leader = {
+						name = "Karl von Luxburg"
+						desc = "POLITICS_KARL_LUXBURG_DESC"
+						picture = "gfx/leaders/GER/Portrait_Karl_Luxburg.dds"
+						expire = "1965.1.1.1"
+						ideology = despotism
+						traits = {
+							
+						}
+					}
+					create_country_leader = {
+						name = "Karl von Luxburg"
+						desc = "POLITICS_KARL_LUXBURG_DESC"
+						picture = "gfx/leaders/GER/Portrait_Karl_Luxburg.dds"
+						expire = "1965.1.1.1"
+						ideology = conservatism
+						traits = {
+							
+						}
+					}
+					set_cosmetic_tag = BOM_GER
+					set_party_name = {
+						ideology = neutrality
+						long_name = BOM_neutrality_party_german_long
+						name = BOM_neutrality_party_german
+					}
+					set_politics = {
+						ruling_party = neutrality
+						elections_allowed = no
+						last_election = "1933.12.12"
+						election_frequency = 128
+					}
+					set_popularities = {
+						democratic = 20
+						neutrality = 75
+						fascism = 2
+						communism = 3
+					}
+				}
+
+				BOM = {
+					transfer_state = 429
+					add_state_core = 429
+					transfer_state = 437
+					add_state_core = 437
+					transfer_state = 428
+					add_state_core = 428
+					transfer_state = 433
+					add_state_core = 433
+					transfer_state = 439
+					add_state_core = 439
+					transfer_state = 443
+					add_state_core = 443
+					transfer_state = 440
+					add_state_core = 440
+					transfer_state = 441
+					add_state_core = 441
+					transfer_state = 442
+					add_state_core = 442
+					transfer_state = 787
+					add_state_core = 787
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 90
+		}
+	}
+}
+
+political_actions = {
+	
+	GER_annex_dahomey = {
+
+		icon = GFX_decision_generic_nationalism
+
+		available = {
+			has_country_flag = GER_dahomey_folds
+			DAH = {
+				has_capitulated = no
+			}
+		}
+		
+		cost = 10
+
+		visible = {
+			has_country_flag = GER_dahomey_folds
+		}
+
+		fire_only_once = yes
+
+		days_remove = 200
+		remove_effect = {
+			annex_country = {
+				target = DAH
+				transfer_troops = no
+			}
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		
+	}
+
+	GER_annex_cameroon = {
+
+		icon = GFX_decision_generic_nationalism
+
+		available = {
+			has_country_flag = GER_cameroon_folds
+			CMR = {
+				has_capitulated = no
+			}
+		}
+		
+		cost = 10
+
+		visible = {
+			has_country_flag = GER_cameroon_folds
+		}
+
+		fire_only_once = yes
+
+		days_remove = 200
+		remove_effect = {
+			annex_country = {
+				target = CMR
+				transfer_troops = no
+			}
+		}
+		ai_will_do = {
+			factor = 15
+		}
+	}
+
+	GER_annex_austria = {
+
+		icon = GFX_decision_generic_nationalism
+
+		available = {
+			has_country_flag = GER_austrian_ally
+			AUS = {
+				is_in_faction_with = GER
+			}
+		}
+		
+		cost = 175
+
+		visible = {
+			has_country_flag = GER_austrian_ally
+			AUS = {
+				is_in_faction_with = GER
+			}
+		}
+
+		fire_only_once = yes
+
+		days_remove = 400
+		remove_effect = {
+			annex_country = {
+				target = AUS
+				transfer_troops = yes
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.2
+			}
+			152 = { add_core_of = GER }
+			4 = { add_core_of = GER }
+			102 = { add_core_of = GER }
+			736 = { add_core_of = GER }
+			
+			152 = { remove_core_of = AUS }
+			4 = { remove_core_of = AUS }
+			102 = { remove_core_of = AUS }
+			736 = { remove_core_of = AUS }
+			153 = { remove_core_of = AUS }
+			39 = { remove_core_of = AUS }
+		}
+		ai_will_do = {
+			factor = 80
+		}
+	}
+
+	GER_ally_finland = {
+
+		icon = GFX_decision_generic_nationalism
+
+		available = {
+			FIN = { is_in_faction = no }
+			has_completed_focus = GER_reallign_finland
+		}
+		
+		cost = 25
+
+		visible = {
+			has_completed_focus = GER_reallign_finland
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			GER = {
+				add_to_faction = FIN
+			}
+		}
+		
+		ai_will_do = {
+			factor = 25
+		}
+	}
+
+	GER_polish_peace = {
+
+		icon = GFX_decision_generic_nationalism
+
+		available = {
+			has_war_with = POL
+			controls_state = 763
+			controls_state = 5
+			controls_state = 762
+		}
+		
+
+		visible = {
+			has_war_with = POL
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			white_peace = POL
+			transfer_state = 5
+			transfer_state = 762
+			transfer_state = 763
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	GER_konigsberg_core = {
+
+		icon = GFX_decision_generic_nationalism
+
+		available = {
+			763 = {
+				compliance > 60
+			}
+		}
+		
+
+		visible = {
+			has_completed_focus = GER_use_alldeutsch
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			763 = {
+				remove_dynamic_modifier = {
+					modifier = alldeutsch_compliance
+				}
+			}
+			add_state_core = 763
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	GER_katowice_core = {
+
+		icon = GFX_decision_generic_nationalism
+
+		available = {
+			762 = {
+				compliance > 60
+			}
+		}
+		
+
+		visible = {
+			has_completed_focus = GER_use_alldeutsch
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			762 = {
+				remove_dynamic_modifier = {
+					modifier = alldeutsch_compliance
+				}
+				set_state_name = "Kattowitz"
+			}
+			add_state_core = 762
+			
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+	GER_ermland_core = {
+
+		icon = GFX_decision_generic_nationalism
+
+		available = {
+			5 = {
+				compliance > 60
+			}
+		}
+		
+
+		visible = {
+			has_completed_focus = GER_use_alldeutsch
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			5 = {
+				remove_dynamic_modifier = {
+					modifier = alldeutsch_compliance
+				}
+			}
+			add_state_core = 5
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+	}
+
+}
+
+economy_decisions = {
+
+	###SHIP_BUILDING_ALLIES###
+
+	GER_austrian_capital = {
+
+		icon = GFX_decision_generic_nationalism
+
+		available = {
+			has_completed_focus = GER_build_for_allies
+			NOT = {
+				has_idea = idea_dockyard_allies
+				has_completed_focus = GER_special_elections
+			}
+		}
+		
+		cost = 25
+
+		visible = {
+			has_completed_focus = GER_build_for_allies
+			NOT = {
+				has_completed_focus = GER_special_elections
+			}
+		}
+
+		fire_only_once = yes
+
+		days_remove = 360
+		remove_effect = {
+			AUS = {
+				create_ship = {
+					type = ship_hull_cruiser_panzerschiff 
+					equipment_variant = "Deutschland Class"
+					creator = GER
+					name = "ANS Brotherhood"  #Austrian Naval Ship
+				}
+				add_political_power = -100
+			}
+			add_political_power = 100
+			remove_ideas = idea_dockyard_allies
+		}
+		
+		complete_effect = {
+			add_ideas = idea_dockyard_allies
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	GER_austrian_lcruiser = {
+
+		icon = GFX_decision_generic_nationalism
+
+		available = {
+			has_completed_focus = GER_build_for_allies
+			NOT = {
+				has_idea = idea_dockyard_allies
+				has_completed_focus = GER_special_elections
+			}
+		}
+		
+		cost = 25
+
+		visible = {
+			has_completed_focus = GER_build_for_allies
+			NOT = {
+				has_completed_focus = GER_special_elections
+			}
+		}
+
+		fire_only_once = yes
+
+		days_remove = 180
+		remove_effect = {
+			AUS = {
+				create_ship = {
+					type = ship_hull_cruiser_2  
+					equipment_variant = "Leipzig Class"
+					creator = GER
+					name = "ANS Bregenz"  #Austrian Naval Ship
+				}
+				add_political_power = -75
+			}
+			add_political_power = 75
+			remove_ideas = idea_dockyard_allies
+		}
+		
+		complete_effect = {
+			add_ideas = idea_dockyard_allies
+		}
+		
+		ai_will_do = {
+			factor = 9
+		}
+	}
+	
+	GER_austrian_destroyer = {
+
+		icon = GFX_decision_generic_nationalism
+
+		available = {
+			has_completed_focus = GER_build_for_allies
+			NOT = {
+				has_idea = idea_dockyard_allies
+				has_completed_focus = GER_special_elections
+			}
+		}
+		
+		cost = 25
+
+		visible = {
+			has_completed_focus = GER_build_for_allies
+			NOT = {
+				has_completed_focus = GER_special_elections
+			}
+		}
+
+		fire_only_once = yes
+
+		days_remove = 360
+		remove_effect = {
+			AUS = {
+				create_ship = {
+					type = ship_hull_light_2   
+					equipment_variant = "Zerstörer 1934A Class"
+					creator = GER
+					name = "ANS Kornblume"  #Austrian Naval Ship
+				}
+				create_ship = {
+					type = ship_hull_light_2   
+					equipment_variant = "Zerstörer 1934A Class"
+					creator = GER
+					name = "ANS Gladiole"  #Austrian Naval Ship
+				}
+				create_ship = {
+					type = ship_hull_light_2   
+					equipment_variant = "Zerstörer 1934A Class"
+					creator = GER
+					name = "ANS Nelke"  #Austrian Naval Ship
+				}
+				add_political_power = -120
+			}
+			add_political_power = 120
+			remove_ideas = idea_dockyard_allies
+		}
+		
+		complete_effect = {
+			add_ideas = idea_dockyard_allies
+		}
+		
+		ai_will_do = {
+			factor = 8
+		}
+	}
+	
+	GER_venetian_capital = {
+
+		icon = GFX_decision_generic_nationalism
+
+		available = {
+			has_completed_focus = GER_build_for_allies
+			NOT = {
+				has_idea = idea_dockyard_allies
+				has_completed_focus = GER_special_elections
+			}
+		}
+		
+		cost = 25
+
+		visible = {
+			has_completed_focus = GER_build_for_allies
+			NOT = {
+				has_completed_focus = GER_special_elections
+			}
+		}
+
+		fire_only_once = yes
+
+		days_remove = 360
+		remove_effect = {
+			SAN = {
+				create_ship = {
+					type = ship_hull_cruiser_panzerschiff 
+					equipment_variant = "Deutschland Class"
+					creator = GER
+					name = "Honor"
+				}
+				add_political_power = -100
+			}
+			add_political_power = 100
+			remove_ideas = idea_dockyard_allies
+		}
+		
+		complete_effect = {
+			add_ideas = idea_dockyard_allies
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+	}
+	
+	GER_venetian_lcruiser = {
+
+		icon = GFX_decision_generic_nationalism
+
+		available = {
+			has_completed_focus = GER_build_for_allies
+			NOT = {
+				has_idea = idea_dockyard_allies
+				has_completed_focus = GER_special_elections
+			}
+		}
+		
+		cost = 25
+
+		visible = {
+			has_completed_focus = GER_build_for_allies
+			NOT = {
+				has_completed_focus = GER_special_elections
+			}
+		}
+
+		fire_only_once = yes
+
+		days_remove = 180
+		remove_effect = {
+			SAN = {
+				create_ship = {
+					type = ship_hull_cruiser_2  
+					equipment_variant = "Leipzig Class"
+					creator = GER
+					name = "Ludovico Manin" 
+				}
+				add_political_power = -75
+			}
+			add_political_power = 75
+			remove_ideas = idea_dockyard_allies
+		}
+		
+		complete_effect = {
+			add_ideas = idea_dockyard_allies
+		}
+		
+		ai_will_do = {
+			factor = 9
+		}
+	}
+	
+	GER_venetian_destroyer = {
+
+		icon = GFX_decision_generic_nationalism
+
+		available = {
+			has_completed_focus = GER_build_for_allies
+			NOT = {
+				has_idea = idea_dockyard_allies
+				has_completed_focus = GER_special_elections
+			}
+		}
+		
+		cost = 25
+
+		visible = {
+			has_completed_focus = GER_build_for_allies
+			NOT = {
+				has_completed_focus = GER_special_elections
+			}
+		}
+
+		fire_only_once = yes
+
+		days_remove = 360
+		remove_effect = {
+			AUS = {
+				create_ship = {
+					type = ship_hull_light_2   
+					equipment_variant = "Zerstörer 1934A Class"
+					creator = GER
+					name = "San Marco"  
+				}
+				create_ship = {
+					type = ship_hull_light_2   
+					equipment_variant = "Zerstörer 1934A Class"
+					creator = GER
+					name = "Rialto"  
+				}
+				create_ship = {
+					type = ship_hull_light_2   
+					equipment_variant = "Zerstörer 1934A Class"
+					creator = GER
+					name = "Saint Mark"  
+				}
+				add_political_power = -120
+			}
+			add_political_power = 120
+			remove_ideas = idea_dockyard_allies
+		}
+		
+		complete_effect = {
+			add_ideas = idea_dockyard_allies
+		}
+		
+		ai_will_do = {
+			factor = 8
+		}
+	}
+
+
+
+}

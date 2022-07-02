@@ -1,0 +1,1657 @@
+
+CZE_transylvania_category = {
+
+	CZE_north_trans_breakaway = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+			76 = { 
+				NOT = { 
+					is_core_of = CZE 
+				}
+				is_owned_and_controlled_by = CZE
+			}
+		}
+		
+		activation = {
+			has_country_flag = CZE_transylvania_problem_flag
+		}
+		
+		available = {
+			76 = {
+				is_core_of = CZE
+			}
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		is_good = no
+		
+		days_mission_timeout = 400
+		
+		timeout_effect = {
+			random_list = {
+				75 = {
+					76 = { 
+						transfer_state_to = MOL 
+						hidden_effect = { add_claim_by = CZE }
+						add_core_of = MOL
+					}
+				}
+				25 = {
+					76 = { 
+						transfer_state_to = ROM
+						hidden_effect = { add_claim_by = CZE }
+						add_core_of = ROM
+					}
+				}
+				
+			}
+		}
+	}
+	
+	CZE_north_trans_breakaway_1 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			76 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			76 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		days_re_enable = 30
+		
+		cost = 10
+		
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = CZE_north_trans_breakaway
+				days = 20
+			}
+		}
+	}
+	
+	CZE_north_trans_breakaway_2 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			76 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			76 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		days_re_enable = 30
+		
+		cost = 25
+		
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = CZE_north_trans_breakaway
+				days = 50
+			}
+		}
+	}
+	
+	CZE_north_trans_breakaway_3 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			76 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			76 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		days_re_enable = 30
+		
+		cost = 40
+		
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = CZE_north_trans_breakaway
+				days = 100
+			}
+		}
+	}
+	
+	CZE_north_trans_stop_breakaway_1 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			76 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			76 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		modifier = {
+			political_power_gain = -0.05
+		}
+		
+		fire_only_once = yes
+	
+		days_remove = 120
+		
+		remove_effect = {
+			random_list = {
+				10 = {
+					add_state_core = 76
+				}
+				90 = {
+					
+				}
+			}
+			hidden_effect = {
+				set_country_flag = CZE_north_trans_stop_breakaway_1_flag
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	CZE_north_trans_stop_breakaway_2 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			76 = { NOT = { is_core_of = CZE } }
+			has_country_flag = CZE_north_trans_stop_breakaway_1_flag
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		modifier = {
+			political_power_gain = -0.1
+		}
+		
+		available = {
+			76 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		fire_only_once = yes
+	
+		days_remove = 120
+		
+		remove_effect = {
+			random_list = {
+				50 = {
+					add_state_core = 76
+				}
+				50 = {
+					
+				}
+				
+			}
+			hidden_effect = {
+				set_country_flag = CZE_north_trans_stop_breakaway_2_flag
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	CZE_north_trans_stop_breakaway_3 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			76 = { NOT = { is_core_of = CZE } }
+			has_country_flag = CZE_north_trans_stop_breakaway_2_flag
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			76 = { 
+				NOT = { 
+					is_core_of = CZE 
+				} 
+			}
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		modifier = {
+			political_power_gain = -0.15
+		}
+		
+		days_re_enable = 0
+	
+		days_remove = 120
+		
+		remove_effect = {
+			random_list = {
+				90 = {
+					add_state_core = 76
+				}
+				10 = {
+					
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	CZE_trans_breakaway = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			84 = {
+				is_owned_and_controlled_by = CZE
+			}
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		activation = {
+			has_country_flag = CZE_transylvania_problem_flag
+		}
+		
+		available = {
+			84 = {
+				is_core_of = CZE
+			}
+			
+		}
+		
+		is_good = no
+		
+		days_mission_timeout = 400
+		
+		timeout_effect = {
+			random_list = {
+				25 = {
+					84 = { 
+						transfer_state_to = MOL 
+						hidden_effect = { add_claim_by = CZE }
+						add_core_of = MOL
+					}
+				}
+				75 = {
+					84 = { 
+						transfer_state_to = ROM
+						hidden_effect = { add_claim_by = CZE }
+						add_core_of = ROM
+					}
+				}
+				
+			}
+		}
+	}
+	
+	CZE_trans_breakaway_1 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			84 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			84 = { NOT = { is_core_of = CZE } }
+		}
+		
+		days_re_enable = 30
+		
+		cost = 10
+		
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = CZE_trans_breakaway
+				days = 20
+			}
+		}
+	}
+	
+	CZE_trans_breakaway_2 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			84 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			84 = { NOT = { is_core_of = CZE } }
+		}
+		
+		days_re_enable = 30
+		
+		cost = 25
+		
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = CZE_trans_breakaway
+				days = 50
+			}
+		}
+	}
+	
+	CZE_trans_breakaway_3 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			84 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			84 = { NOT = { is_core_of = CZE } }
+		}
+		
+		days_re_enable = 30
+		
+		cost = 40
+		
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = CZE_trans_breakaway
+				days = 100
+			}
+		}
+	}
+	
+	CZE_trans_stop_breakaway_1 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			84 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			84 = { NOT = { is_core_of = CZE } }
+		}
+		
+		modifier = {
+			political_power_gain = -0.05
+		}
+		
+		fire_only_once = yes
+	
+		days_remove = 120
+		
+		remove_effect = {
+			random_list = {
+				10 = {
+					add_state_core = 84
+				}
+				90 = {
+					
+				}
+			}
+			hidden_effect = {
+				set_country_flag = CZE_trans_stop_breakaway_1_flag
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	CZE_trans_stop_breakaway_2 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			84 = { NOT = { is_core_of = CZE } }
+			has_country_flag = CZE_trans_stop_breakaway_1_flag
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		modifier = {
+			political_power_gain = -0.1
+		}
+		
+		available = {
+			84 = { NOT = { is_core_of = CZE } }
+		}
+		
+		fire_only_once = yes
+	
+		days_remove = 120
+		
+		remove_effect = {
+			random_list = {
+				50 = {
+					add_state_core = 84
+				}
+				50 = {
+					
+				}
+				
+			}
+			hidden_effect = {
+				set_country_flag = CZE_trans_stop_breakaway_2_flag
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	CZE_trans_stop_breakaway_3 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			84 = { NOT = { is_core_of = CZE } }
+			has_country_flag = CZE_trans_stop_breakaway_2_flag
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			84 = { NOT = { is_core_of = CZE } }
+		}
+		
+		modifier = {
+			political_power_gain = -0.15
+		}
+		
+		days_re_enable = 0
+	
+		days_remove = 120
+		
+		remove_effect = {
+			random_list = {
+				90 = {
+					add_state_core = 84
+				}
+				10 = {
+					
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	CZE_crisana_breakaway = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			83 = {
+				is_owned_and_controlled_by = CZE
+			}
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		activation = {
+			has_country_flag = CZE_transylvania_problem_flag
+		}
+		
+		available = {
+			83 = {
+				is_core_of = CZE
+			}
+			
+		}
+		
+		is_good = no
+		
+		days_mission_timeout = 400
+		
+		timeout_effect = {
+			random_list = {
+				50 = {
+					83 = { 
+						transfer_state_to = MOL 
+						hidden_effect = { add_claim_by = CZE }
+						add_core_of = MOL
+					}
+				}
+				50 = {
+					83 = { 
+						transfer_state_to = ROM
+						hidden_effect = { add_claim_by = CZE }
+						add_core_of = ROM
+					}
+				}
+			}
+		}
+	}
+	
+	CZE_crisana_breakaway_1 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			83 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			83 = { NOT = { is_core_of = CZE } }
+		}
+		
+		days_re_enable = 30
+		
+		cost = 10
+		
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = CZE_crisana_breakaway
+				days = 20
+			}
+		}
+	}
+	
+	CZE_crisana_breakaway_2 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			83 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			83 = { NOT = { is_core_of = CZE } }
+		}
+		
+		days_re_enable = 30
+		
+		cost = 25
+		
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = CZE_crisana_breakaway
+				days = 50
+			}
+		}
+	}
+	
+	CZE_crisana_breakaway_3 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			83 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			83 = { NOT = { is_core_of = CZE } }
+		}
+		
+		days_re_enable = 30
+		
+		cost = 40
+		
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = CZE_crisana_breakaway
+				days = 100
+			}
+		}
+	}
+	
+	CZE_crisana_stop_breakaway_1 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			83 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			83 = { NOT = { is_core_of = CZE } }
+		}
+		
+		modifier = {
+			political_power_gain = -0.05
+		}
+		
+		fire_only_once = yes
+	
+		days_remove = 120
+		
+		remove_effect = {
+			random_list = {
+				25 = {
+					add_state_core = 83
+				}
+				75 = {
+					
+				}
+			}
+			hidden_effect = {
+				set_country_flag = CZE_crisana_stop_breakaway_1_flag
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	CZE_crisana_stop_breakaway_2 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			83 = { NOT = { is_core_of = CZE } }
+			has_country_flag = CZE_crisana_stop_breakaway_1_flag
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		modifier = {
+			political_power_gain = -0.1
+		}
+		
+		available = {
+			83 = { NOT = { is_core_of = CZE } }
+		}
+		
+		fire_only_once = yes
+	
+		days_remove = 120
+		
+		remove_effect = {
+			random_list = {
+				75 = {
+					add_state_core = 83
+				}
+				25 = {
+					
+				}
+				
+			}
+			hidden_effect = {
+				set_country_flag = CZE_crisana_stop_breakaway_2_flag
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	CZE_crisana_stop_breakaway_3 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			83 = { NOT = { is_core_of = CZE } }
+			has_country_flag = CZE_crisana_stop_breakaway_2_flag
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			83 = { NOT = { is_core_of = CZE } }
+		}
+		
+		modifier = {
+			political_power_gain = -0.15
+		}
+		
+		days_re_enable = 0
+	
+		days_remove = 120
+		
+		remove_effect = {
+			random_list = {
+				95 = {
+					add_state_core = 83
+				}
+				5 = {
+					
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	CZE_banat_breakaway = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			82 = {
+				is_owned_and_controlled_by = CZE
+			}
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		activation = {
+			has_country_flag = CZE_transylvania_problem_flag
+		}
+		
+		available = {
+			82 = {
+				is_core_of = CZE
+			}
+			
+		}
+		
+		is_good = no
+		
+		days_mission_timeout = 400
+		
+		timeout_effect = {
+			random_list = {
+				50 = {
+					82 = { 
+						transfer_state_to = MOL 
+						hidden_effect = { add_claim_by = CZE }
+						add_core_of = MOL
+					}
+				}
+				50 = {
+					82 = { 
+						transfer_state_to = ROM
+						hidden_effect = { add_claim_by = CZE }
+						add_core_of = ROM
+					}
+				}
+				
+			}
+		}
+	}
+	
+	CZE_banat_breakaway_1 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			82 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			82 = { NOT = { is_core_of = CZE } }
+		}
+		
+		days_re_enable = 30
+		
+		cost = 10
+		
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = CZE_banat_breakaway
+				days = 20
+			}
+		}
+	}
+	
+	CZE_banat_breakaway_2 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			82 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			82 = { NOT = { is_core_of = CZE } }
+		}
+		
+		days_re_enable = 30
+		
+		cost = 25
+		
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = CZE_banat_breakaway
+				days = 50
+			}
+		}
+	}
+	
+	CZE_banat_breakaway_3 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			82 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			82 = { NOT = { is_core_of = CZE } }
+		}
+		
+		days_re_enable = 30
+		
+		cost = 40
+		
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = CZE_banat_breakaway
+				days = 100
+			}
+		}
+	}
+	
+	CZE_banat_stop_breakaway_1 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			82 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			82 = { NOT = { is_core_of = CZE } }
+		}
+		
+		modifier = {
+			political_power_gain = -0.05
+		}
+		
+		fire_only_once = yes
+	
+		days_remove = 120
+		
+		remove_effect = {
+			random_list = {
+				25 = {
+					add_state_core = 82
+				}
+				75 = {
+					
+				}
+			}
+			hidden_effect = {
+				set_country_flag = CZE_banat_stop_breakaway_1_flag
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	CZE_banat_stop_breakaway_2 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			82 = { NOT = { is_core_of = CZE } }
+			has_country_flag = CZE_banat_stop_breakaway_1_flag
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		modifier = {
+			political_power_gain = -0.1
+		}
+		
+		available = {
+			82 = { NOT = { is_core_of = CZE } }
+		}
+		
+		fire_only_once = yes
+	
+		days_remove = 120
+		
+		remove_effect = {
+			random_list = {
+				75 = {
+					add_state_core = 82
+				}
+				25 = {
+					
+				}
+				
+			}
+			hidden_effect = {
+				set_country_flag = CZE_banat_stop_breakaway_2_flag
+				}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	CZE_banat_stop_breakaway_3 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			82 = { NOT = { is_core_of = CZE } }
+			has_country_flag = CZE_banat_stop_breakaway_2_flag
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			82 = { NOT = { is_core_of = CZE } }
+		}
+		
+		modifier = {
+			political_power_gain = -0.15
+		}
+		
+		days_re_enable = 0
+	
+		days_remove = 120
+		
+		remove_effect = {
+			random_list = {
+				95 = {
+					add_state_core = 82
+				}
+				5 = {
+					
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	CZE_westbanat_breakaway = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			764 = {
+				is_owned_and_controlled_by = CZE
+			}
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		activation = {
+			has_country_flag = CZE_transylvania_problem_flag
+		}
+		
+		available = {
+			764 = {
+				is_core_of = CZE
+			}
+			
+		}
+		
+		
+		
+		is_good = no
+		
+		days_mission_timeout = 400
+		
+		timeout_effect = {
+			random_list = {
+				50 = {
+					764 = { 
+						transfer_state_to = MOL 
+						hidden_effect = { add_claim_by = CZE }
+						add_core_of = MOL
+					}
+				}
+				50 = {
+					764 = { 
+						transfer_state_to = ROM
+						hidden_effect = { add_claim_by = CZE }
+						add_core_of = ROM
+					}
+				}
+				
+			}
+		}
+	}
+	
+	CZE_west_banat_breakaway_1 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			764 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			764 = { NOT = { is_core_of = CZE } }
+		}
+		
+		days_re_enable = 30
+		
+		cost = 10
+		
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = CZE_westbanat_breakaway
+				days = 20
+			}
+		}
+	}
+	
+	CZE_west_banat_breakaway_2 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			764 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			764 = { NOT = { is_core_of = CZE } }
+		}
+		
+		days_re_enable = 30
+		
+		cost = 25
+		
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = CZE_westbanat_breakaway
+				days = 50
+			}
+		}
+	}
+	
+	CZE_west_banat_breakaway_3 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			764 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			764 = { NOT = { is_core_of = CZE } }
+		}
+		
+		days_re_enable = 30
+		
+		cost = 40
+		
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = CZE_westbanat_breakaway
+				days = 100
+			}
+		}
+	}
+	
+	CZE_west_banat_stop_breakaway_1 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			764 = { NOT = { is_core_of = CZE } }
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			764 = { NOT = { is_core_of = CZE } }
+		}
+		
+		modifier = {
+			political_power_gain = -0.05
+		}
+		
+		fire_only_once = yes
+	
+		days_remove = 120
+		
+		remove_effect = {
+			random_list = {
+				25 = {
+					add_state_core = 764
+				}
+				75 = {
+					
+				}
+			}
+			hidden_effect = {
+				set_country_flag = CZE_west_banat_stop_breakaway_1_flag
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	CZE_west_banat_stop_breakaway_2 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			764 = { NOT = { is_core_of = CZE } }
+			has_country_flag = CZE_west_banat_stop_breakaway_1_flag
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		modifier = {
+			political_power_gain = -0.1
+		}
+		
+		available = {
+			764 = { NOT = { is_core_of = CZE } }
+		}
+		
+		fire_only_once = yes
+	
+		days_remove = 120
+		
+		remove_effect = {
+			random_list = {
+				50 = {
+					add_state_core = 764
+				}
+				50 = {
+					
+				}
+				
+			}
+			hidden_effect = {
+				set_country_flag = CZE_west_banat_stop_breakaway_2_flag
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	CZE_west_banat_stop_breakaway_3 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			764 = { NOT = { is_core_of = CZE } }
+			has_country_flag = CZE_west_banat_stop_breakaway_2_flag
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			764 = { NOT = { is_core_of = CZE } }
+		}
+		
+		modifier = {
+			political_power_gain = -0.15
+		}
+		
+		days_re_enable = 0
+	
+		days_remove = 120
+		
+		remove_effect = {
+			random_list = {
+				75 = {
+					add_state_core = 764
+				}
+				25 = {
+					set_country_flag = CZE_west_banat_stop_breakaway_3_flag
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	CZE_west_banat_stop_breakaway_4 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_transylvania_problem
+			764 = { NOT = { is_core_of = CZE } }
+			has_country_flag = CZE_west_banat_stop_breakaway_3_flag
+			NOT = { has_completed_focus = CZE_transylvania_solution }
+		}
+		
+		available = {
+			764 = { NOT = { is_core_of = CZE } }
+		}
+		
+		fire_only_once = yes
+	
+		complete_effect = {
+			764 = { 
+				transfer_state_to = SER 
+			}
+		}
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+political_actions = {
+
+	CZE_core_hun_155 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_country_flag = CZE_core_hungarians
+		}
+		
+		allowed = { tag = CZE }
+		
+		modifier = {
+			political_power_gain = -0.1
+		}
+		
+		fire_only_once = yes
+	
+		days_remove = 150
+		
+		remove_effect = {
+			add_state_core = 155
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		
+	}
+	
+	CZE_core_hun_43 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_country_flag = CZE_core_hungarians
+		}
+		
+		allowed = { tag = CZE }
+		
+		modifier = {
+			political_power_gain = -0.1
+		}
+		
+		fire_only_once = yes
+	
+		days_remove = 150
+		
+		remove_effect = {
+			add_state_core = 43
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		
+	}
+	
+	CZE_core_hun_154 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_country_flag = CZE_core_hungarians
+		}
+		
+		allowed = { tag = CZE }
+		
+		modifier = {
+			political_power_gain = -0.1
+		}
+		
+		fire_only_once = yes
+	
+		days_remove = 150
+		
+		remove_effect = {
+			add_state_core = 154
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		
+	}
+	
+	CZE_combine_spainish_crown1 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			SPR = { is_subject_of = CZE }
+		}
+		
+		allowed = { tag = CZE }
+		
+		available = {
+			SPR = { is_subject_of = CZE }
+		}
+		
+		fire_only_once = yes
+		
+		modifier = {
+			political_power_gain = -0.15
+		}
+		
+		days_remove = 100
+		remove_effect = {
+			set_country_flag = CZE_spanish_annex1
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+		
+	}
+	
+	CZE_combine_spainish_crown2 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			SPR = { is_subject_of = CZE }
+			has_country_flag = CZE_spanish_annex1
+		}
+		
+		allowed = { tag = CZE }
+		
+		available = {
+			SPR = { is_subject_of = CZE }
+		}
+		
+		fire_only_once = yes
+		
+		modifier = {
+			political_power_gain = -0.15
+		}
+		
+		days_remove = 150
+		remove_effect = {
+			set_country_flag = CZE_spanish_annex2
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+		
+	}
+	
+	CZE_combine_spainish_crown3 = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			SPR = { is_subject_of = CZE }
+			has_country_flag = CZE_spanish_annex2
+		}
+		
+		allowed = { tag = CZE }
+		
+		available = {
+			SPR = { is_subject_of = CZE }
+		}
+		
+		fire_only_once = yes
+		
+		modifier = {
+			political_power_gain = -0.15
+		}
+		
+		days_remove = 200
+		remove_effect = {
+			hidden_effect = {
+				SPR = {
+					transfer_navy = { target = CZE }
+					send_equipment_fraction = {
+						value = 1
+						target = CZE
+					}
+					every_core_state = {
+						add_core_of = CZE
+					}
+					SPR = {
+						every_unit_leader = {
+							limit = {  }
+							set_nationality = CZE
+						}
+					}
+				}
+			}
+			CZE = {
+				annex_country = {
+					target = SPR
+					transfer_troops = yes
+				}
+			}
+			add_political_power = 100
+			
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+		
+	}
+	
+}
+
+CZE_arms_sale_category = {
+
+	CZE_weapon_sales = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_question_of_arms
+		}
+		
+		activation = {
+			has_idea = idea_czech_export_focus
+		}
+		
+		available = {
+			NOT = {
+				has_idea = idea_czech_export_focus
+			}
+		}
+		
+		days_re_enable = 1
+		
+		is_good = yes
+		
+		days_mission_timeout = 180
+		
+		timeout_effect = {
+			random_list = {
+				20 = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = -25
+						producer = CZE
+					}
+				}
+				20 = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = -50
+						producer = CZE
+					}
+				}
+				20 = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = -100
+						producer = CZE
+					}
+				}
+				20 = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = -250
+						producer = CZE
+					}
+				}
+				20 = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment
+						amount = -1000
+						producer = CZE
+					}
+				}
+			}
+			random_list = {
+				25 = {
+					add_political_power = 50
+				}
+				25 = {
+					add_political_power = 100
+				}
+				25 = {
+					add_political_power = -50
+				}
+				25 = {
+					add_political_power = -100
+				}
+			}
+		}
+	}
+	
+	CZE_stop_arms_exports = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_question_of_arms
+		}
+		
+		available = {
+			has_idea = idea_czech_export_focus
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			remove_ideas = idea_czech_export_focus
+			set_country_flag = CZE_stopped_exports
+		}
+		
+		days_remove = 360
+		remove_effect = {
+			clr_country_flag = CZE_stopped_exports
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	CZE_resume_arms_exports = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		visible = {
+			has_completed_focus = CZE_question_of_arms
+		}
+		
+		available = {
+			NOT = {
+				has_idea = idea_czech_export_focus
+			}
+			NOT = {
+				has_country_flag = CZE_stopped_exports
+			}
+		}
+		
+		fire_only_once = no
+		
+		complete_effect = {
+			add_ideas = idea_czech_export_focus
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+}
+
+
+
+
+

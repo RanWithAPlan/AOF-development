@@ -1,0 +1,91 @@
+units = {
+
+	fleet = {
+		name = "Naval Expeditionary Force"
+		naval_base = 6384
+		task_force = {
+			name = "Naval Expeditionary Force 'Fraternity'"
+			location = 6384
+			ship = { 
+				name = "Aurora"
+				definition = light_cruiser
+				start_experience_factor = 0.15
+				equipment = { 
+					ship_hull_cruiser_1 = { 
+						amount = 1 
+						owner = CRR
+						version_name = "Chernov Class"
+					}
+				}
+			}
+			ship = { 
+				name = "Sposobny"
+				definition = light_cruiser
+				start_experience_factor = 0.15
+				equipment = { 
+					ship_hull_cruiser_1 = { 
+						amount = 1 
+						owner = CRR
+						version_name = "Chernov Class"
+					}
+				}
+			}
+		}
+		task_force = {
+			name = "Naval Expeditionary Force 'Equality'"
+			location = 3379
+			ship = { 
+				name = "Stoykiy"
+				definition = light_cruiser
+				start_experience_factor = 0.15
+				equipment = { 
+					ship_hull_cruiser_1 = { 
+						amount = 1 
+						owner = CRR
+						version_name = "Chernov Class"
+					}
+				}
+			}
+			ship = { 
+				name = "Vdumchivyy"
+				definition = light_cruiser
+				start_experience_factor = 0.15
+				equipment = { 
+					ship_hull_cruiser_1 = { 
+						amount = 1 
+						owner = CRR
+						version_name = "Chernov Class"
+					}
+				}
+			}
+		}
+		task_force = {
+			name = "Naval Expeditionary Force 'Liberty'"
+			location = 6395
+			ship = { 
+				name = "Okrylennyy"
+				definition = light_cruiser
+				start_experience_factor = 0.15
+				equipment = { 
+					ship_hull_cruiser_1 = { 
+						amount = 1 
+						owner = CRR
+						version_name = "Chernov Class"
+					}
+				}
+			}
+			ship = { 
+				name = "Otlichnyy"
+				definition = light_cruiser
+				start_experience_factor = 0.15
+				equipment = { 
+					ship_hull_cruiser_1 = { 
+						amount = 1 
+						owner = CRR
+						version_name = "Chernov Class"
+					}
+				}
+			}
+		}
+	}
+}

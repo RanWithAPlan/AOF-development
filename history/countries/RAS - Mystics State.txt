@@ -1,0 +1,39 @@
+capital = 403
+
+set_rule = {
+	can_join_factions = no
+}
+
+oob = "RAS_1936"
+
+set_research_slots = 1
+
+recruit_character = RAS_rasputin_f
+recruit_character = RAS_rasputin_d
+recruit_character = RAS_rasputin_n
+recruit_character = RAS_rasputin_c
+
+add_ideas = idea_frozen_war_army
+add_ideas = idea_years_of_war
+add_ideas = idea_donativum
+
+
+set_stability = 1
+set_war_support = 1
+
+set_popularities = {
+	neutrality = 100
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1934.7.12"
+	election_frequency = 60
+	elections_allowed = no
+}
+
+
+
+set_technology = {
+ 	infantry_weapons = 1
+}

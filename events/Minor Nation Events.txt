@@ -1,0 +1,130 @@
+#################################
+# 1848 Minor Nation Events		#
+#################################
+
+add_namespace = mod_minors
+
+
+country_event = {
+	id = mod_minors.1
+	title = mod_minors.1.t
+	desc = mod_minors.1.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_minors.1.a # Danish King joins
+		ai_chance = {
+			factor = 40
+		}	
+		SWE = {
+			country_event = { id = mod_minors.2 days = 7 }
+		}
+	}
+	option = {
+		name = mod_minors.1.b # Danish King refuses
+		ai_chance = {
+			factor = 10
+		}
+		SWE = {
+			country_event = { id = mod_minors.3 days = 7 }
+		}
+	}
+}
+
+
+country_event = {
+	id = mod_minors.2 # Danish King joins
+	title = mod_minors.2.t
+	desc = mod_minors.2.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_minors.2.a
+		ai_chance = {
+			factor = 40
+		}	
+		SWE = {
+			set_rule = {
+				can_create_factions = yes
+			}
+			create_faction = SWE_scandinavian_shield
+			add_to_faction = ICE
+		}
+		hidden_effect = {
+			SWE = {
+				add_ai_strategy = {
+					type = prepare_for_war
+					id = DEN
+					value = 200
+				}
+			}
+			ICE = {
+				add_ai_strategy = {
+					type = prepare_for_war
+					id = DEN
+					value = 200
+				}
+			}
+			DEN = {
+				every_core_state = {
+					add_core_of = ICE
+				}
+				add_ai_strategy = {
+					type = prepare_for_war
+					id = SWE
+					value = 200
+				}
+			}
+			country_event = { id = mod_minors.4 days = 42 }
+		}
+	}
+}
+
+country_event = {
+	id = mod_minors.3 # Danish King refuses
+	title = mod_minors.3.t
+	desc = mod_minors.3.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_minors.3.a
+		ai_chance = {
+			factor = 40
+		}	
+		add_political_power = -10
+		hidden_effect = {
+			clr_country_flag = SWE_join_faction
+		}
+	}
+}
+
+country_event = {
+	id = mod_minors.4
+	title = mod_minors.4.t
+	desc = mod_minors.4.d
+	picture = GFX_report_event_usa_election_generic
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_minors.4.a
+		ai_chance = {
+			factor = 40
+		}	
+		create_wargoal = {
+			target = DEN
+			type = annex_everything
+		}
+	}
+}
+

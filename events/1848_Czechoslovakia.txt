@@ -1,0 +1,717 @@
+#########################
+#	1848 Czech Events	#
+#########################
+
+add_namespace = mod_czech
+
+country_event = {
+	id = mod_czech.1
+	title = mod_czech.1.t
+	desc = mod_czech.1.d
+	picture = GFX_report_event_soldiers_marching
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.1.a
+		ai_chance = {
+			factor = 10
+		}
+		69 = { set_demilitarized_zone = no }
+	}
+}
+
+country_event = {
+	id = mod_czech.2
+	title = mod_czech.2.t
+	desc = mod_czech.2.d
+	picture = GFX_report_event_generic_rifles
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.2.a
+		ai_chance = {
+			factor = 10
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 1000
+			producer = CZE
+		}
+	}
+}
+
+country_event = {
+	id = mod_czech.3
+	title = mod_czech.3.t
+	desc = mod_czech.3.d
+	picture = GFX_report_event_generic_factory
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.3.a # arms for export
+		ai_chance = {
+			factor = 30
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 100
+			}
+		}
+		add_ideas = idea_czech_export_focus
+		set_global_flag = CZE_arms_for_the_world
+	}
+	option = {
+		name = mod_czech.3.b # arms for people
+		ai_chance = {
+			factor = 10
+		}
+		add_ideas = idea_czech_people_armed
+	}
+}
+
+country_event = {
+	id = mod_czech.4 #'sudden' Transylvania rebellion
+	title = mod_czech.4.t
+	desc = mod_czech.4.d
+	picture = GFX_report_event_spr_anarchist_uprising2
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.4.a 
+		ai_chance = {
+			factor = 10
+		}
+		add_ideas = idea_czech_trans_rebellion
+	}
+}
+
+country_event = {
+	id = mod_czech.5 
+	title = mod_czech.5.t
+	desc = mod_czech.5.d
+	picture = GFX_report_event_hitler_parade
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.5.a # accept annexation
+		ai_chance = {
+			factor = 25
+		}
+		CZE = { country_event = { id = mod_czech.6 days = 14 } }
+	}
+	option = {
+		name = mod_czech.5.b # refuse annexation
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		CZE = { country_event = { id = mod_czech.7 days = 14 } }
+	}
+}
+
+country_event = {
+	id = mod_czech.6
+	title = mod_czech.6.t
+	desc = mod_czech.6.d
+	picture = GFX_report_event_hitler_handshake
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.6.a 
+		ai_chance = {
+			factor = 10
+		}
+		transfer_state = 69
+		CZE = { add_state_core = 69 }
+		diplomatic_relation = {
+			country = GER
+			relation = non_aggression_pact
+		}
+		diplomatic_relation = {
+			country = AUS
+			relation = non_aggression_pact
+		}
+	}
+}
+
+country_event = {
+	id = mod_czech.7
+	title = mod_czech.7.t
+	desc = mod_czech.7.d
+	picture = GFX_report_event_hitler_parade
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.7.a 
+		ai_chance = {
+			factor = 10
+		}
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = GER
+		}
+	}
+}
+
+country_event = {
+	id = mod_czech.8 #Slovakia isn't doing great
+	title = mod_czech.8.t
+	desc = mod_czech.8.d
+	picture = GFX_report_event_usa_election_generic
+	
+	fire_only_once = yes
+	
+	hidden = yes
+	
+	trigger = {
+		tag = SLO
+		has_war_with = HUN
+		OR = {
+			has_manpower < 0
+			surrender_progress > 0.25
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			CZE = {
+				country_event = { id = mod_czech.9 }
+			}
+			set_country_flag = CZE_help_needed
+		}
+	}
+	
+	option = {
+		
+	}
+}
+
+country_event = {
+	id = mod_czech.9
+	title = mod_czech.9.t
+	desc = mod_czech.9.d
+	picture = GFX_report_event_tur_machine_gunners
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.9.a 
+		ai_chance = {
+			factor = 10
+		}
+		puppet = SLO
+		SLO = {
+			declare_war_on = {
+				target = HUN
+				type = annex_everything
+			}
+		}
+		declare_war_on = {
+			target = HUN
+			type = annex_everything
+		}
+		hidden_effect = {
+			add_state_claim = 664
+			add_state_claim = 155
+			add_state_claim = 43
+			add_state_claim = 154
+			add_state_claim = 764
+			add_state_claim = 82
+			add_state_claim = 83
+			add_state_claim = 76
+			add_state_claim = 84
+			remove_ideas = idea_czech_proxy_soldiers
+		}
+	}
+}
+
+country_event = {
+	id = mod_czech.10
+	title = mod_czech.10.t
+	desc = mod_czech.10.d
+	picture = GFX_report_event_hungary_parliament
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.10.a 
+		ai_chance = {
+			factor = 10
+		}
+		add_state_core = 155
+		add_state_core = 43
+		add_state_core = 154
+		add_stability = 0.1
+	}
+}
+
+country_event = {
+	id = mod_czech.11
+	title = mod_czech.11.t
+	desc = mod_czech.11.d
+	picture = GFX_report_event_crowd_in_prague
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.11.a 
+		ai_chance = {
+			factor = 10
+		}
+		custom_effect_tooltip = core_hungarians_tt
+		hidden_effect = {
+			set_country_flag = CZE_core_hungarians
+		}
+		add_stability = -0.05
+	}
+}
+
+country_event = {
+	id = mod_czech.12
+	title = mod_czech.12.t
+	desc = mod_czech.12.d
+	picture = GFX_report_event_nazis_in_danzig
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.12.a 
+		ai_chance = {
+			factor = 40
+		}
+		release_autonomy = {
+			target = TRA
+			autonomy_state = autonomy_reichskommissariat
+			freedom_level = 0.5
+		}
+		TRA = {
+			promote_character = {
+				character = TRA_dome_sztojay 
+				ideology = nazism
+			}
+			add_ideas = idea_order_of_dragon
+			add_ideas = idea_brother_vs_brother
+			inherit_technology = CZE
+		}
+		hidden_effect = {
+			clr_country_flag = CZE_transylvania_problem_flag
+			MOL = { add_ideas = idea_brother_vs_brother_2 }
+			ROM = { add_ideas = idea_brother_vs_brother_2 }
+			CZE = { country_event = { id = mod_czech.23 days = 8 } }
+		}
+	}
+	option = {
+		name = mod_czech.12.b 
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = 50
+
+		hidden_effect = {
+			clr_country_flag = CZE_transylvania_problem_flag
+		}
+	}
+}
+
+country_event = {
+	id = mod_czech.13
+	title = mod_czech.13.t
+	desc = mod_czech.13.d
+	picture = GFX_report_event_hitler_handshake
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.13.a 
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = 0.1
+	}
+	option = {
+		name = mod_czech.13.b
+		ai_chance = {
+			factor = 10
+		}
+		add_war_support = 0.1
+	}
+}
+
+country_event = {
+	id = mod_czech.14
+	title = mod_czech.14.t
+	desc = mod_czech.14.d
+	picture = GFX_report_event_generic_read_write
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.14.a 
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_war_support > 0.9
+			}
+		}
+		add_war_support = 0.1
+	}
+	option = {
+		name = mod_czech.14.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_stability > 0.9
+			}
+		}
+		add_stability = 0.1
+	}
+}
+
+country_event = {
+	id = mod_czech.15
+	title = mod_czech.15.t
+	desc = mod_czech.15.d
+	picture = GFX_report_event_cze_divided_nation
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.15.a 
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_war_support > 0.9
+			}
+		}
+		add_war_support = 0.1
+		add_ideas = idea_czech_centralization
+	}
+	option = {
+		name = mod_czech.15.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				has_stability > 0.9
+			}
+		}
+		add_stability = 0.1
+		every_owned_state = {
+			if = {
+				limit = {
+						
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_czech.16
+	title = mod_czech.16.t
+	desc = mod_czech.16.d
+	picture = GFX_report_event_royal_visit
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.16.a #Spanish Princess Beatriz of Spain + Personal Union
+		ai_chance = {
+			factor = 100 # obvious choice
+		}
+		trigger = {
+			SPR = { exists = yes }
+		}
+		SPR = {
+			promote_character = {
+				character = SPR_maximilian_habsburg  
+				ideology = fascism_ideology
+			}
+			set_cosmetic_tag = SPR_habs
+			}
+		set_autonomy = {
+			target = SPR
+			autonomy_state = autonomy_personal_union
+			end_wars = no
+			end_civil_wars = no
+		}
+		hidden_effect = {
+			165 = {
+				remove_dynamic_modifier = { modifier = autonomous_state }
+			}
+			171 = {
+				remove_dynamic_modifier = { modifier = autonomous_state }
+			}
+			792 = {
+				remove_dynamic_modifier = { modifier = autonomous_state }
+			}
+			
+		}
+	}
+	option = {
+		name = mod_czech.16.b # British Princess, maybe Lizzy + Alliance FRA; once britain has been conquered by Faction, able to set her up as queen
+		ai_chance = {
+			factor = 10
+		}
+		trigger = {
+			ENG = { has_government = communism }
+			FRA = { exists = yes }
+		}
+		FRA = { add_to_faction = CZE }
+	}
+	option = {
+		name = mod_czech.16.c # Hohenzollern + Alliance GER
+		ai_chance = {
+			factor = 10
+		}
+		trigger = {
+			GER = { exists = yes }
+		}
+		GER = { add_to_faction = CZE }
+	}
+	option = {
+		name = mod_czech.16.e # Portugese Princess + Alliance POR
+		ai_chance = {
+			factor = 10
+		}
+		trigger = {
+			POR = { exists = yes }
+		}
+		CZE = { add_to_faction = POR }
+	}
+	option = {
+		name = mod_czech.16.f # commoner, if no other option exists
+		ai_chance = {
+			factor = 10
+		}
+		trigger = {
+			POR = { exists = no }
+			GER = { exists = no }
+			FRA = { exists = no }
+			SPR = { exists = no }
+		}
+		add_political_power = 25
+	}
+}
+
+country_event = {
+	id = mod_czech.17
+	title = mod_czech.17.t
+	desc = mod_czech.17.d
+	picture = GFX_report_event_generic_sign_treaty3
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.17.a # accept
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 100
+				is_historical_focus_on = yes
+			}
+		}
+		CZE = {
+			add_to_faction = LAT
+			country_event = { id = mod_czech.19 days = 12 }
+		}
+	}
+	option = {
+		name = mod_czech.17.b # refuse
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		CZE = { country_event = { id = mod_czech.18 days = 3 } }
+	}
+}
+
+country_event = {
+	id = mod_czech.18
+	title = mod_czech.18.t
+	desc = mod_czech.18.d
+	picture = GFX_report_event_yugoslavian_cavalry
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.18.a
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -15
+		create_wargoal = {
+			type = take_claimed_state 
+			target = POL
+		}
+		
+	}
+}
+
+country_event = {
+	id = mod_czech.19
+	title = mod_czech.19.t
+	desc = mod_czech.19.d
+	picture = GFX_report_event_yugoslavian_cavalry
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.19.a
+		ai_chance = {
+			factor = 10
+		}
+		create_wargoal = {
+			type = take_claimed_state 
+			target = POL
+		}
+		LAT = {
+			create_wargoal = {
+				type = annex_everything 
+				target = POL
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_czech.20
+	title = mod_czech.20.t
+	desc = mod_czech.20.d
+	picture = GFX_report_event_generic_parliament
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.20.a
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = 0.01
+	}
+}
+
+country_event = {
+	id = mod_czech.21 # Anthem for Habsburg Reich
+	title = mod_czech.21.t
+	desc = mod_czech.21.d
+	picture = GFX_report_event_journalists_speech
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.21.a # Gott erhalte Franz den Kaiser
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = 0.01
+	}
+	option = {
+		name = mod_czech.21.b # Hymne of the Empire
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = 0.01
+	}
+	option = {
+		name = mod_czech.21.c # Land der Berge, Land am Strome
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = 0.01
+	}
+}
+
+country_event = {
+	id = mod_czech.22 # Anthem for Bohemia-Slovakia
+	title = mod_czech.22.t
+	desc = mod_czech.22.d
+	picture = GFX_report_event_journalists_speech
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.22.a # Gott erhalte Franz den Kaiser
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = 0.01
+	}
+	option = {
+		name = mod_czech.22.b # Nad Tatrou sa blýska
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = 0.01
+	}
+	option = {
+		name = mod_czech.22.c # Sei gesegnet ohne Ende
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = 0.01
+	}
+}
+
+country_event = {
+	id = mod_czech.23 # Benno Straucher resigns
+	title = mod_czech.23.t
+	desc = mod_czech.23.d
+	picture = GFX_report_event_communist_leader
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_czech.23.a 
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = -0.01
+		retire_character = CZE_benno_straucher
+	}
+}
+
+
+
+
+
+
+

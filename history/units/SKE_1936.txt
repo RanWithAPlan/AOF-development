@@ -1,0 +1,115 @@
+division_template = {
+	name = "Infantry Brigade"			# Infantry Brigade
+
+	division_names_group = SKE_GAR_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+}
+division_template = {
+	name = "Exiled Gurkha Brigade"			# Infantry Brigade
+
+	division_names_group = SKE_MTN_01
+
+	regiments = {
+		mountaineers  = { x = 0 y = 0 }
+		mountaineers  = { x = 0 y = 1 }
+		mountaineers  = { x = 0 y = 2 }
+		mountaineers  = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+}
+division_template = {
+	name = "Cavalry Brigade"			# Cavalry Brigade
+
+	division_names_group = SKE_CAV_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+	}
+}
+
+
+units = { 
+	
+	division = {
+		name = "5th All-Indian Regiment"
+		location = 3456
+		division_template = "Infantry Brigade"		
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.4
+
+	}
+	division = {
+		name = "9th All-Indian Regiment"
+		location = 1971
+		division_template = "Infantry Brigade"		
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.4
+
+	}
+	division = {
+		name = "Lahore Guards"
+		location = 10887
+		division_template = "Infantry Brigade"		
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.4
+
+	}
+	division = {
+		name = "I. Exiled Gurkha Brigade"
+		location = 10887
+		division_template = "Exiled Gurkha Brigade"		
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}
+	division = {
+		name = "II. Exiled Gurkha Brigade"
+		location = 10887
+		division_template = "Exiled Gurkha Brigade"		
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}
+	division = {
+		name = "VI. Exiled Gurkha Brigade"
+		location = 12763
+		division_template = "Exiled Gurkha Brigade"		
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}
+	
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "SKE"
+		}
+		requested_factories = 1
+		progress = 0.31
+		efficiency = 100
+	}
+}
+
+
+
+
+
+
+

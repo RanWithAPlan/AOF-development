@@ -1,0 +1,22 @@
+characters={
+
+	UZB_fayzulla_khodzhayev = {
+		name = "Fayzulla Ubaydullayevich Khodzhayev"
+		portraits={
+			civilian = {
+				large = "gfx/leaders/RUS/Portrait_fayulla_khodzhayev.dds"
+			}
+		}
+		country_leader = {
+			ideology = socialism
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = -1
+		}
+	}
+	
+	
+	
+	
+	
+}

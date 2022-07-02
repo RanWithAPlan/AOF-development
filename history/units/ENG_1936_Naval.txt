@@ -1,0 +1,378 @@
+﻿units = {
+	##### NAVAL UNITS #####
+	### HOME COMMAND ###
+	fleet = {
+		name = "Home Command"			
+		naval_base = 11064 # Scapa Flow
+		task_force = {
+			name = "Home Fleet"
+			location = 11064 # Scapa Flow
+			ship = { name = "WLNS Furious" definition = carrier start_experience_factor = 0.25 equipment = { ship_hull_carrier_conversion_bb = { amount = 1 owner = ENG version_name = "Courageous Class" } } 
+				air_wings = {
+					cv_fighter_equipment_0 =  { owner = "ENG" amount = 18 }
+					cv_nav_bomber_equipment_1 =  { owner = "ENG" amount = 12 }
+				}
+			}
+			ship = { name = "WLNS Nelson" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Nelson Class" } } }
+			ship = { name = "WLNS Rodney" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Nelson Class" } } }
+			ship = { name = "WLNS Royal Oak" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Revenge Class"} } }
+			ship = { name = "WLNS Ramillies" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Revenge Class"} } }
+			ship = { name = "WLNS Hood" pride_of_the_fleet = yes definition = battle_cruiser start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Admiral Class" } } }
+			ship = { name = "WLNS Repulse" definition = battle_cruiser start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Renown Class" } } }
+			ship = { name = "WLNS Renown" definition = battle_cruiser start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Renown Class" } } }
+			ship = { name = "WLNS Norfolk" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
+			ship = { name = "WLNS Calcutta" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "C-Class"} } }
+			ship = { name = "WLNS Emerald" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Emerald Class" } } }
+			ship = { name = "WLNS Enterprise" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Emerald Class" } } }
+			ship = { name = "WLNS Sabre" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "S Class"} } }
+			ship = { name = "WLNS Shikari" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "S Class"} } }
+			### 6th Destroyer Flotilla
+			ship = { name = "WLNS Keith" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }
+			# Destroyer Division 11
+			ship = { name = "WLNS Venetia" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			ship = { name = "WLNS Vanessa" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			ship = { name = "WLNS Viscount" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			ship = { name = "WLNS Wessex" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			# Destroyer Division 12
+			ship = { name = "WLNS Vesper" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			ship = { name = "WLNS Vivacious" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			ship = { name = "WLNS Wakeful" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }
+			### 8th Destroyer Flotilla
+			ship = { name = "WLNS Faulknor" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }
+			# Destroyer Division 15
+			ship = { name = "WLNS Foxhound" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } } 						# to RCN as Qu'Appelle, 1943	
+			ship = { name = "WLNS Fury" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }
+			ship = { name = "WLNS Fearless" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }
+			ship = { name = "WLNS Forester" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }
+			# Destroyer Division 16
+			ship = { name = "WLNS Fame" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }
+			ship = { name = "WLNS Firedrake" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }
+			ship = { name = "WLNS Foresight" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }
+			ship = { name = "WLNS Fortune" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = ENG version_name = "E/F/G/H Class"} } }							# to RCN as Saskatchewan, 1943	
+		}				
+		task_force = {				
+			name = "Reserve Fleet"			
+			location = 9458 # Portsmouth
+			ship = { name = "WLNS Elizabeth" definition = battleship equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Queen Elizabeth Class" } } }
+			ship = { name = "WLNS Valiant" definition = battleship equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Queen Elizabeth Class" } } }
+			ship = { name = "WLNS Frobisher" definition = heavy_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Hawkins Class" } } }
+			ship = { name = "WLNS Hawkins" definition = heavy_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Hawkins Class" } } }
+			ship = { name = "WLNS Carlisle" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "C-Class" } } }
+			ship = { name = "WLNS Curlew" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "C-Class" } } }
+			ship = { name = "WLNS Adventure" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Adventure Class" } } }
+			# Reserve Destroyer Division
+			ship = { name = "WLNS Whitshed" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "WLNS Wild Swan" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "WLNS Vanity" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+		}
+		task_force = {
+			name = "Channel Force"			
+			location = 9458 # Portsmouth
+			ship = { name = "WLNS Courageous" definition = carrier start_experience_factor = 0.25 equipment = { ship_hull_carrier_conversion_bb = { amount = 1 owner = ENG version_name = "Courageous Class" } }
+				air_wings = {
+					cv_fighter_equipment_0 =  { owner = "ENG" amount = 18 }
+					cv_nav_bomber_equipment_1 =  { owner = "ENG" amount = 24 }
+				}
+			}
+			ship = { name = "WLNS Resolution" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Revenge Class"} } }			
+			ship = { name = "WLNS Revenge" definition = battleship start_experience_factor = 0.25 equipment = { ship_hull_heavy_1 = { amount = 1 owner = ENG version_name = "Revenge Class"} } }					
+			ship = { name = "WLNS Ceres" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "C-Class" } } }
+			ship = { name = "WLNS Caradoc" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "C-Class" } } }
+			# 5th Destroyer Flotilla
+			ship = { name = "WLNS Kempenfelt" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }		# to RCN as Assiniboine, 1939
+			# Destroyer Division 9
+			ship = { name = "WLNS Acasta" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }			
+			ship = { name = "WLNS Antelope" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }			
+			ship = { name = "WLNS Ardent" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }			
+			ship = { name = "WLNS Acheron" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }			
+			# Destroyer Division 10
+			ship = { name = "WLNS Achates" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }				
+			ship = { name = "WLNS Anthony" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }			
+			ship = { name = "WLNS Arrow" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }			
+			ship = { name = "WLNS Amazon" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }		
+		}
+		task_force = {
+			name = "Humber Force"
+			location = 11297 # Hull
+			### 7th Destroyer Flotilla
+			# Destroyer Division 13
+			ship = { name = "WLNS Broke" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "WLNS Wanderer" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "WLNS Whitehall" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "WLNS Witch" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }	
+			# Destroyer Division 14
+			ship = { name = "WLNS Verity" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "WLNS Volunteer" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "WLNS Witherington" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "WLNS Wolverine" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }	
+		}				
+		task_force = {
+			name = "Northern Patrol"
+			location = 11064 # Scapa Flow
+			# 7th Cruiser Squadron
+			ship = { name = "WLNS Diomede" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Danae Class" } } }
+			ship = { name = "WLNS Dragon" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Danae Class" } } }
+			# 12th Cruiser Squadron
+			ship = { name = "WLNS Effingham" definition = heavy_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Hawkins Class" } } }
+			ship = { name = "WLNS Cardiff" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "C-Class" } } }
+			ship = { name = "WLNS Dunedin" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Danae Class"} } }
+		}
+		task_force = {
+			name = "Rosyth Escort Force"
+			location = 6300 # Rosyth
+			# Rosyth Destroyer Division
+			ship = { name = "WLNS Wallace" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "WLNS Valorous" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "WLNS Whitley" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+		}
+		task_force = {
+			name = "Continental Fleet"
+			location = 575 # Dunkerque
+			ship = { name = "WLNS London" definition = heavy_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
+			ship = { name = "WLNS Curacoa" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "C-Class"} } }
+			# Nore Destroyer Division
+			ship = { name = "WLNS Campbell" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "WLNS Vivien" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "WLNS Worcester" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "WLNS Woolston" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "WLNS Wolfhound" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			### 14th Destroyer Flotilla
+			ship = { name = "WLNS Codrington" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }
+			# Destroyer Division 27
+			ship = { name = "WLNS Basilisk" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }
+			ship = { name = "WLNS Beagle" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }	
+			ship = { name = "WLNS Boreas" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }
+			ship = { name = "WLNS Bulldog" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }	
+			# Destroyer Division 28
+			ship = { name = "WLNS Blanche" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }
+			ship = { name = "WLNS Boadicea" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }	
+			ship = { name = "WLNS Brazen" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }
+			ship = { name = "WLNS Brilliant" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }
+		}
+		task_force = {
+			name = "Dublin Fleet"
+			location = 11293 # Dublin
+			ship = { name = "WLNS Suffolk" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
+			### 9th Destroyer Flotilla
+			# Destroyer Division 17
+			ship = { name = "WLNS Skate" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "S Class"} } }
+			ship = { name = "WLNS Saladin" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "S Class"} } }
+			ship = { name = "WLNS Scimitar" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "S Class"} } }
+			ship = { name = "WLNS Sardonyx" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "S Class"} } }
+			# Destroyer Division 18
+			ship = { name = "WLNS Ambuscade" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }
+			ship = { name = "WLNS Winchester" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class" } } }	
+		}
+		task_force = {
+			name = "2nd Submarine Flotilla"
+			location = 11064 # Scapa Flow
+			# Submarine Division 21
+			ship = { name = "WLNS Oxley" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "WLNS Swordfish" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }
+			ship = { name = "WLNS Sturgeon" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }
+			ship = { name = "WLNS Seahorse" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }
+			ship = { name = "WLNS Starfish" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }
+			# Submarine Division 22
+			ship = { name = "WLNS H32" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "WLNS L26" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "WLNS L27" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+		}
+		task_force = {
+			name = "5th Submarine Flotilla"
+			location = 9458 # Portsmouth
+			# Submarine Division 51
+			ship = { name = "WLNS Oberon" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "WLNS Thames" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			# Submarine Division 52
+			ship = { name = "WLNS L23" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "WLNS H28" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "WLNS H31" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "WLNS H33" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "WLNS H34" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "WLNS H43" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "WLNS H44" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "WLNS H49" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "WLNS H50" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+		}
+	}
+
+	### MEDITERRANIAN FLEET ###			
+	fleet = {
+		name = "Mediterranean Command"
+		naval_base = 12003 # Malta			
+		task_force = {				
+			name = "1st Submarine Flotilla"			
+			location = 12003 # Malta
+			# Submarine Division 11
+			ship = { name = "WLNS Sealion" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }		
+			ship = { name = "WLNS Shark" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }		
+			ship = { name = "WLNS Snapper" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }	
+			ship = { name = "WLNS Salmon" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }		
+			ship = { name = "WLNS Porpoise" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "S Class" } } }		
+			# Submarine Division 12
+			ship = { name = "WLNS Otway" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }	
+			ship = { name = "WLNS Osiris" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }	
+			ship = { name = "WLNS Oswald" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }			
+		}
+		task_force = {
+			name = "North Atlantic Fleet"
+			location = 4135 # Gibraltar
+			ship = { name = "WLNS Colombo" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "C-Class" } } }
+			ship = { name = "WLNS Capetown" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "C-Class" } } }
+			ship = { name = "WLNS Wryneck" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }	
+			# 13th Destroyer Flotilla
+			ship = { name = "WLNS Keppel" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			# Destroyer Division 25
+			ship = { name = "WLNS Vidette" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "WLNS Vortigern" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "WLNS Velox" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "WLNS Watchman" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			# Destroyer Division 26
+			ship = { name = "WLNS Douglas" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "WLNS Active" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "A/B/C/D Class" } } }	
+			ship = { name = "WLNS Wishart" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+			ship = { name = "WLNS Wrestler" definition = destroyer start_experience_factor = 0.25 equipment = { ship_hull_light_1 = { amount = 1 owner = ENG version_name = "V/W Class"} } }
+		}		
+	}
+				
+	### NORTH AND SOUTH AMERICAS ###			
+	fleet = {
+		name = "Americas Command"
+		naval_base = 12960 # Falkland Is.
+		task_force = {				
+			name = "America Squadron"
+			location = 12960 # Falkland Is.
+			ship = { name = "WLNS Exeter" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }		
+			ship = { name = "WLNS Cumberland" definition = heavy_cruiser start_experience_factor = 0.25 equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "County Class" } } }
+			ship = { name = "WLNS Ajax" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = ENG version_name = "Emerald Class" } } }	
+		}				
+		task_force = {				
+			name = "3rd Submarine Flotilla"			
+			location = 13016 # Sierra Leone
+			# Submarine Division 71
+			ship = { name = "WLNS Severn" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }		
+			ship = { name = "WLNS Clyde" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }		
+		}
+	}
+
+	### FAR EAST ###			
+	fleet = {
+		name = "Triple Alliance Command"
+		naval_base = 13091 # Anchorage
+		task_force = {				
+			name = "Alaska Division"
+			location = 13091 # Anchorage	
+			ship = { name = "WLNS Achilles" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = ENG version_name = "Leander Class" } } }		# to RNZN 1941
+			ship = { name = "WLNS Leander" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = ENG version_name = "Leander Class" } } }		# to RNZN 1941
+		}				
+		task_force = {				
+			name = "4th Submarine Flotilla"			
+			location = 7361 # Halifax
+			# Submarine Division 41
+			ship = { name = "WLNS Olympus" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "WLNS Parthian" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }	
+			ship = { name = "WLNS Proteus" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }	
+			ship = { name = "WLNS Regent" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }	
+			ship = { name = "WLNS Rover" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }		
+			# Submarine Division 42
+			ship = { name = "WLNS Odin" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }	
+			ship = { name = "WLNS Orpheus" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "WLNS Otus" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }	
+			ship = { name = "WLNS Pandora" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }
+			ship = { name = "WLNS Perseus" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }		
+			ship = { name = "WLNS Phoenix" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }		
+			ship = { name = "WLNS Rainbow" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }	
+			ship = { name = "WLNS Regulus" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = ENG version_name = "O/P/R Class" } } }	
+		}				
+	}
+}
+instant_effect = {
+	### Ongoing Ship Production Jan 1 1936 ###
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "ENG" 
+			version_name = "Leander Class"
+		}
+		name = "WLNS Apollo"
+		requested_factories = 1
+		progress = 0.95
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "ENG" 
+			version_name = "Leander Class"
+		}
+		name = "WLNS Aurora"
+		requested_factories = 1
+		progress = 0.15
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_cruiser_2
+			creator = "ENG" 
+			version_name = "Town Class"
+		}
+		requested_factories = 1
+		progress = 0.5
+		amount = 2
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_submarine_1
+			creator = "ENG" 
+			version_name = "S Class"
+		}
+		name = "WLNS Seawolf"
+		requested_factories = 1
+		progress = 0.50
+		amount = 3
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_submarine_1
+			creator = "ENG" 
+			version_name = "S Class"
+		}
+		name = "WLNS Narwhal"
+		requested_factories = 1
+		progress = 0.40
+		amount = 3
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "ENG" 
+			version_name = "E/F/G/H Class"
+		}
+		name = "WLNS Gallant"
+		requested_factories = 1
+		progress = 0.90
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "ENG" 
+			version_name = "E/F/G/H Class"
+		}
+		name = "WLNS Garland"
+		requested_factories = 1
+		progress = 0.80
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = ship_hull_light_2
+			creator = "ENG" 
+			version_name = "E/F/G/H Class"
+		}
+		name = "WLNS Gipsy"
+		requested_factories = 1
+		progress = 0.80
+		amount = 1
+	}
+}

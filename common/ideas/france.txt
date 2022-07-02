@@ -1,0 +1,1047 @@
+ideas = {
+
+	country = {
+
+		FRA_flying_artillery = {
+			picture = combined_bomber_offensive
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			equipment_bonus = {
+				tac_bomber_equipment = {
+					air_ground_attack = 0.15
+					instant = yes
+				}
+				CAS_equipment = {
+					air_ground_attack = 0.15
+					instant = yes
+				}
+			}
+
+			modifier = {
+				
+			}
+		}
+
+		idea_citroen = {
+			
+			allowed = {
+				always = no
+			}
+
+			picture = generic_industrial_concern_2
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				motorized_equipment = {
+					build_cost_ic = -0.1 instant = yes
+					reliability = -0.15
+				}
+			}
+		}
+		
+		idea_peugeot = {
+			
+			allowed = {
+				always = no
+			}
+
+			picture = generic_industrial_concern_2
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				motorized_equipment = {
+					reliability = 0.1
+				}
+			}
+		}
+		
+		idea_tank_inventor = {
+			
+			allowed = {
+				always = no
+			}
+
+			picture = generic_armor
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				medium_tank_chassis = {
+					build_cost_ic = -0.08 instant = yes
+				}
+			}
+		}
+		
+		idea_french_destroyer = {
+			
+			allowed = {
+				always = no
+			}
+
+			picture = generic_sea_focused_navy
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				screen_ship = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+		}
+		
+		idea_hotchkiss_bonus = {
+			
+			allowed = {
+				always = no
+			}
+
+			picture = generic_artillery_regiments
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				artillery_equipment = {
+					soft_attack = 0.05
+					defense = 0.05
+				}
+			}
+		}
+		
+		idea_colonial_gold = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = SPR_seize_the_gold_reserves
+
+			removal_cost = -1
+
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		idea_french_tourism = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = ROM_king_carol_ii_hedonist
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = 0.05
+				political_power_cost = -0.2
+			}
+		}
+		
+		idea_aa_cruiser = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_naval_manufacturer_1
+
+			removal_cost = -1
+
+			modifier = {
+				experience_gain_light_cruiser_combat_factor = 0.1
+				navy_screen_attack_factor = 0.05
+			}
+		}
+		
+		idea_three_bb_moral = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_coastal_defense_ships2
+
+			removal_cost = -1
+
+			modifier = {
+				naval_has_potf_in_combat_attack = 0.2
+				naval_has_potf_in_combat_defense = 0.2
+			}
+		}
+		
+		idea_push_across_canal = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = eng_preparing_the_second_front
+
+			removal_cost = -1
+
+			modifier = {
+				invasion_preparation = -0.15
+				naval_invasion_capacity = 4
+				navy_fuel_consumption_factor = 0.075
+			}
+		}
+		
+		idea_FRA_bomber_plant = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_air_bonus
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				tac_bomber_equipment = {
+					reliability = -0.05
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+		}
+		
+		idea_FRA_fighter_plant = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_air_bonus
+
+			removal_cost = -1
+
+			equipment_bonus = {
+				fighter_equipment = {
+					air_range = 0.1
+					build_cost_ic = -0.05 instant = yes
+				}
+			}
+		}
+		
+		idea_FRA_agrarianism = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_agrarian_reform
+
+			removal_cost = -1
+
+			modifier = {
+				monthly_population = 0.075
+				line_change_production_efficiency_factor = -0.2
+				army_core_defence_factor = 0.04
+				mobilization_speed = 0.1
+			}
+		}
+		
+		idea_FRA_industrialism = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = POL_succesful_four_year_plan
+
+			removal_cost = -1
+
+			modifier = {
+				industry_repair_factor = 0.15
+				mobilization_speed = -0.2
+				production_speed_buildings_factor = 0.1
+				industrial_capacity_dockyard = 0.15
+				industrial_capacity_factory = 0.1
+				conscription = -0.01
+			}
+		}
+		
+		idea_FRA_unclear_powersupply = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+		
+			picture = FRA_factory_strikes
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_cost = 0.05
+				production_speed_buildings_factor = -0.05
+			}
+		}
+		
+		idea_FRA_coalpower = {
+
+			allowed = {
+				always = no
+			}
+			
+			#remove if Alsace not held
+
+			allowed_civil_war = {
+				always = yes
+			}
+			
+			available = {
+				28 = { is_fully_controlled_by = FRA }
+			}
+
+			picture = ast_all_in
+
+			removal_cost = -1
+
+			modifier = {
+				min_export = 0.05
+				political_power_cost = 0.05
+				production_speed_industrial_complex_factor = 0.2
+			}
+		}
+		
+		idea_FRA_waterpower = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = por_hydroelectric_power
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor = -0.01
+				production_factory_efficiency_gain_factor = 0.1
+				consumer_goods_factor = -0.03
+			}
+		}
+		
+		idea_FRA_contained_free_speech = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = EST_democratic_opposition
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_cost = -0.1
+				offensive_war_stability_factor = 0.2
+				max_surrender_limit_offset = 0.05
+				communism_drift = -0.05
+			}
+		}
+		
+		idea_FRA_liberal_agitation1 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = FRA_political_violence
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.15
+				political_advisor_cost_factor = 0.5
+				economy_cost_factor = 0.5
+			}
+		}
+		
+		idea_FRA_liberal_agitation2 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = FRA_political_violence
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.1
+				political_advisor_cost_factor = 0.25
+				economy_cost_factor = 0.25
+			}
+		}
+		
+		idea_FRA_liberal_agitation3 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = FRA_political_violence
+
+			removal_cost = -1
+
+			modifier = {
+				stability_factor = -0.05
+				political_advisor_cost_factor = 0.1
+				economy_cost_factor = 0.1
+			}
+		}
+		
+		idea_FRA_conservative_agitation1 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = FRA_political_violence
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_cost = 0.5
+				high_command_cost_factor = 0.5
+				army_chief_cost_factor = 0.5
+				mobilization_laws_cost_factor = 0.5
+			}
+		}
+		
+		idea_FRA_conservative_agitation2 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = FRA_political_violence
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_cost = 0.25
+				high_command_cost_factor = 0.25
+				army_chief_cost_factor = 0.25
+				mobilization_laws_cost_factor = 0.25
+			}
+		}
+		
+		idea_FRA_conservative_agitation3 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = FRA_political_violence
+
+			removal_cost = -1
+
+			modifier = {
+				political_power_cost = 0.15
+				high_command_cost_factor = 0.1
+				army_chief_cost_factor = 0.1
+				mobilization_laws_cost_factor = 0.1
+			}
+		}
+		
+		idea_FRA_old_guard = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = generic_reserve_divisions
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.03
+				army_core_attack_factor = 0.1
+				army_morale_factor = 0.05
+			}
+		}
+		
+		idea_FRA_anti_semitism = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = SPR_political_violence
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = -0.005
+				war_support_factor = -0.15
+				war_support_weekly = 0.001	
+			}
+		}
+		
+		idea_FRA_regional_minorities = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = hol_the_foundations_of_defense
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.006
+				political_power_factor = -0.05
+			}
+		}
+		
+		idea_FRA_free_market = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = can_wartime_prices_and_trade_board
+
+			removal_cost = -1
+
+			modifier = {
+				production_speed_buildings_factor = 0.12
+				production_speed_infrastructure_factor = -0.06
+				research_speed_factor = -0.02
+				industrial_capacity_factory = 0.05
+				communism_drift = -0.05
+			}
+		}
+		
+		idea_FRA_federation_manpower = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = por_volunteers_in_the_war3
+
+			removal_cost = -1
+
+			modifier = {
+				conscription = 0.02
+			}
+		}
+		
+		idea_FRA_sexual_sciences_grenoble = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = canadian_car_foundry
+
+			removal_cost = -1
+
+			modifier = {
+				research_speed_factor = 0.04
+				weekly_manpower = 200
+				stability_weekly = 0.001
+				democratic_drift = 0.05
+			}
+		}
+		
+		idea_FRA_racism_problem = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			picture = SPR_political_violence
+
+			removal_cost = -1
+
+			modifier = {
+				weekly_manpower = -10
+				fascism_drift = 0.01
+				communism_drift = 0.01
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	}
+
+	
+	tank_manufacturer = {
+
+		designer = yes
+	
+		# TECHNOLOGY
+		renault_fra = {
+		
+			picture = renault
+						
+			allowed = {
+				original_tag = FRA
+			}
+						
+			research_bonus = {
+				armor = 0.15
+			}
+			
+
+			traits = { heavy_tank_manufacturer }
+		}
+	
+		FRA_AMX = {
+		
+			picture = generic_tank_manufacturer_2
+
+						
+			allowed = {
+				original_tag = FRA
+			}
+						
+			research_bonus = {
+				armor = 0.15
+			}
+			
+
+			traits = { fast_tank_manufacturer }
+		}
+		FRA_hotchkiss = {
+		
+			picture = generic_tank_manufacturer_3
+						
+			allowed = {
+				original_tag = FRA
+			}
+						
+			research_bonus = {
+				armor = 0.15
+			}
+			
+
+			traits = { infantry_tank_manufacturer }
+		}
+
+		FRA_APX = {
+			picture = FRA_atelier_puteaux
+			
+
+			available = {
+				
+			}
+						
+			allowed = {
+				original_tag = FRA
+			}
+						
+			research_bonus = {
+				armor = 0.15
+			}
+			
+
+			traits = { medium_tank_manufacturer }
+		}
+		FRA_panhard = {
+			
+
+			available = {
+				
+			}
+
+						
+			allowed = {
+				original_tag = FRA
+				has_dlc = "La Resistance"
+			}
+						
+			research_bonus = {
+				armor = 0.15
+			}
+			
+
+			traits = { armored_car_manufacturer }
+		}
+	}
+	
+	materiel_manufacturer = {
+			
+		designer = yes
+		
+		somua = {
+		
+			allowed = {
+				original_tag = FRA
+			}
+
+			research_bonus = {
+				motorized_equipment = 0.15
+			}
+			
+			traits = { motorized_equipment_manufacturer }
+
+		}
+		
+		mas = {
+						
+			allowed = {
+				original_tag = FRA
+			}
+						
+			research_bonus = {
+				infantry_weapons = 0.15
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+		}
+	
+		schneider = {
+						
+			allowed = {
+				original_tag = FRA
+			}		
+			
+			research_bonus = {
+				artillery = 0.15
+			}
+			
+			traits = { artillery_manufacturer }
+		}
+	}
+	
+	aircraft_manufacturer = {
+			
+		designer = yes
+		
+		morane_saulnier = {
+			
+			allowed = {
+				original_tag = FRA
+			}
+			
+			research_bonus = {
+				air_equipment = 0.1
+			}
+			
+			traits = { light_aircraft_manufacturer }
+		}
+		
+		bloch = {
+						
+			allowed = {
+				original_tag = FRA
+			}
+						
+			research_bonus = {
+				air_equipment = 0.1
+			}
+			
+			traits = { medium_aircraft_manufacturer }
+		}
+		
+		amiot = {
+						
+			allowed = {
+				original_tag = FRA
+			}
+						
+			research_bonus = {
+				air_equipment = 0.1
+			}
+			
+			traits = { heavy_aircraft_manufacturer }
+		}
+		
+		levasseur = {
+						
+			allowed = {
+				original_tag = FRA
+			}
+						
+			research_bonus = {
+				air_equipment = 0.1
+			}
+			
+			traits = { naval_aircraft_manufacturer }
+		}
+		SNCAN = {
+			picture = FRA_sncan		
+			allowed = {
+				original_tag = FRA
+			}
+			visible = { has_completed_focus = FRA_reorganize_the_aviation_industry }	
+			available = { has_country_flag = FRA_SNCAN_formed }	
+			research_bonus = {
+				air_equipment = 0.2
+			}
+			
+			traits = { heavy_aircraft_manufacturer }
+		}
+		SNCAO = {
+			picture = FRA_sncao			
+			allowed = {
+				original_tag = FRA
+			}
+			visible = { has_completed_focus = FRA_reorganize_the_aviation_industry }	
+			available = { has_country_flag = FRA_SNCAO_formed }	
+			research_bonus = {
+				air_equipment = 0.2
+			}
+			
+			traits = { medium_aircraft_manufacturer }
+		}
+		SNCASE = {
+			picture = FRA_sncase		
+			allowed = {
+				original_tag = FRA
+			}
+			visible = { has_completed_focus = FRA_reorganize_the_aviation_industry }	
+			available = { has_country_flag = FRA_SNCASE_formed }	
+			research_bonus = {
+				air_equipment = 0.2
+			}
+			
+			traits = { light_aircraft_manufacturer }
+		}
+		SNCASO = {
+			picture = FRA_sncaso		
+			allowed = {
+				original_tag = FRA
+			}
+			visible = { has_completed_focus = FRA_reorganize_the_aviation_industry }	
+			available = { has_country_flag = FRA_SNCASO_formed }	
+			research_bonus = {
+				air_equipment = 0.2
+			}
+			
+			traits = { naval_aircraft_manufacturer }
+		}
+		SNCAC = {
+			picture = FRA_sncac			
+			allowed = {
+				original_tag = FRA
+			}
+			visible = { has_completed_focus = FRA_reorganize_the_aviation_industry }	
+			available = { has_country_flag = FRA_SNCAC_formed }	
+			research_bonus = {
+				air_equipment = 0.3
+			}
+			
+			traits = { aircraft_manufacturer }
+		}
+		
+	}
+	naval_manufacturer = {
+
+		designer = yes
+		
+		fcm = {
+						
+			allowed = {
+				original_tag = FRA
+			}
+						
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { mediterranean_naval_manufacturer }
+		}
+		aeb = {
+			picture = FRA_aeb		
+			allowed = {
+				original_tag = FRA
+			}
+						
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { convoy_escort_naval_manufacturer }
+		}
+		acl = {
+			picture = FRA_acl	
+			allowed = {
+				original_tag = FRA
+			}
+						
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { atlantic_fleet_naval_manufacturer }
+		}
+		acf = {
+			picture = FRA_acf			
+			allowed = {
+				original_tag = FRA
+			}
+						
+			research_bonus = {
+				naval_equipment = 0.15
+			}
+			
+			traits = { raiding_fleet_naval_manufacturer }
+		}
+	}
+	
+	industrial_concern = {	
+		
+		famh = {
+						
+			allowed = {
+				original_tag = FRA
+			}
+						
+			research_bonus = {
+				industry = 0.15
+			}
+			
+			traits = { industrial_concern }
+		}
+	}
+}

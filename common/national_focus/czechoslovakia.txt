@@ -1,0 +1,1961 @@
+﻿### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+
+focus_tree = {
+	id = czech_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 20
+			tag = CZE
+		}
+	}
+	
+	default = no
+	
+	continuous_focus_position = { x = 50 y = 200 }
+	
+	focus = {
+		id = CZE_bohemia
+		icon = GFX_goal_rhineland
+		x = 22
+		y = 0
+		cost = 7
+		available = {
+			is_subject = no
+		}
+		bypass = {
+			9 = { is_demilitarized_zone = no }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			9 = { set_demilitarized_zone = no }
+			add_political_power = 80
+			army_experience = 10
+			add_threat = 5
+			GER = {
+				country_event = { id = mod_czech.1 }
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_question_of_arms
+		icon = GFX_goal_generic_small_arms
+		x = 4
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_bohemia }
+		relative_position_id = CZE_bohemia
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = { id = mod_czech.3 }
+		}
+	}
+	
+	focus = {
+		id = CZE_steady_stream
+		icon = GFX_goal_generic_trade
+		x = 1
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_question_of_arms }
+		relative_position_id = CZE_question_of_arms
+		mutually_exclusive = { focus = CZE_schutzenverein }
+		available = {
+			has_idea = idea_czech_export_focus
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = idea_czech_steady_stream
+		}
+	}
+	
+	focus = {
+		id = CZE_protect_investment
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_steady_stream }
+		relative_position_id = CZE_steady_stream
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = idea_czech_protect_investment
+		}
+	}
+	
+	focus = {
+		id = CZE_schutzenverein
+		icon = GFX_focus_secret_rearmament
+		x = -1
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_question_of_arms }
+		relative_position_id = CZE_question_of_arms
+		mutually_exclusive = { focus = CZE_steady_stream }
+		available = {
+			has_idea = idea_czech_people_armed
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = idea_czech_schutzenverein
+		}
+	}
+	
+	focus = {
+		id = CZE_mountain_guns
+		icon = GFX_goal_generic_army_artillery2
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_schutzenverein }
+		relative_position_id = CZE_schutzenverein
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			set_technology = { mountain_gun = 1 }
+		}
+	}
+	
+	focus = {
+		id = CZE_glider_schools
+		icon = GFX_goal_generic_air_doctrine
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_mountain_guns }
+		relative_position_id = CZE_mountain_guns
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = idea_czech_glider_schools
+		}
+	}
+	
+	focus = {
+		id = CZE_special_forces_focus
+		icon = GFX_goal_generic_special_forces
+		x = 1
+		y = 2
+		cost = 7
+		prerequisite = { focus = CZE_protect_investment focus = CZE_kaiserliche_marines }
+		relative_position_id = CZE_protect_investment
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = mountaineers_tech
+				category = para_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_restore_arms_indu
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		cost = 7
+		available = {
+			has_full_control_of_state = 9
+		}
+		prerequisite = { focus = CZE_bohemia }
+		relative_position_id = CZE_bohemia
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			9 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory  
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_kaiserbeer
+		icon = GFX_focus_SOV_breadbasket_of_the_union
+		x = 1
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_restore_arms_indu }
+		relative_position_id = CZE_restore_arms_indu
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			9 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex  
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_ideas = idea_czech_beer_exports
+		}
+	}
+	
+	focus = {
+		id = CZE_appeal_to_loyalists
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = -1
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_restore_arms_indu }
+		prerequisite = { focus = CZE_training_in_plzen }
+		relative_position_id = CZE_restore_arms_indu
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			set_rule = { can_generate_female_aces = yes }
+			add_stability = 0.15
+			add_war_support = 0.1
+			custom_effect_tooltip = CZE_Imperial_Crown_Guards_tt
+			hidden_effect = {
+				division_template = {
+					name = "Imperial Crown Guard"
+					priority = 2
+					division_names_group = CZE_INF_01
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+				
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+				
+		    	   	 	infantry = { x = 2 y = 0 }
+						artillery_brigade = { x = 2 y = 1 }
+						artillery_brigade = { x = 2 y = 2 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }
+						recon = { x = 0 y = 1 }
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 9 }
+					create_unit = {
+						division = "name = \"1st Imperial Crown Guard\" division_template = \"Imperial Crown Guard\" start_experience_factor = 1.0" 
+						owner = CZE
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 9 }
+					create_unit = {
+						division = "name = \"2nd Imperial Crown Guard\" division_template = \"Imperial Crown Guard\" start_experience_factor = 1.0" 
+						owner = CZE
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 9 }
+					create_unit = {
+						division = "name = \"3rd Imperial Crown Guard\" division_template = \"Imperial Crown Guard\" start_experience_factor = 1.0" 
+						owner = CZE
+					}
+				}
+				random_owned_controlled_state = {
+					limit = { ROOT = { has_full_control_of_state = PREV } }
+					prioritize = { 75 }
+					create_unit = {
+						division = "name = \"4th Imperial Crown Guard\" division_template = \"Imperial Crown Guard\" start_experience_factor = 1.0" 
+						owner = CZE
+					}
+				}
+				add_ideas = idea_czech_loyalists
+				add_manpower = 75000
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_nationalize_skoda
+		icon = GFX_focus_generic_industry_2
+		x = -1
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_appeal_to_loyalists }
+		prerequisite = { focus = CZE_kaiserbeer }
+		relative_position_id = CZE_kaiserbeer
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			9 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex  
+					level = 2
+					instant_build = yes
+				}
+			}
+			70 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex  
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_ideas = idea_czech_skoda
+		}
+	}
+	
+	focus = {
+		id = CZE_fund_trans_seperatists
+		icon = GFX_focus_YUG_autonomous_transylvania
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_nationalize_skoda }
+		relative_position_id = CZE_nationalize_skoda
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			HUN = { 
+				country_event = { id = mod_czech.4 } 
+			}
+			76 = { 
+				remove_core_of = HUN 
+			}
+			84 = { 
+				remove_core_of = HUN 
+			}
+			83 = { 
+				remove_core_of = HUN  
+			}
+			82 = { 
+				remove_core_of = HUN  
+			}
+			764 = { 
+				remove_core_of = HUN 
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_demand_sudetenland
+		icon = GFX_goal_generic_demand_territory
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_fund_trans_seperatists }
+		relative_position_id = CZE_fund_trans_seperatists
+		will_lead_to_war_with = GER
+		available = {
+			has_army_manpower = { size > 300000 }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_threat = 5
+			GER = { country_event = { id = mod_czech.5 } }
+		}
+	}
+	
+	focus = {
+		id = CZE_intellectuals
+		icon = GFX_focus_research
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_demand_sudetenland }
+		relative_position_id = CZE_demand_sudetenland
+		available = {
+			controls_state = 69
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	focus = {
+		id = CZE_hungarian_war
+		icon = GFX_goal_generic_attack_allies
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_intellectuals }
+		relative_position_id = CZE_intellectuals
+		will_lead_to_war_with = HUN
+		available = {
+			has_army_manpower = { size > 400000 }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			SLO = {
+				declare_war_on = {
+					target = HUN
+					type = annex_everything
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_rebirth_habs_empire
+		icon = GFX_focus_POL_habsburg
+		x = -5
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_hungarian_war }
+		relative_position_id = CZE_hungarian_war
+		mutually_exclusive = { focus = CZE_bohemia_slovakia } 
+		available = {
+			has_war = no
+			SLO = { 
+				has_war = no
+				is_puppet_of = CZE
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = { 
+			hidden_effect = {
+				SLO = { 
+					remove_ideas = idea_slovaks_purpose 
+					every_army_leader = {
+						set_nationality = CZE
+					}
+				}
+				664 = { add_core_of = CZE }
+				set_cosmetic_tag = CZE_habsburg
+				create_field_marshal = {
+					name = "Vojtech Tuka"
+					picture = "gfx/leaders/SLO/Portrait_Vojtech_Tuka.dds"
+					traits = { hill_fighter fast_planner war_hero }
+					skill = 2
+					attack_skill = 4
+					defense_skill = 2
+					planning_skill = 1
+					logistics_skill = 1
+				}
+				country_event = { id = mod_czech.21 days = 24 }
+				remove_ideas = idea_czech_loyalists
+			}
+			random_list = {
+				30 = {
+					country_event = { id = mod_czech.11 days = 7 } # stuborn hungarians
+				}
+				70 = {
+					country_event = { id = mod_czech.10 days = 7 } # good ol reliable
+				}
+			}
+			annex_country = {
+				target = SLO
+				transfer_troops = yes
+			}
+			add_political_power = 100
+			add_stability = 0.15
+			#add_war_support = 0.2
+			set_rule = {
+				can_create_factions = yes
+			}
+			create_faction = CZE_hab
+			add_timed_idea = {
+				idea = idea_czech_vigorous_researcher
+				days = 450
+			}
+			AUS = {
+				every_core_state = {
+					add_claim_by = CZE
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_bohemia_slovakia
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 5
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_hungarian_war }
+		relative_position_id = CZE_hungarian_war
+		mutually_exclusive = { focus = CZE_rebirth_habs_empire } 
+		available = {
+			has_war = no
+			SLO = { 
+				has_war = no 
+				NOT = { has_country_flag = CZE_help_needed }
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_political_power = -100
+			add_stability = 0.1
+			random_list = {
+				30 = {
+					country_event = { id = mod_czech.11 days = 7 } # stuborn hungarians
+				}
+				70 = {
+					country_event = { id = mod_czech.10 days = 7 } # good ol reliable
+				}
+			}
+			hidden_effect = {
+				664 = { add_core_of = CZE }
+				set_cosmetic_tag = CZE_boh_slo
+				remove_ideas = idea_czech_loyalists
+				country_event = { id = mod_czech.22 days = 24 }
+			}
+			annex_country = {
+				target = SLO
+				transfer_troops = no
+			}
+			set_rule = {
+				can_create_factions = yes
+			}
+			create_faction = CZE_bohslo
+		}
+	}
+	
+	focus = {
+		id = CZE_transylvania_problem
+		icon = GFX_focus_rom_preserve_romania
+		x = 5
+		y = 2
+		cost = 7
+		prerequisite = { focus = CZE_rebirth_habs_empire focus = CZE_bohemia_slovakia }
+		relative_position_id = CZE_rebirth_habs_empire 
+		available = {
+			NOT = { country_exists = HUN }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			custom_effect_tooltip = CZE_Trans_Breakaway_tt
+			hidden_effect = {
+				set_country_flag = CZE_transylvania_problem_flag
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_transylvania_solution
+		icon = GFX_focus_BUL_free_balkan_states
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_transylvania_problem }
+		relative_position_id = CZE_transylvania_problem
+		bypass = {
+			NOT = {
+				OR = {
+					owns_state = 76
+					owns_state = 84
+					owns_state = 83
+					owns_state = 82
+					owns_state = 764
+				}
+			}
+		}
+		available = {
+			76 = {
+				OR = {
+					is_controlled_by = MOL
+					is_controlled_by = ROM
+					is_core_of = CZE
+				}
+			}
+			84 = {
+				OR = {
+					is_controlled_by = MOL
+					is_controlled_by = ROM
+					is_core_of = CZE
+				}
+			}
+			83 = {
+				OR = {
+					is_controlled_by = MOL
+					is_controlled_by = ROM
+					is_core_of = CZE
+				}
+			}
+			82 = {
+				OR = {
+					is_controlled_by = MOL
+					is_controlled_by = ROM
+					is_core_of = CZE
+				}
+			}
+			764 = {
+				OR = {
+					is_controlled_by = MOL
+					is_controlled_by = ROM
+					is_core_of = CZE
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = { id = mod_czech.12 }
+			remove_mission = CZE_westbanat_breakaway
+			remove_mission = CZE_north_trans_breakaway
+			remove_mission = CZE_trans_breakaway
+			remove_mission = CZE_crisana_breakaway
+			remove_mission = CZE_banat_breakaway
+		}
+	}
+	
+	focus = {
+		id = CZE_habsburg_possessions
+		icon = GFX_focus_spa_save_the_alcazar
+		x = -1
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_rebirth_habs_empire }
+		relative_position_id = CZE_rebirth_habs_empire
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_protector_of_catholicism
+		icon = GFX_focus_mex_restore_the_army_of_christ
+		x = -2
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_habsburg_possessions }
+		relative_position_id = CZE_habsburg_possessions
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = idea_protector_catholic
+		}
+	}
+	
+	focus = {
+		id = CZE_personal_oilfields
+		icon = GFX_goal_generic_oil_refinery
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_protector_of_catholicism }
+		relative_position_id = CZE_protector_of_catholicism
+		available = {
+			controls_state = 75
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_resource = {
+				type = oil
+				amount = 6
+				state = 75
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = synth_resources
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_austrian_highway_system
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_habsburg_possessions }
+		relative_position_id = CZE_habsburg_possessions
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			every_owned_state = {
+				if = {
+					limit = {
+						
+					}
+					add_building_construction = {
+						type = infrastructure 
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_agricultural_reforms
+		icon = GFX_goal_generic_trade
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_austrian_highway_system }
+		relative_position_id = CZE_austrian_highway_system
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = ROM_agrarian_reform 
+		}
+	}
+	
+	focus = {
+		id = CZE_bohemian_airline
+		icon = GFX_goal_generic_build_airforce
+		x = -1
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_agricultural_reforms }
+		prerequisite = { focus = CZE_personal_oilfields }
+		relative_position_id = CZE_agricultural_reforms
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			9 = {
+				add_building_construction = {
+					type = air_base 
+					level = 10
+					instant_build = yes
+				}	
+			}
+			add_ideas = idea_czech_bohemian_airline
+		}
+	}
+	
+	focus = {
+		id = CZE_forge_shared_identity
+		icon = GFX_goal_generic_improve_relations
+		x = 1
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_bohemia_slovakia }
+		relative_position_id = CZE_bohemia_slovakia
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = { id = mod_czech.13 days = 4 }
+			country_event = { id = mod_czech.14 days = 18 }
+			country_event = { id = mod_czech.15 days = 32 }
+		}
+	}
+	
+	focus = {
+		id = CZE_combine_curriculum
+		icon = GFX_goal_generic_scientific_exchange
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_forge_shared_identity }
+		relative_position_id = CZE_forge_shared_identity
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	focus = {
+		id = CZE_empire_thought
+		icon = GFX_focus_generic_home_defense
+		x = 2
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_forge_shared_identity }
+		relative_position_id = CZE_forge_shared_identity
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_state_core = 73
+			add_state_claim = 88
+			add_state_claim = 91
+			add_state_claim = 89
+		}
+	}
+	
+	focus = {
+		id = CZE_mechanized_bonus
+		icon = GFX_focus_generic_combined_arms
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_empire_thought }
+		relative_position_id = CZE_empire_thought
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_mechanized_equipment
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_build_bridge
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_combine_curriculum }
+		relative_position_id = CZE_combine_curriculum
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			70 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			71 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			75 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			72 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_forge_crown
+		icon = GFX_focus_generic_monarchy_2
+		x = 1
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_build_bridge }
+		prerequisite = { focus = CZE_mechanized_bonus }
+		relative_position_id = CZE_build_bridge
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = idea_czech_crown_bohslo
+		}
+	}
+	
+	focus = {
+		id = CZE_protect_against_west
+		icon = GFX_goal_generic_defence
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_forge_crown }
+		relative_position_id = CZE_forge_crown
+		available = {
+			NOT = {
+				AND = {
+					has_war_with = AUS
+					has_war_with = GER
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			69 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+			74 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+			72 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+			70 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+			664 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+			155 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_push_to_adriatic
+		icon = GFX_focus_generic_adriatic_sea_focus
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_transylvania_solution }
+		relative_position_id = CZE_transylvania_solution
+		will_lead_to_war_with = SER
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = SER
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_marriage
+		icon = GFX_focus_generic_royal_wedding
+		x = -2
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_push_to_adriatic }
+		prerequisite = { focus = CZE_bohemian_airline }
+		relative_position_id = CZE_push_to_adriatic
+		mutually_exclusive = { focus = CZE_austrian_slavism }
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			country_event = { id = mod_czech.16 days = 3 }
+		}
+	}
+	
+	focus = {
+		id = CZE_austrian_slavism
+		icon = GFX_goal_generic_alliance
+		x = 2
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_push_to_adriatic }
+		prerequisite = { focus = CZE_forge_crown }
+		relative_position_id = CZE_push_to_adriatic
+		mutually_exclusive = { focus = CZE_marriage }
+		will_lead_to_war_with = POL
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			LAT = { country_event = { id = mod_czech.17 days = 3 } }
+		}
+	}
+	
+	focus = {
+		id = CZE_commonwealth
+		icon = GFX_focus_POL_common_organization_of_society
+		x = 1
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_austrian_slavism }
+		relative_position_id = CZE_austrian_slavism
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = CZE_commonwealth_conquered_tt
+				OR = {
+					CZE = { controls_state = 96 }
+						any_other_country = {
+							is_in_faction_with = CZE
+							controls_state = 96
+						}
+				}
+				OR = {
+					CZE = { controls_state = 784 }
+						any_other_country = {
+							is_in_faction_with = CZE
+							controls_state = 784
+						}
+				}
+				OR = {
+					CZE = { controls_state = 95 }
+						any_other_country = {
+							is_in_faction_with = CZE
+							controls_state = 95
+						}
+				}
+				OR = {
+					CZE = { controls_state = 97 }
+						any_other_country = {
+							is_in_faction_with = CZE
+							controls_state = 97
+						}
+				}
+				OR = {
+					CZE = { controls_state = 94 }
+						any_other_country = {
+							is_in_faction_with = CZE
+							controls_state = 94
+						}
+				}
+				OR = {
+					CZE = { controls_state = 93 }
+						any_other_country = {
+							is_in_faction_with = CZE
+							controls_state = 93
+						}
+				}
+				OR = {
+					CZE = { controls_state = 91 }
+						any_other_country = {
+							is_in_faction_with = CZE
+							controls_state = 91
+						}
+				}
+				OR = {
+					CZE = { controls_state = 89 }
+						any_other_country = {
+							is_in_faction_with = CZE
+							controls_state = 89
+						}
+				}
+				OR = {
+					CZE = { controls_state = 73 }
+						any_other_country = {
+							is_in_faction_with = CZE
+							controls_state = 73
+						}
+				}
+				OR = {
+					CZE = { controls_state = 92 }
+						any_other_country = {
+							is_in_faction_with = CZE
+							controls_state = 92
+						}
+				}
+				OR = {
+					CZE = { controls_state = 88 }
+						any_other_country = {
+							is_in_faction_with = CZE
+							controls_state = 88
+						}
+				}
+				OR = {
+					CZE = { controls_state = 98 }
+						any_other_country = {
+							is_in_faction_with = CZE
+							controls_state = 98
+						}
+				}
+				OR = {
+					CZE = { controls_state = 87 }
+						any_other_country = {
+							is_in_faction_with = CZE
+							controls_state = 87
+						}
+				}
+				OR = {
+					CZE = { controls_state = 10 }
+						any_other_country = {
+							is_in_faction_with = CZE
+							controls_state = 10
+						}
+				}
+				OR = {
+					CZE = { controls_state = 90 }
+						any_other_country = {
+							is_in_faction_with = CZE
+							controls_state = 90
+						}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			LAT = {
+				transfer_state = 96
+				add_state_core = 96
+				transfer_state = 784
+				add_state_core = 784
+				transfer_state = 95
+				add_state_core = 95
+				transfer_state = 94
+				add_state_core = 94
+				transfer_state = 93
+				add_state_core = 93
+				transfer_state = 97
+				add_state_core = 97
+				transfer_state = 92
+				add_state_core = 92
+				transfer_state = 90
+				add_state_core = 90
+				transfer_state = 98
+				add_state_core = 98
+				transfer_state = 10
+				add_state_core = 10
+				transfer_state = 87
+				add_state_core = 87
+				set_cosmetic_tag = PLC_UNIFIED
+				add_state_core = 763
+				add_state_core = 5
+				add_state_core = 85
+				add_state_core = 807
+				add_state_core = 86
+				add_state_core = 66
+				add_state_core = 67
+				promote_character = {
+					character = LAT_karl_albrecht 
+					ideology = fascism_ideology
+				}
+			}
+			CZE = {
+				transfer_state = 88
+				add_state_core = 88
+				transfer_state = 91
+				add_state_core = 91
+				transfer_state = 89
+				add_state_core = 89
+				transfer_state = 73
+				add_state_core = 73
+				puppet = LAT
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = CZE_imperial_capital
+		icon = GFX_focus_SOV_rebuild_the_savior_cathedral
+		x = 0
+		y = 2
+		cost = 7
+		prerequisite = { focus = CZE_marriage focus = CZE_austrian_slavism }
+		relative_position_id = CZE_push_to_adriatic
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			9 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+					type = anti_air_building
+					level = 3
+					instant_build = yes
+				}
+				add_dynamic_modifier = {
+					modifier = imperial_capital
+				}
+				set_state_category = metropolis
+			}
+			109 = {
+				add_core_of = CZE
+			}
+			45 = {
+				add_core_of = CZE
+			}
+			103 = {
+				add_core_of = CZE
+			}
+			163 = {
+				add_core_of = CZE
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_settle_old_scores
+		icon = GFX_focus_TUR_the_montreux_convention
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_imperial_capital }
+		relative_position_id = CZE_imperial_capital
+		will_lead_to_war_with = TUR
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_state_claim = 804
+			add_state_claim = 105
+			create_wargoal = {
+				type = take_claimed_state 
+				target = TUR
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_training_in_plzen
+		icon = GFX_goal_generic_army_doctrines
+		x = -3
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_bohemia }
+		relative_position_id = CZE_bohemia
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			army_experience = 20
+			add_doctrine_cost_reduction = {
+				name = land_doc_bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+			random_unit_leader = {
+				add_unit_leader_trait = ranger
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_weapon_advancements
+		icon = GFX_goal_generic_small_arms
+		x = -2
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_training_in_plzen }
+		relative_position_id = CZE_training_in_plzen
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				name = CZE_inf_and_artillery_advancement
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_tank_imports
+		icon = GFX_focus_chi_reach_out_to_france
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_training_in_plzen }
+		relative_position_id = CZE_training_in_plzen
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+			add_equipment_to_stockpile = {
+				type = light_tank_chassis_2
+				amount = 120
+				producer = FRA
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_modern_hussars
+		icon = GFX_goal_generic_cavalry
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_tank_imports }
+		relative_position_id = CZE_tank_imports
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = light_fighter
+			}
+			add_ideas = idea_czech_modern_hussars
+		}
+	}
+	
+	focus = {
+		id = CZE_flying_artillery
+		icon = GFX_goal_generic_CAS
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_modern_hussars }
+		relative_position_id = CZE_modern_hussars
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = FRA_flying_artillery 
+		}
+	}
+	
+	focus = {
+		id = CZE_tank_modernization
+		icon = GFX_goal_generic_army_tanks
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_weapon_advancements }
+		relative_position_id = CZE_weapon_advancements
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_finetune_divisions
+		icon = GFX_goal_generic_axis_build_infantry
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_tank_modernization }
+		relative_position_id = CZE_tank_modernization
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = support_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_war_college
+		icon = GFX_goal_generic_axis_build_infantry
+		x = 1
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_finetune_divisions }
+		prerequisite = { focus = CZE_flying_artillery }
+		relative_position_id = CZE_finetune_divisions
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = CZE_war_college_idea 
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	focus = {
+		id = CZE_rebuild_imperial_fleet
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 32
+		y = 0
+		cost = 7
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			navy_experience = 25
+			random_owned_controlled_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_back_to_naval_basics
+		icon = GFX_focus_generic_destroyer
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_rebuild_imperial_fleet }
+		relative_position_id = CZE_rebuild_imperial_fleet
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = dd_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_restore_glory
+		icon = GFX_focus_generic_navy_battleship2
+		x = -2
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_back_to_naval_basics }
+		relative_position_id = CZE_back_to_naval_basics
+		mutually_exclusive = { focus = CZE_accept_new_world }
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = bb_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_cruisers
+		icon = GFX_focus_generic_cruiser2
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_restore_glory }
+		relative_position_id = CZE_restore_glory
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 3
+				category = ship_modules_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = cl_tech
+				category = ca_tech
+			}
+			add_ideas = idea_czech_cruisers
+		}
+	}
+	
+	focus = {
+		id = CZE_kaiserliche_marines
+		icon = GFX_goal_generic_amphibious_assault
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_cruisers }
+		relative_position_id = CZE_cruisers
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = tp_tech
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = marine_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_sms_habsburg
+		icon = GFX_goal_generic_navy_battleship
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_kaiserliche_marines }
+		relative_position_id = CZE_kaiserliche_marines
+		available = { date > 1942.1.1 }
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			set_technology = { ship_hull_super_heavy = 1 }
+			create_equipment_variant = {
+				name = "Habsburg"
+				type = ship_hull_super_heavy_1
+				parent_version = 0
+				modules = {
+					fixed_ship_battery_slot = ship_super_heavy_battery_1
+					fixed_ship_anti_air_slot = ship_anti_air_2
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_2
+					fixed_ship_radar_slot = ship_radar_2
+					fixed_ship_engine_slot = heavy_ship_engine_2
+					fixed_ship_secondaries_slot = dp_ship_secondaries
+					fixed_ship_armor_slot = ship_armor_shbb
+					front_1_custom_slot = ship_super_heavy_battery_1
+					front_2_custom_slot = ship_anti_air_2
+					mid_1_custom_slot = ship_anti_air_2
+					mid_2_custom_slot = dp_ship_secondaries
+					mid_3_custom_slot = dp_ship_secondaries
+					rear_1_custom_slot = ship_super_heavy_battery_1
+					rear_2_custom_slot = ship_super_heavy_battery_1
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_accept_new_world
+		icon = GFX_goal_generic_wolf_pack
+		x = 2
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_back_to_naval_basics }
+		relative_position_id = CZE_back_to_naval_basics
+		mutually_exclusive = { focus = CZE_restore_glory }
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_coast_defense_ships
+		icon = GFX_focus_generic_adriatic_sea_focus
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_accept_new_world }
+		relative_position_id = CZE_accept_new_world
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = ROM_coastal_defense_ships
+			set_technology = { coastal_defense_ships = 1 } 
+		}
+	}
+	
+	focus = {
+		id = CZE_coast_bunker
+		icon = GFX_focus_generic_coastal_fort
+		x = 0
+		y = 1
+		cost = 7
+		prerequisite = { focus = CZE_coast_defense_ships }
+		relative_position_id = CZE_coast_defense_ships
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = idea_czech_coastal_bunkers
+		}
+	}
+	
+	focus = {
+		id = CZE_rebuild_hungarian_heartland
+		icon = GFX_goal_continuous_non_factory_construct
+		x = 2
+		y = 2
+		cost = 7
+		available = {
+			155 = {
+				is_core_of = CZE
+				is_controlled_by = CZE
+			}
+			43 = {
+				is_core_of = CZE
+				is_controlled_by = CZE
+			}
+			154 = {
+				is_core_of = CZE
+				is_controlled_by = CZE
+			}
+		}
+		prerequisite = { focus = CZE_rebirth_habs_empire focus = CZE_bohemia_slovakia }
+		relative_position_id = CZE_rebirth_habs_empire
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			HUN = {
+				random_core_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_core_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				random_core_state = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_build_twin_cities
+		icon = GFX_focus_generic_industry_3
+		x = 0
+		y = 1
+		cost = 7
+		available = {
+			155 = {
+				is_core_of = CZE
+				is_controlled_by = CZE
+			}
+			43 = {
+				is_core_of = CZE
+				is_controlled_by = CZE
+			}
+			154 = {
+				is_core_of = CZE
+				is_controlled_by = CZE
+			}
+		}
+		prerequisite = { focus = CZE_rebuild_hungarian_heartland }
+		relative_position_id = CZE_rebuild_hungarian_heartland
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			43 = {
+				add_victory_points = {
+					province = 3731
+					value = 3
+				}
+				add_resource = {
+					type = steel
+					amount = 4
+				}
+			}
+			add_stability = 0.02
+		}
+	}
+	
+	focus = {
+		id = CZE_revive_turan_project
+		icon = GFX_focus_generic_army_tanks2
+		x = 0
+		y = 1
+		cost = 7
+		available = {
+			155 = {
+				is_core_of = CZE
+			}
+			43 = {
+				is_core_of = CZE
+			}
+			154 = {
+				is_core_of = CZE
+			}
+		}
+		prerequisite = { focus = CZE_build_twin_cities }
+		relative_position_id = CZE_build_twin_cities
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
+			custom_effect_tooltip = CZE_Turan_advancement_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						has_tech = engine_tech_1 
+						NOT = { has_tech = engine_tech_2 }
+					}
+					set_technology = { engine_tech_2 = 1 }
+				}
+				else_if = {
+					limit = {
+						has_tech = engine_tech_2 
+						NOT = { has_tech = engine_tech_3 }
+					}
+					set_technology = { engine_tech_3 = 1 }
+				}
+				else_if = {
+					limit = {
+						has_tech = engine_tech_3 
+						NOT = { has_tech = engine_tech_4 }
+					}
+					set_technology = { engine_tech_4 = 1 }
+				}
+				
+				if = {
+					limit = {
+						has_tech = armor_tech_1  
+						NOT = { has_tech = armor_tech_2 }
+					}
+					set_technology = { armor_tech_2 = 1 }
+				}
+				else_if = {
+					limit = {
+						has_tech = armor_tech_2 
+						NOT = { has_tech = armor_tech_3 }
+					}
+					set_technology = { armor_tech_3 = 1 }
+				}
+				else_if = {
+					limit = {
+						has_tech = armor_tech_3 
+						NOT = { has_tech = armor_tech_4 }
+					}
+					set_technology = { armor_tech_4 = 1 }
+				}
+				
+			}
+		}
+	}
+	
+	focus = {
+		id = CZE_hungarian_e_officer
+		icon = GFX_focus_generic_military_mission
+		x = -2
+		y = 2
+		cost = 7
+		available = {
+			155 = {
+				is_core_of = CZE
+			}
+			43 = {
+				is_core_of = CZE
+			}
+			154 = {
+				is_core_of = CZE
+			}
+		}
+		prerequisite = { focus = CZE_rebirth_habs_empire focus = CZE_bohemia_slovakia }
+		relative_position_id = CZE_bohemia_slovakia
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_manpower = -1500
+			add_ideas = idea_hungarian_e_officers
+			
+		}
+	}
+	
+	focus = {
+		id = CZE_integrate_hungarian_boyscouts
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 0
+		y = 1
+		cost = 7
+		available = {
+			155 = {
+				is_core_of = CZE
+			}
+			43 = {
+				is_core_of = CZE
+			}
+			154 = {
+				is_core_of = CZE
+			}
+		}
+		prerequisite = { focus = CZE_hungarian_e_officer }
+		relative_position_id = CZE_hungarian_e_officer
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_ideas = idea_magyar_boyscouts
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

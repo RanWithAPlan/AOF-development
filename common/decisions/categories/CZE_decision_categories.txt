@@ -1,0 +1,23 @@
+
+
+CZE_arms_sale_category = {
+	icon = generic_economy
+	allowed = {
+		original_tag = CZE
+	}
+	visible = {
+		has_global_flag = CZE_arms_for_the_world
+	}
+}
+
+CZE_transylvania_category = {
+	icon = border_war
+	allowed = {
+		original_tag = CZE
+		NOT = { has_completed_focus = CZE_transylvania_solution }
+	}
+	visible = {
+		has_country_flag = CZE_transylvania_problem_flag
+		NOT = { has_completed_focus = CZE_transylvania_solution }
+	}
+}

@@ -1,0 +1,107 @@
+Council_historical = {
+	name = "Council Russian historical plan"
+	desc = "Essentially historical behaviour for Council Russia"
+
+	allowed = {
+		original_tag = CRR
+	}
+	enable = {
+		is_historical_focus_on = yes
+	}
+
+	ai_national_focuses = {
+		#1936
+		CRR_new_five_year_plan
+		CRR_government_reform
+		CRR_army_reform
+		CRR_finally_end_this_war
+		CRR_white_russia
+		CRR_modernize_agriculture
+		CRR_prepare_infiltration
+		CRR_reopen_pupblic_schools
+		#1937
+		CRR_core_white_russia
+		CRR_doctrine_effort
+		CRR_new_five_year_plan_2
+		CRR_resource_rich_ground
+		CRR_go_west
+		CRR_childlabor
+		CRR_ukrainian_wheat
+		#1938
+		CRR_green_militia
+		CRR_recruit_old_generals
+		CRR_red_airforce
+		CRR_new_five_year_plan_3
+		CRR_mass_assault
+		CRR_ministry_logistics_railroad
+		CRR_motorization
+		CRR_end_the_damned_suffering
+		CRR_ratlines
+		#1939
+		CRR_extraordinary_espionage
+		CRR_infiltrate_perm
+		CRR_unwavering_loyalty
+		CRR_capital_steel
+		CRR_demand_perm_subjugation
+		CRR_counterrevolutionaries
+		CRR_infiltrate_finland
+		CRR_token_navy
+		#1940
+		CRR_fund_naval_academies
+		CRR_eastern_route
+		CRR_new_five_year_plan_4
+		CRR_first_okb
+		CRR_shared_past
+		CRR_cossacks_to_the_south
+		CRR_a_soldier_a_plane_scheme
+		CRR_ural_war
+		CRR_next_generation_fighter
+		#1941
+		CRR_air_doctrine_effort
+		CRR_siberian_war
+		CRR_demand_anarchist_subjugation
+		CRR_tank_plant
+		CRR_grant_siberian_autonomy
+		CRR_eurasian_marines
+		CRR_red_sailors
+		CRR_radartech
+		CRR_nuclear
+		CRR_cas_bomber
+		CRR_grant_siberian_autonomy
+		CRR_true_red_army
+		CRR_russian_unity
+		CRR_female_sufferage_nationwide
+		CRR_celebrate_war_heroes
+		CRR_orthodox_church
+		CRR_international_regiments
+		CRR_make_movies
+		CRR_factory_sport
+		CRR_first_unified_election
+		CRR_return_moscow
+		CRR_add_the_great_steppes
+		CRR_national_delimitation
+		CRR_old_traitors
+		CRR_clean_up_the_caucasus
+		CRR_ottoman_caucasus
+		CRR_far_east
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+		
+		weight = {
+		factor = 1.0
+			modifier = {
+				factor = 1.0
+			}
+		}
+}

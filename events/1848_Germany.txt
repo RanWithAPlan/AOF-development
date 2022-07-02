@@ -1,0 +1,354 @@
+﻿###########################
+# 1848 German Events
+###########################
+
+add_namespace = mod_germany
+
+country_event = {
+	id = mod_germany.1
+	title = mod_germany.1.t
+	desc = mod_germany.1.d
+	picture = GFX_report_event_election_vote
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_germany.1.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		
+		add_political_power = 25
+		
+		#promote_character = {
+		#	character = GER_heinrich_bruening 
+		#	ideology = conservatism
+		#}
+		
+		#set_party_name = {
+		#	ideology = democratic
+		#	long_name = GER_democratic_party_zentrum_long
+		#	name = GER_democratic_party_zentrum
+		#}
+		
+	}
+	option = {
+		name = mod_germany.1.b
+		ai_chance = {
+			factor = 90
+		}
+		add_political_power = 25
+	}
+}
+
+country_event = {
+	id = mod_germany.2
+	title = mod_germany.2.t
+	desc = mod_germany.2.d
+	picture = GFX_report_event_molotov_ribbentrop_stalin_pact
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_germany.2.a
+		ai_chance = {
+			factor = 100
+		}
+		GER = {
+			country_event = { 
+				id = mod_germany.3 
+				days = 4
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_germany.3
+	title = mod_germany.3.t
+	desc = mod_germany.3.d
+	picture = GFX_report_event_france_parade
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_germany.3.a
+		ai_chance = {
+			factor = 100
+		}
+		GER = {
+			transfer_state = 546
+		}
+	}
+}
+
+country_event = {
+	id = mod_germany.4
+	title = mod_germany.4.t
+	desc = mod_germany.4.d
+	picture = GFX_report_event_kenya_army
+		
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_germany.4.a #Dahomey folds
+		ai_chance = {
+			factor = 80
+		}
+		GER = {
+			country_event = { 
+				id = mod_germany.5 
+				days = 4 
+			}
+		}
+	}
+	option = {
+		name = mod_germany.4.b #Dahomey refuses
+		ai_chance = {
+			factor = 20
+		}
+		GER = {
+			country_event = { 
+				id = mod_germany.6 
+				days = 4 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_germany.5
+	title = mod_germany.5.t
+	desc = mod_germany.5.d
+	picture = GFX_report_event_kenya_army
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_germany.5.a
+		DAH = {
+			776 = {
+				remove_building = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+			give_resource_rights = {
+			receiver = GER
+			state = 776
+			}
+		}
+		GER = {
+			add_offsite_building = {
+				type = industrial_complex 
+				level = 2
+			}
+		}
+		hidden_effect = {
+			set_country_flag = GER_dahomey_folds
+		}
+	}
+}
+
+country_event = {
+	id = mod_germany.6
+	title = mod_germany.6.t
+	desc = mod_germany.6.d
+	picture = GFX_report_event_ast_army
+		
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_germany.6.a 
+		declare_war_on = {
+			target = DAH
+			type = annex_everything
+		}
+	}
+}
+
+country_event = {
+	id = mod_germany.7
+	title = mod_germany.7.t
+	desc = mod_germany.7.d
+	picture = GFX_report_event_kenya_army
+		
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_germany.7.a #Cameroon folds
+		ai_chance = {
+			factor = 80
+		}
+		GER = {
+			country_event = { 
+				id = mod_germany.8
+				days = 4 
+			}
+		}
+	}
+	option = {
+		name = mod_germany.7.b #Cameroon refuses
+		ai_chance = {
+			factor = 20
+		}
+		GER = {
+			country_event = { 
+				id = mod_germany.9 
+				days = 4 
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mod_germany.8
+	title = mod_germany.8.t
+	desc = mod_germany.8.d
+	picture = GFX_report_event_kenya_army
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_germany.8.a
+		CMR = {
+			773 = {
+				remove_building = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+			give_resource_rights = {
+			receiver = GER
+			state = 773
+			}
+		}
+		GER = {
+			add_offsite_building = {
+				type = industrial_complex 
+				level = 2
+			}
+		}
+		hidden_effect = {
+			set_country_flag = GER_cameroon_folds
+		}
+	}
+}
+
+country_event = {
+	id = mod_germany.9
+	title = mod_germany.9.t
+	desc = mod_germany.9.d
+	picture = GFX_report_event_ast_army
+		
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_germany.9.a 
+		declare_war_on = {
+			target = CMR
+			type = annex_everything
+		}
+	}
+}
+
+country_event = {
+	id = mod_germany.10
+	title = mod_germany.10.t
+	desc = mod_germany.10.d
+	picture = GFX_report_event_soviet_finnish_pact	
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = mod_germany.10.a 
+		GER = {
+			add_to_faction = AUS
+		}
+		set_country_flag = GER_austrian_ally
+		ai_chance = {
+			factor = 75
+		}
+	}
+	option = {
+		name = mod_germany.10.b
+		GER = {
+			annex_country = {
+				target = AUS
+				transfer_troops = yes
+			}
+		}
+		152 = { add_core_of = GER }
+		4 = { add_core_of = GER }
+		102 = { add_core_of = GER }
+		736 = { add_core_of = GER }
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+
+country_event = {
+	id = mod_germany.16 # Kissinger Football Trainer
+	title = mod_germany.16.t
+	desc = mod_germany.16.d
+	picture = GFX_report_event_crowd_in_prague
+
+	fire_only_once = yes
+	hidden = yes
+	
+	trigger = {
+		tag = GER
+		date > "1936.6.16"
+	}
+	
+	immediate = {
+		country_event = { id = mod_germany.17 days = 2 }
+	}
+
+	option = {
+		name = mod_germany.16.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	id = mod_germany.17 # Kissinger Football Trainer
+	title = mod_germany.17.t
+	desc = mod_germany.17.d
+	picture = GFX_report_event_bul_troops_macedonia
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_germany.17.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+
+

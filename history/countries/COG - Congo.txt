@@ -1,0 +1,50 @@
+﻿capital = 295
+
+set_rule = {
+	can_join_factions = no
+}
+
+oob = "COG_1936"
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	tech_mountaineers = 1
+}
+
+set_convoys = 5
+
+recruit_character = COG_haakon_glucksburg
+
+recruit_character = COG_pot
+recruit_character = COG_mt
+recruit_character = COG_awt
+recruit_character = COG_acgs
+recruit_character = COG_communist_guy
+recruit_character = COG_coi
+recruit_character = COG_ar
+recruit_character = COG_acr
+recruit_character = COG_nccr
+recruit_character = COG_ncm
+recruit_character = COG_aco2
+recruit_character = COG_stc
+recruit_character = COG_aa2
+recruit_character = COG_ncs
+recruit_character = COG_nt
+recruit_character = COG_democratic_guy
+recruit_character = COG_fascist_guy
+recruit_character = COG_ai2
+recruit_character = COG_acas
+recruit_character = COG_acd2
+
+# A colony of Italy in 1939.  However, if independent it would have the same as its 1936 politics
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+set_popularities = {
+	neutrality = 100
+}
+

@@ -1,0 +1,160 @@
+bookmarks = {
+	bookmark = {
+		name = "GATHERING_STORM_NAME"
+		desc = "GATHERING_STORM_DESC"
+		date = 1936.1.1.12
+		picture = "GFX_select_date_1936"
+		default_country = "GER"
+		default = yes
+		
+		
+		"FRA"={
+			history = "FRA_GATHERING_STORM_DESC"
+			ideology = democratic
+			available = { has_dlc = "La Resistance" } 
+			ideas = {
+				idea_FRA_racism_problem
+			}
+			focuses = {
+				FRA_form_middle_india
+				FRA_victory_eth
+				FRA_african_cores
+			}
+		}
+		"USA"={
+			history = "USA_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				planned_obsolescence
+				slim_ships
+				dwindling_recession
+			}
+			focuses = {
+				
+			}
+		}
+		"ENG"={
+			history = "ENG_GATHERING_STORM_DESC"
+			ideology = democratic
+			available = { has_dlc = "Man the Guns" }
+			ideas = {
+				idea_typhoid_plague
+				idea_parrot_fever
+				idea_ambivalent_naval_commitment
+			}
+			focuses = {
+				ENG_reinforce_triple_alliance
+				ENG_greater_union
+				ENG_fortress_calais
+			}
+		}
+		
+		"GER"={
+			history = "GER_GATHERING_STORM_DESC"
+			ideology = democratic
+			available = { has_dlc = "Waking the Tiger" }
+			ideas = {
+				idea_confusing_electoral_system
+			}
+			focuses = {
+				GER_german_legion
+				GER_economy_connection
+				GER_end_pseudo_democracy
+			}
+		}
+		"RRP"={
+			history = "RRP_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				
+			}	
+			focuses = {
+				
+			}		
+		}
+		"CZE"={
+			history = "CZE_GATHERING_STORM_DESC"
+			ideology = fascism
+			ideas = {
+				idea_czech_proxy_soldiers
+			}	
+			focuses = {
+				CZE_rebirth_habs_empire
+				CZE_bohemia
+				CZE_bohemia_slovakia
+			}			
+		}
+		"CRR"={
+			history = "CRR_GATHERING_STORM_DESC"
+			ideology = communism
+			ideas = {
+				idea_once_part_of_red_army
+				idea_donativum
+				idea_years_of_war
+			}
+			focuses = {
+				CRR_finally_end_this_war
+				CRR_russian_unity
+				CRR_return_moscow
+			}	
+		}
+		
+
+		"---"={
+			history = "OTHER_GATHERING_STORM_DESC"
+		}
+
+
+		# minors from DLC ####
+		"CAN"={
+			minor = yes
+			history = "CAN_GATHERING_STORM_DESC"
+			ideology = communism
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}
+		}
+
+		"NOR"={
+			minor = yes
+			history = "NOR_GATHERING_STORM_DESC"
+			ideology = communism
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}
+		}
+		
+		"SWE"={
+			minor = yes
+			history = "SWE_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}
+		}
+		"ICE"={
+			minor = yes
+			history = "ICE_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				
+			}
+			focuses = {
+				
+			}
+		}
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

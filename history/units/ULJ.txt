@@ -1,0 +1,97 @@
+division_template = {
+	name = "Infantry Brigade"			# Infantry Brigade
+
+	division_names_group = ULJ_GAR_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+}
+division_template = {
+	name = "Cavalry Brigade"			# Cavalry Brigade
+
+	division_names_group = ULJ_CAV_01
+
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+		cavalry = { x = 1 y = 0 }
+		cavalry = { x = 1 y = 1 }
+		cavalry = { x = 1 y = 2 }
+	}
+}
+
+
+units = {
+	
+	division = {
+		name = "Lucknow Rifles"
+		location = 10030
+		division_template = "Infantry Brigade"		
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.4
+
+	}
+	division = {
+		name = "Jabalpur Rifles"
+		location = 10401
+		division_template = "Infantry Brigade"		
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.4
+
+	}
+	
+	division = {
+		name = "2nd Unionist Regiment"
+		location = 12137
+		division_template = "Infantry Brigade"		
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.4
+
+	}
+	
+	division = {
+		name = "3rd Unionist Regiment"
+		location = 12137
+		division_template = "Infantry Brigade"		
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.4
+
+	}
+	
+	division = {
+		name = "1st Indian Sowar"
+		location = 5040
+		division_template = "Cavalry Brigade"		
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.4
+
+	}
+	
+	
+}
+
+instant_effect = {
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "ULJ"
+		}
+		requested_factories = 1
+		progress = 0.31
+		efficiency = 100
+	}
+}
+
+
+
+
+
+
+
