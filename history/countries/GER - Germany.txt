@@ -1,7 +1,7 @@
 ﻿capital = 55
 
 set_rule = {
-	can_join_factions = no
+	can_join_factions = yes
 }
 
 if = {
@@ -87,9 +87,7 @@ set_convoys = 125
 set_stability = 0.75 
 set_war_support = 0.35
 
-puppet = SAN
-puppet = LOM
-puppet = HOL
+puppet = DEN
 
 set_politics = {
 	ruling_party = democratic

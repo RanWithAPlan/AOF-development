@@ -29,7 +29,7 @@ state= {
 			}
 		}
 		add_core_of = GER
-		add_claim_by = DEN
+		add_claim_by = ICE
 		1939.1.1 = {
 			buildings = {
 				synthetic_refinery = 3
