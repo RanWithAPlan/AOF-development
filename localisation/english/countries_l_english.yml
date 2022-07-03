@@ -1361,12 +1361,13 @@
  JOR:0 "Jordan"
  JOR_DEF:0 "Jordan"
  JOR_ADJ:0 "Jordanian"
+ 
  EGY_fascism:0 "Imperial Kemet"
  EGY_fascism_DEF:0 "Imperial Kemet"
  EGY_democratic:0 "Egypt"
  EGY_democratic_DEF:0 "Egypt"
- EGY_neutrality:0 "Kingdom of Egypt"
- EGY_neutrality_DEF:0 "the Kingdom of Egypt"
+ EGY_neutrality:0 "International Dominion of Egypt"
+ EGY_neutrality_DEF:0 "the International Dominion of Egypt"
  EGY_communism:0 "Soviet Nile State"
  EGY_communism_DEF:0 "the Soviet Nile State"
  EGY_fascism_ADJ:0 "Egyptian"
@@ -1376,6 +1377,7 @@
  EGY:0 "Egypt"
  EGY_DEF:0 "Egypt"
  EGY_ADJ:0 "Egyptian"
+ 
  LBA_fascism:0 "Africa Nova"
  LBA_fascism_DEF:0 "Africa Nova"
  LBA_democratic:0 "Libyan Electorate"

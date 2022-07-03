@@ -8,7 +8,7 @@ state=
 
 	history=
 	{
-		owner = FRA
+		owner = EGY
 		buildings = {
 			infrastructure = 3 #was: 5
 			industrial_complex = 1

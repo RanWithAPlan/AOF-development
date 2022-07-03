@@ -335,8 +335,8 @@ LBA = {
 }
 
 EGY = {
-	color = rgb { 230 230 70 }
-	color_ui = rgb { 230 230 70 }
+	color = rgb { 17 142 140 }
+	color_ui = rgb { 17 142 140 }
 }
 
 PAL = {

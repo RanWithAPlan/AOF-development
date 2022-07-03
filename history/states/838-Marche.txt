@@ -1,18 +1,17 @@
-
 state={
-	id=157
-	name="STATE_157"
-
+	id=838
+	name="STATE_838"
+	
 	history={
 		owner = RRP
 		victory_points = {
-			6831 1 
+			925 1 
 		}
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 1
-			6831 = {
-				naval_base = 1
+			925 = {
+				naval_base = 4
 
 			}
 
@@ -20,11 +19,13 @@ state={
 		add_core_of = RRP
 
 	}
-
+	
+	
+	
 	provinces={
-		963 3910 3923 3966 6831 9838 
+		925 967 6926 11790 11861 
 	}
-	manpower=1673733
+	manpower=1486520
 	buildings_max_level_factor=1.000
 	state_category=city
 	local_supplies=0.000
