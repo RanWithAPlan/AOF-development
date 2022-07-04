@@ -1,0 +1,70 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+
+focus_tree = {
+	id = sardinian_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 20
+			tag = SAR
+		}
+	}
+	
+	default = no
+	
+	continuous_focus_position = { x = 50 y = 200 }
+	
+	
+	focus = {
+		id = SAR_annex_milan
+		icon = GFX_goal_rhineland
+		x = 12
+		y = 0
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			LOM = {
+				every_core_state = {
+					add_core_of = SAR
+				}
+			}
+			create_wargoal = {
+				type = annex_everything 
+				target = LOM
+			}
+			
+		}
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
