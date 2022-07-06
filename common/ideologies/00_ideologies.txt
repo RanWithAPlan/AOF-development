@@ -1,16 +1,19 @@
 ideologies = {
 	
-	democratic = {
+	democratic = {		#liberalism
 	
 		types = {
 			
 			conservatism = {
 			}
 		
-			liberalism = {
+			classical_liberalism = {
 			}
 		
-			socialism = {
+			social_democracy = {
+			}
+
+			laissez-faire = {
 			}
 		}
 		
@@ -61,23 +64,20 @@ ideologies = {
 	}
 
 
-	communism = {
+	communism = {		#socialism
 		
 		types = {
 		
 			marxism = {
 			}
 			
-			leninism = {
-			}
-			
-			stalinism = {
+			vanguard_socialism = {
 			}
 			
 			anti_revisionism = {
 			}
-			
-			anarchist_communism = {
+
+			democratic_socialism = {
 			}
 		}
 		
@@ -119,23 +119,17 @@ ideologies = {
 
 	}
 
-	fascism = {
+	fascism = {			#nationalism
 	
 		types = {
 		
-			nazism = {
+			pan-germanism = {
 			}
 
-			gen_nazism = {
+			religous_extremeism = {
 			}
 			
-			fascism_ideology = {
-			}
-			
-			falangism = {
-			}
-			
-			rexism = {
+			imperial_extremeism = {
 			}
 		}
 		
@@ -172,24 +166,14 @@ ideologies = {
 		ai_fascist = yes # uses the fascist AI behaviour
 	}
 	
-	neutrality = {
+	neutrality = {		#monarchism
 	
 		types = {
 		
-			despotism  = {
+			absolutism  = {
 			}
 			
-			oligarchism  = {
-			}
-
-			anarchism = {
-				can_be_randomly_selected = no # won't be assigned to randomly generated country leaders
-			}
-			
-			moderatism = {
-			}
-			
-			centrism = {
+			semi-constitutional_monarchy  = {
 			}
 		}
 
@@ -231,5 +215,123 @@ ideologies = {
 		}
 
 		ai_neutral = yes # 
+	}
+	anarchism = {
+	
+		types = {
+			
+			anarcho_syndicalism = {
+			}
+
+			anarcho_communism = {
+			}
+
+			libertarian_socialism = {
+			}
+		
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_ANARCHIST_1"
+			"FACTION_NAME_ANARCHIST_2"
+			"FACTION_NAME_ANARCHIST_3"
+			"FACTION_NAME_ANARCHIST_4"
+			
+		}
+		
+		color = { 34 34 34 }
+		
+		rules = {
+			can_create_collaboration_government = no
+			can_declare_war_on_same_ideology = no
+			can_force_government = yes
+			can_send_volunteers = yes
+			can_puppet = no
+			can_lower_tension = yes
+			can_only_justify_war_on_threat_country = yes
+			can_guarantee_other_ideologies = no
+		}
+		
+		can_host_government_in_exile = no
+		
+		war_impact_on_world_tension = 0.75		# the world is scared of anarchist uprisingss 
+		faction_impact_on_world_tension = 0.1
+		
+		modifiers = {
+			generate_wargoal_tension = 1.00
+			join_faction_tension = 0.20
+			lend_lease_tension = 0.20
+			send_volunteers_tension = 0.00
+			guarantee_tension = 0.25
+			annex_cost_factor = 0.4
+			civilian_intel_to_others = 20.0
+			army_intel_to_others = 5.0
+			navy_intel_to_others = 20.0
+			airforce_intel_to_others = 5
+		}
+		
+		faction_modifiers = {
+			faction_trade_opinion_factor = 0.50 #plus 50% trade opinion
+		}
+		ai_neutral = yes # uses the democratic AI behaviour
+	}
+	corporatism = {
+	
+		types = {
+			
+			imperial_corporatism = {
+			}
+
+			extreme_corporatism = {
+			}
+
+			moderate_corporatism = {
+			}
+		
+		}
+		
+		dynamic_faction_names = {
+			"FACTION_NAME_CORPORATISM_1"
+			"FACTION_NAME_CORPORATISM_2"
+			"FACTION_NAME_CORPORATISM_3"
+			"FACTION_NAME_CORPORATISM_4"
+			
+		}
+		
+		color = { 247 178 0 }
+		
+		rules = {
+			can_create_collaboration_government = yes
+			can_declare_war_on_same_ideology = yes #its a free market, competition is important
+			can_force_government = yes
+			can_send_volunteers = no #waste of company time! 
+			can_puppet = yes
+			can_lower_tension = no
+			can_only_justify_war_on_threat_country = no
+			can_guarantee_other_ideologies = yes
+		}
+		
+		can_host_government_in_exile = yes
+		
+		war_impact_on_world_tension = 0.50	
+		faction_impact_on_world_tension = 0.1 
+		
+		modifiers = {
+			generate_wargoal_tension = 0.20
+			join_faction_tension = 0.20
+			lend_lease_tension = 0.20 
+			send_volunteers_tension = 0.00
+			guarantee_tension = 0.25
+			annex_cost_factor = 0.4
+			civilian_intel_to_others = 20.0
+			army_intel_to_others = 5.0
+			navy_intel_to_others = 20.0
+			airforce_intel_to_others = 5
+		}
+		
+		faction_modifiers = {
+			faction_trade_opinion_factor = 0.70 #nothing like the sweet smell of exploitation 
+		}
+		ai_neutral = yes # uses the democratic AI behaviour
 	}
 }

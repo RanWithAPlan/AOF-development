@@ -1,0 +1,30 @@
+#################################
+# 1848 Sardinia Unification		#
+#################################
+
+add_namespace = mod_sardinia
+
+
+country_event = {
+	id = mod_sardinia.1
+	title = mod_sardinia.1.t
+	desc = mod_sardinia.1.d
+	picture = GFX_report_event_sar_milan
+
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		annex_country = {
+            target = LOM
+            transfer_troops = no
+        }
+		
+	}
+
+}
+
+
+
+
+

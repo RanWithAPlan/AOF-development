@@ -1,9 +1,5 @@
 ﻿capital = 267
 
-set_rule = {
-	can_join_factions = no
-}
-
 if = {
 	limit = {
 		NOT = {

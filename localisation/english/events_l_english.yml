@@ -531,8 +531,13 @@
  #mod_calais_struggles..b:0 ""
  
  
- 
- 
+
+
+ #### SAR EVENTS ####
+
+ mod_sardinia.1.t:0 "Sardinians in Milan"
+ mod_sardinia.1.d:0 "After an ultimatum was sent to the government of Lombardy, Sardinian troops have crossed the border and now control most of the region."
+ mod_sardinia.1.a:0 "One more step towards unification."
  #### USA EVENTS ####
  
  mod_usa.2.t:0 "Murder of [USA.GetLeader]"

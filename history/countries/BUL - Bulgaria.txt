@@ -1,7 +1,7 @@
 ﻿capital = 48
 
 set_rule = {
-	can_join_factions = no
+	can_join_factions = yes
 }
 
 recruit_character = BUL_aleksandar_tsankov_leader

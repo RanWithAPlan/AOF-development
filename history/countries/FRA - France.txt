@@ -1,7 +1,7 @@
 ﻿capital = 16
 
 set_rule = {
-	can_join_factions = no
+	can_join_factions = yes
 }
 
 if = {

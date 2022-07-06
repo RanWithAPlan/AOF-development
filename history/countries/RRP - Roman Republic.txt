@@ -1,7 +1,7 @@
 capital = 2
 
 set_rule = {
-	can_join_factions = no
+	can_join_factions = yes
 }
 
 set_stability = 0.75
