@@ -39,6 +39,7 @@ focus_tree = {
 				}
 			}
 			country_event = { id = mod_sardinia.1 }
+		add_political_power = 80
 		}
 	}
 	focus = {
@@ -70,7 +71,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SAR_corsican_factories
-		icon = GFX_goal_generic_construction
+		icon = GFX_goal_goal_generic_construct_mil_factory
 		prerequisite = {
 			focus = SAR_milano_industry
 		}
@@ -97,7 +98,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SAR_recruitment
-		icon = GFX_goal_rhineland
+		icon = GFX_goal_goal_rhineland
 		prerequisite = {
 			focus = SAR_corsican_factories
 		}
@@ -151,4 +152,77 @@ focus_tree = {
 			}
 		}
 	}
+	focus = {
+		id = SAR_invade_venice
+		icon = GFX_goal_focus_
+		prerequisite = {
+			focus = SAR_annex_milan
+		}
+		relative_position_id = SAR_annex_milan
+		x = -1
+		y = 1
+		cost = 5
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			SAN = {
+				every_core_state = {
+					add_core_of = SAR
+				}
+			}
+			create_wargoal = {
+				type = annex_everything 
+				target = SAN
+			}
+			army_experience = 10
+			add_threat = 5
+		}
+	}
+	focus = {
+		id = SAR_dreams_of_unification
+		icon = GFX_goal_goal_generic_national_unity
+		prerequisite = {
+			focus = SAR_annex_milan
+		}
+		relative_position_id = SAR_invade_venice
+		x = 0
+		y = 1
+		cost = 4
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			# add idea thingy later
+			add_political_power = 80
+		}
+	}
+	focus = {
+		id = SAR_appeal_to_italy
+		icon = GFX_goal_focus_befriend_italy
+		prerequisite = {
+			SAR_dreams_of_unification
+		}
+		relative_position_id = SAR_dreams_of_unification
+		x = 0
+		y = 1
+		cost = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			RRP = {
+				every_core_state = {
+					add_core_of = SAR
+				}
+			}
+			TWO = {
+				every_core_state = {
+					add_core_of = SAR
+				}
+			}
+			add_political_power = 80
+		}
+	}
+
 }

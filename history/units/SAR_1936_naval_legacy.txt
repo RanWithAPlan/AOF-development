@@ -1,0 +1,18 @@
+﻿
+units= {
+
+	##### Naval OOB #####
+	fleet = {
+		name = "I Flotta Navale"			
+		naval_base = 6788 # Genoa
+		task_force = {				
+			name = "I Squadra Navale"			
+			location = 6788 # Genoa
+			ship = { name = "RI Luigi Cadorna" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = SAR version_name = "Giussano Class" } } }
+			ship = { name = "RI Armando Diaz" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = SAR version_name = "Giussano Class" } } }
+			ship = { name = "RI Alberico da Barbiano" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = SAR version_name = "Giussano Class" } } }
+			ship = { name = "RI Alberto da Giussano" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = SAR version_name = "Giussano Class" } } }
+		}				
+	}
+} 
+
