@@ -35,7 +35,7 @@ focus_tree = {
 		completion_reward = {
 			LOM = {
 				every_core_state = {
-					add_core_of = SAR
+					add_core_of = RAJ
 				}
 			}
 			country_event = { id = mod_sardinia.1 }
