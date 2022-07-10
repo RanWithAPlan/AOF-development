@@ -35,7 +35,5 @@ focus_tree = {
         completion_reward = {
             add_stability = -0.25
 			add_war_support = 0.15
-            custom_effect_tooltip = available_political_advisor
-            show_ideas_tooltip = hjalmar_schacht
 			}
 }
