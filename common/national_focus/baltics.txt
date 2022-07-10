@@ -1,0 +1,41 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+
+focus_tree = {
+	id = baltics_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 20
+			tag = LAT
+		}
+	}
+	
+	default = no
+	
+	continuous_focus_position = { x = 50 y = 200 }
+	
+	focus = {
+			id = LAT_appease_lithuanian_nationalists
+        icon = GFX_goal_focus_POL_riot_of_37
+        x = 1
+        y = 0
+        cost = 10
+        ai_will_do = {
+            factor = 12
+        }
+        search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_POLITICAL }
+        completion_reward = {
+            add_stability = -0.25
+			add_war_support = 0.15
+            custom_effect_tooltip = available_political_advisor
+            show_ideas_tooltip = hjalmar_schacht
+			}
+}
