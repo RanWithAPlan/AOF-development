@@ -187,7 +187,7 @@ focus_tree = {
 		}
 		relative_position_id = SAR_invade_venice
 		x = 0
-		y = 1
+		y = 2
 		cost = 4
 		ai_will_do = {
 			factor = 10
@@ -202,9 +202,10 @@ focus_tree = {
 		icon = GFX_goal_focus_befriend_italy
 		prerequisite = {
 			SAR_dreams_of_unification
+			SAR_recruitment
 		}
 		relative_position_id = SAR_dreams_of_unification
-		x = 0
+		x = 1
 		y = 1
 		cost = 10
 		ai_will_do = {
@@ -222,6 +223,19 @@ focus_tree = {
 				}
 			}
 			add_political_power = 80
+		}
+	}
+	focus = {
+		id = SAR_strike_north
+		icon = GFX_goal_focus_GRE_a_land_of_mountains
+		prerequisite = {
+			SAR_appeal_to_italy
+		}
+		relative_position_id = SAR_appeal_to_italy
+		x = -1
+		y = 1
+		ai_will_do = {
+			factor = 10
 		}
 	}
 
