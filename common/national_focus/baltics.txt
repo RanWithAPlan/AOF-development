@@ -31,9 +31,46 @@ focus_tree = {
         ai_will_do = {
             factor = 12
         }
-        search_filters = { FOCUS_FILTER_RESEARCH FOCUS_FILTER_POLITICAL }
+		mutually_exclusive = { focus = LAT_appease_latvian_nationalists }
+		mutually_exclusive = { focus = LAT_control_riots }
+        search_filters = { FOCUS_FILTER_POLITICAL }
         completion_reward = {
             add_stability = -0.25
 			add_war_support = 0.15
-			}
+			}}
+			
+		focus = {
+			id = LAT_control_riots
+        icon = GFX_goal_focus_POL_riot_of_37
+        x = 3
+        y = 0
+        cost = 10
+        ai_will_do = {
+            factor = 12
+        }
+		mutually_exclusive = { focus = LAT_appease_lithuanian_nationalists }
+		mutually_exclusive = { focus = LAT_appease_latvian_nationalists }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        completion_reward = {
+            add_stability = -0.35
+			add_political_power = -100
+			add_manpower = -30000
+			}}
+			
+		focus = {
+			id = LAT_appease_latvian_nationalists
+        icon = GFX_goal_focus_POL_riot_of_37
+        x = 5
+        y = 0
+        cost = 10
+        ai_will_do = {
+            factor = 12
+        }
+		mutually_exclusive = { focus = LAT_appease_lithuanian_nationalists }
+		mutually_exclusive = { focus = LAT_control_riots }
+        search_filters = { FOCUS_FILTER_POLITICAL }
+        completion_reward = {
+            add_manpower = 100000
+			add_political_power = -200
+			}}
 }
