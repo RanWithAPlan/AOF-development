@@ -1044,10 +1044,15 @@
  SAR_recruitment:0 "Boost the Military"
  SAR_recruitment_desc:0 "Throughout our nation, many young men are eager to join the armed forces. We will recruit these potential soldiers and boost the power of our military."
  SAR_invade_venice:0 "Invade San Marco"
- SAR_invade_venice_desc:0 "Although the San Marco Republic will put up more of a fight than Milan, our military is still superior. This will be an excellent test for our army, and it will further the cause of Italian Unification
+ SAR_invade_venice_desc:0 "Although the San Marco Republic will put up more of a fight than Milan, our military is still superior. This will be an excellent test for our army, and it will further the cause of Italian Unification."
  
  
  
  
  LAT_appease_lithuanian_nationalists:0 "Appease Lithuanian Nationalists"
  LAT_appease_lithuanian_nationalists_desc:0 "By choosing Lithuania we can calm where the majority of the riots are meaning more stability than the other options and more war support."
+ LAT_appease_latvian_nationalists:0 "Appease Latvian Nationalists"
+ LAT_appease_latvian_nationalists_desc:0 "By choosing Latvia you can finally fully seize the factories and get the manpower you need for the army but the Lithuanians will slowly get more angry over your appeasment of Latvians."
+ LAT_control_riots:0 "Control The Riots"
+ LAT_control_riots_desc:0 "Trying to appease either the Lithuanians or Latvians is too dangerous so we just need to control the rioting but this will come with a cost that might, in the future, just might work out..."
+ 
