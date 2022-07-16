@@ -49,17 +49,21 @@ if = {
 		mtg_transport = 1
 	}
 }
+
+set_convoys = 75
+
 recruit_character = SAR_victor_emmanuel
 
 set_popularities = {
 	democratic = 31
 	neutrality = 59
+	fascism = 10
 }
 
 set_politics = {
 	ruling_party = neutrality
 	last_election = "1930.3.11"
-	election_frequency = 120
+	election_frequency = 48
 	elections_allowed = yes
 }
 

@@ -50,7 +50,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=stalinism
+			ideology=vanguard_socialism
 			expire="1944.1.1.12"
 			id=-1
 		}
@@ -63,7 +63,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=fascism_ideology
+			ideology=religous_extremeism
 			expire="1949.1.1.12"
 			id=-1
 		}

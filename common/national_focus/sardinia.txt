@@ -35,7 +35,7 @@ focus_tree = {
 		completion_reward = {
 			LOM = {
 				every_core_state = {
-					add_core_of = RAJ
+					add_core_of = SAR
 				}
 			}
 			country_event = { id = mod_sardinia.1 }
@@ -226,16 +226,61 @@ focus_tree = {
 		}
 	}
 	focus = {
-		id = SAR_strike_north
+		id = SAR_outside_peninsula
 		icon = GFX_goal_focus_GRE_a_land_of_mountains
 		prerequisite = {
 			SAR_appeal_to_italy
 		}
 		relative_position_id = SAR_appeal_to_italy
-		x = -1
+		x = -2
 		y = 1
 		ai_will_do = {
 			factor = 10
+		}
+		completion_reward = {
+		39 = {
+			add_core_of = SAR
+			}
+		736 = {
+			add_core_of = SAR
+			}
+		163 = {
+			add_core_of = SAR
+			}
+		103 = {
+			add_core_of = SAR
+			}
+		}
+	}
+	focus = {
+		id = SAR_purchase Malta
+		prerequisite = { 
+			SAR_appeal_to_italy
+		}
+		relative_position_id = SAR_appeal_to_italy
+		x = 2
+		y = 1
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			#put an event here#
+		}
+	}
+	focus = {
+		id = SAR_alliance_TWO
+		prerequisite = {
+			SAR_purchase_malta
+		}
+		relative_position_id = SAR_purchase_malta
+		x = 0
+		y = 1
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			create_faction = Bologna Accords
+			add_to_faction = TWO
 		}
 	}
 

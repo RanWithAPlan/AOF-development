@@ -175,6 +175,9 @@ ideologies = {
 			
 			semi-constitutional_monarchy  = {
 			}
+
+			despotism = {
+			}
 		}
 
 		dynamic_faction_names = {
@@ -223,7 +226,7 @@ ideologies = {
 			anarcho_syndicalism = {
 			}
 
-			anarcho_communism = {
+			anarchist_communism = {
 			}
 
 			libertarian_socialism = {

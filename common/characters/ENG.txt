@@ -33,7 +33,7 @@ characters={
 			}
 		}
 		country_leader = {
-			ideology = oligarchism
+			ideology = despotism
 			traits = { head_of_military_council }
 			expire = "1965.1.1.1"
 			id = 1
@@ -96,7 +96,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=centrism
+			ideology= liberalism
 			traits={ quartermaster_general compassionate_gentleman }
 			expire="1945.1.1.12"
 			id=-1
