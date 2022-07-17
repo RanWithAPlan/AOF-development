@@ -1,0 +1,1493 @@
+
+focus_tree = {
+	id = usa_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = USA
+		}
+		
+		modifier = {
+			add = 10
+			original_tag = USA
+		}
+	}
+	continuous_focus_position = { x = 50 y = 1600 }
+	default = no
+	
+	
+	focus = {
+		id = USA_railroad_anti_trust
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 26
+		y = 0
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = anti_trust_resistance
+				days = 180
+			}
+			add_ideas = anti_trust_effect
+		}
+	}
+	
+	focus = {
+		id = USA_inaugurate_smith
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = USA_railroad_anti_trust }
+		x = 0
+		y = 1
+		relative_position_id = USA_railroad_anti_trust
+
+		cost = 1.5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			NOT = {
+				has_country_leader = {
+					character = USA_huey_long
+					ruling_only = yes
+				}
+			}
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_advisor_role = {
+				Character = USA_joseph_robinson
+				advisor = {
+					slot = political_advisor
+					idea_token = USA_joseph_robinson
+					allowed  = {
+						original_tag  = USA
+					}
+					traits  = {
+						vp 
+					}
+					cost  = 50.000
+				}
+			}
+			activate_advisor = USA_joseph_robinson
+		}
+	}
+	
+	focus = {
+		id = USA_prepare_to_abandon_goldstandard
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		prerequisite = { focus = USA_inaugurate_smith }
+		x = 0
+		y = 1
+		relative_position_id = USA_inaugurate_smith
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = abandon_goldstandard_tt
+			country_event = {
+				id = mod_usa.3
+				days = 4
+				random_days = 2
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_form_usea
+		icon = GFX_focus_generic_the_giant_wakes
+		prerequisite = { focus = USA_prepare_to_abandon_goldstandard }
+		x = 0
+		y = 2
+		relative_position_id = USA_prepare_to_abandon_goldstandard
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = usea
+		}
+	}
+	
+	focus = {
+		id = USA_discuss_obsolescence
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = USA_prepare_to_abandon_goldstandard }
+		x = -3
+		y = 1
+		relative_position_id = USA_prepare_to_abandon_goldstandard
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			has_idea = planned_obsolescence
+		}
+		
+		bypass = {
+			NOT = {
+				has_idea = planned_obsolescence
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			country_event = {
+				id = mod_usa.4
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_remove_ban_iww
+		icon = GFX_focus_usa_union_representation_act
+		prerequisite = { focus = USA_discuss_obsolescence }
+		x = 0
+		y = 1
+		relative_position_id = USA_discuss_obsolescence
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.04
+			}
+			add_political_power = 150
+		}
+	}
+	
+	focus = {
+		id = USA_meet_with_walter_waters
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = USA_remove_ban_iww }
+		x = 0
+		y = 1
+		relative_position_id = USA_remove_ban_iww
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			country_event = {
+				id = mod_usa.5
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_meeting_of_the_industrialists
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = USA_prepare_to_abandon_goldstandard }
+		x = 3
+		y = 1
+		relative_position_id = USA_prepare_to_abandon_goldstandard
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			country_event = {
+				id = mod_usa.7
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_unamerican_activities_committee
+		icon = GFX_goal_anti_comintern_pact
+		prerequisite = { focus = USA_meeting_of_the_industrialists }
+		x = 0
+		y = 1
+		relative_position_id = USA_meeting_of_the_industrialists
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = house_unamerican_activities_committee
+		}
+	}
+	
+	focus = {
+		id = USA_fund_veterans_organisation
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = USA_unamerican_activities_committee }
+		x = 0
+		y = 1
+		relative_position_id = USA_unamerican_activities_committee
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = eagles_and_fasces
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = corporatism 
+				popularity = 0.05
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_abandon_the_gold_standard
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		prerequisite = { focus = USA_fund_veterans_organisation }
+		prerequisite = { focus = USA_meet_with_walter_waters }
+		x = 3
+		y = 1
+		relative_position_id = USA_meet_with_walter_waters
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = dwindling_recession
+				add_idea = dwindling_recession1
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_approach_patton
+		icon = GFX_goal_molotov_ribbentrop_pact
+		prerequisite = { focus = USA_abandon_the_gold_standard }
+		x = 0
+		y = 1
+		relative_position_id = USA_abandon_the_gold_standard
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			country_event = {
+				id = mod_usa.8
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_eagles_and_fasces_march
+		icon = GFX_focus_prc_infiltration
+		prerequisite = { focus = USA_approach_patton }
+		x = 0
+		y = 1
+		relative_position_id = USA_approach_patton
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			has_country_flag = USA_patton_tool
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = corporatism
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.05
+			}
+			custom_effect_tooltip = eagle_fasces_marches_tt
+		}
+	}
+	
+	focus = {
+		id = USA_march_on_washington
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = USA_eagles_and_fasces_march }
+		x = 0
+		y = 2
+		relative_position_id = USA_eagles_and_fasces_march
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = corporatism
+				popularity = 0.1
+			}
+			country_event = {
+				id = mod_usa.11
+			}
+			361 = {
+				damage_building = {
+					type = infrastructure
+					damage = 2
+				}
+				damage_building = {
+					type = industrial_complex
+					damage = 2
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_form_justice_guardians
+		icon = GFX_focus_SOV_penal_battalions
+		prerequisite = { focus = USA_march_on_washington }
+		x = -8
+		y = 1
+		relative_position_id = USA_march_on_washington
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			has_idea = supreme_court_resistance
+			has_country_flag = USA_justice_attack
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = supreme_court_resistance
+				add_idea = supreme_court_resistance1
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_form_blue_shirts
+		icon = GFX_focus_secret_rearmament
+		prerequisite = { focus = USA_form_justice_guardians }
+		x = -1
+		y = 1
+		relative_position_id = USA_form_justice_guardians
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = USA_smith_state_resistance
+					}
+				}
+				remove_dynamic_modifier = {
+					modifier = USA_smith_state_resistance
+				}
+				set_demilitarized_zone = no
+			}
+			add_ideas = blue_shirts
+			hidden_effect = {
+				country_event = {
+					id = mod_usa.14
+					days = 12
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_pack_the_court
+		icon = GFX_focus_POL_complete_april_constitution
+		prerequisite = { focus = USA_form_justice_guardians }
+		x = 1
+		y = 1
+		relative_position_id = USA_form_justice_guardians
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			has_idea = supreme_court_resistance1
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_ideas = supreme_court_resistance1
+			add_timed_idea = {
+				idea = last_court_resistance
+				days = 120
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_reinterpret_the_constitution
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = USA_pack_the_court }
+		prerequisite = { focus = USA_form_blue_shirts }
+		x = -1
+		y = 1
+		relative_position_id = USA_pack_the_court
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			NOT = {
+				has_idea = last_court_resistance
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_country_leader_trait = unconstitutional_president
+			remove_country_leader_trait = secretary_of_general_affairs
+			retire_character = USA_bertrand_snell
+		}
+	}
+	
+	focus = {
+		id = USA_finding_traitors_in_parliament
+		icon = GFX_focus_usa_voter_registration_act
+		prerequisite = { focus = USA_march_on_washington }
+		x = -4
+		y = 1
+		relative_position_id = USA_march_on_washington
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 50
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.1
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_all_american_solidarity_party
+		icon = GFX_focus_LAT_suspend_constitution_of_latvia
+		prerequisite = { focus = USA_finding_traitors_in_parliament }
+		x = 0
+		y = 1
+		relative_position_id = USA_finding_traitors_in_parliament
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 50
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = corporatism
+				popularity = 0.1
+			}
+			set_party_name = { 
+				ideology = fascism 
+				long_name = USA_solidarity_party_long
+				name = USA_solidarity_party
+			}
+			set_party_name = { 
+				ideology = corporatism 
+				long_name = USA_solidarity_party_long
+				name = USA_solidarity_party
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_disolve_the_bizone
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		prerequisite = { focus = USA_march_on_washington }
+		x = 0
+		y = 1
+		relative_position_id = USA_march_on_washington
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			country_exists = SHX
+		}
+		
+		bypass = {
+			NOT = { country_exists = SHX }
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			puppet = SHX
+			SHX = {
+				set_cosmetic_tag = SHX_USA_occupation
+				remove_ideas = idea_bizone_trade
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+				set_popularities = {
+					democratic = 5
+					neutrality = 80
+					corporatism = 15
+				}
+			}
+			JAP = {
+				add_opinion_modifier = {
+					target = USA
+					modifier = unprovoked_aggression   
+				}
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	focus = {
+		id = USA_brand_new_rifle
+		icon = GFX_goal_generic_small_arms
+		#prerequisite = { focus = USA_remove_ban_iww }
+		x = 6
+		y = 0
+		relative_position_id = USA_railroad_anti_trust
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			has_completed_focus = USA_inaugurate_smith
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_global_military	
+		icon = GFX_focus_usa_build_the_pentagon
+		prerequisite = { focus = USA_brand_new_rifle }
+		x = 0
+		y = 1
+		relative_position_id = USA_brand_new_rifle
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = global_military
+		}
+	}
+	
+	focus = {
+		id = USA_complex_division_support
+		icon = GFX_goal_panzerwaffe
+		prerequisite = { focus = USA_global_military }
+		x = 2
+		y = 2
+		relative_position_id = USA_global_military
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = support_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_fully_desegregate_army
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = USA_global_military }
+		x = 0
+		y = 1
+		relative_position_id = USA_global_military
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = fully_desegregate_the_army
+		}
+	}
+	
+	focus = {
+		id = USA_texas_maine_exercises
+		icon = GFX_focus_generic_provoke_border_clashes
+		prerequisite = { focus = USA_fully_desegregate_army }
+		x = 0
+		y = 2
+		relative_position_id = USA_fully_desegregate_army
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available = {
+			has_capitulated = no
+			has_country_leader = {
+				character = USA_george_patton
+				ruling_only = yes
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 25
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_armor_experiments
+		icon = GFX_focus_generic_army_tanks2
+		prerequisite = { focus = USA_texas_maine_exercises }
+		x = 2
+		y = 1
+		relative_position_id = USA_texas_maine_exercises
+		mutually_exclusive = { focus = USA_fighter_assembly_plant }
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available = {
+			has_capitulated = no
+			has_country_leader = {
+				character = USA_george_patton
+				ruling_only = yes
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_pump_out_gmc_trucks
+		icon = GFX_
+		prerequisite = { focus = USA_armor_experiments }
+		x = 0
+		y = 1
+		relative_position_id = USA_armor_experiments
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available = {
+			has_capitulated = no
+			has_country_leader = {
+				character = USA_george_patton
+				ruling_only = yes
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = gmc_assembly_boost
+				days = 240
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_fortify_the_infantry
+		icon = GFX_
+		prerequisite = { focus = USA_pump_out_gmc_trucks }
+		x = 0
+		y = 1
+		relative_position_id = USA_pump_out_gmc_trucks
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available = {
+			has_capitulated = no
+			has_country_leader = {
+				character = USA_george_patton
+				ruling_only = yes
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 2
+				category = cat_mechanized_equipment
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_streamline_armor
+		icon = GFX_
+		prerequisite = { focus = USA_fortify_the_infantry }
+		x = 0
+		y = 1
+		relative_position_id = USA_fortify_the_infantry
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available = {
+			has_capitulated = no
+			has_country_leader = {
+				character = USA_george_patton
+				ruling_only = yes
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = streamlined_armor
+		}
+	}
+	
+	
+	
+	
+	focus = {
+		id = USA_plane_competition
+		icon = GFX_goal_generic_air_production
+		#prerequisite = { focus = USA_remove_ban_iww }
+		x = 11
+		y = 0
+		relative_position_id = USA_railroad_anti_trust
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			has_completed_focus = USA_inaugurate_smith
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			country_event = {
+				id = mod_usa.6
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_fill_the_decks
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = USA_plane_competition }
+		x = 0
+		y = 2
+		relative_position_id = USA_plane_competition
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = naval_air
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_fighter_competition
+		icon = GFX_
+		prerequisite = { focus = USA_fill_the_decks }
+		x = 0
+		y = 2
+		relative_position_id = USA_fill_the_decks
+		mutually_exclusive = { focus = USA_armor_experiments }
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			has_country_leader = {
+				character = USA_george_patton
+				ruling_only = yes
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = light_air
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_fighter_assembly_plant
+		icon = GFX_
+		prerequisite = { focus = USA_fighter_competition }
+		x = -1
+		y = 1
+		mutually_exclusive = { focus = USA_armor_experiments }
+		relative_position_id = USA_fighter_competition
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = fighter_assembly_line
+		}
+	}
+	
+	focus = {
+		id = USA_direct_fire_support
+		icon = GFX_
+		prerequisite = { focus = USA_fighter_competition }
+		x = 0
+		y = 1
+		mutually_exclusive = { focus = USA_fighter_assembly_plant }
+		relative_position_id = USA_fighter_assembly_plant
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_invest_into_kelly_johnson
+		icon = GFX_
+		prerequisite = { focus = USA_fighter_competition }
+		x = 1
+		y = 1
+		relative_position_id = USA_fighter_competition
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			has_country_leader = {
+				character = USA_george_patton
+				ruling_only = yes
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = cat_heavy_fighter
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_flexible_bombers
+		icon = GFX_
+		prerequisite = { focus = USA_invest_into_kelly_johnson }
+		x = 0
+		y = 1
+		relative_position_id = USA_invest_into_kelly_johnson
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			has_country_leader = {
+				character = USA_george_patton
+				ruling_only = yes
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_jet_advancements
+		icon = GFX_
+		prerequisite = { focus = USA_flexible_bombers }
+		prerequisite = { focus = USA_direct_fire_support }
+		x = -1
+		y = 1
+		relative_position_id = USA_flexible_bombers
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			has_country_leader = {
+				character = USA_george_patton
+				ruling_only = yes
+			}
+			date > 1942.1.1
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = jet_technology
+			}
+		}
+	}
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

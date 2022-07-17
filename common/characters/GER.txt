@@ -8,7 +8,7 @@ characters={
 			}
 		}
 		country_leader = {
-			ideology = liberalism
+			ideology = classical_liberalism 
 			traits = { dislikes_france liberal_democratic_paragon }
 			expire = "1965.1.1.1"
 			id = 1
@@ -53,7 +53,7 @@ characters={
 			}
 		}
 		country_leader = {
-			ideology = nazism
+			ideology = pan-germanism
 			traits = { retired_officer warmonger }
 			expire = "1965.1.1.1"
 			id = 1
@@ -68,7 +68,7 @@ characters={
 			}
 		}
 		country_leader = {
-			ideology = marxism
+			ideology = democratic_socialism 
 			traits = { economic_reformer union_man }
 			expire = "1965.1.1.1"
 			id = 1
@@ -83,7 +83,7 @@ characters={
 			}
 		}
 		country_leader = {
-			ideology = centrism
+			ideology = absolutism  
 			traits = {  }
 			expire = "1965.1.1.1"
 			id = 1

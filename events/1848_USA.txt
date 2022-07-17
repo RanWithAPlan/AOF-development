@@ -50,6 +50,394 @@ country_event = { # Death of Long / Valentines Day
 	}
 }
 
+country_event = { # Meeting of Hearst & Murphy
+	id = mod_usa.3
+	title = mod_usa.3.t
+	desc = mod_usa.3.d
+	picture = GFX_report_event_hitler_handshake
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.3.a
+		add_popularity = {
+			ideology = corporatism 
+			popularity = 0.01
+		}
+	}
+}
+
+country_event = { # Discuss Planned Obsolescence
+	id = mod_usa.4
+	title = mod_usa.4.t
+	desc = mod_usa.4.d
+	picture = GFX_report_event_usa_election_generic
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.4.a # Continue for Campaign Contribution
+		358 = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = dockyard
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	option = {
+		name = mod_usa.4.b # Force End of Policy
+		remove_ideas = planned_obsolescence
+		add_popularity = {
+			ideology = corporatism 
+			popularity = 0.02
+		}
+	}
+}
+
+country_event = { # Meet with Walther Waters
+	id = mod_usa.5
+	title = mod_usa.5.t
+	desc = mod_usa.5.d
+	picture = GFX_report_event_spain_civil_war_volunteers_02
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.5.a 
+		swap_ideas = {
+			remove_idea = disarmed_nation
+			add_idea = volunteer_only
+		}
+	}
+}
+
+country_event = { # Plane Competition
+	id = mod_usa.6
+	title = mod_usa.6.t
+	desc = mod_usa.6.d
+	picture = GFX_
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.6.a 
+		add_ideas = lockheed
+		378 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	option = {
+		name = mod_usa.6.b
+		add_ideas = douglas_aircraft_company
+		378 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	option = {
+		name = mod_usa.6.c
+		add_ideas = boeing
+		386 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+country_event = { # Secret Bellevue-Stratford Meeting
+	id = mod_usa.7
+	title = mod_usa.7.t
+	desc = mod_usa.7.d
+	picture = GFX_
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.7.a 
+		
+	}
+}
+
+country_event = { # The Group approaches Patton
+	id = mod_usa.8
+	title = mod_usa.8.t
+	desc = mod_usa.8.d
+	picture = GFX_report_event_oahu_withdraws
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.8.a 
+		add_trait = {
+			character = USA_george_s_patton
+			trait = hidden_sympathies
+		}
+		hidden_effect = {
+			country_event = {
+				id = mod_usa.9
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = { # Patton visits the White House
+	id = mod_usa.9
+	title = mod_usa.9.t
+	desc = mod_usa.9.d
+	picture = GFX_report_event_usa_election_generic
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.9.a 
+		add_political_power = -25
+		USA_george_s_patton = {
+			remove_unit_leader_role = yes
+		}
+		remove_advisor_role = {
+		  character = USA_george_s_patton
+		  slot = theorist
+		}
+		USA_douglas_macarthur = {
+			remove_unit_leader_role = yes
+		}
+		remove_advisor_role = {
+			character = USA_douglas_macarthur
+			slot = army_chief
+		}
+		USA_edward_brooks = {
+			remove_unit_leader_role = yes
+		}
+		
+		hidden_effect = {
+			country_event = {
+				id = mod_usa.10
+				days = 12
+			}
+		}
+	}
+}
+
+country_event = { # Patton declares Smith sick and unfit to run country
+	id = mod_usa.10
+	title = mod_usa.10.t
+	desc = mod_usa.10.d
+	picture = GFX_report_event_generic_rally
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.10.a 
+		add_political_power = -10
+		set_country_flag = USA_patton_tool
+	}
+}
+
+country_event = { # Patton inaugurated
+	id = mod_usa.11
+	title = mod_usa.11.t
+	desc = mod_usa.11.d
+	picture = GFX_report_event_generic_rally
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.11.a
+		hidden_effect = {
+			set_cosmetic_tag = USA_business_plot_fascism
+		}
+		add_stability = -0.25
+		add_war_support = -0.1
+		set_politics = {
+			ruling_party = corporatism 
+			elections_allowed = no
+			last_election = "1934.11.8"
+			election_frequency = 48
+			long_name = USA_plot_fascism_long
+			name = USA_plot_fascism
+		}
+		add_country_leader_role = {
+			character = USA_george_patton
+			promote_leader = yes
+			country_leader = {
+				ideology = extreme_corporatism 
+				expire = "1965.1.1.1"
+				traits = { unconstitutional_president }
+			}
+		}
+		add_country_leader_trait = secretary_of_general_affairs
+		add_field_marshal_role = {
+			Character = USA_douglas_macarthur
+			traits={ brilliant_strategist career_officer media_personality politically_connected offensive_doctrine }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=2
+		}
+		add_advisor_role = {
+			character = USA_douglas_macarthur
+			advisor = {
+				idea_token = douglas_macarthur
+				slot = army_chief
+				cost = 50
+				traits = {
+					army_chief_morale_3
+				}
+			}
+			activate = yes
+		}
+		add_corps_commander_role = {
+			character = USA_edward_brooks
+			traits={ trait_reckless armor_officer }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=2
+		}
+		retire_character = USA_joseph_robinson
+		add_advisor_role = {
+			Character = USA_bertrand_snell
+			advisor = {
+				slot = political_advisor
+				idea_token = USA_bertrand_snell
+				allowed  = {
+					original_tag  = USA
+				}
+				traits  = {
+					popular_figurehead2 
+				}
+				cost  = 50.000
+			}
+		}
+		activate_advisor = USA_bertrand_snell
+		set_party_name = { 
+			ideology = democratic 
+			long_name = USA_business_plot_democratic_long
+			name = USA_business_plot_democratic
+		}
+		remove_country_leader_role = {
+			character = USA_al_smith
+			ideology = socialism
+		}
+		hidden_effect = {
+			country_event = {
+				id = mod_usa.12
+				days = 21
+			}
+		}
+	}
+}
+
+country_event = { # Supreme Court starts resisting Patton
+	id = mod_usa.12
+	title = mod_usa.12.t
+	desc = mod_usa.12.d
+	picture = GFX_report_event_saf_coup
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.12.a 
+		add_political_power = -75
+		add_ideas = supreme_court_resistance
+		hidden_effect = {
+			country_event = {
+				id = mod_usa.13
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = { # 'Lone' Gunman (Payed Killer = Adel Perkily) attacks Supreme Justice
+	id = mod_usa.13
+	title = mod_usa.13.t
+	desc = mod_usa.13.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.13.a 
+		set_country_flag = USA_justice_attack
+		custom_effect_tooltip = unlock_justice_protection_tt
+	}
+}
+
+country_event = { # Maurice Rose fears antisemitism and deserts
+	id = mod_usa.14
+	title = mod_usa.14.t
+	desc = mod_usa.14.d
+	picture = GFX_report_event_desertion_poster
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.14.a 
+		set_nationality = {
+			target_country = CUB
+			character = USA_maurice_rose
+		}
+		add_manpower = -25000
+		hidden_effect = {
+			CUB = {
+				country_event = {
+					id = mod_usa.15
+				}
+			}
+		}
+	}
+}
+
+country_event = { # Maurice Rose arrives in Kingston
+	id = mod_usa.15
+	title = mod_usa.15.t
+	desc = mod_usa.15.d
+	picture = GFX_report_event_soldiers_in_france
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.15.a 
+		add_manpower = 23500
+	}
+}
 
 
 

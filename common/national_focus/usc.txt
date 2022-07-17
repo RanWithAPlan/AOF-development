@@ -1,0 +1,353 @@
+focus_tree = {
+	id = usc_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = CUB
+		}
+		
+		modifier = {
+			add = 10
+			original_tag = CUB
+		}
+	}
+	continuous_focus_position = { x = 50 y = 1600 }
+	default = no
+	
+	
+	focus = {
+		id = CUB_marine_nation
+		icon = GFX_focus_usa_recruit_the_free_corps
+		x = 30
+		y = 0
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = idea_marine_nation
+		}
+	}
+	
+	focus = {
+		id = CUB_caribbean_monroe_doctrine
+		icon = GFX_focus_generic_coastal_fort
+		prerequisite = { focus = CUB_marine_nation }
+		x = -2
+		y = 1
+		relative_position_id = CUB_marine_nation
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			GUA = {
+				give_military_access = CUB
+			}
+			HON = {
+				give_military_access = CUB
+			}
+			ELS = {
+				give_military_access = CUB
+			}
+			NIC = {
+				give_military_access = CUB
+			}
+			COS = {
+				give_military_access = CUB
+			}
+			PAN = {
+				give_military_access = CUB
+			}
+			COL = {
+				give_military_access = CUB
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_move_usmc_aviation
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = CUB_marine_nation }
+		x = 2
+		y = 1
+		relative_position_id = CUB_marine_nation
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = idea_independent_usmc_aviation
+			add_equipment_to_stockpile = {
+				type = nav_bomber_equipment_1
+				amount = 32
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = fighter_equipment_0
+				amount = 64
+				producer = USA
+			}
+			315 = {
+				set_building_level = {
+					type = air_base 
+					level = 5
+					instant_build = yes
+				}
+			}
+			689 = {
+				set_building_level = {
+					type = air_base 
+					level = 5
+					instant_build = yes
+				}
+			}
+			318 = {
+				set_building_level = {
+					type = air_base 
+					level = 5
+					instant_build = yes
+				}
+			}
+			690 = {
+				set_building_level = {
+					type = air_base 
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_end_the_galvez_strike
+		icon = GFX_focus_generic_military_dictatorship
+		prerequisite = { focus = CUB_move_usmc_aviation }
+		prerequisite = { focus = CUB_caribbean_monroe_doctrine }
+		x = -2
+		y = 1
+		relative_position_id = CUB_move_usmc_aviation
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			NOT = {
+				country_exists = HON
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			312 = {
+				set_demilitarized_zone = no
+			}
+			army_experience = 15
+			country_event = {
+				id = mod_usc.1
+			}
+			hidden_effect = {
+				division_template = {
+					name = "US Marines Advisors"
+					is_locked = yes
+					division_names_group = USA_MAR_01
+					priority = 0
+					regiments = {
+						marine = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+					}
+					support = { 
+						military_police = { x = 0 y = 0 }
+					} 
+				}
+				689 = {
+					create_unit = {
+						division = "name = \"1st US Marines Advisors\" division_template = \"US Marines Advisors\" start_experience_factor = 0.3"
+						owner = CUB
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_caribbean_serves_the_marines
+		icon = GFX_focus_generic_tank_production
+		prerequisite = { focus = CUB_end_the_galvez_strike }
+		x = 0
+		y = 1
+		relative_position_id = CUB_end_the_galvez_strike
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = -0.05
+			add_ideas = idea_caribbean_serves_the_marines
+			
+		}
+	}
+	
+	focus = {
+		id = CUB_sell_hispaniola_chromium
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = CUB_caribbean_serves_the_marines }
+		x = 0
+		y = 1
+		relative_position_id = CUB_caribbean_serves_the_marines
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_resource = {
+				type = chromium
+				amount = -2
+				state = 319
+			}
+			add_resource = {
+				type = chromium
+				amount = -5
+				state = 318
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

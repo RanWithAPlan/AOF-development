@@ -77,8 +77,15 @@
  RCO_caucasus_republic_DEF:0 "Caucasia"
  RCO_caucasus_republic_ADJ:0 "Caucasian"
 
-
-
+ USA_business_plot_fascism:0 "United States of America"
+ 
+ 
+ SHX_USA_occupation_neutrality:0 "The Shandong Occupation Zone"
+ SHX_USA_occupation_fascism:0 "The Shandong Occupation Zone"
+ SHX_USA_occupation_communism:0 "The Shandong Occupation Zone"
+ SHX_USA_occupation_democratic:0 "The Shandong Occupation Zone"
+ SHX_USA_occupation_ADJ:0 "Shandong"
+ SHX_USA_occupation_DEF:0 "the Shandong Occupation Zone"
 
 
 
