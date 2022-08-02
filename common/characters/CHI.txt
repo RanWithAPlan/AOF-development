@@ -42,7 +42,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=leninism
+			ideology=vanguard_socialism
 			traits={ cornered_fox }
 			expire="1965.1.1.1"
 			id=-1
@@ -57,7 +57,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=fascism_ideology
+			ideology=imperial_extremeism
 			expire="1965.1.1.1"
 			id=-1
 		}

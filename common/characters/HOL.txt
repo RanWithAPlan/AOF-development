@@ -39,7 +39,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=fascism_ideology
+			ideology=pan-germanism 
 			traits={ leider }
 			expire="1965.1.1.1"
 			id=-1
@@ -53,7 +53,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=leninism
+			ideology=vanguard_socialism
 			traits={ veteran_communist }
 			expire="1965.1.1.1"
 			id=-1

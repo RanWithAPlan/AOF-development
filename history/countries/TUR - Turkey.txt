@@ -1,4 +1,4 @@
-﻿capital = 49
+﻿capital = 797
 
 set_rule = {
 	can_join_factions = no

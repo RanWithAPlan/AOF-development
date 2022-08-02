@@ -1,0 +1,21 @@
+state={
+	id=849
+	name="STATE_849"
+	provinces={
+		489 582 9543 11557 
+	}
+	history={
+		owner = UKR
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+			industrial_complex = 2
+			fuel_silo = 1
+		}
+		add_core_of = UKR
+	}
+	manpower=100000
+	state_category = large_town
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

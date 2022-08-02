@@ -17,22 +17,31 @@
  corporatism:0 "Corporatist"
  corporatism_noun:0 "Corporatism"
  corporatism_desc:0 "Corporatist Government"
+
  conservatism:0 "Conservatism"
  classical_liberalism:0 "Classical Liberalism"
  social_democracy:0 "Social Democracy"
  laissez-faire:0 "Laissez-Faire"
+
  pan-germanism:0 "Pan-Germanism"
  religous_extremeism:0 "Religous Extremeism"
  imperial_extremeism:0 "Imperial Extremeism"
+ green_army:0 "Green Army Nationalism"
+
  marxism:0 "Orthodox Marxist"
  vanguard_socialism:0 "Vanguard Socialism"
  democratic_socialism:0 "Democratic Socialism"
+ anti_revisionism:0 "Anti-Revisionism"
+
  anarchist_communism:0 "Anarcho-Communism"
  libertarian_socialism:0 "Libertarian Socialism"
  anarcho_syndicalism:0 "Anarcho-Syndicalism"
+
  absolutism:0 "Absolutism"
  semi-constitutional_monarchy:0 "Semi-Constitutional Monarchy"
  despotism:0 "Despotism"
+ centrism:0 "Centrism"
+ 
  imperial_corporatism:0 "Imperialist Corporatism"
  extreme_corporatism:0 "Extreme Corporatism"
  libertarianism:0 "Libertarianism"

@@ -8,7 +8,7 @@ characters={
 			}
 		}
 		country_leader = {
-			ideology = despotism 
+			ideology = despotism
 			traits = {  }
 			expire = "1965.1.1.1"
 			id = 1
@@ -25,7 +25,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=liberalism
+			ideology=classical_liberalism
 			expire="1965.1.1.1"
 			id=-1
 		}
@@ -38,7 +38,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=stalinism
+			ideology=vanguard_socialism
 			traits={ reluctant_interventionist }
 			expire="1941.1.1.12"
 			id=-1
@@ -52,7 +52,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=rexism
+			ideology=imperial_extremeism
 			expire="1952.1.1.12"
 			id=-1
 		}
@@ -65,7 +65,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=oligarchism
+			ideology=despotism
 			traits={ economist }
 			expire="1947.1.1.12"
 			id=-1

@@ -8,7 +8,7 @@ characters={
 			}
 		}
 		country_leader = {
-			ideology = social_democracy 
+			ideology = social_democracy
 			traits = {  }
 			expire = "1965.1.1.1"
 			id = 1
@@ -23,58 +23,11 @@ characters={
 			}
 		}
 		country_leader = {
-			ideology = social_democracy 
+			ideology = social_democracy
 			traits = { former_vp }
 			expire = "1965.1.1.1"
 			id = 1
 		}
-	}
-	
-	USA_george_patton = {
-		name = "George S. Patton"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/USA/Portrait_George_Patton.dds"
-			}
-		}
-	}
-	
-	USA_charles_hughes = {
-		name = "Charles Evans Hughes"
-		portraits = {
-			civilian = {
-				large = "gfx/leaders/USA/Portrait_Charles_Hughes.dds"
-			}
-		}
-		country_leader = {
-			ideology = classical_liberalism 
-			traits = { }
-			expire = "1965.1.1.1"
-			id = 1
-		}
-	}
-	
-	
-	
-	
-	USA_joseph_robinson={
-		name= "Joseph T. Robinson"
-		portraits={
-			army={
-				small="GFX_idea_generic_political_advisor_europe_4"
-			}
-		}
-		
-	}
-	
-	USA_bertrand_snell={
-		name= "Bertrand Snell"
-		portraits={
-			army={
-				small="GFX_idea_generic_air_close_air_sup_western_european_2d"
-			}
-		}
-		
 	}
 
 
@@ -116,7 +69,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=oligarchism
+			ideology=libertarianism
 			traits={ financial_expert }
 			expire="1953.1.1.12"
 			id=-1
@@ -1402,7 +1355,7 @@ characters={
 			traits  = {
 				financial_expert 
 			}
-			cost  = 150.000
+			cost  = 0.000
 			do_effect  = {
 			}
 			ai_will_do  = {
@@ -1440,7 +1393,7 @@ characters={
 			traits  = {
 				economist 
 			}
-			cost  = 150.000
+			cost  = 0.000
 			do_effect  = {
 			}
 			ai_will_do  = {
@@ -1478,7 +1431,7 @@ characters={
 			traits  = {
 				editor 
 			}
-			cost  = 150.000
+			cost  = 0.000
 			do_effect  = {
 			}
 			ai_will_do  = {

@@ -13,4 +13,148 @@ characters = {
 			id = 1
 		}
 	}
+
+	ITA_pietro_badoglio={
+		name=ITA_pietro_badoglio
+		portraits={
+			army={
+				small="GFX_idea_pietro_badoglio"
+			}
+			army={
+				large=GFX_portrait_ITA_pietro_badoglio
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = pietro_badoglio
+			allowed = {
+				original_tag = ITA
+			}
+			traits = {
+				army_chief_morale_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+
+		field_marshal={
+			traits={ old_guard inflexible_strategist politically_connected defensive_doctrine }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=0
+		}
+	}
+
+	ITA_emilio_de_bono={
+		name=ITA_emilio_de_bono
+		portraits={
+			army={
+				small="GFX_idea_emilio_de_bono"
+			}
+			army={
+				large=GFX_portrait_ITA_emilio_de_bono
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = emilio_de_bono
+			allowed = {
+				original_tag = ITA
+			}
+			traits = {
+				army_chief_defensive_1
+			}
+			cost =  50
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		field_marshal={
+			traits={ old_guard trait_cautious politically_connected defensive_doctrine }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=0
+		}
+	}
+
+	ITA_ugo_cavallero={
+		name=ITA_ugo_cavallero
+		portraits={
+			army={
+				small="GFX_idea_ugo_cavallero"
+			}
+			army={
+				large=GFX_portrait_ITA_ugo_cavallero
+			}
+		}
+		advisor={
+			slot = army_chief
+			idea_token = ugo_cavallero
+			allowed = {
+				original_tag = ITA
+			}
+			traits = {
+				army_chief_maneuver_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		corps_commander={
+			traits={ old_guard career_officer trait_cautious }
+			skill=2
+			attack_skill=1
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=0
+		}
+	}
+
+	ITA_italo_balbo={
+		name=ITA_italo_balbo
+		portraits={
+			army={
+				small="GFX_idea_italo_balbo"
+			}
+			army={
+				large=GFX_portrait_ITA_italo_balbo
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = italo_balbo
+			allowed = {
+				original_tag = ITA
+			}
+			traits = {
+				air_chief_all_weather_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		
+		corps_commander={
+			traits={ career_officer politically_connected }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=0
+		}
+	}
 }

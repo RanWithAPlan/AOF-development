@@ -77,7 +77,7 @@ ideologies = {
 			anti_revisionism = {
 			}
 
-			democratic_socialism = {
+			socialism = {
 			}
 		}
 		
@@ -131,6 +131,9 @@ ideologies = {
 			
 			imperial_extremeism = {
 			}
+
+			green_army = {
+			}
 		}
 		
 		dynamic_faction_names = {
@@ -166,7 +169,7 @@ ideologies = {
 		ai_fascist = yes # uses the fascist AI behaviour
 	}
 	
-	neutrality = {		#monarchism
+	neutrality = {		#authoritarian
 	
 		types = {
 		
@@ -177,6 +180,9 @@ ideologies = {
 			}
 
 			despotism = {
+			}
+			
+			centrism = {
 			}
 		}
 
@@ -288,7 +294,7 @@ ideologies = {
 			extreme_corporatism = {
 			}
 
-			moderate_corporatism = {
+			libertarianism = {
 			}
 		
 		}

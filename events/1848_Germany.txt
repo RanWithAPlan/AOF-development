@@ -296,10 +296,11 @@ country_event = {
 				transfer_troops = yes
 			}
 		}
-		152 = { add_core_of = GER }
-		4 = { add_core_of = GER }
-		102 = { add_core_of = GER }
-		736 = { add_core_of = GER }
+		AUS = {
+				every_core_state = {
+					add_core_of = GER
+				}
+			}
 		ai_chance = {
 			factor = 25
 		}

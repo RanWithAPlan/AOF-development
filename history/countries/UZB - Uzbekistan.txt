@@ -21,16 +21,16 @@ recruit_character = UZB_fayzulla_khodzhayev
 
 
 set_politics = {
-	ruling_party = democratic
-	last_election = "1936.1.1"
+	ruling_party = neutrality
+	last_election = "1905.1.1"
 	election_frequency = 48
-	elections_allowed = yes
+	elections_allowed = no
 }
 set_popularities = {
-	democratic = 50
+	democratic = 20
 	fascism = 1
-	communism = 40
-	neutrality = 9
+	communism = 15
+	neutrality = 64
 }
 
 #create_country_leader = {

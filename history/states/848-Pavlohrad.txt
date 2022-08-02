@@ -1,0 +1,22 @@
+state={
+	id=848
+	name="STATE_848"
+	provinces={
+		453 472 486 9463 9479 11452 
+	}
+	history = {
+		owner = UKR
+		add_core_of = UKR
+		victory_points = {
+			11452 5
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+	}
+	manpower=100000
+	state_category = town
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

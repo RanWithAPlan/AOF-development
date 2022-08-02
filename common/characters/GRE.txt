@@ -39,7 +39,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=stalinism
+			ideology=vanguard_socialism
 			traits={ reluctant_stalinist }
 			expire="1965.1.1.1"
 			id=-1
@@ -54,7 +54,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=gen_nazism
+			ideology=imperial_extremeism
 			traits={ polemarch likes_turkey }
 			expire="1965.1.1.1"
 			id=-1
@@ -128,7 +128,7 @@ characters={
 				}
 			}
 			country_leader = {
-				ideology = despotism
+				ideology = libertarianism
 				expire="1965.1.1.1"
 				traits = { 
 					arkhigos
@@ -250,7 +250,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=nazism
+			ideology=pan-germanism
 			expire="1965.1.1.1"
 			id=-1
 		}

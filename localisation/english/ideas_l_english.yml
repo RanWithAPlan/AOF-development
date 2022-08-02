@@ -2685,7 +2685,7 @@
  
  ###GERMANY
  idea_confusing_electoral_system:0 "Confusing Electoral System"
- idea_confusing_electoral_system_desc:0 "Ever since the revolution of 1848 the electoral system put in place hasn't changed, allowing all states inside Germany to keep their own ways. This undoubtedly is standing in our way for a more perfect democracy."
+ idea_confusing_electoral_system_desc:0 "Ever since the treaty of 1866 the electoral system put in place hasn't changed, allowing all states inside Germany to keep their own ways. This undoubtedly is standing in our way for a more perfect democracy."
  idea_five_year_plan:0 "Five Year Plan"
  idea_tax_surplus:0 "Tax Surplus"
  idea_tax_surplus_desc:0 "The fat years are now being put to good use and building up the public and private sectors of German economy."
@@ -2985,60 +2985,7 @@
  slim_ships_desc:0 "Our naval strategy is based around the Panama Canal and our ships being able to fit through it, thus we need to limit the size of our navy, till we refine our strategy."
  dwindling_recession:0 "Dwindling Recession"
  dwindling_recession_desc:0 "The US has been stuck in a recession for the last years, but it seems the worst is over."
- dwindling_recession1:0 "Dwindling Recession"
- dwindling_recession1_desc:0 "The US has been stuck in a recession for the last years, but it seems the worst is over."
- anti_trust_resistance:0 "Railroad Anti-Trust Resistance"
- anti_trust_resistance_desc:0 "The Railroad Companies we split up, are passively resisting our policies."
- anti_trust_effect:0 "Railroad Anti-Trust Act of 1936"
- global_military:0 "Global Military"
- global_military_desc:0 "Our Army is able to project power and fight basically everywhere on earth."
- fully_desegregate_the_army:0 "Fully Desegregated Army"
- house_unamerican_activities_committee:0 "House Un-American Activities Committee"
- house_unamerican_activities_committee_desc:0 "America is under siege of communists and saboteurs. The house committee will find the enemies wherever they are hiding. Martin Dies Jr. was appointed to head the committee, a not uncontroversial pick, as he seems to only focus on communists, neglecting the threats from the right."
- eagles_and_fasces:0 "Eagles & Fasces"
- eagles_and_fasces_desc:0 "The veterans of this nations have once fought for this country and will do so again. By collecting them into the veterans organization Eagles and Fasces they can be better controlled and used if needed."
- usea:0 "United States Efficiency Agency"
- usea_desc:0 "The core ideal of the efficiency movement have finally been enshrined by law into an agency, focusing on eliminating waste, be it economical or societal."
- supreme_court_resistance:0 "Supreme Court Resistance at Every Turn"
- supreme_court_resistance_desc:0 "The US Supreme Court resists most, if not all decisions made by our leadership, may it be directly by striking down decisions or indirectly by back door dealings and illegal lobbying."
- supreme_court_resistance1:0 "Supreme Court Resistance at Most Turns"
- supreme_court_resistance1_desc:0 "The US Supreme Court resists most, if not all decisions made by our leadership, may it be directly by striking down decisions or indirectly by back door dealings and illegal lobbying."
- last_court_resistance:0 "Last Resistance in the Supreme Court"
- blue_shirts:0 "Blue Shirts"
- fighter_assembly_line:0 "Fighter Assembly Lines"
- gmc_assembly_boost:0 "GMC builds Trucks for the Army"
- streamlined_armor:0 "Streamlined Armor Production"
  
- 
- 
- 
- fruit_companies_influence:0 "Fruit Companies Influence"
- fruit_companies_influence_desc:0 "Sizeable Fruit Companies, like United Fruit and Standard Fruit are influencing huge parts of our economy and politics."
- 
- 
- USA_patton_tool:0 "Patton has been convinced"
- USA_new_york_pacified:0 "New York pacified"
- USA_new_england_pacified:0 "New England pacified"
- USA_south_carolina_pacified:0 "South Carolina pacified"
- USA_georgia_pacified:0 "Georgia pacified"
- USA_alabama_pacified:0 "Alabama pacified"
- USA_mississippi_pacified:0 "Mississippi pacified"
- USA_louisiana_pacified:0 "Louisiana pacified"
- USA_arkansas_pacified:0 "Arkansas pacified"
- 
- 
- USA_indian_reservation:0 "Major Indian Reservations"
- USA_smith_state_resistance:0 "Smith State Resistance"
- 
- 
- 
- #### USC IDEAS ####
- 
- idea_marine_nation:0 "Marine Nation"
- idea_marine_nation_desc:0 "The Caribbean has been transformed into the new home of the United States Marine Corps and in turn the whole state is set up to ensure the optimal conditions for the corps."
- idea_independent_usmc_aviation:0 "USMC Aviation moved to USC"
- idea_caribbean_serves_the_marines:0 "The Caribbean serves the Marines"
- idea_caribbean_serves_the_marines_desc:0 "Not only will the Military be set up around the US Marines, the Economy has to follow too."
  
  
  
@@ -3049,7 +2996,7 @@
  idea_hansa_league:0 "New Hansa League"
  idea_hansa_league_desc:0 "The §tNew Hansa Leauge§! was founded in 1901 in Lübeck, the former de-facto capital of the Hansa. Just like the medieval trade confederation, the modern version aims to increase trade, share profits, build a democratic foundation of a merchant federation and aims to build a robust free trade zone. Most nations along the Baltic Sea are part of the League, ironically counting out Germany, which was a founding member, but soon opted out, due to focusing on the Mediterranean Sea instead. Member nations aren't allowed to declare war on each other and are generally encouraged to work together peacefully."
  idea_exiled_danish_king:0 "Exiled Danish Monarchy"
- idea_exiled_danish_king_desc:0 "The House of Glücksburg was forced into exile in the frozen North because we had to give up Schleswig to the Germans in 1855. The damned liberals threatened to burn down Copenhagen, so we gave up the throne in Denmark and relocated to Iceland. The fire for a return of the monarchy still remain lit, the king still being the symbol our people rally around."
+ idea_exiled_danish_king_desc:0 "The House of Glücksburg was forced into exile in the frozen North because we went to war with the Germans in 1905. The damned liberals threatened to burn down Copenhagen, so we gave up the throne in Denmark and relocated to Iceland. The fire for a return of the monarchy still remain lit, the king still being the symbol our people rally around."
  idea_red_british_aid:0 "Red British Aid"
  idea_red_british_aid_desc:0 "Britain is by far the most powerful communist nation on Earth. Their achievements and advancements are being shared with the world through the Order of the Black Country."
  idea_portugese_world_fleet:0 "Portuguese World Fleet"
@@ -3062,7 +3009,6 @@
  idea_roadblock_for_the_revolution_desc:0 "We are aware that we are surrounded by capitalists and other enemies of the proletariat, many bolstering much larger armies than us. Our task won't be to beat them, but to stop the enemy before they can rush through us. We will fight tooth and nail to keep the flame of Socialism alive."
  idea_unpopular_bizone:0 "Unpopular Bizone"
  idea_unpopular_bizone_desc:0 "The major concessions of Japan and the US in Shandong aren't very popular among the population."
- idea_bizone_trade:0 "US & Japan Economic Dominance"
  idea_opium_nation:0 "Opium Nation"
  idea_opium_nation_desc:0 "The East India Company isn't really a nation in the traditional sense. After the fall of the Home Island we had to survive without Britain guiding us. The greatest weapon in our arsenal has been the red flower of vice, Poppy. The opium trade with other Indian nations and the whole of East Asia helped us survive, but with the widespread sale, usage also increased to the point, that most all of the countryside is helplessly addicted."
  idea_australian_anti_communism:0 "Fanatical Australian Anti-Communism"

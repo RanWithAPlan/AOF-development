@@ -1,0 +1,24 @@
+state={
+	id=842
+	name="STATE_842"
+	provinces={
+		778 9603 9745 11573 
+	}
+	history = {
+		victory_points = {
+			778 1 
+		}
+		
+		owner = SAR 
+		add_core_of = SAR
+		add_core_of = FRA
+		buildings = {
+			infrastructure = 2
+
+		}
+	}
+	manpower=100000
+	state_category = town
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

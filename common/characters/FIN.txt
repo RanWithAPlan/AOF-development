@@ -8,7 +8,7 @@ characters={
 			}
 		}	
 		country_leader = {
-			ideology = oligarchism
+			ideology = despotism
 			traits = {  }
 			expire = "1965.1.1.1"
 			id = 1
@@ -54,7 +54,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=fascism_ideology
+			ideology=green_army
 			expire="1965.1.1.1"
 			id=-1
 		}

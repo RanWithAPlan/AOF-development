@@ -48,7 +48,7 @@ characters={
 			}
 		}
 		country_leader = {
-			ideology = fascism_ideology  
+			ideology = imperial_extremeism
 			traits = { editor }
 			expire = "1965.1.1.1"
 			id = 1

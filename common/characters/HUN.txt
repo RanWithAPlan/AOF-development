@@ -33,13 +33,13 @@ characters={
 				}
 			}
 			country_leader={
-				ideology=oligarchism
+				ideology=despotism
 				traits={ fascist_sympathies anti_communist }
 				expire="1965.1.1.1"
 				id=500
 			}
 			country_leader={
-				ideology=fascism_ideology
+				ideology=imperial_extremeism
 				traits={ anti_communist }
 				expire="1965.1.1.1"
 				id=503
@@ -56,12 +56,12 @@ characters={
 				}
 			}
 			country_leader={
-				ideology=oligarchism
+				ideology=despotism
 				expire="1965.1.1.1"
 				id=500
 			}
 			country_leader={
-				ideology=fascism_ideology
+				ideology=imperial_extremeism
 				expire="1965.1.1.1"
 				id=500
 			}
@@ -91,7 +91,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=stalinism
+			ideology=vanguard_socialism
 			expire="1965.1.1.1"
 			id=-1
 		}
@@ -131,7 +131,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=falangism
+			ideology=religous_extremeism
 			expire="1948.1.1.12"
 			id=-1
 		}

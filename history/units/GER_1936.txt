@@ -21,6 +21,21 @@
 	}
 }
 division_template = {
+	name = "Koloniale Division"
+
+	division_names_group = GER_Col_01
+
+	regiments = { 
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+	priority = 0
+}
+division_template = {
 	name = "Panzer-Division"
 
 	division_names_group = GER_Arm_01
@@ -95,7 +110,36 @@ division_template = {
 }
 
 units = {
-
+	division= {
+		name = Lagos Division
+		location = 2050
+		division_template = "Koloniale Division"
+		start_experience_factor = 0.2
+	}
+	division= {
+		name = Berbera Division
+		location = 10833
+		division_template = "Koloniale Division"
+		start_experience_factor = 0.2
+	}
+	division= {
+		name = Berbera Division
+		location = 12991
+		division_template = "Koloniale Division"
+		start_experience_factor = 0.2
+	}
+	division= {
+		name = Nairobi Division
+		location = 1939
+		division_template = "Koloniale Division"
+		start_experience_factor = 0.2
+	}
+	division= {
+		name = Madagascar Division
+		location = 5222
+		division_template = "Koloniale Division"
+		start_experience_factor = 0.2
+	}
 	##### Oberkommando des Heeres #####
 	### 1. Armee (Wehrmacht-Gruppenkommando) ###
 	# II. Armeekorps
@@ -185,7 +229,7 @@ units = {
 				is_name_ordered = yes
 				name_order = 4
 		}
-		location = 6462
+		location = 678
 		division_template = "Infanterie-Division"
 		start_experience_factor = 0.3
 	}
@@ -194,7 +238,7 @@ units = {
 				is_name_ordered = yes
 				name_order = 14
 		}
-		location = 6462
+		location = 9559
 		division_template = "Infanterie-Division"
 		start_experience_factor = 0.3
 	}
@@ -203,7 +247,7 @@ units = {
 				is_name_ordered = yes
 				name_order = 24
 		}
-		location = 6462
+		location = 678
 		division_template = "Infanterie-Division"
 		start_experience_factor = 0.3
 	}
@@ -213,7 +257,7 @@ units = {
 				is_name_ordered = yes
 				name_order = 8
 		}
-		location = 11467
+		location = 9503
 		division_template = "Infanterie-Division"
 		start_experience_factor = 0.3
 	}
@@ -222,7 +266,7 @@ units = {
 				is_name_ordered = yes
 				name_order = 18
 		}
-		location = 11467
+		location = 9503
 		division_template = "Infanterie-Division"
 		start_experience_factor = 0.3
 	}
@@ -233,7 +277,7 @@ units = {
 				is_name_ordered = yes
 				name_order = 1
 		}
-		location = 6402
+		location = 11531
 		division_template = "Infanterie-Division"
 		start_experience_factor = 0.3
 	}
@@ -242,7 +286,7 @@ units = {
 				is_name_ordered = yes
 				name_order = 11
 		}
-		location = 266
+		location = 3629
 		division_template = "Infanterie-Division"
 		start_experience_factor = 0.3
 	}
@@ -251,13 +295,13 @@ units = {
 				is_name_ordered = yes
 				name_order = 21
 		}
-		location = 3384
+		location = 1346
 		division_template = "Infanterie-Division"
 		start_experience_factor = 0.3
 	}
 	division= {	
 		name = "Kavallerie-Kommando Insterburg" 
-		location = 281
+		location = 11435
 		division_template = "Kavallerie-Brigade"
 		start_experience_factor = 0.3
 	}

@@ -71,7 +71,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SAR_corsican_factories
-		icon = GFX_goal_goal_generic_construct_mil_factory
+		icon = GFX_goal_generic_construct_mil_factory
 		prerequisite = {
 			focus = SAR_milano_industry
 		}
@@ -98,7 +98,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SAR_recruitment
-		icon = GFX_goal_goal_rhineland
+		icon = GFX_goal_rhineland
 		prerequisite = {
 			focus = SAR_corsican_factories
 		}
@@ -181,7 +181,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SAR_dreams_of_unification
-		icon = GFX_goal_goal_generic_national_unity
+		icon = GFX_goal_generic_national_unity
 		prerequisite = {
 			focus = SAR_annex_milan
 		}
@@ -199,10 +199,10 @@ focus_tree = {
 	}
 	focus = {
 		id = SAR_appeal_to_italy
-		icon = GFX_goal_focus_befriend_italy
+		icon = GFX_focus_befriend_italy
 		prerequisite = {
-			SAR_dreams_of_unification
-			SAR_recruitment
+			focus = SAR_dreams_of_unification
+			focus = SAR_recruitment
 		}
 		relative_position_id = SAR_dreams_of_unification
 		x = 1
@@ -227,9 +227,9 @@ focus_tree = {
 	}
 	focus = {
 		id = SAR_outside_peninsula
-		icon = GFX_goal_focus_GRE_a_land_of_mountains
+		icon = GFX_focus_GRE_a_land_of_mountains
 		prerequisite = {
-			SAR_appeal_to_italy
+			focus = SAR_appeal_to_italy
 		}
 		relative_position_id = SAR_appeal_to_italy
 		x = -2
@@ -255,7 +255,7 @@ focus_tree = {
 	focus = {
 		id = SAR_purchase Malta
 		prerequisite = { 
-			SAR_appeal_to_italy
+			focus = SAR_appeal_to_italy
 		}
 		relative_position_id = SAR_appeal_to_italy
 		x = 2
@@ -265,22 +265,6 @@ focus_tree = {
 		}
 		completion_reward = {
 			#put an event here#
-		}
-	}
-	focus = {
-		id = SAR_alliance_TWO
-		prerequisite = {
-			SAR_purchase_malta
-		}
-		relative_position_id = SAR_purchase_malta
-		x = 0
-		y = 1
-		ai_will_do = {
-			factor = 10
-		}
-		completion_reward = {
-			create_faction = Bologna Accords
-			add_to_faction = TWO
 		}
 	}
 

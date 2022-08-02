@@ -17,8 +17,8 @@ SWE = {
 	color_ui = rgb { 47 172 255 }
 }
 FRA = {
-	color = rgb { 57 113 228 }
-	color_ui = rgb { 74 147 255 }
+	color = rgb { 62 78 168 }
+	color_ui = rgb { 79 98 188 }
 }
 LUX = {
 	color = rgb { 65 175 179 }
@@ -35,8 +35,8 @@ CZE = {	color = rgb { 54 167 156 }
 		color_ui = rgb { 70 217 203 }
 }
 POL = {
-	color = rgb { 214 102 139 }
-	color_ui = rgb { 255 120 138 }
+	color = rgb { 211 57 113 }
+	color_ui = rgb { 255 67 112 }
 }
 AUS = {
 	color = rgb { 194 198 215 }
@@ -95,8 +95,8 @@ DEN = {
 	color_ui = rgb { 199 151 121 }
 }
 BUL = {
-	color = rgb { 51 155 0 }
-	color_ui = rgb { 210 147 217 }
+	color = rgb { 70 175 142}
+	color_ui = rgb { 87 214 162 }
 }
 POR = {
 	color = rgb { 39 116 70 }
