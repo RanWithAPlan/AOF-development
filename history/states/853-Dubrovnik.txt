@@ -1,0 +1,32 @@
+state={
+	id=853
+	name="STATE_853"
+	provinces={
+		3868 6889 11816 
+	}
+	history={
+		owner = MAC
+		victory_points = {
+			3868 3 
+		}
+		buildings = {
+			infrastructure = 3
+			dockyard = 1
+			industrial_complex = 1
+			6889 = {
+				naval_base = 1
+
+			}
+
+		}
+		add_core_of = MAC
+		add_core_of = BOS
+		add_core_of = HER
+		add_core_of = CRO
+
+	}
+	manpower=431700
+	state_category = large_town
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

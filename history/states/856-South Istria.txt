@@ -1,31 +1,21 @@
-
 state={
-	id=736
-	name="STATE_736"
-
+	id=856
+	name="STATE_856"
+	provinces={
+		11735 
+	}
 	history={
-		victory_points = {
-			6626 1 
-		}
 		owner = AUS
 		add_core_of = AUS
 		add_core_of = SLV
+		add_core_of = CRO
 		buildings = {
 			infrastructure = 1
-			6626 = {
-				naval_base = 5
-
-			}
-
 		}
 
 	}
-
-	provinces={
-		599 6626 11595 
-	}
-	manpower=1063159
+	manpower=30000
+	state_category = town
 	buildings_max_level_factor=1.000
-	state_category=city
 	local_supplies=0.000
 }

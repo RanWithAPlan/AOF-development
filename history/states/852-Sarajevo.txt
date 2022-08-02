@@ -1,18 +1,13 @@
-
 state={
-	id=104
-	name="STATE_104"
-	resources={
-		aluminium=7.000
+	id=852
+	name="STATE_852"
+	provinces={
+		606 982 6799 11574 11741 11899 
 	}
-
 	history={
 		owner = SER
 		victory_points = {
 			11899 5 
-		}
-		victory_points = {
-			6983 3 
 		}
 		buildings = {
 			infrastructure = 3
@@ -21,14 +16,11 @@ state={
 
 		}
 		add_core_of = BOS
+		add_core_of = SER
 
 	}
-
-	provinces={
-		6957 9591 9922 11572 11872
-	}
-	manpower=910200
+	manpower=1010200
+	state_category = city
 	buildings_max_level_factor=1.000
-	state_category=town
-	local_supplies=7.000
+	local_supplies=0.000
 }

@@ -1,0 +1,21 @@
+state={
+	id=855
+	name="STATE_855"
+	provinces={
+		3985 6614 6619 6983 9586 9588 
+	}
+	history={
+		owner = SER
+		
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = BOS
+		add_core_of = SER
+
+	}
+	manpower=50000
+	state_category = town
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}
