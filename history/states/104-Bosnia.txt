@@ -8,15 +8,13 @@ state={
 
 	history={
 		owner = SER
-		victory_points = {
-			11899 5 
-		}
-		victory_points = {
-			6983 3 
+		victory_points = { 
+			11572 3
 		}
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 2
+			arms_factory = 1
 			air_base = 2
 
 		}

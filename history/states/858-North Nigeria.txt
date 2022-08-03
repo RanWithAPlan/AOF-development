@@ -5,6 +5,12 @@ state={
 		1891 1932 1969 2025 4938 4972 4997 5028 8021 8109 10820 
 	}
 	history={
+		victory_points = {
+			2025 5
+		}
+		victory_points = {
+			4972 3
+		}
 		owner = GER
 		add_core_of = NGA
 		buildings = {
@@ -16,8 +22,8 @@ state={
 
 		}
 	}
-	manpower=10757000
-	state_category = rural
-	buildings_max_level_factor=1.000
+	manpower= 10757000
+	state_category= rural
+	buildings_max_level_factor= 1.000
 	local_supplies=0.000
 }

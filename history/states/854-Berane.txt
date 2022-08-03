@@ -5,6 +5,7 @@ state={
 		937 6913 
 	}
 	history={
+		victory_points = { 6913 5 }
 		owner = MAC
 		add_core_of = MAC
 		buildings = {

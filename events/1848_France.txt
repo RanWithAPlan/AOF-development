@@ -5,6 +5,48 @@
 add_namespace = mod_france
 
 country_event = {
+	id = france.20
+	hidden = yes
+	trigger = {
+		tag = FRA
+		has_war_with = ETH
+		has_government = democratic
+		551 = { is_controlled_by = ETH }
+		268 = { is_controlled_by = ETH }
+		has_civil_war = no
+		
+	}
+	mean_time_to_happen = { days = 2 }
+	immediate = {
+		FRA = {country_event = france.21}
+	}
+}
+
+country_event = {
+	id = france.21
+	title = france.21.t
+	desc = france.21.d
+	picture = GFX_report_event_african_soldiers
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		white_peace = ETH
+		ETH = {
+			add_state_core = 268
+			transfer_state = 268
+		}
+		SUD = {
+			transfer_state = 549
+			transfer_state = 551
+			transfer_state = 767
+		}
+	}
+}
+
+country_event = {
 	id = mod_france.1
 	title = mod_france.1.t
 	desc = mod_france.1.d

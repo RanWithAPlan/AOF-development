@@ -1,0 +1,1037 @@
+focus_tree = {
+	id = westafrika_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = SIE
+		}
+	}
+
+	initial_show_position = {
+		x = 0
+	}
+
+	
+	default = no
+	
+	focus = {
+		id = SIE_Our_Origins
+		icon = GFX_goal_generic_demand_territory
+	 	#prerequisite = { focus = FRA_bomber_focus }
+		x = 15
+		y = 0
+		#relative_position_id = FRA_bomber_focus
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 150
+			add_stability = 0.10
+            army_experience = 20
+		}
+	}
+
+	focus = {
+		id = SIE_Rally_Around_Royalism
+		icon = GFX_focus_generic_monarchy_2
+	 	prerequisite = { focus = SIE_Our_Origins }
+		mutually_exclusive = { focus = SIE_Rally_Under_The_Flag }
+		x = 0
+		y = 2
+		relative_position_id = SIE_Our_Origins
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 10
+			add_stability = -0.10
+			 add_popularity = {
+         ideology = fascism
+         popularity = 0.15}
+		}
+	}
+
+
+	focus = {
+		id = SIE_Restore_Faith_In_Cabral
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+	 	prerequisite = { focus = SIE_Rally_Around_Royalism }
+		x = 0
+		y = 2
+		relative_position_id = SIE_Rally_Around_Royalism
+		cost = 12
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 25
+			 add_popularity = {
+         ideology = fascism
+         popularity = 0.10}
+		}
+	}
+
+	focus = {
+		id = SIE_Faith_In_The_Monarchy
+		icon = GFX_goal_generic_national_unity
+	 	prerequisite = { focus = SIE_Restore_Faith_In_Cabral }
+		prerequisite = { focus = SIE_Secure_Political_Positions }
+		x = 0
+		y = 2
+		relative_position_id = SIE_Restore_Faith_In_Cabral
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			 add_popularity = {
+         ideology = fascism
+         popularity = 0.05}
+		}
+	}
+
+	focus = {
+		id = SIE_Secure_Political_Positions
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+	 	prerequisite = { focus = SIE_Restore_Faith_In_Cabral }
+		x = 1
+		y = 1
+		relative_position_id = SIE_Restore_Faith_In_Cabral
+		cost = 6
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 100
+			add_stability = -0.10
+			 add_popularity = {
+         ideology = fascism
+         popularity = 0.01}
+		}
+	}
+
+	focus = {
+		id = SIE_Royal_Coup
+		icon = GFX_focus_generic_monarchy_1
+	 	prerequisite = { focus = SIE_Secure_Political_Positions }
+		x = 0
+		y = 2
+		relative_position_id = SIE_Faith_In_The_Monarchy
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = -0.20
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+		}
+	}
+
+	focus = {
+		id = SIE_Instate_A_Royalist_Dictatorship
+		icon = GFX_focus_rom_royal_dictatorship
+	 	prerequisite = { focus = SIE_Royal_Coup }
+		x = 2
+		y = 2
+		relative_position_id = SIE_Royal_Coup
+		cost = 3
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.05
+			add_country_leader_trait = dictator
+		}
+	}
+
+	focus = {
+		id = SIE_Royal_Party
+		icon = GFX_focus_generic_royal_wedding
+	 	prerequisite = { focus = SIE_Royal_Coup }
+		x = 0
+		y = 2
+		relative_position_id = SIE_Royal_Coup
+		cost = 1
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.10
+			add_threat = -2
+		}
+	}
+
+	focus = {
+		id = SIE_Royal_Academy
+		icon = GFX_focus_research
+	 	prerequisite = { focus = SIE_Royal_Party }
+		x = -1
+		y = 1
+		relative_position_id = SIE_Royal_Party
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = SIE_Wassoulou_Nationalism
+		icon = GFX_goal_generic_political_pressure
+	 	prerequisite = { focus = SIE_Instate_A_Royalist_Dictatorship }
+		prerequisite = { focus = SIE_Royal_Party }
+		x = 1
+		y = 1
+		relative_position_id = SIE_Royal_Party
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.10
+		}
+	}
+
+	focus = {
+		id = SIE_Prepare_Expansion
+		icon = GFX_goal_generic_more_territorial_claims
+	 	prerequisite = { focus = SIE_Wassoulou_Nationalism }
+		x = 0
+		y = 1
+		relative_position_id = SIE_Wassoulou_Nationalism
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_war_support = 0.20
+			add_threat = 1
+			add_manpower = 20000
+		}
+	}
+	
+	focus = {
+		id = SIE_Strike_The_Golden_Empire
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+	 	prerequisite = { focus = SIE_Prepare_Expansion }
+		x = -1
+		y = 1
+		relative_position_id = SIE_Prepare_Expansion
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_war_support = 0.05
+			create_wargoal = {
+				type = annex_everything
+				target = MLI
+			}
+		}
+	}
+
+	focus = {
+		id = SIE_Cross_The_Volta
+		icon = GFX_goal_generic_major_war
+	 	prerequisite = { focus = SIE_Prepare_Expansion }
+		x = 1
+		y = 1
+		relative_position_id = SIE_Prepare_Expansion
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_war_support = 0.05
+			create_wargoal = {
+				type = annex_everything
+				target = VOL
+			}
+		}
+	}
+		focus = {
+		id = SIE_Reforming_The_Empire
+		icon = GFX_goal_generic_propaganda
+	 	prerequisite = { focus = SIE_Cross_The_Volta }
+		prerequisite = { focus = SIE_Strike_The_Golden_Empire }
+		x = 0
+		y = 2
+		relative_position_id = SIE_Prepare_Expansion
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_war_support = 0.05
+			add_state_core = 556
+			add_state_core = 778
+			add_state_core = 782
+		}
+	}
+
+	focus = {
+		id = SIE_Revenge_On_The_Frog
+		icon = GFX_focus_attack_france
+	 	prerequisite = { focus = SIE_Reforming_The_Empire }
+		x = 0
+		y = 2
+		relative_position_id = SIE_Reforming_The_Empire
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_war_support = 0.05
+			add_state_core = 272
+			add_state_core = 701
+			create_wargoal = {
+				type = annex_everything
+				target = FRA
+			}
+		}
+	}
+focus = {
+		id = SIE_Invite_Old_Chiefs
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+	 	prerequisite = { focus = SIE_Instate_A_Royalist_Dictatorship }
+		x = 4
+		y = 1
+		relative_position_id = SIE_Instate_A_Royalist_Dictatorship
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.20
+		}
+	}
+
+focus = {
+		id = SIE_Recover_Old_Ledgers
+		icon = GFX_focus_hol_the_foundations_of_defense
+	 	prerequisite = { focus = SIE_Invite_Old_Chiefs }
+		x = -1
+		y = 1
+		relative_position_id = SIE_Invite_Old_Chiefs
+		cost = 6
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SIE_Restore_Chaplains
+		icon = GFX_focus_GRE_an_orthodox_state
+	 	prerequisite = { focus = SIE_Invite_Old_Chiefs }
+		x = 1
+		y = 2
+		relative_position_id = SIE_Invite_Old_Chiefs
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = SIE_Legitimization
+		icon = GFX_goal_support_democracy
+	 	prerequisite = { focus = SIE_Recover_Old_Ledgers }
+		prerequisite = { focus = SIE_Restore_Chaplains }
+		x = 0
+		y = 3
+		relative_position_id = SIE_Invite_Old_Chiefs
+		cost = 6
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.10
+			remove_country_leader_trait =
+			uncertain_lineage
+			add_popularity = {
+         ideology = fascism
+         popularity = 0.10}
+		}
+	}
+
+	focus = {
+		id = SIE_Monarcho_Socialism
+		icon = GFX_goal_tfv_burn_the_royal_portraits
+	 	prerequisite = { focus = SIE_Legitimization }
+		x = 0
+		y = 1
+		relative_position_id = SIE_Legitimization
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.10
+			add_popularity = {
+         ideology = fascism
+         popularity = 0.05}
+		 add_popularity = {
+         ideology = communism
+         popularity = 0.05}
+		}
+	}
+
+	focus = {
+		id = SIE_Royalist_League
+		icon = GFX_focus_ger_return_of_the_kaiser
+	 	prerequisite = { focus = SIE_Royal_Party }
+		x = -3
+		y = 2
+		relative_position_id = SIE_Royal_Party
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			set_rule = {
+				desc =
+				SIE_my_rule_description
+				can_create_factions = yes
+			}
+		}
+	}
+
+	focus = {
+		id = SIE_Rally_Under_The_Flag
+		icon = GFX_goal_generic_alliance
+	 	prerequisite = { focus = SIE_Our_Origins }
+		mutually_exclusive = { focus = SIE_Rally_Around_Royalism }
+		x = 8
+		y = 2
+		relative_position_id = SIE_Our_Origins
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_popularity = {
+         ideology = democratic
+         popularity = 0.05}
+		}
+	}
+
+	focus = {
+		id = SIE_Article_1909
+		icon = GFX_focus_generic_treaty
+	 	prerequisite = { focus = SIE_Rally_Under_The_Flag }
+		x = -2
+		y = 4
+		relative_position_id = SIE_Rally_Under_The_Flag
+		cost = 6
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = SIE_Anti_Royalist_Bulwark
+		icon = GFX_goal_tfv_sever_ties_with_uk
+	 	prerequisite = { focus = SIE_Rally_Under_The_Flag }
+		x = 0
+		y = 4
+		relative_position_id = SIE_Rally_Under_The_Flag
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.1
+			add_popularity = {
+         ideology = fascism
+         popularity = -0.05}
+		}
+	}
+
+	focus = {
+		id = SIE_1st_State_Congress
+		icon = GFX_goal_generic_national_unity
+	 	prerequisite = { focus = SIE_Article_1909 }
+		prerequisite = { focus = SIE_Anti_Royalist_Bulwark }
+		x = 2
+		y = 2
+		relative_position_id = SIE_Article_1909
+		cost = 12
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.02
+		}
+	}
+
+	focus = {
+		id = SIE_Education_For_The_Masses
+		icon = GFX_focus_research
+	 	prerequisite = { focus = SIE_1st_State_Congress }
+		x = 1
+		y = 1
+		relative_position_id = SIE_1st_State_Congress
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = SIE_2nd_State_Congress
+		icon = GFX_goal_generic_national_unity
+	 	prerequisite = { focus = SIE_Education_For_The_Masses }
+		x = 1
+		y = 2
+		relative_position_id = SIE_Education_For_The_Masses
+		cost = 12
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.02
+		}
+	}
+
+	focus = {
+		id = SIE_Welfare
+		icon = GFX_goal_generic_consumer_goods
+	 	prerequisite = { focus = SIE_2nd_State_Congress }
+		x = 0
+		y = 1
+		relative_position_id = SIE_2nd_State_Congress
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 2
+				uses = 2
+				category = Industry
+			}
+		}
+	}
+
+	focus = {
+		id = SIE_3rd_State_Congress
+		icon = GFX_goal_generic_national_unity
+	 	prerequisite = { focus = SIE_Welfare }
+		mutually_exclusive = { focus = SIE_Seize_Power}
+		x = 0
+		y = 2
+		relative_position_id = SIE_Welfare
+		cost = 12
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.02
+		}
+	}
+
+	focus = {
+		id = SIE_Seize_Power
+		icon = GFX_goal_generic_political_pressure
+	 	prerequisite = { focus = SIE_Welfare }
+		mutually_exclusive = { focus = SIE_3rd_State_Congress }
+		x = 2
+		y = 2
+		relative_position_id = SIE_Welfare
+		cost = 12
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = -0.4
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = no
+			}
+		}
+	}
+
+	focus = {
+		id = SIE_Strengthen_Ruler
+		icon = GFX_focus_hol_the_foundations_of_defense
+	 	prerequisite = { focus = SIE_Seize_Power }
+		x = 0
+		y = 1
+		relative_position_id = SIE_Seize_Power
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	focus = {
+		id = SIE_Join_France
+		icon = GFX_focus_chi_reach_out_to_france
+	 	prerequisite = { focus = SIE_Strengthen_Ruler focus = SIE_Hold_Elections }
+		mutually_exclusive = {focus = SIE_Join_Germany}
+		x = 0
+		y = 1
+		relative_position_id = SIE_Strengthen_Ruler
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.05
+			FRA = { add_to_faction = SIE }
+		}
+	}
+
+	focus = {
+		id = SIE_Hold_Elections
+		icon = GFX_goal_support_democracy
+	 	prerequisite = { focus = SIE_3rd_State_Congress }
+		x = 0
+		y = 1
+		relative_position_id = SIE_3rd_State_Congress
+		cost = 3
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.03
+			Hold_Elections = SIE
+		}
+	}
+
+	focus = {
+		id = SIE_Join_Germany
+		icon = GFX_focus_chi_mission_to_germany
+	 	prerequisite = { focus = SIE_Hold_Elections }
+		mutually_exclusive = { focus = SIE_Join_France }
+		x = 0
+		y = 1
+		relative_position_id = SIE_Hold_Elections
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.05
+			GER = { add_to_faction = SIE }
+		}
+	}
+
+	focus = {
+		id = SIE_Economic_Reforms
+		icon = GFX_goal_reichsautobahn
+	 	#prerequisite = { focus = SIE_Hold_Elections }
+		x = 35
+		y = 0
+		#relative_position_id = SIE_Hold_Elections
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.4
+				uses = 3
+				category = Industry
+			}
+		}
+	}
+
+	
+	focus = {
+		id = SIE_Foreign_Investment
+		icon = GFX_goal_generic_intelligence_exchange
+	 	prerequisite = { focus = SIE_Economic_Reforms }
+		x = -2
+		y = 1
+		relative_position_id = SIE_Economic_Reforms
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 2 }
+		}
+	}
+	
+	focus = {
+		id = SIE_Civilian_Industry
+		icon = GFX_goal_generic_construct_civ_factory
+	 	prerequisite = { focus = SIE_Foreign_Investment }
+		x = 1
+		y = 1
+		relative_position_id = SIE_Foreign_Investment
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2
+		}
+	}
+
+	focus = {
+		id = SIE_Civilian_Industry_2
+		icon = GFX_goal_generic_construct_civ_factory
+	 	prerequisite = { focus = SIE_Civilian_Industry }
+		x = 0
+		y = 1
+		relative_position_id = SIE_Civilian_Industry
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2
+		}
+	}
+
+	focus = {
+		id = SIE_Improve_Metal_Industry
+		icon = GFX_focus_generic_steel
+	 	prerequisite = { focus = SIE_Civilian_Industry_2 }
+		x = 0
+		y = 1
+		relative_position_id = SIE_Civilian_Industry_2
+		cost = 7
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_resource = {
+				type = steel
+				amount = 10
+				state = 779
+			}
+			add_resource = {
+				type = aluminium
+				amount = 5
+				state = 700
+			}
+			add_resource = {
+				type = steel
+				amount = 5
+				state = 700
+			}
+		}
+	}
+
+	focus = {
+		id = SIE_Civilian_Infrastructure
+		icon = GFX_goal_generic_construct_infrastructure
+	 	prerequisite = { focus = SIE_Foreign_Investment }
+		x = -1
+		y = 1
+		relative_position_id = SIE_Foreign_Investment
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+
+	focus = {
+		id = SIE_Civilian_Infrastructure_2
+		icon = GFX_goal_generic_construct_infrastructure
+	 	prerequisite = { focus = SIE_Civilian_Infrastructure }
+		x = 0
+		y = 1
+		relative_position_id = SIE_Civilian_Infrastructure
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	focus = {
+		id = SIE_Digging_For_Synthetics
+		icon = GFX_goal_generic_construction2
+	 	prerequisite = { focus = SIE_Civilian_Infrastructure_2 }
+		x = 0
+		y = 1
+		relative_position_id = SIE_Civilian_Infrastructure_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_resource = {
+                type = oil
+                amount = 12
+                state = 779
+            }
+            add_resource = {
+                type = rubber
+                amount = 8
+                state = 780
+            }
+            add_resource = {
+                type = tungsten
+                amount = 2
+                state = 296
+            }
+		}
+	}
+
+	focus = {
+		id = SIE_Money_For_The_Army
+		icon = GFX_goal_generic_construct_mil_factory
+	 	prerequisite = { focus = SIE_Economic_Reforms}
+		x = 1
+		y = 2
+		relative_position_id = SIE_Economic_Reforms
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 3
+		}
+	}
+
+	focus = {
+		id = SIE_Conscript_Peoples_to_Work!
+		icon = GFX_goal_generic_construct_mil_factory
+	 	prerequisite = { focus = SIE_Money_For_The_Army}
+		x = 0
+		y = 2
+		relative_position_id = SIE_Money_For_The_Army
+		cost = 10
+		available = {
+			has_war = yes
+		}
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = -0.05
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 2
+		}
+	}
+
+	focus = {
+		id = SIE_Army_Focus
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = SIE_Money_For_The_Army}
+		x = 2
+		y = 1
+		relative_position_id = SIE_Money_For_The_Army
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 1
+			army_experience = 15
+		}
+	}
+
+	focus = {
+		id = SIE_Army_Reform
+		icon = GFX_goal_generic_allies_build_infantry
+	 	prerequisite = { focus = SIE_Army_Focus}
+		x = 0
+		y = 1
+		relative_position_id = SIE_Army_Focus
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 15
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.2
+				uses = 3
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SIE_Expand_Officer_Schools
+		icon = GFX_focus_generic_military_academy
+	 	prerequisite = { focus = SIE_Army_Focus}
+		x = 2
+		y = 2
+		relative_position_id = SIE_Army_Focus
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 15
+			add_command_power = 20
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = SIE_Found_Airforce
+		icon = GFX_goal_generic_build_airforce
+	 	prerequisite = { focus = SIE_Money_For_The_Army}
+		x = 5
+		y = 1
+		relative_position_id = SIE_Money_For_The_Army
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 15
+			add_doctrine_cost_reduction = {
+				bonus = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SIE_Air_Academy
+		icon = GFX_goal_generic_air_fighter2
+	 	prerequisite = { focus = SIE_Found_Airforce}
+		mutually_exclusive = { focus = SIE_Naval_Academy }
+		x = 0
+		y = 1
+		relative_position_id = SIE_Found_Airforce
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 20
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.7
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SIE_Naval_Reform
+		icon = GFX_focus_generic_africa_naval
+	 	prerequisite = { focus = SIE_Money_For_The_Army}
+		x = 7
+		y = 1
+		relative_position_id = SIE_Money_For_The_Army
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			naval_experience = 50
+		}
+	}
+
+	focus = {
+		id = SIE_Naval_Academy
+		icon = GFX_goal_generic_construct_naval_dockyard
+	 	prerequisite = { focus = SIE_Naval_Reform}
+		mutually_exclusive = { focus = SIE_Air_Academy }
+		x = 0
+		y = 1
+		relative_position_id = SIE_Naval_Reform
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			naval_experience = 15
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SIE_School_Reforms
+		icon = GFX_focus_generic_treaty
+	 	prerequisite = { focus = SIE_Improve_Metal_Industry}
+		prerequisite = { focus = SIE_Digging_For_Synthetics}
+		x = 0
+		y = 6
+		relative_position_id = SIE_Economic_Reforms
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+			add_extra_state_shared_building_slots = 2
+		}
+	}
+}
+}
