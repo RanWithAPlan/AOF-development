@@ -57,9 +57,17 @@
  
  
  ###FRANCE###
- 
+ mod_france.21.t:0 "Ethiopia Has Crushed Us"
+ mod_france.21.d:0 "Today, [ETH.GetLeader] sent us a list of demands, which include the hand over of Dijbouti, and the releasing of Sudan from colonial rule. These demands come after Ethiopian troops, aided by foreign volunteers, fully secured East Africa by siezing both Dijbouti and Port Sudan."
+ mod_france.21.a:0 "We must accept, even if it means humiliation"
+ mod_france.21.b:0 "France never surrenders!"
+ mod_france.22.t:0 "Ethiopia Has Defeated France"
+ mod_france.22.d:0 "Today, President [FRA.GetLeader] has signed the demands sent by [ETH.GetLeader]. The treaty has crippled France's African influence, and is a humiliating defeat."
+ mod_france.22.a:0 "A humiliation."
+ mod_france.22.a:0 "A glorious day for Ethiopia!"
+ mod_france.22.a:0 "Good, France has been put in its place."
  mod_france.1.t:0 "New Government Contract"
- mod_france.1.d:0 "France is the automobile nation on the planet, only rivaled by their inventor, Germany. The army has slowly been motorized and is now looking for a new company to receive the prestigious contract to supply the standard military truck. Three companies have made it into the last round, Peugeot, Renault and Citroën. \n\nPeugeot has basically invented the car and has been at the forefront of reliance and efficient.\n\nRenault has been struggling a bit lately, sitting on a large stockpile of surplus trucks able to immediately enter service.\n\nCitroën has been founded only recently, but has shown great ability at quickly catching up to the big players. Their trucks aren't the most reliable, but they are able to produce them far quicker than any other company in France.\n\nNow the choice remains, which company get the contract and can greatly expand their factories around their holdings."
+ mod_france.1.d:0 "France is the greatest automobile nation on the planet, only rivaled by their inventor, Germany. The army has slowly been motorized and is now looking for a new company to receive the prestigious contract to supply the standard military truck. Three companies have made it into the last round, Peugeot, Renault and Citroën. \n\nPeugeot has basically invented the car and has been at the forefront of reliance and efficient.\n\nRenault has been struggling a bit lately, sitting on a large stockpile of surplus trucks able to immediately enter service.\n\nCitroën has been founded only recently, but has shown great ability at quickly catching up to the big players. Their trucks aren't the most reliable, but they are able to produce them far quicker than any other company in France.\n\nNow the choice remains, which company get the contract and can greatly expand their factories around their holdings."
  mod_france.1.a:0 "§4Peugeot§!"
  mod_france.1.b:0 "§gRenault§!"
  mod_france.1.c:0 "§tCitroën§!"

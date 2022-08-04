@@ -1,8 +1,29 @@
 @tier1 = 30
 @tier2 = 20
 @tier3 = 10
-
 leader_traits = {
+
+	colonialist = {
+		random = no
+		political_power_gain = 0.05
+		stability_factor = 0.10
+		subjects_autonomy_gain = -0.50
+		resistance_decay_on_our_occupied_states = 0.75
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	seized_power = {
+		random = no
+		political_power_gain = 0.10
+		stability_factor = 0.01
+		soft_attack = 0.05
+		defensive_war_stability_factor = 0.10
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
 	fiery_democrat = {
 		random = no

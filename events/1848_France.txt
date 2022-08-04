@@ -5,34 +5,38 @@
 add_namespace = mod_france
 
 country_event = {
-	id = france.20
+	id = mod_france.20
 	hidden = yes
 	trigger = {
 		tag = FRA
 		has_war_with = ETH
 		has_government = democratic
-		551 = { is_controlled_by = ETH }
+		863 = { is_controlled_by = ETH }
 		268 = { is_controlled_by = ETH }
+
 		has_civil_war = no
 		
 	}
 	mean_time_to_happen = { days = 2 }
 	immediate = {
-		FRA = {country_event = france.21}
+		FRA = {country_event = mod_france.21}
 	}
 }
 
 country_event = {
-	id = france.21
-	title = france.21.t
-	desc = france.21.d
+	id = mod_france.21
+	title = mod_france.21.t
+	desc = mod_france.21.d
 	picture = GFX_report_event_african_soldiers
-	
 	fire_only_once = yes
 	
 	is_triggered_only = yes
 
-	immediate = {
+	option = {
+		name = mod_france.21.a 
+		ai_chance = {
+			factor = 2
+		}
 		white_peace = ETH
 		ETH = {
 			add_state_core = 268
@@ -42,6 +46,54 @@ country_event = {
 			transfer_state = 549
 			transfer_state = 551
 			transfer_state = 767
+			transfer_state = 862
+			transfer_state = 863
+		}
+		add_stability = -0.1
+		add_political_power = -50
+		FRA = {country_event = mod_france.22}
+	}
+	option = {
+		name = mod_france.21.b
+		ai_chance = {
+			factor = 8
+		}
+		add_political_power -50
+		set_country_flag = refused_peace_deal
+		}
+	}
+}
+
+country_event = {
+	id = mod_france.22
+	title = mod_france.22.t
+	desc = mod_france.22.d
+	picture = GFX_report_event_african_soldiers
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = mod_france.22.a
+		trigger = {
+			OR = {
+				original_tag = FRA
+				original_tag = MEX
+			}
+		}
+	}
+	option = {
+		name = mod_france.22.b
+		trigger = {
+			original_tag = ETH
+		}
+	}
+	option = {
+		name = mod_france.22.c
+		trigger = {
+			OR = {
+				NOT = { original_tag = ETH }
+				NOT = { original_tag = FRA }
+				NOT = { original_tag = MEX }
+			}	
 		}
 	}
 }

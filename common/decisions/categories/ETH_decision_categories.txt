@@ -2,7 +2,7 @@
 ##### ETH ######
 ################
 
-ETH_defeat_italy_category = {
+ETH_defeat_france_category = {
 
 	icon = GFX_decision_category_saf_anti_colonialist_crusade
 	
@@ -15,8 +15,8 @@ ETH_defeat_italy_category = {
 	}
 
 	visible = {
-		ITA = {
-			NOT = { has_completed_focus = ITA_victoryinETH }
+		FRA = {
+			NOT = { has_completed_focus = FRA_victory_eth }
 		}
 	}
 }
