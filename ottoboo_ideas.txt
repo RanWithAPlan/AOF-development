@@ -1,0 +1,89 @@
+ideas = {
+    country = {
+        idea_ottoman_debt = {
+            allowed = no
+            allowed_civil_war = yes
+            
+            picture = SPR_relocate_the_gold_reserves
+
+            removal_cost = -1
+
+            modifier = {
+                consumer_goods_factor = 0.15
+                stability_factor = -0.15
+                research_speed_factor = -0.20
+                political_power_gain = -0.05
+            }
+        }
+
+        idea_state_of_the_army = {
+            allowed = no
+            allowed_civil_war = no
+            
+            picture = por_colonial_army
+
+            removal_cost = -1
+
+            modifier = {
+                army_attack_factor = -0.30
+                army_org = -1
+                army_defence_factor = -0.10
+            }
+        }
+
+        idea_said_nursi_prime_minister = {
+            allowed = no
+            allowed_civil_war
+
+            picture = tur_said_i_nursi
+
+            removal_cost = -1
+
+            modifier = {
+                stability_factor = 0.10
+                research_speed_factor = -0.02
+            }
+        }
+
+        idea_young_turk_threat = {
+            allowed = no
+            allowed_civil_war = yes
+
+            picture = tur_kemalist_officers
+
+            removal_cost = -1
+
+            modifier = {
+                stability_factor = -0.20
+            }
+        }
+
+        idea_uneducated_populace = {
+            allowed = no
+            allowed_civil_war
+
+            picture = great_depression
+
+            removal_cost = -1
+
+            modifier = {
+                research_speed_factor = -0.30
+                consumer_goods_factor = 0.10
+            }
+        }
+
+        idea_free_education = {
+            allowed = no
+            allowed_civil_war
+
+            picture = jap_duplicate_research
+
+            removal_cost = -1
+
+            modifier = {
+                research_speed_factor = 0.12
+                consumer_goods_factor = 0.05
+            }
+        }
+    }
+}

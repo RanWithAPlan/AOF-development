@@ -1,0 +1,109 @@
+
+focus_tree = {
+	id = roman_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 20
+			tag = RRP
+		}
+	}
+	
+	default = no
+	
+	continuous_focus_position = { x = 50 y = 200 }
+
+    focus = {
+		id = RRP_Address_Senate
+		icon = GFX_focus_generic_self_management
+		x = 20
+		y = 3
+		cost = 10
+
+		completion_reward = {
+            add_political_power = 50
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.35
+			}
+		}
+	}
+
+	focus = {
+		id = RRP_Legacy_of_Rome
+		icon = GFX_focus_generic_military_dictatorship
+		prerequisite = { focus = RRP_Address_Senate }
+		mutually_exclusive = { focus = RRP_Republican_Plot }
+		x = -5
+		y = 1
+		relative_position_id = RRP_Address_Senate
+		cost = 10
+
+		completion_reward = {
+			add_stability = -0.25
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no 
+			}
+		}
+	}
+
+	focus = {
+		id = RRP_Republican_Plot
+		icon = GFX_focus_spr_masters_of_our_own_fate
+		prerequisite = { focus = RRP_Address_Senate }
+		mutually_exclusive = { focus = RRP_Legacy_of_Rome }
+		x = 5
+		y = 1
+		relative_position_id = RRP_Address_Senate
+		cost = 10
+
+		completion_reward = {
+            add_political_power = 60
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no 
+			}
+		}
+	}
+
+	focus = {
+		id = RRP_Democracy_by_the_Senate
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		prerequisite = { focus = RRP_Republican_Plot }
+		mutually_exclusive = { focus = RRP_Democracy_by_the_People }
+		x = -3
+		y = 1
+		relative_position_id = RRP_Republican_Plot
+		cost = 10
+
+		completion_reward = {
+            add_political_power = 120
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.10
+			}
+		}
+	}
+
+	focus = {
+		id = RRP_Democracy_by_the_People
+		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+		prerequisite = { focus = RRP_Republican_Plot }
+		mutually_exclusive = { focus = RRP_Democracy_by_the_Senate }
+		x = 3
+		y = 1
+		relative_position_id = RRP_Republican_Plot
+		cost = 10
+
+		completion_reward = {
+            add_political_power = 120
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.10
+			}
+		}
+	}
+}

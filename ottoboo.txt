@@ -1,0 +1,940 @@
+focus_tree = {
+	id = ottoboo_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = TUR
+		}
+	}
+
+	initial_show_position = {
+		x = 0
+	}
+
+	
+	default = no
+	
+	focus = {
+		id = TUR_Ankara_Incident
+		icon = GFX_focus_generic_little_entente
+	 	#prerequisite = { focus = FRA_bomber_focus }
+		x = 15
+		y = -20
+		#relative_position_id = FRA_bomber_focus
+		cost = 2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = -50
+			add_country_leader_trait = 
+			unpopular_monarch
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.30
+			}
+	 	}
+	}
+
+	focus = {
+		id = TUR_Sultan_Reforms
+		icon = GFX_goal_support_democracy
+	 	prerequisite = { focus = TUR_Ankara_Incident }
+		mutually_exclusive = { focus = TUR_Rise_of_the_Young_Turks }
+		x = 10
+		y = 1
+		relative_position_id = TUR_Ankara_Incident
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 150
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.10
+			}
+	 	}
+	}
+
+	focus = {
+		id = TUR_Establish_Noble_Council
+		icon = GFX_focus_generic_home_defense
+	 	prerequisite = { focus = TUR_Sultan_Reforms }
+		x = -2
+		y = 1
+		relative_position_id = TUR_Sultan_Reforms
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 150
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+	 	}
+	}
+
+	focus = {
+		id = TUR_Deal_With_Opposition
+		icon = GFX_goal_generic_improve_relations
+	 	prerequisite = { focus = TUR_Sultan_Reforms }
+		x = 2
+		y = 1
+		relative_position_id = TUR_Sultan_Reforms
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.10
+			}
+	 	}
+	}
+
+	focus = {
+		id = TUR_Constantinople_System
+		icon = GFX_goal_generic_national_unity
+	 	prerequisite = { focus = TUR_Deal_With_Opposition }
+		x = 3
+		y = 1
+		relative_position_id = TUR_Deal_With_Opposition
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 200
+	 	}
+	}
+
+	focus = {
+		id = TUR_Support_Colonial_Elite
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+	 	prerequisite = { focus = TUR_Constantinople_System }
+		x = 0
+		y = 2
+		relative_position_id = TUR_Constantinople_System
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.10
+			add_country_leader_trait =
+			colonialist
+	 	}
+	}
+
+	focus = {
+		id = TUR_Wallachia_Colonial_Mission
+		icon = GFX_focus_generic_attack_romania
+	 	prerequisite = { focus = TUR_Support_Colonial_Elite}
+		mutually_exclusive = {focus = TUR_Unify_Romania}
+		available = {
+			has_war_support > 0.7
+		}
+		x = 2
+		y = 2
+		relative_position_id = TUR_Support_Colonial_Elite
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = -100
+			add_stability = -0.10
+			add_command_power = -20
+			set_autonomy = {
+				target = ROM
+				autonomy_state = autonomy_puppet
+				end_wars = No
+				end_civil_wars = yes
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_Unify_Romania
+		icon = GFX_focus_invite_romania
+	 	prerequisite = { focus = TUR_Support_Colonial_Elite}
+		mutually_exclusive = { focus = TUR_Wallachia_Colonial_Mission }
+		available = {
+			has_war_support > 0.1
+		}
+		x = 0
+		y = 2
+		relative_position_id = TUR_Support_Colonial_Elite
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = -50
+			create_wargoal = {
+				type = annex_everything
+				target = UKR
+			}
+			set_autonomy = {
+				target = ROM
+				autonomy_state = autonomy_dominion
+				end_wars = No
+				end_civil_wars = yes
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_Arab_Colonial_Mission
+		icon = GFX_focus_generic_strike_at_democracy1
+	 	prerequisite = { focus = TUR_Support_Colonial_Elite}
+		available = {
+			has_war_support > 0.3
+		}
+		x = -2
+		y = 1
+		relative_position_id = TUR_Support_Colonial_Elite
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = -200
+			add_command_power = -20
+
+			set_autonomy = {
+				target = IRQ
+				autonomy_state = autonomy_integrated_puppet
+				end_wars = No
+				end_civil_wars = yes
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_Rumelia_Mission
+		icon = GFX_focus_generic_strike_at_democracy1
+	 	prerequisite = { focus = TUR_Support_Colonial_Elite}
+		available = {
+			has_war_support > 0.5
+		}
+		x = 0
+		y = 1
+		relative_position_id = TUR_Arab_Colonial_Mission
+		cost = 12
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = -100
+			add_command_power = -20
+
+			set_autonomy = {
+				target = MAC
+				autonomy_state = autonomy_integrated_puppet
+				end_wars = No
+				end_civil_wars = yes
+			}
+		}
+	}
+
+	focus = {
+		id = TUR_Colonial_Education_Act
+		icon = GFX_focus_research
+	 	prerequisite = { focus = TUR_Rumelia_Mission}
+		prerequisite = { focus = TUR_Peoples_Assembly}
+		available = {
+			has_stability > 0.5
+		}
+		x = -2
+		y = 1
+		relative_position_id = TUR_Rumelia_Mission
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+			add_stability = 0.05
+		}
+	}
+
+	focus = {
+		id = TUR_Grand_Caliphate
+		icon = GFX_focus_TUR_pivot_to_the_past
+	 	prerequisite = { focus = TUR_Wallachia_Colonial_Mission focus = TUR_Unify_Romania}
+		prerequisite = {focus = TUR_Rumelia_Mission}
+		prerequisite = {focus = TUR_Hyperislamism}
+		available = {
+			has_war_support > 0.5
+		}
+		x = 0
+		y = 7
+		relative_position_id = TUR_Unify_Romania
+		cost = 12
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.30
+			create_wargoal = {
+				type = annex_everything
+				target = SAU
+			}
+			add_country_leader_trait =
+			caliph
+			add_state_core = 677
+			add_state_core = 680
+			add_state_core = 676
+			add_state_core = 731
+			add_state_core = 212
+			add_state_core = 211
+			add_state_core = 77
+			add_state_core = 184
+			add_state_core = 836
+			add_state_core = 106
+			add_state_core = 44
+			add_state_core = 804
+			add_state_core = 104
+			add_state_core = 675
+			add_state_core = 291
+			add_state_core = 554
+			add_state_core = 553
+			add_state_core = 454
+			add_state_core = 455
+			add_state_core = 679
+			add_state_core = 852
+			add_state_core = 855
+			MAC = {
+				exists = no
+			}
+			IRQ = {
+				exists = no
+			}
+		}
+	}
+
+
+	focus = {
+		id = TUR_Contact_Unions
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+	 	prerequisite = { focus = TUR_Sultan_Reforms }
+		x = 0
+		y = 1
+		relative_position_id = TUR_Sultan_Reforms
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.15
+			}
+	 	}
+	}
+
+	focus = {
+		id = TUR_Constitution
+		icon = GFX_focus_hol_the_foundations_of_defense
+	 	prerequisite = { focus = TUR_Establish_Noble_Council }
+		prerequisite = { focus = TUR_Deal_With_Opposition }
+		prerequisite = { focus = TUR_Contact_Unions }
+		x = 0
+		y = 2
+		relative_position_id = TUR_Sultan_Reforms
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.10
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+	 	}
+	}
+
+	focus = {
+		id = TUR_Limit_Sultans_Power
+		icon = GFX_focus_rom_handle_king
+	 	prerequisite = { focus = TUR_Constitution }
+		x = -2
+		y = 1
+		relative_position_id = TUR_Constitution
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_country_leader_trait = 
+			constitutional_monarch
+			remove_country_leader_trait = 
+			unpopular_monarch
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.10
+			}
+			add_ideas = idea_said_nursi_prime_minister
+	 	}
+	}
+
+	focus = {
+		id = TUR_Allow_Kemalist_Party
+		icon = GFX_focus_TUR_ratify_the_six_arrows
+	 	prerequisite = { focus = TUR_Constitution }
+		x = 0
+		y = 1
+		relative_position_id = TUR_Constitution
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.10
+			}
+
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+	 	}
+	}
+
+	focus = {
+		id = TUR_Peoples_Assembly
+		icon = GFX_focus_generic_treaty
+	 	prerequisite = { focus = TUR_Allow_Kemalist_Party focus = TUR_Limit_Sultans_Power }
+		x = 0
+		y = 2
+		relative_position_id = TUR_Allow_Kemalist_Party
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.10}
+	 	}
+	}
+
+	focus = {
+		id = TUR_Purge_Young_Turks
+		icon = GFX_goal_generic_major_war
+	 	prerequisite = { focus = TUR_Allow_Kemalist_Party focus = TUR_Limit_Sultans_Power }
+		x = 0
+		y = 2
+		relative_position_id = TUR_Limit_Sultans_Power
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			remove_ideas = idea_young_turk_threat
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.15
+				}
+	 	}
+	}
+
+	focus = {
+		id = TUR_Neo_Imperialism
+		icon = GFX_goal_generic_territory_or_war
+	 	prerequisite = { focus = TUR_Peoples_Assembly }
+		prerequisite = { focus = TUR_Purge_Young_Turks }
+		x = 1
+		y = 2
+		relative_position_id = TUR_Purge_Young_Turks
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.15
+			add_war_support = 0.15
+	 	}
+	}
+
+	focus = {
+		id = TUR_Invade_Egypt
+		icon = GFX_focus_generic_provoke_border_clashes
+	 	prerequisite = { focus = TUR_Neo_Imperialism }
+		x = 0
+		y = 1
+		relative_position_id = TUR_Neo_Imperialism
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_war_support = 0.15
+			declare_war_on = {
+				target = EGY
+				type = puppet_wargoal_focus
+			}
+	 	}
+	}
+
+	focus = {
+		id = TUR_Interventionism
+		icon = GFX_goal_generic_more_territorial_claims
+	 	prerequisite = { focus = TUR_Invade_Egypt }
+		mutually_exclusive = {focus = TUR_Militarism}
+		x = -3
+		y = 1
+		relative_position_id = TUR_Invade_Egypt
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.10
+	 	}
+	}
+
+	focus = {
+		id = TUR_Bulgarian_Autonomy
+		icon = GFX_focus_generic_befriend_bulgaria
+	 	prerequisite = { focus = TUR_Interventionism }
+		mutually_exclusive = {focus = TUR_Greek_Autonomy}
+		x = -1
+		y = 1
+		relative_position_id = TUR_Interventionism
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			set_autonomy = {
+				target = BUL
+				autonomy_state = autonomy_colony
+				end_wars = No
+				end_civil_wars = yes
+			}
+	 	}
+	}
+
+	focus = {
+		id = TUR_Conquer_Greece
+		icon = GFX_focus_generic_attack_greece
+	 	prerequisite = { focus = TUR_Bulgarian_Autonomy }
+		x = 0
+		y = 1
+		relative_position_id = TUR_Bulgarian_Autonomy
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = GRE
+			}
+	 	}
+	}
+
+	focus = {
+		id = TUR_Greek_Autonomy
+		icon = GFX_focus_generic_befriend_greece
+	 	prerequisite = { focus = TUR_Interventionism }
+		mutually_exclusive = {focus = TUR_Bulgarian_Autonomy}
+		x = 1
+		y = 1
+		relative_position_id = TUR_Interventionism
+		cost = 5
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			set_autonomy = {
+				target = GRE
+				autonomy_state = autonomy_colony
+				end_wars = No
+				end_civil_wars = yes
+			}
+	 	}
+	}
+
+	focus = {
+		id = TUR_Conquer_Bulgaria
+		icon = GFX_focus_generic_attack_bulgaria
+	 	prerequisite = { focus = TUR_Greek_Autonomy }
+		x = 0
+		y = 1
+		relative_position_id = TUR_Greek_Autonomy
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = BUL
+			}
+	 	}
+	}
+
+
+	focus = {
+		id = TUR_Militarism
+		icon = GFX_goal_generic_political_pressure
+	 	prerequisite = { focus = TUR_Invade_Egypt }
+		mutually_exclusive = {focus = TUR_Interventionism}
+		x = 3
+		y = 1
+		relative_position_id = TUR_Invade_Egypt
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_war_support = 0.15
+	 	}
+	}
+
+	focus = {
+		id = TUR_Conquer_Balkans
+		icon = GFX_focus_generic_balkans_focus
+	 	prerequisite = { focus = TUR_Militarism}
+		x = -2
+		y = 2
+		relative_position_id = TUR_Militarism
+		cost = 13
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = BUL
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = GRE
+			}
+	 	}
+	}
+
+	focus = {
+		id = TUR_Conquer_Persia
+		icon = GFX_focus_generic_attack_iran
+	 	prerequisite = { focus = TUR_Militarism}
+		x = 2
+		y = 2
+		relative_position_id = TUR_Militarism
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = PER
+			}
+	 	}
+	}
+
+	focus = {
+		id = TUR_Hyperislamism
+		icon = GFX_focus_TUR_turanist_ambition
+	 	prerequisite = { focus = TUR_Conquer_Balkans focus = TUR_Conquer_Bulgaria focus = TUR_Conquer_Persia focus = TUR_Conquer_Greece}
+		x = -2
+		y = 3
+		relative_position_id = TUR_Militarism
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = GEO
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = DAG
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = SER
+			}
+	 	}
+	}
+
+	focus = {
+		id = TUR_Rise_of_the_Young_Turks
+		icon = GFX_goal_generic_secret_weapon
+	 	prerequisite = { focus = TUR_Ankara_Incident }
+		mutually_exclusive = { focus = TUR_Sultan_Reforms }
+		x = -10
+		y = 1
+		relative_position_id = TUR_Ankara_Incident
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 150
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.10
+			}
+	 	}
+	}
+
+	focus = {
+		id = TUR_Ottoman_Debt_Admin
+		icon = GFX_goal_generic_neutrality_focus
+	 	prerequisite = { focus = TUR_Sultan_Reforms focus = TUR_Rise_of_the_Young_Turks }
+		x = 0
+		y = 2
+		relative_position_id = TUR_Ankara_Incident
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 150
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 6
+			}
+	 	}
+	}
+
+
+	focus = {
+		id = TUR_Invite_Foreign_Teachers
+		icon = GFX_goal_generic_scientific_exchange
+	 	prerequisite = { focus = TUR_Ottoman_Debt_Admin }
+		x = -2
+		y = 2
+		relative_position_id = TUR_Ottoman_Debt_Admin
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+	 	}
+	}
+
+	focus = {
+		id = TUR_Free_Education
+		icon = GFX_focus_research
+	 	prerequisite = { focus = TUR_Ottoman_Debt_Admin }
+		x = 0
+		y = 2
+		relative_position_id = TUR_Ottoman_Debt_Admin
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = idea_free_education
+			add_political_power = -10
+	 	}
+	}
+
+	focus = {
+		id = TUR_Rehabilitate_Schools
+		icon = GFX_focus_generic_military_academy
+	 	prerequisite = { focus = TUR_Invite_Foreign_Teachers }
+		prerequisite = { focus = TUR_Free_Education }
+		x = 1
+		y = 2
+		relative_position_id = TUR_Invite_Foreign_Teachers
+		cost = 12
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+	 	}
+	}
+
+	focus = {
+		id = TUR_School_Curriculum
+		icon = GFX_focus_research2
+	 	prerequisite = { focus = TUR_Rehabilitate_Schools }
+		x = 0
+		y = 1
+		relative_position_id = TUR_Rehabilitate_Schools
+		cost = 12
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+			remove_ideas = idea_uneducated_populace
+			add_political_power = -100
+	 	}
+	}
+
+	focus = {
+		id = TUR_Sell_Titles_To_Nobles
+		icon = GFX_focus_ger_revive_kaiserreich
+	 	prerequisite = { focus = TUR_Ottoman_Debt_Admin }
+		prerequisite = { focus = TUR_Establish_Noble_Council }
+		x = 3
+		y = 2
+		relative_position_id = TUR_Ottoman_Debt_Admin
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 150
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+	 	}
+	}
+	focus = {
+		id = TUR_Free_Market_Act
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+	 	prerequisite = { focus = TUR_Sell_Titles_To_Nobles }
+		x = 0
+		y = 2
+		relative_position_id = TUR_Sell_Titles_To_Nobles
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = free_trade
+			add_political_power = 25
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+	 	}
+	}
+	focus = {
+		id = TUR_Balance_The_Budget
+		icon = GFX_focus_hol_abandon_the_gold_standard
+	 	prerequisite = { focus = TUR_Free_Market_Act }
+		prerequisite = { focus = TUR_School_Curriculum }
+		x = -3
+		y = 2
+		relative_position_id = TUR_Free_Market_Act
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = -100
+			remove_ideas = idea_ottoman_debt
+	 	}
+	}
+
+	focus = {
+		id = TUR_Civilian_Industry
+		icon = GFX_goal_generic_construct_civ_factory
+	 	prerequisite = { focus = TUR_Balance_The_Budget }
+		x = -1
+		y = 1
+		relative_position_id = TUR_Balance_The_Budget
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+	 	}
+	}
+	
+	focus = {
+		id = TUR_Arms_Industry
+		icon = GFX_goal_generic_construct_mil_factory
+	 	prerequisite = { focus = TUR_Balance_The_Budget }
+		x = -3
+		y = 1
+		relative_position_id = TUR_Balance_The_Budget
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+	 	}
+	}
+}
