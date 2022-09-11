@@ -64,7 +64,9 @@ set_politics = {
 	ruling_party = neutrality
 	last_election = "1930.3.11"
 	election_frequency = 48
-	elections_allowed = yes
+	elections_allowed = no
 }
+add_country_leader_trait = 
+soldier_king
 
 

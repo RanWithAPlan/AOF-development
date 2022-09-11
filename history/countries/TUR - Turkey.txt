@@ -1,7 +1,7 @@
 ﻿capital = 797
 
 set_rule = {
-	can_join_factions = no
+	can_join_factions = yes
 }
 
 if = {
@@ -143,15 +143,17 @@ if = {
 
 set_politics = {
 	ruling_party = neutrality
-	last_election = "1935.2.8"
-	elections_allowed = yes
+	last_election = "1912.1.8"
+	elections_allowed = no
 }
 set_popularities = {
-	democratic = 6
-	neutrality = 94
+	democratic = 20
+	neutrality = 70
+	fascism = 5
+	communism = 5
 }
 
-set_convoys = 20
+set_convoys = 200
 set_stability = 0.5
 set_war_support = 0.3
 
@@ -414,4 +416,8 @@ if = {
 			rear_1_custom_slot = empty
 		}
 	}
+	add_ideas = idea_ottoman_debt
+	add_ideas = idea_state_of_the_army
+	add_ideas = idea_uneducated_populace
+	add_ideas = idea_young_turk_threat
 }

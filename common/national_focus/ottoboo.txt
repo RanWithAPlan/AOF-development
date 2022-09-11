@@ -21,7 +21,7 @@ focus_tree = {
 		id = TUR_Ankara_Incident
 		icon = GFX_focus_generic_little_entente
 	 	#prerequisite = { focus = FRA_bomber_focus }
-		x = 40
+		x = 15
 		y = -20
 		#relative_position_id = FRA_bomber_focus
 		cost = 2
@@ -251,7 +251,7 @@ focus_tree = {
 	 	prerequisite = { focus = TUR_Rumelia_Mission}
 		prerequisite = { focus = TUR_Peoples_Assembly}
 		available = {
-			has_stability > 0.7
+			has_stability > 0.5
 		}
 		x = -2
 		y = 1
@@ -261,8 +261,8 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_political = 50
-			add_research_slots = 2
+			add_research_slot = 1
+			add_stability = 0.05
 		}
 	}
 
@@ -390,6 +390,7 @@ focus_tree = {
 				ideology = neutrality
 				popularity = 0.10
 			}
+			add_ideas = idea_said_nursi_prime_minister
 	 	}
 	}
 
@@ -447,9 +448,11 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+			remove_ideas = idea_young_turk_threat
 			add_popularity = {
 				ideology = fascism
-				popularity = -0.15}
+				popularity = -0.15
+				}
 	 	}
 	}
 
@@ -697,9 +700,10 @@ focus_tree = {
 			}
 	 	}
 	}
+
 	focus = {
 		id = TUR_Ottoman_Debt_Admin
-		icon = GFX_focus_usa_reestablish_the_gold_standard
+		icon = GFX_goal_generic_neutrality_focus
 	 	prerequisite = { focus = TUR_Sultan_Reforms focus = TUR_Rise_of_the_Young_Turks }
 		x = 0
 		y = 2
@@ -713,9 +717,224 @@ focus_tree = {
 			random_owned_state = {
 				add_building_construction = {
 					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 6
+			}
+	 	}
+	}
+
+
+	focus = {
+		id = TUR_Invite_Foreign_Teachers
+		icon = GFX_goal_generic_scientific_exchange
+	 	prerequisite = { focus = TUR_Ottoman_Debt_Admin }
+		x = -2
+		y = 2
+		relative_position_id = TUR_Ottoman_Debt_Admin
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+	 	}
+	}
+
+	focus = {
+		id = TUR_Free_Education
+		icon = GFX_focus_research
+	 	prerequisite = { focus = TUR_Ottoman_Debt_Admin }
+		x = 0
+		y = 2
+		relative_position_id = TUR_Ottoman_Debt_Admin
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = idea_free_education
+			add_political_power = -10
+	 	}
+	}
+
+	focus = {
+		id = TUR_Rehabilitate_Schools
+		icon = GFX_focus_generic_military_academy
+	 	prerequisite = { focus = TUR_Invite_Foreign_Teachers }
+		prerequisite = { focus = TUR_Free_Education }
+		x = 1
+		y = 2
+		relative_position_id = TUR_Invite_Foreign_Teachers
+		cost = 12
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+	 	}
+	}
+
+	focus = {
+		id = TUR_School_Curriculum
+		icon = GFX_focus_research2
+	 	prerequisite = { focus = TUR_Rehabilitate_Schools }
+		x = 0
+		y = 1
+		relative_position_id = TUR_Rehabilitate_Schools
+		cost = 12
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+			remove_ideas = idea_uneducated_populace
+			add_political_power = -100
+	 	}
+	}
+
+	focus = {
+		id = TUR_Sell_Titles_To_Nobles
+		icon = GFX_focus_ger_revive_kaiserreich
+	 	prerequisite = { focus = TUR_Ottoman_Debt_Admin }
+		prerequisite = { focus = TUR_Establish_Noble_Council }
+		x = 3
+		y = 2
+		relative_position_id = TUR_Ottoman_Debt_Admin
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 150
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
 					level = 2
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 4
+				add_extra_state_shared_building_slots = 3
 			}
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+	 	}
 	}
+	focus = {
+		id = TUR_Free_Market_Act
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+	 	prerequisite = { focus = TUR_Sell_Titles_To_Nobles }
+		x = 0
+		y = 2
+		relative_position_id = TUR_Sell_Titles_To_Nobles
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = free_trade
+			add_political_power = 25
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+	 	}
+	}
+	focus = {
+		id = TUR_Balance_The_Budget
+		icon = GFX_focus_hol_abandon_the_gold_standard
+	 	prerequisite = { focus = TUR_Free_Market_Act }
+		prerequisite = { focus = TUR_School_Curriculum }
+		x = -3
+		y = 2
+		relative_position_id = TUR_Free_Market_Act
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = -100
+			remove_ideas = idea_ottoman_debt
+	 	}
+	}
+
+	focus = {
+		id = TUR_Civilian_Industry
+		icon = GFX_goal_generic_construct_civ_factory
+	 	prerequisite = { focus = TUR_Balance_The_Budget }
+		x = -1
+		y = 1
+		relative_position_id = TUR_Balance_The_Budget
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+	 	}
+	}
+	
+	focus = {
+		id = TUR_Arms_Industry
+		icon = GFX_goal_generic_construct_mil_factory
+	 	prerequisite = { focus = TUR_Balance_The_Budget }
+		x = -3
+		y = 1
+		relative_position_id = TUR_Balance_The_Budget
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+	 	}
+	}
+}
