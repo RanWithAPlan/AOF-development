@@ -19,11 +19,11 @@ set_stability = 0.6
 set_war_support = 0.1
 
 set_popularities = {
-	fascism = 100
+	falangalism = 100
 }
 
 set_politics = {
-	ruling_party = fascism
+	ruling_party = falangalism
 	last_election = "1932.6.17"
 	election_frequency = 72
 	elections_allowed = no

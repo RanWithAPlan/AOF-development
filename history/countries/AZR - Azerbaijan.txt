@@ -68,11 +68,20 @@ if = {
 		basic_torpedo = 1
 	}
 }
+et_politics = {
+	ruling_party = despotism
+	last_election = "1936.11.8"
+	election_frequency = 48
+	elections_allowed = no
+}
 
 set_popularities = {
-	democratic = 70
-	communism = 15
-	neutrality = 15
+	condem =  25 
+	authdem = 30
+	soclib = 15
+	freemarket = 20
+	communardien = 15 
+	despotism = 15
 }
 
 

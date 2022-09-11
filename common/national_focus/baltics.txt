@@ -25,7 +25,7 @@ focus_tree = {
 
 	focus = {
 			id = LAT_appease_lithuanian_nationalists
-        icon = GFX_focus_LIT_restore_the_grand_duchy
+        icon = GFX_goal_focus_POL_riot_of_37
         x = 10
         y = 0
         cost = 10
@@ -40,9 +40,9 @@ focus_tree = {
 			add_war_support = 0.15
 			}}
 			
-	focus = {
+		focus = {
 			id = LAT_control_riots
-        icon = GFX_focus_POL_riot_of_37
+        icon = GFX_goal_focus_POL_riot_of_37
         x = 12
         y = 0
         cost = 10
@@ -58,9 +58,9 @@ focus_tree = {
 			add_manpower = -30000
 			}}
 			
-	focus = {
+		focus = {
 			id = LAT_appease_latvian_nationalists
-        icon = GFX_focus_LAT_latvia_for_latvians
+        icon = GFX_goal_focus_POL_riot_of_37
         x = 14
         y = 0
         cost = 10
@@ -73,11 +73,11 @@ focus_tree = {
         completion_reward = {
             add_manpower = 100000
 			add_political_power = -200
-			}}
-		
+			}}		
+	
 	focus = {
 			id = LAT_early_elections
-        icon = GFX_focus_hol_the_foundations_of_defense
+        icon = GFX_goal_focus_POL_riot_of_37
 		prerequisite = { focus = LAT_control_riots }
         x = 11
         y = 2
@@ -95,7 +95,7 @@ focus_tree = {
 	
 	focus = {
 			id = LAT_polish_sympathiser
-        icon = GFX_goal_support_communism
+        icon = GFX_goal_focus_POL_riot_of_37
 		prerequisite = { focus = LAT_control_riots }
         x = 13
         y = 2
@@ -108,45 +108,8 @@ focus_tree = {
         completion_reward = {
             add_stability = -0.05
 			add_political_power = +50
-			add_popularity = { ideology = communism popularity = 0.10 }
-            add_popularity = { ideology = democratic popularity = -0.10 }
-			
-			}}
-			
-	focus = {
-			id = LAT_latvian_leader
-        icon = LAT_the_sun_shines_equally
-		prerequisite = { focus = LAT_early_elections }
-        x = 12
-        y = 3
-        cost = 10
-        ai_will_do = {
-            factor = 12
-        }
-		mutually_exclusive = { focus = LAT_lithuanian_leader }
-        search_filters = { FOCUS_FILTER_POLITICAL }
-        completion_reward = {
-            add_stability = -0.10
-			add_political_power = +100
-			add_manpower = 10000
-			
-			}}
-			
-	focus = {
-			id = LAT_lithuanian_leader
-        icon = GFX_goal_support_communism
-		prerequisite = { focus = LAT_early_elections }
-        x = 9
-        y = 3
-        cost = 10
-        ai_will_do = {
-            factor = 12
-        }
-		mutually_exclusive = { focus = LAT_latvian_leader }
-        search_filters = { FOCUS_FILTER_POLITICAL }
-        completion_reward = {
-            add_stability = 0.05
-			add_political_power = -20
+			add_popularity = { ideology = communism popularity = 0.25 }
+            add_popularity = { ideology = democratic popularity = -0.25 }
 			
 			}}
 }

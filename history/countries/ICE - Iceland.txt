@@ -29,16 +29,16 @@ set_convoys = 60
 set_stability = 0.75
 
 set_politics = {
-	ruling_party = neutrality
+	ruling_party = authdem
 	last_election = "1932.9.17"
 	election_frequency = 36
 	elections_allowed = no
 }
 set_popularities = {
-	neutrality = 94
-	democratic = 2
-	fascism = 2
-	communism = 2
+	authdem = 94
+	soclib = 2
+	natsyn = 2
+	demsoc = 2
 }
 
 recruit_character = ICE_christian_x

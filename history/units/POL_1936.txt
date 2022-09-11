@@ -312,18 +312,6 @@ units = {
 
 	}
 
-	### Armia Wilno ###	
-	division= {	# "1 DP Legionów im. Pilsudskiego"
-		division_name = {
-			is_name_ordered = yes
-			name_order = 1
-		}
-		location = 3320
-		division_template = "Dywizja Piechoty"
-		start_experience_factor = 0.3
-		start_equipment_factor = 0.7
-
-	}
 
 	## GO Lublin ##	
 	division= {	# "9 Dywizja Piechoty"

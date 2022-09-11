@@ -47,16 +47,22 @@ recruit_character = AUS_leopold_figl
 
 
 set_politics = {
-	ruling_party = democratic
+	ruling_party = condem
 	last_election = "1930.11.9"
 	election_frequency = 48
 	elections_allowed = yes
 }
 
 set_popularities = {
-	neutrality = 5
-	democratic = 55
-	communism = 40
+	despotism = 5
+	condem = 25
+	authdem = 5
+	soclib = 20
+	freemarket = 10
+	natsyn = 5
+	vanguardist = 10
+	demsoc = 10
+	communardien = 10
 }
 
 set_stability = 0.50

@@ -1,7 +1,7 @@
 ﻿capital = 7
 
 set_rule = {
-	can_join_factions = yes
+	can_join_factions = no
 }
 
 oob = "HOL_1936"
@@ -256,15 +256,16 @@ recruit_character = HOL_wilhelmina
 }
 
 set_politics = {
-	ruling_party = democratic
+	ruling_party = soclib
 	last_election = "1933.4.26"
 	election_frequency = 48
 	elections_allowed = yes
 }
 set_popularities = {
-	democratic = 93
-	fascism = 4
-	communism = 3
+	soclib = 53
+	condem = 40
+	natsyn = 4
+	demsoc = 3
 }
 
 set_convoys = 150

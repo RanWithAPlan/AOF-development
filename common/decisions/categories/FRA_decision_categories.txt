@@ -12,6 +12,21 @@ FRA_rif_war_category = {
 	}
 }
 
+FRA_ethiopia_war_category ={
+	icon = power_struggle
+	allowed = {
+		original_tag = FRA
+		original_tag = ETH
+	}
+	visible = {
+		visible = {
+		FRA = {
+			NOT = { has_completed_focus = FRA_victory_eth }
+		}
+	}
+	}
+}
+
 FRA_east_indian_exploits = {
 	icon = power_struggle
 	allowed = {

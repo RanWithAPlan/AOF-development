@@ -1,7 +1,7 @@
 ﻿capital = 48
 
 set_rule = {
-	can_join_factions = yes
+	can_join_factions = no
 }
 
 recruit_character = BUL_aleksandar_tsankov_leader
@@ -42,8 +42,8 @@ if = { #DLC
 
 	#DLC POLIICS
 	set_popularities = { #DLC
-		fascism = 85
-		neutrality = 15
+		falangalism = 85
+		despotism = 15
 	}
 
 	recruit_character = BUL_boris_iii
@@ -124,7 +124,7 @@ if = { #DLC
 
 	#RULING PARTY
 	set_politics = { #DLC
-		ruling_party = fascism
+		ruling_party = falangalism
 		last_election = "1935.1.22"
 		election_frequency = 48
 		elections_allowed = no
@@ -138,12 +138,12 @@ if = { #DLC
 
 		#POLITICS
 		set_popularities = { #VANILLA
-			democratic = 5
-			fascism = 35
-			neutrality = 60
+			condem = 5
+			falangalism = 35
+			despotism = 60
 		}
 		set_politics = { #VANILLA
-			ruling_party = neutrality
+			ruling_party = despotism
 			last_election = "1931.6.21"
 			election_frequency = 48
 			elections_allowed = no

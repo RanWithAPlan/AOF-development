@@ -1,7 +1,7 @@
 ﻿capital = 126
 
 set_rule = {
-	can_join_factions = yes
+	can_join_factions = no
 }
 
 if = {
@@ -162,15 +162,16 @@ set_convoys = 200
 
 
 set_politics = {
-	ruling_party = communism
+	ruling_party = demsoc
 	last_election = "1933.5.1"
 	election_frequency = 48
-	elections_allowed = no
+	elections_allowed = yes
 }
 set_popularities = {
-	democratic = 3
-	fascism = 0
-	communism = 97
+	demsoc = 49
+	communardien = 21
+	vanguardist = 21
+	soclib = 9
 }
 
 

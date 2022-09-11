@@ -21,14 +21,14 @@ add_ideas = idea_once_part_of_green_army
 
 
 set_popularities = {
-	democratic = 15
-	communism = 15
-	fascism = 60
-	neutrality = 10
+	condem = 15
+	communardien = 15
+	falangalism = 60
+	despotism = 10
 }
 
 set_politics = {
-	ruling_party = fascism
+	ruling_party = falangalism 
 	last_election = "1932.6.17"
 	election_frequency = 72
 	elections_allowed = no

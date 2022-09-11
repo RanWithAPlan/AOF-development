@@ -24,14 +24,15 @@ set_stability = 0.55
 set_war_support = 0.65
 
 set_popularities = {
-	democratic = 10
-	anarchism = 75
-	communism = 10
-	fascism = 5
+	vanguardist = 5
+	soclib = 5
+	communardien = 75
+	demsoc = 10
+	falangalism = 5
 }
 
 set_politics = {
-	ruling_party = anarchism
+	ruling_party = communardien
 	last_election = "1905.5.2"
 	election_frequency = 72
 	elections_allowed = no

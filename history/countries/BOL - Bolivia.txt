@@ -1,5 +1,9 @@
 ﻿capital = 302
 
+set_rule = {
+	can_join_factions = no
+}
+
 oob = "BOL_1936"
 
 # Starting tech
@@ -93,26 +97,26 @@ set_country_flag = monroe_doctrine
 }
 
 set_politics = {
-	ruling_party = neutrality
+	ruling_party = despotism
 	last_election = "1934.11.11"
 	election_frequency = 72
 	elections_allowed = yes
 }
 
 set_popularities = {
-	neutrality = 100
+	despotism = 100
 }
 
 1939.1.1 = {
 	set_politics = {
-		ruling_party = neutrality
+		ruling_party = authdem 
 		last_election = "1934.11.11"
 		election_frequency = 72
 		elections_allowed = yes
 	}
 
 	set_popularities = {
-		neutrality = 100
+		authdem = 100
 	}
 
 }

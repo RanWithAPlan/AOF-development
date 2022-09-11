@@ -87,11 +87,22 @@ if = {
 		basic_torpedo = 1
 	}
 }
-
+set_politics = {
+	ruling_party = despotism
+	last_election = "1936.11.8"
+	election_frequency = 48
+	elections_allowed = no
+}
 set_popularities = {
-	fascism = 34
-	democratic = 30
-	communism = 36
+	falangalism= 10
+	natpop = 5
+	natsyn = 5
+	soclib = 15
+	condem = 15
+	vanguardist = 4
+	communardien = 4
+	demsoc 12
+	despotism = 30
 }
 
 

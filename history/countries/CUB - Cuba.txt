@@ -1,7 +1,7 @@
 ﻿capital = 315
 
 set_rule = {
-	can_join_factions = yes
+	can_join_factions = no
 }
 
 oob = "CUB_1936"
@@ -45,13 +45,13 @@ set_convoys = 75
 
 
 set_politics = {
-	ruling_party = neutrality
+	ruling_party = despotism
 	last_election = "1933.1.10"
 	election_frequency = 48
 	elections_allowed = no
 }
 set_popularities = {
-	neutrality = 90
-	communism = 2
-	democratic = 8
+	despotism = 90
+	communardien = 2
+	soclib = 8
 }

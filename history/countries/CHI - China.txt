@@ -1,7 +1,7 @@
 ﻿capital = 613 # Nanjing
 
 set_rule = {
-	can_join_factions = yes
+	can_join_factions = no
 }
 
 oob = "CHI_1936"
@@ -110,14 +110,14 @@ set_convoys = 40
 
 
 set_politics = {
-	ruling_party = neutrality
+	ruling_party = authdem
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
 }
 
 set_popularities = {
-	neutrality = 100
+	authdem = 100
 }
 
 ### VARIANTS ###

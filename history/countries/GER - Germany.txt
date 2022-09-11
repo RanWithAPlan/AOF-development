@@ -1,7 +1,7 @@
 ﻿capital = 55
 
 set_rule = {
-	can_join_factions = yes
+	can_join_factions = no
 }
 
 if = {
@@ -90,13 +90,18 @@ set_war_support = 0.35
 puppet = DEN
 
 set_politics = {
-	ruling_party = democratic
+	ruling_party = soclib
 	last_election = "1932.5.1"
 	election_frequency = 48
 	elections_allowed = yes
 }
 set_popularities = {
-	democratic = 100
+	demsoc = 14
+	communardien = 5
+	vanguardist = 5
+	soclib = 41
+	condem  = 30
+	authdem = 5
 }
 set_rule = {
 	can_send_volunteers = yes

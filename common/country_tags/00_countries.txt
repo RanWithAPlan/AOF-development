@@ -265,6 +265,7 @@ PRM = "countries/Great Perm.txt"
 WHR = "countries/White Russia.txt"
 CRR = "countries/Council Russia.txt"
 GAR = "countries/Green Army Russia.txt"
+BAL = ""countries/Baltic States.txt"
 
 
 

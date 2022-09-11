@@ -28,18 +28,7 @@ state={
 			arms_factory = 4
 			industrial_complex = 1
 			air_base = 3
-			3530 = {
-				bunker = 2
-			}
-			6542 = {
-				bunker = 2
-			}
-			6712 = {
-				bunker = 2
-			}
-			11640 = {
-				bunker = 2
-			}
+			
 		}
 		add_core_of = GER
 		add_core_of = WUR

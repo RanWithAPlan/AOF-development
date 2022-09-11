@@ -13,15 +13,36 @@ country_event = {
 
 	fire_only_once = yes
 	is_triggered_only = yes
+	major = yes
 	
 	immediate = {
 		annex_country = {
             target = LOM
             transfer_troops = no
         }
-		
 	}
-
+	option = {
+		name = mod_sardinia.1.a
+		trigger = {
+			original_tag = SAR
+		}
+	}
+	option = {
+		name = mod_sardinia.1.b
+		trigger = {
+			NOT = {
+				original_tag = SAR
+			}
+		}
+	}
+	option = {
+		name = mod_sardinia.1.c
+		trigger = {
+			original_tag = SAN
+			original_tag = TWO
+			original_tag = RRP
+		}
+	}
 }
 
 

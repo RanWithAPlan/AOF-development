@@ -59,7 +59,7 @@ country_event = {
 			factor = 8
 		}
 		add_political_power -50
-		set_country_flag = refused_peace_deal
+		set_country_flag = refused_peace_deal 
 		}
 	}
 }
@@ -95,6 +95,59 @@ country_event = {
 				NOT = { original_tag = MEX }
 			}	
 		}
+	}
+}
+
+country_event = {
+	id = mod_france.24
+	title = mod_france.24.t
+	desc = mod_france.24.d
+	picture = GFX_report_event_african_soldiers
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = mod_france.24.a
+		trigger = {
+			NOT = {
+				original_tag = ETH
+			}
+		}
+	}
+	option = {
+		name = mod_france.24.b
+		trigger = {
+			original_tag = ETH
+		}
+	}
+}
+
+country_event = {
+	id = mod_france.23
+	title = mod_france.23.t
+	desc = mod_france.23.d
+	picture = GFX_report_event_african_soldiers
+	is_triggered_only = yes
+	option = {
+		name = mod_france.24.a
+		white_peace = ETH
+		ETH = {
+			add_state_core = 268
+			transfer_state = 268
+		}
+		SUD = {
+			transfer_state = 549
+			transfer_state = 551
+			transfer_state = 767
+			transfer_state = 862
+			transfer_state = 863
+		}
+		EGY = {
+			transfer_state = 552
+			transfer_state = 452
+		}
+		add_stability = -0.15
+		add_political_power = -150
+		FRA = {country_event = mod_france.24}
 	}
 }
 

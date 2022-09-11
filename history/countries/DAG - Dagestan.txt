@@ -80,17 +80,18 @@ if = {
 	}
 }
 set_politics = {
-	ruling_party = democratic
+	ruling_party = condem
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = yes
 }
 
 set_popularities = {
-	democratic = 50
-	fascism = 10
-	communism = 10
-	neutrality = 30
+	condem = 40
+	natsyn = 10
+	vanguardist = 10
+	demsoc = 10
+	despotism = 30
 }
 
 recruit_character = DAG_adbulmajid_tchermoeff 

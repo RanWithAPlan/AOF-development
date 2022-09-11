@@ -1,7 +1,7 @@
 ﻿capital = 282
 
 set_rule = {
-	can_join_factions = yes
+	can_join_factions = no
 }
 
 
@@ -133,13 +133,15 @@ create_import = {
 set_convoys = 300
 
 set_politics = {
-	ruling_party = fascism
+	ruling_party = falangalism
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
 }
 set_popularities = {
-	fascism = 100
+	falangalism = 70
+	communadien = 10
+	despotism = 20
 }
 
 recruit_character = JAP_emperor_hirohito1

@@ -86,8 +86,12 @@ if = {
 }
 
 set_popularities = {
-	democratic = 60
-	communism = 40
+	despotism = 40
+	natpop = 3
+	condem = 7
+	demsoc = 30
+	communadien = 5
+	vanguardist = 5
 }
 
 recruit_character = KAZ_mukhtar_auezov

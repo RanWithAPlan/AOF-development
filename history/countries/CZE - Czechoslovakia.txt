@@ -1,7 +1,7 @@
 ﻿capital = 9
 
 set_rule = {
-	can_join_factions = yes
+	can_join_factions = no
 }
 
 if = {
@@ -113,15 +113,19 @@ if = {
 set_research_slots = 3
 
 set_politics = {
-	ruling_party = fascism
+	ruling_party = natpop 
 	last_election = "1848.12.25"
 	election_frequency = 60
 	elections_allowed = no
 }
 
 set_popularities = {
-	neutrality = 15
-	fascism = 85
+	authdem = 15
+	vanguardist = 5
+	demosc = 5
+	communardien = 5
+	natpop = 65
+	natysn = 5
 }
 
 if = {

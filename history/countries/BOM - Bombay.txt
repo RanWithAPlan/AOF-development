@@ -18,11 +18,11 @@ recruit_character = BOM_jrd_tata_f
 recruit_character = BOM_jrd_tata_n
 
 set_politics = {
-	ruling_party = neutrality
+	ruling_party = despotism
 	last_election = "1933.6.8"
 	election_frequency = 36
 	elections_allowed = no
 }
 set_popularities = {
-	neutrality = 100
+	despotism = 100
 }

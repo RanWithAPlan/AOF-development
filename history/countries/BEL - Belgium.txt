@@ -1,7 +1,7 @@
 ﻿capital = 6
 
 set_rule = {
-	can_join_factions = yes
+	can_join_factions = no
 }
 
 oob = "BEL_1936"
@@ -62,17 +62,19 @@ recruit_character = BEL_hubert_pierlot
 
 
 set_politics = {
-	ruling_party = communism
+	ruling_party = demsoc
 	last_election = "1932.11.27"
 	election_frequency = 60
 	elections_allowed = yes
 }
 
 set_popularities = {
-	democratic = 24
-	fascism = 1
-	communism = 62
-	neutrality = 13
+	soclib = 9
+	vanguardist = 13
+	communardien = 13
+	natsyn = 2
+	demsoc = 62
+	freemarket = 1
 }
 
 set_convoys = 80

@@ -84,12 +84,21 @@ if = {
 		basic_torpedo = 1
 	}
 }
+set_politics = {
+	ruling_party = soclib
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = yes
+}
 
 set_popularities = {
-	democratic = 40
-	communism = 40
-	fascism = 10
-	neutrality = 10
+	soclib = 35
+	condem = 5
+	demsoc = 30
+	communardien = 5
+	vanguardist = 5
+	falangalism = 10
+	despotism = 10
 }
 
 create_country_leader = {

@@ -1,7 +1,7 @@
 ﻿capital = 43
 
 set_rule = {
-	can_join_factions = yes
+	can_join_factions = no
 }
 
 oob = "HUN_1936"
@@ -116,14 +116,18 @@ recruit_character = HUN_franz_friedrich
 
 1939.1.1 = {
 	set_politics = {
-		ruling_party = fascism
+		ruling_party = condem 
 		last_election = "1939.5.29"
 		election_frequency = 48
 		elections_allowed = yes
 	}
 	set_popularities = {
-		democratic = 27
-		fascism = 70
-		communism = 3
+		condem = 27
+		soclib = 23
+		freemarket = 15
+		falangalism = 7
+		demsoc = 8
+		communardien = 5
+		vanguarsit = 5
 	}
 }

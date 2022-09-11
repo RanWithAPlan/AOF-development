@@ -133,15 +133,19 @@ if = {
 
 
 set_politics = {
-	ruling_party = democratic
+	ruling_party = condem
 	last_election = "1934.9.15"
 	election_frequency = 36
 	elections_allowed = yes
 }
 
 set_popularities = {
-	democratic = 88
-	fascism = 12
+	condem = 32
+	auth dem = 10
+	soclib = 27
+	freemarket = 7
+	vanguardist = 8
+	natsyn = 4
 }
 
 set_convoys = 100

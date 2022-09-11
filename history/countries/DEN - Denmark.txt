@@ -1,7 +1,7 @@
 ﻿capital = 37
 
 set_rule = {
-	can_join_factions = yes
+	can_join_factions = no
 }
 
 oob = "DEN_1936"
@@ -185,21 +185,23 @@ if = {
 
 
 set_politics = {
-	ruling_party = democratic
+	ruling_party = soclib
 	last_election = "1935.10.22"
 	election_frequency = 48
 	elections_allowed = yes
 }
 set_popularities = {
-	democratic = 97
-	fascism = 1
-	communism = 2
+	soclib = 47
+	condem = 35
+	authdem = 5
+	natpop = 1
+	demsoc = 10
 }
 
 
 1939.1.1 = {
 	set_politics = {
-		ruling_party = democratic
+		ruling_party = condem
 		last_election = "1939.4.3"
 		election_frequency = 48
 		elections_allowed = yes

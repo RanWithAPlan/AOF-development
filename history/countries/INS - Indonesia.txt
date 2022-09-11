@@ -48,12 +48,19 @@ if = {
 		basic_battery = 1
 	}
 }
+set_politics = {
+	ruling_party = despotism
+	last_election = "1936.9.17"
+	election_frequency = 36
+	elections_allowed = no
+}
 
 set_convoys = 25
 set_popularities = {
-	democratic = 10
-	communism = 20
-	neutrality = 70
+	condem = 10
+	vanguardist = 10
+	communardien = 10
+	despotism = 70
 }
 
 recruit_character = INS_hubertus_van_mook

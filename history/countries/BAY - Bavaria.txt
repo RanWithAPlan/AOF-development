@@ -1,7 +1,7 @@
 ﻿capital = 52
 
 set_rule = {
-	can_join_factions = yes
+	can_join_factions = no
 }
 
 # Starting tech
@@ -144,16 +144,21 @@ set_stability = 0.75
 }
 
 set_politics = {
-	ruling_party = communism
+	ruling_party = condem 
 	last_election = "1936.1.1"
 	election_frequency = 48
 	elections_allowed = no
 
 }
 set_popularities = {
-	democratic = 30
-	fascism = 10
-	communism = 60
+	condem = 30
+	soclib = 20
+	vanguardist = 10
+	demsoc = 10
+	communardien = 10
+	natpop = 10
+	natsyn = 5
+	despotism 5
 }
 
 add_ideas = {

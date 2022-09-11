@@ -1,7 +1,7 @@
 ﻿capital = 47
 
 set_rule = {
-	can_join_factions = yes
+	can_join_factions = no
 }
 
 oob = "GRE_1936"
@@ -80,10 +80,10 @@ set_politics = {
 	elections_allowed = yes # none after offset 1
 }
 set_popularities = {
-	democratic = 18
-	fascism = 4
-	communism = 22
-	neutrality = 56
+	soclib = 18
+	falangalism = 4
+	demsoc = 22
+	despotism = 56
 }
 
 set_stability = 0.72
