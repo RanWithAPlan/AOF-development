@@ -47,19 +47,19 @@ ideologies = {
 		ai_communist = yes
 	}
 	
-	demsoc = {		#democratic socialist
+	soc = {		#democratic socialist
 	
 		types = {
-			ds = {}
+			so = {}
 		}
 		
 		dynamic_faction_names = {
-			"FACTION_NAME_MX_1"
-			"FACTION_NAME_MX_2"
-			"FACTION_NAME_MX_3"
-			"FACTION_NAME_MX_4"
-			"FACTION_NAME_MX_5"
-			"FACTION_NAME_MX_6"
+			"FACTION_NAME_SO_1"
+			"FACTION_NAME_SO_2"
+			"FACTION_NAME_SO_3"
+			"FACTION_NAME_SO_4"
+			"FACTION_NAME_SO_5"
+			"FACTION_NAME_SO_6"
 		}
 		
 		color = { 150 33 33 }
@@ -156,7 +156,7 @@ ideologies = {
 			"FACTION_NAME_SL_6"
 		}
 		
-		color = { 255 74 58 }
+		color = { 205 28 95 }
 		
 		rules = {
 			can_create_collaboration_government = no
@@ -235,53 +235,6 @@ ideologies = {
 		}
 		ai_democratic = yes
 	}
-	authdem = {		#auth democracy
-	
-		types = {
-			ad = {}
-		}
-		
-		dynamic_faction_names = {
-			"FACTION_NAME_AD_1"
-			"FACTION_NAME_AD_2"
-			"FACTION_NAME_AD_3"
-			"FACTION_NAME_AD_4"
-			"FACTION_NAME_AD_5"
-			"FACTION_NAME_AD_6"
-		}
-		
-		color = { 201 201 255 }
-		
-		rules = {
-			can_create_collaboration_government = yes
-			can_declare_war_on_same_ideology = yes
-			can_force_government = yes
-			can_send_volunteers = yes
-			can_puppet = yes
-			can_lower_tension = yes
-			can_only_justify_war_on_threat_country = yes
-			can_guarantee_other_ideologies = yes
-		}
-		
-		can_host_government_in_exile = yes
-		
-		war_impact_on_world_tension = 0.25	# not that politically extreme
-		faction_impact_on_world_tension = 0.1
-		
-		modifiers = {
-			generate_wargoal_tension = 0.90
-			join_faction_tension = 0.80
-			lend_lease_tension = 0.50
-			send_volunteers_tension = 0.50
-			guarantee_tension = 0.50
-			annex_cost_factor = 0.5
-			civilian_intel_to_others = 20.0
-			army_intel_to_others = 5.0
-			navy_intel_to_others = 20.0
-			airforce_intel_to_others = 5
-		}
-		ai_democratic = yes
-	}
 	condem = {		#conservative democracy
 	
 		types = {
@@ -329,10 +282,14 @@ ideologies = {
 		}
 		ai_democratic = yes
 	}
-	despotism = {		#monarchist/dictatorship
+	authoritarian = {		#monarchist/dictatorship
 	
 		types = {
+			mn = {}
 			dp = {}
+		}
+		types = {
+			ao
 		}
 		
 		dynamic_faction_names = {
@@ -344,7 +301,7 @@ ideologies = {
 			"FACTION_NAME_DP_6"
 		}
 		
-		color = { 0 28 89 }
+		color = { 96 96 96 }
 		
 		rules = {
 			can_create_collaboration_government = no
@@ -391,55 +348,7 @@ ideologies = {
 			"FACTION_NAME_NP_6"
 		}
 		
-		color = { 56 56 56 }
-		
-		rules = {
-			can_create_collaboration_government = yes
-			can_declare_war_on_same_ideology = yes
-			can_force_government = yes
-			can_send_volunteers = yes
-			can_puppet = yes
-			can_lower_tension = no
-			can_only_justify_war_on_threat_country = no
-			can_guarantee_other_ideologies = yes
-		}
-		
-		can_host_government_in_exile = yes
-		
-		war_impact_on_world_tension = 1.00	# EVIL
-		faction_impact_on_world_tension = 0.2
-		
-		modifiers = {
-			generate_wargoal_tension = 0.30
-			join_faction_tension = 0.30
-			lend_lease_tension = 0.20
-			send_volunteers_tension = 0.20
-			guarantee_tension = 0.20
-			annex_cost_factor = 0.3
-			civilian_intel_to_others = 20.0
-			army_intel_to_others = 5.0
-			navy_intel_to_others = 20.0
-			airforce_intel_to_others = 5
-		}
-		ai_fascist = yes
-	}
-	
-	falangalism = {		#fascism lite
-	
-		types = {
-			fl = {}
-		}
-		
-		dynamic_faction_names = {
-			"FACTION_NAME_FL_1"
-			"FACTION_NAME_FL_2"
-			"FACTION_NAME_FL_3"
-			"FACTION_NAME_FL_4"
-			"FACTION_NAME_FL_5"
-			"FACTION_NAME_FL_6"
-		}
-		
-		color = { 198 101 63 }
+		color = { 22 22 22 }
 		
 		rules = {
 			can_create_collaboration_government = yes
