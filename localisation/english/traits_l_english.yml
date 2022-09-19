@@ -894,6 +894,12 @@
  former_vp:0 "President by Line of Succession"
  council_of_skoda:0 "Council of Škoda"
  head_of_military_council:0 "Head of Military Council"
+ vp:0 "Vice President of the United States"
+ unconstitutional_president:0 "Unconstitutional President"
+ secretary_of_general_affairs:0 "Secretary of General Affairs"
+ american_pompey:0 "American Pompey"
+ american_secretary_party:0 "The Secretary of the Party"
+ shadow_council:0 "Shadow Council"
  
  
 

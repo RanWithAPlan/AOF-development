@@ -50,6 +50,1984 @@ country_event = { # Death of Long / Valentines Day
 	}
 }
 
+country_event = { # Meeting of Hearst & Murphy
+	id = mod_usa.3
+	title = mod_usa.3.t
+	desc = mod_usa.3.d
+	picture = GFX_report_event_hitler_handshake
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.3.a
+		add_popularity = {
+			ideology = corporatism 
+			popularity = 0.01
+		}
+	}
+}
+
+country_event = { # Discuss Planned Obsolescence
+	id = mod_usa.4
+	title = mod_usa.4.t
+	desc = mod_usa.4.d
+	picture = GFX_report_event_usa_election_generic
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.4.a # Continue for Campaign Contribution
+		358 = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = dockyard
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	option = {
+		name = mod_usa.4.b # Force End of Policy
+		remove_ideas = planned_obsolescence
+		add_popularity = {
+			ideology = corporatism 
+			popularity = 0.02
+		}
+	}
+}
+
+country_event = { # Meet with Walther Waters
+	id = mod_usa.5
+	title = mod_usa.5.t
+	desc = mod_usa.5.d
+	picture = GFX_report_event_spain_civil_war_volunteers_02
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.5.a 
+		swap_ideas = {
+			remove_idea = disarmed_nation
+			add_idea = volunteer_only
+		}
+	}
+}
+
+country_event = { # Plane Competition
+	id = mod_usa.6
+	title = mod_usa.6.t
+	desc = mod_usa.6.d
+	picture = GFX_
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.6.a 
+		add_ideas = lockheed
+		378 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	option = {
+		name = mod_usa.6.b
+		add_ideas = douglas_aircraft_company
+		378 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+	option = {
+		name = mod_usa.6.c
+		add_ideas = boeing
+		386 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+country_event = { # Secret Bellevue-Stratford Meeting
+	id = mod_usa.7
+	title = mod_usa.7.t
+	desc = mod_usa.7.d
+	picture = GFX_
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.7.a 
+		
+	}
+}
+
+country_event = { # The Group approaches Patton
+	id = mod_usa.8
+	title = mod_usa.8.t
+	desc = mod_usa.8.d
+	picture = GFX_report_event_oahu_withdraws
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.8.a 
+		add_trait = {
+			character = USA_george_s_patton
+			trait = hidden_sympathies
+		}
+		hidden_effect = {
+			country_event = {
+				id = mod_usa.9
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = { # Patton visits the White House
+	id = mod_usa.9
+	title = mod_usa.9.t
+	desc = mod_usa.9.d
+	picture = GFX_report_event_usa_election_generic
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.9.a 
+		add_political_power = -25
+		USA_george_s_patton = {
+			remove_unit_leader_role = yes
+		}
+		remove_advisor_role = {
+		  character = USA_george_s_patton
+		  slot = theorist
+		}
+		USA_douglas_macarthur = {
+			remove_unit_leader_role = yes
+		}
+		remove_advisor_role = {
+			character = USA_douglas_macarthur
+			slot = army_chief
+		}
+		USA_edward_brooks = {
+			remove_unit_leader_role = yes
+		}
+		
+		hidden_effect = {
+			country_event = {
+				id = mod_usa.10
+				days = 12
+			}
+		}
+	}
+}
+
+country_event = { # Patton declares Smith sick and unfit to run country
+	id = mod_usa.10
+	title = mod_usa.10.t
+	desc = mod_usa.10.d
+	picture = GFX_report_event_generic_rally
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.10.a 
+		add_political_power = -10
+		set_country_flag = USA_patton_tool
+	}
+}
+
+country_event = { # Patton inaugurated
+	id = mod_usa.11
+	title = mod_usa.11.t
+	desc = mod_usa.11.d
+	picture = GFX_report_event_generic_rally
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.11.a
+		hidden_effect = {
+			set_cosmetic_tag = USA_business_plot_fascism
+		}
+		add_stability = -0.25
+		add_war_support = -0.1
+		set_politics = {
+			ruling_party = corporatism 
+			elections_allowed = no
+			last_election = "1934.11.8"
+			election_frequency = 48
+			long_name = USA_plot_fascism_long
+			name = USA_plot_fascism
+		}
+		add_country_leader_role = {
+			character = USA_george_patton
+			promote_leader = yes
+			country_leader = {
+				ideology = extreme_corporatism 
+				expire = "1965.1.1.1"
+				traits = { unconstitutional_president }
+			}
+		}
+		add_country_leader_role = {
+			character = USA_george_patton
+			promote_leader = yes
+			country_leader = {
+				ideology = religous_extremeism  
+				expire = "1965.1.1.1"
+				traits = { unconstitutional_president }
+			}
+		}
+		add_country_leader_trait = secretary_of_general_affairs
+		add_field_marshal_role = {
+			Character = USA_douglas_macarthur
+			traits={ brilliant_strategist career_officer media_personality politically_connected offensive_doctrine }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=2
+		}
+		add_advisor_role = {
+			character = USA_douglas_macarthur
+			advisor = {
+				idea_token = douglas_macarthur
+				slot = army_chief
+				cost = 50
+				traits = {
+					army_chief_morale_3
+				}
+			}
+			activate = yes
+		}
+		add_corps_commander_role = {
+			character = USA_edward_brooks
+			traits={ trait_reckless armor_officer }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=2
+		}
+		retire_character = USA_joseph_robinson
+		add_advisor_role = {
+			Character = USA_bertrand_snell
+			advisor = {
+				slot = political_advisor
+				idea_token = USA_bertrand_snell
+				allowed  = {
+					original_tag  = USA
+				}
+				traits  = {
+					popular_figurehead2 
+				}
+				cost  = 50.000
+			}
+		}
+		activate_advisor = USA_bertrand_snell
+		set_party_name = { 
+			ideology = democratic 
+			long_name = USA_business_plot_democratic_long
+			name = USA_business_plot_democratic
+		}
+		remove_country_leader_role = {
+			character = USA_al_smith
+			ideology = social_democracy
+		}
+		hidden_effect = {
+			country_event = {
+				id = mod_usa.12
+				days = 21
+			}
+			remove_ideas = usea
+		}
+	}
+}
+
+country_event = { # Supreme Court starts resisting Patton
+	id = mod_usa.12
+	title = mod_usa.12.t
+	desc = mod_usa.12.d
+	picture = GFX_report_event_saf_coup
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.12.a 
+		add_political_power = -75
+		add_ideas = supreme_court_resistance
+		hidden_effect = {
+			country_event = {
+				id = mod_usa.13
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = { # 'Lone' Gunman (Payed Killer = Adel Perkily) attacks Supreme Justice
+	id = mod_usa.13
+	title = mod_usa.13.t
+	desc = mod_usa.13.d
+	picture = GFX_report_event_spain_civil_war_volunteers_01
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.13.a 
+		set_country_flag = USA_justice_attack
+		custom_effect_tooltip = unlock_justice_protection_tt
+	}
+}
+
+country_event = { # Maurice Rose fears antisemitism and deserts
+	id = mod_usa.14
+	title = mod_usa.14.t
+	desc = mod_usa.14.d
+	picture = GFX_report_event_desertion_poster
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.14.a 
+		set_nationality = {
+			target_country = CUB
+			character = USA_maurice_rose
+		}
+		add_manpower = -25000
+		hidden_effect = {
+			CUB = {
+				country_event = {
+					id = mod_usa.15
+				}
+			}
+		}
+	}
+}
+
+country_event = { # Maurice Rose arrives in Kingston
+	id = mod_usa.15
+	title = mod_usa.15.t
+	desc = mod_usa.15.d
+	picture = GFX_report_event_soldiers_in_france
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.15.a 
+		add_manpower = 23500
+	}
+}
+
+country_event = { # USA demands Alaska
+	id = mod_usa.16
+	title = mod_usa.16.t
+	desc = mod_usa.16.d
+	picture = GFX_report_event_us_panay_demands
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.16.a # CAN accepts
+		ai_chance = {
+			factor = 60
+		}
+		add_political_power = -10
+		USA = {
+			country_event = {
+				id = mod_usa.17
+				days = 6
+			}
+		}
+	}
+	option = {
+		name = mod_usa.16.b # CAN refuses, ENG gets event to force CAN
+		ai_chance = {
+			factor = 20
+		}
+		add_war_support = 0.1
+		ENG = {
+			country_event = {
+				id = mod_usa.18
+				days = 4
+			}
+		}
+	}
+}
+
+country_event = { # CAN handed over Alaska
+	id = mod_usa.17
+	title = mod_usa.17.t
+	desc = mod_usa.17.d
+	picture = GFX_report_event_hitler_handshake
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.17.a 
+		ai_chance = {
+			factor = 10
+		}
+		transfer_state = 463
+		471 = {
+			set_demilitarized_zone = yes
+		}
+	}
+}
+
+country_event = { # CAN doesn't want to give up Alaska; for ENG
+	id = mod_usa.18
+	title = mod_usa.18.t
+	desc = mod_usa.18.d
+	picture = GFX_report_event_canadian_soldiers
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.18.a # Force them into accepting
+		ai_chance = {
+			factor = 40
+		}
+		add_political_power = -10
+		CAN = {
+			add_war_support = -0.05
+			add_opinion_modifier = {
+				target = ENG
+				modifier = small_decrease 
+			}
+		}
+		USA = {
+			country_event = {
+				id = mod_usa.17
+				days = 2
+			}
+		}
+	}
+	option = {
+		name = mod_usa.18.b # damn the consequences, support them
+		ai_chance = {
+			factor = 20
+		}
+		add_war_support = 0.05
+		USA = {
+			country_event = {
+				id = mod_usa.19
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = { # Alaska will not be gained, embargo them all
+	id = mod_usa.19
+	title = mod_usa.19.t
+	desc = mod_usa.19.d
+	picture = GFX_report_event_usa_election_generic
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.19.a # Force them into accepting
+		ai_chance = {
+			factor = 10
+		}
+		every_other_country = {
+			limit = {
+				is_in_faction_with = ENG
+			}
+			USA = {
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = sanctions 
+				}
+			}
+		}
+		CAN = {
+			add_timed_idea = {
+				idea = sanctioned_industry
+				days = 365
+			}
+		}
+	}
+}
+
+country_event = { # LIB breaks away
+	id = mod_usa.20
+	title = mod_usa.20.t
+	desc = mod_usa.20.d
+	picture = GFX_report_event_african_soldiers
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.20.a 
+		ai_chance = {
+			factor = 10
+		}
+		end_puppet = LIB
+		LIB = {
+			leave_faction = yes
+			add_ideas = dead_industry
+		}
+		298 = {
+			add_claim_by = SIE
+		}
+		dismantle_faction = yes
+	}
+}
+
+country_event = { # USA wants to punish us
+	id = mod_usa.21
+	title = mod_usa.21.t
+	desc = mod_usa.21.d
+	picture = GFX_report_event_usa_election_generic
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.21.a # Give in 
+		ai_chance = {
+			factor = 100
+		}
+		MEX = {
+			transfer_state = 311
+		}
+		311 = {
+			set_state_name = "Mexican Honduras"
+		}
+	}
+	option = {
+		name = mod_usa.21.b # Take the embargo
+		ai_chance = {
+			factor = 10
+		}
+		USA = {
+			add_opinion_modifier = {
+				target = FRA
+				modifier = embargo
+			}
+		}
+	}
+}
+
+country_event = { # Fate of Al Smith
+	id = mod_usa.22
+	title = mod_usa.22.t
+	desc = mod_usa.22.d
+	picture = GFX_report_event_SOV_purge_administration
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.22.a # Kill him 
+		ai_chance = {
+			factor = 10
+		}
+		retire_character = USA_al_smith
+	}
+	option = {
+		name = mod_usa.22.b # Exile him anywhere
+		ai_chance = {
+			factor = 10
+		}
+		add_popularity = {
+			ideology = democratic 
+			popularity = -0.1
+		}
+	}
+	option = {
+		name = mod_usa.22.c # Put him in a box for the Vatican
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = 5
+	}
+}
+
+country_event = { # John Brinkley wants to make Super Soldiers
+	id = mod_usa.23
+	title = mod_usa.23.t
+	desc = mod_usa.23.d
+	picture = GFX_report_event_SOV_atomic_program_caught
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.23.a # Drop the charges
+		ai_chance = {
+			factor = 10
+		}
+		country_event = {
+			id = mod_usa.24
+			days = 1
+		}
+		add_political_power = -20
+	}
+	option = {
+		name = mod_usa.23.b # ridiculous man
+		ai_chance = {
+			factor = 10
+		}
+		
+	}
+}
+
+country_event = { # Which glands to use
+	id = mod_usa.24
+	title = mod_usa.24.t
+	desc = mod_usa.24.d
+	#picture = GFX_report_event_SOV_purge_administration
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.24.a # Goat 
+		ai_chance = {
+			factor = 10
+		}
+		hidden_effect = {
+			country_event = {
+				id = mod_usa.25
+				days = 200
+			}
+		}
+	}
+	option = {
+		name = mod_usa.24.b # Monkey
+		ai_chance = {
+			factor = 10
+		}
+		hidden_effect = {
+			country_event = {
+				id = mod_usa.25
+				days = 200
+			}
+		}
+	}
+	option = {
+		name = mod_usa.24.c # Gorilla
+		ai_chance = {
+			factor = 10
+		}
+		hidden_effect = {
+			country_event = {
+				id = mod_usa.25
+				days = 200
+			}
+		}
+	}
+}
+
+country_event = { # Gland Super Soldier project fails, obviously
+	id = mod_usa.25
+	title = mod_usa.25.t
+	desc = mod_usa.25.d
+	picture = GFX_report_event_dead_soldiers
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.25.a # Drop the charges
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -50
+		add_manpower = -315
+	}
+}
+
+country_event = { # Japan catches us 
+	id = mod_usa.26
+	title = mod_usa.26.t
+	desc = mod_usa.26.d
+	picture = GFX_report_event_japanese_officers
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.26.a 
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -15
+		JAP = {
+			add_opinion_modifier = {
+				target = USA
+				modifier = large_decrease  
+			}
+		}
+		hidden_effect = {
+			set_country_flag = USA_JAP_caught_us
+		}
+	}
+}
+
+country_event = { # Carrier Paths
+	id = mod_usa.27
+	title = mod_usa.27.t
+	desc = mod_usa.27.d
+	picture = GFX_report_event_usa_british_sailors_destroyers
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.27.a # Better Carriers
+		ai_chance = {
+			factor = 10
+		}
+		add_ideas = american_modern_carrier
+	}
+	option = {
+		name = mod_usa.27.b # More Carriers
+		ai_chance = {
+			factor = 30
+		}
+		add_ideas = build_american_carrier
+	}
+}
+
+country_event = { # America demands near complete demilitarization
+	id = mod_usa.28
+	title = mod_usa.28.t
+	desc = mod_usa.28.d
+	picture = GFX_report_event_canadian_soldiers
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		ai_strategy = {
+			type = antagonize
+			id = USA
+			value = 100
+		}
+	}
+	
+	option = {
+		name = mod_usa.28.a # Surrender
+		ai_chance = {
+			factor = 10
+		}
+		USA = {
+			country_event = {
+				id = mod_usa.29
+				days = 2
+			}
+		}
+		465 = {
+			set_demilitarized_zone = yes
+		}
+		468 = {
+			set_demilitarized_zone = yes
+		}
+		276 = {
+			set_demilitarized_zone = yes
+		}
+		471 = {
+			set_demilitarized_zone = yes
+		}
+	}
+	option = {
+		name = mod_usa.28.b # Not Surrender
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 80
+				has_war = yes
+			}
+		}
+		USA = {
+			country_event = {
+				id = mod_usa.30
+				days = 16
+			}
+		}
+		CAN = {
+			add_timed_idea = {
+				idea = canadian_national_defense
+				days = 140
+			}
+			add_stability = 0.05
+			add_war_support = 0.25
+		}
+	}
+}
+
+country_event = { # Canada has demilitarized
+	id = mod_usa.29
+	title = mod_usa.29.t
+	desc = mod_usa.29.d
+	picture = GFX_report_event_hol_cabinet_de_geer
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.29.a # 
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = 50
+		add_stability = 0.05
+	}
+}
+
+country_event = { # Canada stands defiant
+	id = mod_usa.30
+	title = mod_usa.30.t
+	desc = mod_usa.30.d
+	picture = GFX_report_event_canadian_soldiers
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.30.a # 
+		ai_chance = {
+			factor = 10
+		}
+		declare_war_on = {
+			target = CAN
+			type = annex_everything
+		}
+	}
+}
+
+country_event = { # Offer Japan concessions in Pacific
+	id = mod_usa.31
+	title = mod_usa.31.t
+	desc = mod_usa.31.d
+	picture = GFX_report_event_japanese_chinese_surrender
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.31.a # Minor Islands in Pacific
+		ai_chance = {
+			factor = 40
+		}
+		JAP = {
+			country_event = {
+				id = mod_usa.32
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = mod_usa.31.b # All expect Hawaii
+		ai_chance = {
+			factor = 25
+		}
+		JAP = {
+			country_event = {
+				id = mod_usa.35
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = mod_usa.31.c # All even Hawaii
+		ai_chance = {
+			factor = 10
+		}
+		JAP = {
+			country_event = {
+				id = mod_usa.37
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { # USA Offer Minor Islands for Peace
+	id = mod_usa.32
+	title = mod_usa.32.t
+	desc = mod_usa.32.d
+	picture = GFX_report_event_japanese_chinese_surrender
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.32.a # This peace is okay
+		ai_chance = {
+			factor = 5
+		}
+		USA = {
+			country_event = {
+				id = mod_usa.33
+				days = 6
+			}
+		}
+	}
+	option = {
+		name = mod_usa.32.b # This peace is unfit
+		ai_chance = {
+			factor = 45
+		}
+		USA = {
+			country_event = {
+				id = mod_usa.34
+				days = 6
+			}
+		}
+	}
+}
+
+country_event = { # Minor Islands Peace Treaty
+	id = mod_usa.33
+	title = mod_usa.33.t
+	desc = mod_usa.33.d
+	picture = GFX_report_event_japanese_chinese_surrender
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.33.a 
+		ai_chance = {
+			factor = 5
+		}
+		white_peace = JAP
+		JAP = {
+			transfer_state = 646
+			transfer_state = 638
+			transfer_state = 684
+			transfer_state = 632
+		}
+		add_state_claim = 646
+		add_state_claim = 638
+		add_state_claim = 684
+		add_state_claim = 632
+	}
+}
+
+country_event = { # The War goes on / No peace
+	id = mod_usa.34
+	title = mod_usa.34.t
+	desc = mod_usa.34.d
+	picture = GFX_report_event_japanese_chinese_surrender
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.34.a 
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -5
+	}
+}
+
+country_event = { # USA Offer Most Islands for Peace
+	id = mod_usa.35
+	title = mod_usa.35.t
+	desc = mod_usa.35.d
+	picture = GFX_report_event_japanese_chinese_surrender
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.35.a # This peace is okay
+		ai_chance = {
+			factor = 20
+		}
+		USA = {
+			country_event = {
+				id = mod_usa.36
+				days = 6
+			}
+		}
+	}
+	option = {
+		name = mod_usa.35.b # This peace is unfit
+		ai_chance = {
+			factor = 30
+		}
+		USA = {
+			country_event = {
+				id = mod_usa.34
+				days = 6
+			}
+		}
+	}
+}
+
+country_event = { # Most Islands Peace Treaty
+	id = mod_usa.36
+	title = mod_usa.36.t
+	desc = mod_usa.36.d
+	picture = GFX_report_event_japanese_chinese_surrender
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.36.a 
+		ai_chance = {
+			factor = 10
+		}
+		white_peace = JAP
+		JAP = {
+			transfer_state = 646
+			transfer_state = 638
+			transfer_state = 684
+			transfer_state = 632
+			transfer_state = 633
+			transfer_state = 639
+			transfer_state = 642
+			transfer_state = 727
+			transfer_state = 630
+			transfer_state = 631
+			transfer_state = 650
+		}
+		add_state_claim = 646
+		add_state_claim = 638
+		add_state_claim = 684
+		add_state_claim = 632
+		add_state_claim = 633
+		add_state_claim = 639
+		add_state_claim = 642
+		add_state_claim = 727
+		add_state_claim = 630
+		add_state_claim = 631
+		add_state_claim = 650
+	}
+}
+
+country_event = { # USA Offer All Islands for Peace
+	id = mod_usa.37
+	title = mod_usa.37.t
+	desc = mod_usa.37.d
+	picture = GFX_report_event_japanese_chinese_surrender
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.37.a # This peace is okay
+		ai_chance = {
+			factor = 45
+		}
+		USA = {
+			country_event = {
+				id = mod_usa.38
+				days = 6
+			}
+		}
+	}
+	option = {
+		name = mod_usa.37.b # This peace is unfit
+		ai_chance = {
+			factor = 5
+		}
+		USA = {
+			country_event = {
+				id = mod_usa.34
+				days = 6
+			}
+		}
+	}
+}
+
+country_event = { # All Islands Peace Treaty
+	id = mod_usa.38
+	title = mod_usa.38.t
+	desc = mod_usa.38.d
+	picture = GFX_report_event_japanese_chinese_surrender
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.38.a 
+		ai_chance = {
+			factor = 10
+		}
+		white_peace = JAP
+		JAP = {
+			transfer_state = 646
+			transfer_state = 638
+			transfer_state = 684
+			transfer_state = 632
+			transfer_state = 633
+			transfer_state = 639
+			transfer_state = 642
+			transfer_state = 727
+			transfer_state = 630
+			transfer_state = 631
+			transfer_state = 650
+			transfer_state = 629
+		}
+		add_state_claim = 646
+		add_state_claim = 638
+		add_state_claim = 684
+		add_state_claim = 632
+		add_state_claim = 633
+		add_state_claim = 639
+		add_state_claim = 642
+		add_state_claim = 727
+		add_state_claim = 630
+		add_state_claim = 631
+		add_state_claim = 650
+		add_state_claim = 629
+	}
+}
+
+country_event = { # Patton celebrates Confederacy
+	id = mod_usa.39
+	title = mod_usa.39.t
+	desc = mod_usa.39.d
+	picture = GFX_report_event_fascist_speech
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.39.a 
+		ai_chance = {
+			factor = 10
+		}
+		set_province_name = { id = 4464 name = "Dixie" }
+	}
+}
+
+##### GOLDEN CIRCLE STATE TRANSFER EVENTS ####
+
+country_event = { # Guatemala in conquered HIDDEN TRIGGER
+	id = mod_usa.40
+	
+	fire_only_once = yes
+	#is_triggered_only = yes
+	
+	hidden = yes
+	
+	trigger = {
+		original_tag = USA
+		has_completed_focus = USA_revive_golden_circle
+		OR = {
+			controls_state = 313
+			any_allied_country = {
+				controls_state = 313
+			}
+		}
+	}
+	
+	immediate = {
+		country_event = {
+			id = mod_usa.41
+			days = 1
+		}
+	}
+}
+
+country_event = { # Guatemala in conquered
+	id = mod_usa.41
+	title = mod_usa.41.t
+	desc = mod_usa.41.d
+	#picture = GFX_report_event_fascist_speech
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		original_tag = USA
+		OR = {
+			controls_state = 313
+			any_allied_country = {
+				controls_state = 313
+			}
+		}
+	}
+	
+	immediate = {
+		313 = {
+			transfer_state_to = CUB
+		}
+	}
+	
+	option = {
+		name = mod_usa.41.a 
+		ai_chance = {
+			factor = 10
+		}
+		313 = {
+			transfer_state_to = CUB
+		}
+	}
+}
+
+country_event = { # Honduras in conquered HIDDEN TRIGGER
+	id = mod_usa.42
+	
+	fire_only_once = yes
+	#is_triggered_only = yes
+	
+	hidden = yes
+	
+	trigger = {
+		original_tag = USA
+		has_completed_focus = USA_revive_golden_circle
+		OR = {
+			controls_state = 312
+			any_allied_country = {
+				controls_state = 312
+			}
+		}
+	}
+	
+	immediate = {
+		country_event = {
+			id = mod_usa.43
+			days = 1
+		}
+	}
+}
+
+country_event = { # Honduras in conquered
+	id = mod_usa.43
+	title = mod_usa.43.t
+	desc = mod_usa.43.d
+	#picture = GFX_report_event_fascist_speech
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		original_tag = USA
+		OR = {
+			controls_state = 312
+			any_allied_country = {
+				controls_state = 312
+			}
+		}
+	}
+	
+	immediate = {
+		312 = {
+			transfer_state_to = CUB
+		}
+	}
+	
+	option = {
+		name = mod_usa.43.a 
+		ai_chance = {
+			factor = 10
+		}
+		312 = {
+			transfer_state_to = CUB
+		}
+	}
+}
+
+country_event = { # El Salvador in conquered HIDDEN TRIGGER
+	id = mod_usa.44
+	
+	fire_only_once = yes
+	#is_triggered_only = yes
+	
+	hidden = yes
+	
+	trigger = {
+		original_tag = USA
+		has_completed_focus = USA_revive_golden_circle
+		OR = {
+			controls_state = 314
+			any_allied_country = {
+				controls_state = 314
+			}
+		}
+	}
+	
+	immediate = {
+		country_event = {
+			id = mod_usa.45
+			days = 1
+		}
+	}
+}
+
+country_event = { # El Salvador in conquered
+	id = mod_usa.45
+	title = mod_usa.45.t
+	desc = mod_usa.45.d
+	#picture = GFX_report_event_fascist_speech
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		original_tag = USA
+		OR = {
+			controls_state = 314
+			any_allied_country = {
+				controls_state = 314
+			}
+		}
+	}
+	
+	immediate = {
+		314 = {
+			transfer_state_to = CUB
+		}
+	}
+	
+	option = {
+		name = mod_usa.45.a 
+		ai_chance = {
+			factor = 10
+		}
+		314 = {
+			transfer_state_to = CUB
+		}
+	}
+}
+
+country_event = { # Nicaragua in conquered HIDDEN TRIGGER
+	id = mod_usa.46
+	
+	fire_only_once = yes
+	#is_triggered_only = yes
+	
+	hidden = yes
+	
+	trigger = {
+		original_tag = USA
+		has_completed_focus = USA_revive_golden_circle
+		OR = {
+			controls_state = 317
+			any_allied_country = {
+				controls_state = 317
+			}
+		}
+	}
+	
+	immediate = {
+		country_event = {
+			id = mod_usa.47
+			days = 1
+		}
+	}
+}
+
+country_event = { # Nicaragua in conquered
+	id = mod_usa.47
+	title = mod_usa.47.t
+	desc = mod_usa.47.d
+	#picture = GFX_report_event_fascist_speech
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		original_tag = USA
+		OR = {
+			controls_state = 317
+			any_allied_country = {
+				controls_state = 317
+			}
+		}
+	}
+	
+	immediate = {
+		317 = {
+			transfer_state_to = CUB
+		}
+	}
+	
+	option = {
+		name = mod_usa.47.a 
+		ai_chance = {
+			factor = 10
+		}
+		317 = {
+			transfer_state_to = CUB
+		}
+	}
+}
+
+country_event = { # Costa Rica in conquered HIDDEN TRIGGER
+	id = mod_usa.48
+	
+	fire_only_once = yes
+	#is_triggered_only = yes
+	
+	hidden = yes
+	
+	trigger = {
+		original_tag = USA
+		has_completed_focus = USA_revive_golden_circle
+		OR = {
+			controls_state = 316
+			any_allied_country = {
+				controls_state = 316
+			}
+		}
+	}
+	
+	immediate = {
+		country_event = {
+			id = mod_usa.49
+			days = 1
+		}
+	}
+}
+
+country_event = { # Costa Rica in conquered
+	id = mod_usa.49
+	title = mod_usa.49.t
+	desc = mod_usa.49.d
+	#picture = GFX_report_event_fascist_speech
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		original_tag = USA
+		OR = {
+			controls_state = 316
+			any_allied_country = {
+				controls_state = 316
+			}
+		}
+	}
+	
+	immediate = {
+		316 = {
+			transfer_state_to = CUB
+		}
+	}
+	
+	option = {
+		name = mod_usa.49.a 
+		ai_chance = {
+			factor = 10
+		}
+		316 = {
+			transfer_state_to = CUB
+		}
+	}
+}
+
+country_event = { # Panama in conquered HIDDEN TRIGGER
+	id = mod_usa.50
+	
+	fire_only_once = yes
+	#is_triggered_only = yes
+	
+	hidden = yes
+	
+	trigger = {
+		original_tag = USA
+		has_completed_focus = USA_revive_golden_circle
+		OR = {
+			controls_state = 304
+			any_allied_country = {
+				controls_state = 304
+			}
+		}
+	}
+	
+	immediate = {
+		country_event = {
+			id = mod_usa.51
+			days = 1
+		}
+	}
+}
+
+country_event = { # Panama in conquered
+	id = mod_usa.51
+	title = mod_usa.51.t
+	desc = mod_usa.51.d
+	#picture = GFX_report_event_fascist_speech
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		original_tag = USA
+		OR = {
+			controls_state = 304
+			any_allied_country = {
+				controls_state = 304
+			}
+		}
+	}
+	
+	immediate = {
+		304 = {
+			transfer_state_to = CUB
+		}
+	}
+	
+	option = {
+		name = mod_usa.51.a 
+		ai_chance = {
+			factor = 10
+		}
+		304 = {
+			transfer_state_to = CUB
+		}
+	}
+}
+
+country_event = { # Columbia in conquered HIDDEN TRIGGER
+	id = mod_usa.52
+	
+	fire_only_once = yes
+	#is_triggered_only = yes
+	
+	hidden = yes
+	
+	trigger = {
+		original_tag = USA
+		has_completed_focus = USA_revive_golden_circle
+		OR = {
+			controls_state = 493
+			any_allied_country = {
+				controls_state = 493
+			}
+		}
+	}
+	
+	immediate = {
+		country_event = {
+			id = mod_usa.53
+			days = 1
+		}
+	}
+}
+
+country_event = { # Columbia in conquered
+	id = mod_usa.53
+	title = mod_usa.53.t
+	desc = mod_usa.53.d
+	#picture = GFX_report_event_fascist_speech
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		original_tag = USA
+		OR = {
+			controls_state = 493
+			any_allied_country = {
+				controls_state = 493
+			}
+		}
+	}
+	
+	immediate = {
+		493 = {
+			transfer_state_to = CUB
+		}
+	}
+	
+	option = {
+		name = mod_usa.53.a 
+		ai_chance = {
+			factor = 10
+		}
+		493 = {
+			transfer_state_to = CUB
+		}
+	}
+}
+
+country_event = { # Mexico in conquered HIDDEN TRIGGER
+	id = mod_usa.54
+	
+	fire_only_once = yes
+	#is_triggered_only = yes
+	
+	hidden = yes
+	
+	trigger = {
+		original_tag = USA
+		has_completed_focus = USA_revive_golden_circle
+		MEX = {
+			all_core_state = {
+				OR = {
+					is_controlled_by = USA
+					FROM = {
+						is_in_faction_with = USA
+					}
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		country_event = {
+			id = mod_usa.55
+			days = 1
+		}
+	}
+}
+
+country_event = { # Mexico in conquered
+	id = mod_usa.55
+	title = mod_usa.55.t
+	desc = mod_usa.55.d
+	#picture = GFX_report_event_fascist_speech
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		original_tag = USA
+	}
+	
+	immediate = {
+		CUB = {
+			transfer_state = 311
+			transfer_state = 474
+			transfer_state = 475
+			transfer_state = 476
+			transfer_state = 477
+			transfer_state = 485
+			transfer_state = 277
+			transfer_state = 479
+			transfer_state = 480
+			transfer_state = 481
+			transfer_state = 482
+			transfer_state = 483
+			transfer_state = 484
+			transfer_state = 478
+		}
+	}
+	
+	option = {
+		name = mod_usa.55.a 
+		ai_chance = {
+			factor = 10
+		}
+		CUB = {
+			transfer_state = 311
+			transfer_state = 474
+			transfer_state = 475
+			transfer_state = 476
+			transfer_state = 477
+			transfer_state = 485
+			transfer_state = 277
+			transfer_state = 479
+			transfer_state = 480
+			transfer_state = 481
+			transfer_state = 482
+			transfer_state = 483
+			transfer_state = 484
+			transfer_state = 478
+		}
+	}
+}
+
+country_event = { # Ford vs. Electric Boat Struggle begins
+	id = mod_usa.56
+	title = mod_usa.56.t
+	desc = mod_usa.56.d
+	picture = GFX_report_event_generic_factory
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.56.a # 
+		ai_chance = {
+			factor = 10
+		}
+		add_ideas = FORD_Electric_Boat_Struggle
+	}
+}
+
+country_event = { # Ford vs. Electric Boat favor or balance
+	id = mod_usa.57
+	title = mod_usa.57.t
+	desc = mod_usa.57.d
+	picture = GFX_report_event_generic_factory
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.57.a # Favor FORD
+		ai_chance = {
+			factor = 20
+		}
+		set_country_flag = USA_favor_FORD
+	}
+	option = {
+		name = mod_usa.57.b # Try to Balance
+		ai_chance = {
+			factor = 10
+		}
+		set_country_flag = USA_favor_balance
+	}
+	option = {
+		name = mod_usa.57.c # Favor Electric Boat
+		ai_chance = {
+			factor = 20
+		}
+		set_country_flag = USA_favor_electric_boat
+	}
+}
+
+country_event = { # Electric Boat buys company to run into ground
+	id = mod_usa.58
+	title = mod_usa.58.t
+	desc = mod_usa.58.d
+	picture = GFX_report_event_generic_strike
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.58.a # 
+		ai_chance = {
+			factor = 20
+		}  
+		remove_ideas_with_trait = heavy_tank_manufacturer 
+		remove_ideas_with_trait = fast_tank_manufacturer 
+		remove_ideas_with_trait = medium_tank_manufacturer
+		add_timed_idea = {
+			idea = USA_electric_boat_ran_companies_to_ground
+			days = 300
+		}		
+	}
+}
+
+country_event = { # Dockworkers storm Munition Plants
+	id = mod_usa.59
+	title = mod_usa.59.t
+	desc = mod_usa.59.d
+	picture = GFX_report_event_generic_rally2
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.59.a # 
+		ai_chance = {
+			factor = 20
+		}
+		random_owned_controlled_state = {
+			limit = {
+				arms_factory > 3
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 3
+			}
+		}
+	}
+}
+
+country_event = { # Arms Workers storm Dockyards
+	id = mod_usa.60
+	title = mod_usa.60.t
+	desc = mod_usa.60.d
+	picture = GFX_report_event_generic_rally2
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.60.a # 
+		ai_chance = {
+			factor = 20
+		}
+		random_owned_controlled_state = {
+			limit = {
+				dockyard > 3
+			}
+			damage_building = {
+				type = dockyard
+				damage = 3
+			}
+		}
+	}
+}
+
+country_event = { # Ford buys company to run into ground
+	id = mod_usa.61
+	title = mod_usa.61.t
+	desc = mod_usa.61.d
+	picture = GFX_report_event_generic_strike
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.61.a # 
+		ai_chance = {
+			factor = 20
+		}  
+		remove_ideas_with_trait = coastal_defence_naval_manufacturer
+		remove_ideas_with_trait = atlantic_fleet_naval_manufacturer
+		remove_ideas_with_trait = pacific_fleet_naval_manufacturer
+		add_timed_idea = {
+			idea = USA_ford_ran_companies_to_ground
+			days = 300
+		}		
+	}
+}
+
+country_event = { # Balance failed extremely 
+	id = mod_usa.62
+	title = mod_usa.62.t
+	desc = mod_usa.62.d
+	picture = GFX_report_event_generic_strike
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.62.a # 
+		ai_chance = {
+			factor = 20
+		}
+		add_timed_idea = {
+			idea = USA_corporation_sponsored_sabotage
+			days = 365
+		}		
+		hidden_effect = {
+			set_country_flag = USA_no_balance_achievable
+		}
+	}
+}
+
+country_event = { # Howard Hughes wants to build Las Vegas
+	id = mod_usa.63
+	title = mod_usa.63.t
+	desc = mod_usa.63.d
+	picture = GFX_report_event_usa_election_generic
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.63.a # Yes
+		ai_chance = {
+			factor = 20
+		}
+		379 = { add_extra_state_shared_building_slots = -1 }
+		add_political_power = -10
+		hidden_effect = {
+			country_event = {
+				id = mod_usa.64
+				days = 360
+				random_days = 40
+			}
+		}
+	}
+	option = {
+		name = mod_usa.63.b # No
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { # Howard Hughes builds Las Vegas
+	id = mod_usa.64
+	title = mod_usa.64.t
+	desc = mod_usa.64.d
+	picture = GFX_report_event_king_speech
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.64.a # Yes
+		ai_chance = {
+			factor = 20
+		}
+		379 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		add_victory_points = {
+			province = 12425
+			value = 2
+		}
+	}
+}
+
+country_event = { # USA demands Status-Quo ante bellum
+	id = mod_usa.65
+	title = mod_usa.65.t
+	desc = mod_usa.65.d
+	picture = GFX_report_event_japanese_chinese_surrender
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usa.65.a # YES AI-will always yes
+		ai_chance = {
+			factor = 20
+		}
+		add_war_support = -0.025
+		leave_faction = yes
+		white_peace = USA
+	}
+	option = {
+		name = mod_usa.65.b # NO
+		ai_chance = {
+			factor = 0
+		}
+		add_war_support = -0.05
+	}
+}
 
 
 

@@ -251,6 +251,84 @@ ENG_deployed_parachute_regiment = {
 
 
 
+
+
+
+
+USA_indian_reservation = {
+	enable = { always = yes }
+
+	icon = GFX_idea_saf_history_of_segregation
+	
+	remove_trigger = {
+		NOT = {
+			is_owned_by = USA
+		}
+	}
+
+	local_resources = -0.05
+	local_supplies = -0.05
+	local_building_slots = -1
+	
+}
+
+USA_smith_state_resistance = {
+	enable = { always = yes }
+
+	icon = GFX_idea_usa_desegregation_1
+	
+	remove_trigger = {
+		NOT = {
+			is_owned_by = USA
+		}
+	}
+
+	local_resources = -1
+	local_factories = -0.95
+	local_manpower = -0.5
+}
+
+USA_bible_belt1 = { # Major Bible Belt State
+	enable = { always = yes }
+
+	icon = MEX_church_power_5
+	
+	remove_trigger = {
+		NOT = {
+			is_owned_by = USA
+		}
+	}
+
+	local_building_slots = 2
+	local_manpower = 0.25
+	mobilization_speed = 0.75
+	resistance_growth = 0.05
+}
+
+USA_bible_belt2 = { # Minor Bible Belt State
+	enable = { always = yes }
+
+	icon = MEX_church_power_5
+	
+	remove_trigger = {
+		NOT = {
+			is_owned_by = USA
+		}
+	}
+
+	local_building_slots = 1
+	local_manpower = 0.1
+	mobilization_speed = 0.25
+	resistance_growth = 0.02
+}
+
+
+
+
+
+
+
+
 kurdish_agitation = {
 	enable = { always = yes }
 

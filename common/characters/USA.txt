@@ -8,7 +8,7 @@ characters={
 			}
 		}
 		country_leader = {
-			ideology = social_democracy
+			ideology = social_democracy 
 			traits = {  }
 			expire = "1965.1.1.1"
 			id = 1
@@ -23,10 +23,156 @@ characters={
 			}
 		}
 		country_leader = {
-			ideology = social_democracy
+			ideology = social_democracy 
 			traits = { former_vp }
 			expire = "1965.1.1.1"
 			id = 1
+		}
+	}
+	
+	USA_george_patton = {
+		name = "George S. Patton"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/USA/Portrait_George_Patton.dds"
+			}
+			army={
+				small="GFX_idea_george_patton"
+			}
+		}
+	}
+	
+	USA_charles_hughes = {
+		name = "Charles Evans Hughes"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/USA/Portrait_Charles_Hughes.dds"
+			}
+		}
+		country_leader = {
+			ideology = classical_liberalism 
+			traits = { }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+	}
+	
+	USA_vasily_flug = {
+		name = "Vasily Yegorovich Flug"
+		portraits = {
+			civilian = {
+				large=GFX_portrait_Soviet_generic_land_5
+				small=GFX_portrait_idea_Soviet_generic_land_5
+			}
+		}
+		
+	}
+	
+	USA_the_group = {
+		name = "The Group"
+		portraits = {
+			civilian = {
+				large=GFX_portrait_operative_unknown
+			}
+		}
+	}
+	
+	
+	
+	
+	USA_joseph_robinson={
+		name= "Joseph T. Robinson"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_europe_4"
+			}
+		}
+		
+	}
+	
+	USA_bertrand_snell={
+		name= "Bertrand Snell"
+		portraits={
+			army={
+				small="GFX_idea_generic_air_close_air_sup_western_european_2d"
+			}
+		}
+		
+	}
+	
+	
+	USA_evan_fordyce_carlson={
+		name= "Evan Fordyce Carlson"
+		portraits={
+			army={
+				large=GFX_portrait_USA_generic_land_1
+				small=GFX_portrait_idea_USA_generic_land_1
+			}
+		}
+		corps_commander={
+			traits={ trait_reckless commando jungle_rat }
+			skill=4
+			attack_skill=4
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=0
+		}
+	}
+	
+	USA_herman_greenberg={
+		name= "Herman Greenberg"
+		portraits={
+			army={
+				large=GFX_portrait_USA_generic_land_5
+				small=GFX_portrait_idea_USA_generic_land_5
+			}
+		}
+		corps_commander={
+			traits={ media_personality  }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=3
+			logistics_skill=1
+			legacy_id=0
+		}
+	}
+	
+	USA_john_c_h_lee={
+		name= "John C. H. Lee"
+		portraits={
+			army={
+				large=GFX_portrait_USA_generic_land_2
+				small=GFX_portrait_idea_USA_generic_land_2
+			}
+		}
+		corps_commander={
+			traits={ engineer_officer trait_cautious logistics_wizard career_officer }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=4
+			logistics_skill=6
+			legacy_id=0
+		}
+	}
+	
+	USA_terry_de_la_mesa_allen_sr={
+		name= "Terry de la Mesa Allen Sr."
+		portraits={
+			army={
+				large=GFX_portrait_USA_generic_land_3 
+				small=GFX_portrait_idea_USA_generic_land_3
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer desert_fox }
+			skill=2
+			attack_skill=3
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=1
 		}
 	}
 
@@ -69,7 +215,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=libertarianism
+			ideology=oligarchism
 			traits={ financial_expert }
 			expire="1953.1.1.12"
 			id=-1
@@ -507,24 +653,7 @@ characters={
 		}
 	}
 
-	USA_alexander_patch={
-		name=USA_alexander_patch
-		portraits={
-			army={
-				large=GFX_portrait_USA_alexander_patch
-				small=GFX_portrait_USA_alexander_patch_small
-			}
-		}
-		corps_commander={
-			traits={ infantry_officer commando }
-			skill=3
-			attack_skill=3
-			defense_skill=2
-			planning_skill=2
-			logistics_skill=3
-			legacy_id=0
-		}
-	}
+	
 
 	USA_william_simpson={
 		name=USA_william_simpson
@@ -619,9 +748,7 @@ characters={
 				original_tag = USA
 			}
 			available = {
-				NOT = {
-					has_country_flag = joseph_stilwell_sent_to_china
-				}
+				
 			}
 			traits = {
 				army_logistics_2
@@ -1081,29 +1208,6 @@ characters={
 
 	# Krueger up there
 
-	USA_george_marshall={
-		name=USA_george_marshall
-		portraits={
-			army={
-				small="GFX_idea_george_marshall"
-			}
-		}
-		advisor={
-			slot = army_chief
-			idea_token = george_marshall
-			allowed = {
-				original_tag = USA
-			}
-			traits = {
-				army_chief_drill_2
-			}
-			cost = 100
-			ai_will_do = {
-				factor = 1.000
-			}
-		}
-	}
-
 	
 	### NAVY CHIEFS ###
 
@@ -1355,7 +1459,7 @@ characters={
 			traits  = {
 				financial_expert 
 			}
-			cost  = 0.000
+			cost  = 150.000
 			do_effect  = {
 			}
 			ai_will_do  = {
@@ -1393,7 +1497,7 @@ characters={
 			traits  = {
 				economist 
 			}
-			cost  = 0.000
+			cost  = 150.000
 			do_effect  = {
 			}
 			ai_will_do  = {
@@ -1431,7 +1535,7 @@ characters={
 			traits  = {
 				editor 
 			}
-			cost  = 0.000
+			cost  = 150.000
 			do_effect  = {
 			}
 			ai_will_do  = {

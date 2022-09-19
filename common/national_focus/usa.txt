@@ -1,0 +1,5896 @@
+
+focus_tree = {
+	id = usa_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = USA
+		}
+		
+		modifier = {
+			add = 10
+			original_tag = USA
+		}
+	}
+	continuous_focus_position = { x = 50 y = 1600 }
+	default = no
+	
+	
+	focus = {
+		id = USA_railroad_anti_trust
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 26
+		y = 0
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = anti_trust_resistance
+				days = 180
+			}
+			add_ideas = anti_trust_effect
+		}
+	}
+	
+	focus = {
+		id = USA_inaugurate_smith
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = USA_railroad_anti_trust }
+		x = 0
+		y = 1
+		relative_position_id = USA_railroad_anti_trust
+
+		cost = 1.5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			NOT = {
+				has_country_leader = {
+					character = USA_huey_long
+					ruling_only = yes
+				}
+			}
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_advisor_role = {
+				Character = USA_joseph_robinson
+				advisor = {
+					slot = political_advisor
+					idea_token = USA_joseph_robinson
+					allowed  = {
+						original_tag  = USA
+					}
+					traits  = {
+						vp 
+					}
+					cost  = 50.000
+				}
+			}
+			activate_advisor = USA_joseph_robinson
+		}
+	}
+	
+	focus = {
+		id = USA_prepare_to_abandon_goldstandard
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		prerequisite = { focus = USA_inaugurate_smith }
+		x = 0
+		y = 1
+		relative_position_id = USA_inaugurate_smith
+
+		cost = 2.8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = abandon_goldstandard_tt
+			country_event = {
+				id = mod_usa.3
+				days = 4
+				random_days = 2
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_form_usea
+		icon = GFX_focus_generic_the_giant_wakes
+		prerequisite = { focus = USA_prepare_to_abandon_goldstandard }
+		x = 0
+		y = 2
+		relative_position_id = USA_prepare_to_abandon_goldstandard
+
+		cost = 2.8
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			has_government = democratic
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = usea
+		}
+	}
+	
+	focus = {
+		id = USA_discuss_obsolescence
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = USA_prepare_to_abandon_goldstandard }
+		x = -3
+		y = 1
+		relative_position_id = USA_prepare_to_abandon_goldstandard
+
+		cost = 2.8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			has_idea = planned_obsolescence
+		}
+		
+		bypass = {
+			NOT = {
+				has_idea = planned_obsolescence
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			country_event = {
+				id = mod_usa.4
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_remove_ban_iww
+		icon = GFX_focus_usa_union_representation_act
+		prerequisite = { focus = USA_discuss_obsolescence }
+		x = 0
+		y = 1
+		relative_position_id = USA_discuss_obsolescence
+
+		cost = 2.8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.04
+			}
+			add_political_power = 150
+		}
+	}
+	
+	focus = {
+		id = USA_meet_with_walter_waters
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = USA_remove_ban_iww }
+		x = 0
+		y = 1
+		relative_position_id = USA_remove_ban_iww
+
+		cost = 2.8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			country_event = {
+				id = mod_usa.5
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_meeting_of_the_industrialists
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = USA_prepare_to_abandon_goldstandard }
+		x = 3
+		y = 1
+		relative_position_id = USA_prepare_to_abandon_goldstandard
+
+		cost = 2.8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			country_event = {
+				id = mod_usa.7
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_unamerican_activities_committee
+		icon = GFX_goal_anti_comintern_pact
+		prerequisite = { focus = USA_meeting_of_the_industrialists }
+		x = 0
+		y = 1
+		relative_position_id = USA_meeting_of_the_industrialists
+
+		cost = 2.8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = house_unamerican_activities_committee
+		}
+	}
+	
+	focus = {
+		id = USA_fund_veterans_organisation
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = USA_unamerican_activities_committee }
+		x = 0
+		y = 1
+		relative_position_id = USA_unamerican_activities_committee
+
+		cost = 2.8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = eagles_and_fasces
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = corporatism 
+				popularity = 0.05
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_abandon_the_gold_standard
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		prerequisite = { focus = USA_fund_veterans_organisation }
+		prerequisite = { focus = USA_meet_with_walter_waters }
+		x = 3
+		y = 1
+		relative_position_id = USA_meet_with_walter_waters
+
+		cost = 2.8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = dwindling_recession
+				add_idea = dwindling_recession1
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_approach_patton
+		icon = GFX_goal_molotov_ribbentrop_pact
+		prerequisite = { focus = USA_abandon_the_gold_standard }
+		x = 0
+		y = 1
+		relative_position_id = USA_abandon_the_gold_standard
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			country_event = {
+				id = mod_usa.8
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_eagles_and_fasces_march
+		icon = GFX_focus_prc_infiltration
+		prerequisite = { focus = USA_approach_patton }
+		x = 0
+		y = 1
+		relative_position_id = USA_approach_patton
+
+		cost = 2.8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			has_country_flag = USA_patton_tool
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = corporatism
+				popularity = 0.05
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.05
+			}
+			custom_effect_tooltip = eagle_fasces_marches_tt
+		}
+	}
+	
+	focus = {
+		id = USA_march_on_washington
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = USA_eagles_and_fasces_march }
+		x = 0
+		y = 2
+		relative_position_id = USA_eagles_and_fasces_march
+
+		cost = 2.8
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = corporatism
+				popularity = 0.1
+			}
+			country_event = {
+				id = mod_usa.11
+			}
+			361 = {
+				damage_building = {
+					type = infrastructure
+					damage = 2
+				}
+				damage_building = {
+					type = industrial_complex
+					damage = 2
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = mod_usa.56
+					days = 100
+					random_days = 50
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_form_justice_guardians
+		icon = GFX_focus_SOV_penal_battalions
+		prerequisite = { focus = USA_march_on_washington }
+		x = -8
+		y = 1
+		relative_position_id = USA_march_on_washington
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			has_idea = supreme_court_resistance
+			has_country_flag = USA_justice_attack
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = supreme_court_resistance
+				add_idea = supreme_court_resistance1
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_form_blue_shirts
+		icon = GFX_focus_secret_rearmament
+		prerequisite = { focus = USA_form_justice_guardians }
+		x = -1
+		y = 1
+		relative_position_id = USA_form_justice_guardians
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = USA_smith_state_resistance
+					}
+				}
+				remove_dynamic_modifier = {
+					modifier = USA_smith_state_resistance
+				}
+				set_demilitarized_zone = no
+			}
+			add_ideas = blue_shirts
+			hidden_effect = {
+				country_event = {
+					id = mod_usa.14
+					days = 12
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_pack_the_court
+		icon = GFX_focus_POL_complete_april_constitution
+		prerequisite = { focus = USA_form_justice_guardians }
+		x = 1
+		y = 1
+		relative_position_id = USA_form_justice_guardians
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			has_idea = supreme_court_resistance1
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_ideas = supreme_court_resistance1
+			add_timed_idea = {
+				idea = last_court_resistance
+				days = 120
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_reinterpret_the_constitution
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = USA_pack_the_court }
+		prerequisite = { focus = USA_form_blue_shirts }
+		x = -1
+		y = 1
+		relative_position_id = USA_pack_the_court
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			NOT = {
+				has_idea = last_court_resistance
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 150
+			add_stability = 0.075
+			remove_country_leader_trait = secretary_of_general_affairs
+			retire_character = USA_bertrand_snell
+		}
+	}
+	
+	focus = {
+		id = USA_finding_traitors_in_parliament
+		icon = GFX_focus_usa_voter_registration_act
+		prerequisite = { focus = USA_march_on_washington }
+		x = -4
+		y = 1
+		relative_position_id = USA_march_on_washington
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 50
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.1
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_all_american_solidarity_party
+		icon = GFX_focus_LAT_suspend_constitution_of_latvia
+		prerequisite = { focus = USA_finding_traitors_in_parliament }
+		x = 0
+		y = 1
+		relative_position_id = USA_finding_traitors_in_parliament
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 50
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = corporatism
+				popularity = 0.1
+			}
+			set_party_name = { 
+				ideology = fascism 
+				long_name = USA_solidarity_party_long
+				name = USA_solidarity_party
+			}
+			set_party_name = { 
+				ideology = corporatism 
+				long_name = USA_solidarity_party_long
+				name = USA_solidarity_party
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_move_to_secure_the_unions
+		icon = GFX_focus_YUG_pan_slavic_congress
+		prerequisite = { focus = USA_march_on_washington }
+		x = -11
+		y = 1
+		relative_position_id = USA_march_on_washington
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = initial_state_controlled_unions
+			
+		}
+	}
+	
+	focus = {
+		id = USA_major_to_secure_the_unions
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		prerequisite = { focus = USA_move_to_secure_the_unions }
+		x = 0
+		y = 1
+		relative_position_id = USA_move_to_secure_the_unions
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = initial_state_controlled_unions
+				add_idea = advanced_state_controlled_unions
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_total_union_control
+		icon = GFX_focus_CZE_german_puppet
+		prerequisite = { focus = USA_major_to_secure_the_unions }
+		x = 0
+		y = 1
+		relative_position_id = USA_major_to_secure_the_unions
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = civilian_economy 
+			if = {
+				limit = {
+					has_completed_focus = USA_patton_personality_cult
+				}
+				swap_ideas = {
+					remove_idea = advanced_state_controlled_unions
+					add_idea = total_state_controlled_unions_f
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_completed_focus = USA_patton_personality_cult }
+				}
+				swap_ideas = {
+					remove_idea = advanced_state_controlled_unions
+					add_idea = total_state_controlled_unions
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_amtrak
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = USA_march_on_washington }
+		x = -14
+		y = 2
+		relative_position_id = USA_march_on_washington
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_ideas = anti_trust_effect
+			add_ideas = railpax
+		}
+	}
+	
+	focus = {
+		id = USA_remove_banking_regulations
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		prerequisite = { focus = USA_amtrak }
+		x = 0
+		y = 1
+		relative_position_id = USA_amtrak
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+	
+	focus = {
+		id = USA_kickstart_american_car_culture
+		icon = GFX_goal_continuous_non_factory_construct
+		prerequisite = { focus = USA_remove_banking_regulations }
+		x = -1
+		y = 1
+		relative_position_id = USA_remove_banking_regulations
+
+		cost = 20
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			every_core_state = {
+				limit = {
+					infrastructure < 4
+				}
+				set_building_level = {
+					type = infrastructure
+					level = 4
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_allow_hollywood_accounting
+		icon = GFX_focus_mex_privatisation
+		prerequisite = { focus = USA_march_on_washington }
+		x = -16
+		y = 1
+		relative_position_id = USA_march_on_washington
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_completed_focus = USA_patton_personality_cult
+				}
+				add_ideas = hollywood_support_f
+			}
+			else = {
+				limit = {
+					NOT = { has_completed_focus = USA_patton_personality_cult }
+				}
+				add_ideas = hollywood_support
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_hollywood_supports_the_war
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = USA_allow_hollywood_accounting }
+		x = 0
+		y = 1
+		relative_position_id = USA_allow_hollywood_accounting
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			has_war = yes
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = american_propaganda_reels
+				days = 360
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_send_geo_survey_north
+		icon = GFX_focus_SOV_reinforce_northern_naval_bases
+		prerequisite = { focus = USA_remove_banking_regulations }
+		x = 1
+		y = 1
+		relative_position_id = USA_remove_banking_regulations
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = geological_survey_expedition_tt
+		}
+	}
+	
+	focus = {
+		id = USA_rubber_autarky
+		icon = GFX_focus_generic_rubber
+		prerequisite = { focus = USA_total_union_control focus = USA_send_geo_survey_north }
+		prerequisite = {  }
+		x = 1
+		y = 1
+		relative_position_id = USA_send_geo_survey_north
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			NOT = { 
+				LIB = {
+					is_puppet_of = USA
+				}
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = cat_synth_rubber
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_all_minds_for_victory
+		icon = GFX_focus_research
+		prerequisite = { focus = USA_rubber_autarky }
+		x = 0
+		y = 1
+		relative_position_id = USA_rubber_autarky
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			has_war = yes
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+			add_timed_idea = {	
+				idea = all_minds_for_victory
+				days = 100
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_robert_page_radar
+		icon = GFX_goal_generic_radar
+		prerequisite = { focus = USA_all_minds_for_victory }
+		x = 0
+		y = 1
+		relative_position_id = USA_all_minds_for_victory
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 2
+				category = radar_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_weed_out_generals
+		icon = GFX_focus_mex_arrest_general_cedillo
+		prerequisite = { focus = USA_pack_the_court }
+		x = 1
+		y = 2
+		relative_position_id = USA_pack_the_court
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_list = {
+				10 = {
+					retire_character = USA_evan_fordyce_carlson
+				}
+				30 = {
+					set_nationality = {
+						target_country = CUB
+						character = USA_evan_fordyce_carlson
+					}
+				}
+			}
+			random_list = {
+				10 = {
+					retire_character = USA_herman_greenberg
+				}
+				20 = {
+					set_nationality = {
+						target_country = CUB
+						character = USA_herman_greenberg
+					}
+				}
+			}
+			random_list = {
+				10 = {
+					retire_character = USA_john_c_h_lee
+				}
+				20 = {
+					set_nationality = {
+						target_country = CUB
+						character = USA_john_c_h_lee
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "George S. Patton"
+						ruling_only = yes
+					}
+				}
+				country_event = {
+					id = mod_usc.36
+					days = 7
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_invite_companies_to_manage_budget
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = USA_weed_out_generals }
+		prerequisite = { focus = USA_total_union_control }
+		x = -2
+		y = 1
+		relative_position_id = USA_weed_out_generals
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 40
+			country_event = {
+				id = mod_usa.57
+			}
+			custom_effect_tooltip = army_navy_balance_tt
+		}
+	}
+	
+	focus = {
+		id = USA_shift_highways_to_industry
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = USA_weed_out_generals }
+		x = 2
+		y = 1
+		relative_position_id = USA_weed_out_generals
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 75
+			add_ideas = highways_towards_industry
+			
+		}
+	}
+	
+	focus = {
+		id = USA_military_spending_removes_recession
+		icon = GFX_focus_generic_the_giant_wakes
+		prerequisite = { focus = USA_weed_out_generals }
+		x = 0
+		y = 2
+		relative_position_id = USA_weed_out_generals
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_ideas = dwindling_recession1
+			hidden_effect = {
+				country_event = {
+					id = mod_usa.23
+					days = 12
+					random_days = 24
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_revive_company_towns
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		prerequisite = { focus = USA_invite_companies_to_manage_budget }
+		x = 0
+		y = 1
+		relative_position_id = USA_invite_companies_to_manage_budget
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = revived_company_towns
+		}
+	}
+	
+	focus = {
+		id = USA_civilian_work_corps_work_camps
+		icon = GFX_focus_SOV_penal_battalions
+		prerequisite = { focus = USA_military_spending_removes_recession }
+		x = -2
+		y = 1
+		relative_position_id = USA_military_spending_removes_recession
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = -0.06
+			add_ideas = civilian_work_corps_work_camps
+			add_offsite_building = { type = industrial_complex level = 2 }
+		}
+	}
+	
+	focus = {
+		id = USA_decommission_old_military_bases
+		icon = GFX_focus_SOV_merge_plants
+		prerequisite = { focus = USA_military_spending_removes_recession }
+		x = 0
+		y = 1
+		relative_position_id = USA_military_spending_removes_recession
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_core_state = {
+				limit = {
+					arms_factory > 1
+				}
+				remove_building = {
+					type = arms_factory
+					level = 1
+				}
+			}
+			random_core_state = {
+				limit = {
+					arms_factory > 1
+				}
+				remove_building = {
+					type = arms_factory
+					level = 1
+				}
+			}
+			361 = {
+				remove_building = {
+					type = air_base
+					level = 2
+				}
+			}
+			378 = {
+				remove_building = {
+					type = air_base
+					level = 3
+				}
+			}
+			357 = {
+				remove_building = {
+					type = air_base
+					level = 3
+				}
+			}
+			366 = {
+				remove_building = {
+					type = air_base
+					level = 1
+				}
+			}
+			random_core_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex 
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_core_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex 
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_core_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex 
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_core_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex 
+					level = 1
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = mod_usa.63
+					days = 24
+					random_days = 10
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_pacific_investment_act
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = USA_decommission_old_military_bases }
+		x = 0
+		y = 1
+		relative_position_id = USA_decommission_old_military_bases
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			629 = {
+				add_core_of = USA
+				set_building_level = {
+					type = naval_base 
+					level = 10
+					province = 4180
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex 
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = air_base  
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building   
+					level = 2
+					instant_build = yes
+				}
+			}
+			638 = {
+				add_building_construction  = {
+					type = naval_base 
+					level = 4
+					province = 12140
+				}
+				add_building_construction = {
+					type = air_base  
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building   
+					level = 1
+					instant_build = yes
+				}
+			}
+			633 = {
+				add_building_construction  = {
+					type = naval_base 
+					level = 3
+					province = 13041
+				}
+				add_building_construction  = {
+					type = naval_base 
+					level = 2
+					province = 13046
+				}
+				add_building_construction = {
+					type = air_base  
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = anti_air_building   
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	
+	
+	
+	focus = {
+		id = USA_disolve_the_bizone
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		prerequisite = { focus = USA_march_on_washington }
+		x = 0
+		y = 1
+		relative_position_id = USA_march_on_washington
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			country_exists = SHX
+		}
+		
+		bypass = {
+			NOT = { country_exists = SHX }
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			puppet = SHX
+			SHX = {
+				set_cosmetic_tag = SHX_USA_occupation
+				remove_ideas = idea_bizone_trade
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+				set_popularities = {
+					democratic = 5
+					neutrality = 80
+					corporatism = 15
+				}
+			}
+			add_threat = 2
+			JAP = {
+				add_opinion_modifier = {
+					target = USA
+					modifier = unprovoked_aggression   
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = USA_JAP_caught_us
+				}
+				add_manpower = -656
+				add_political_power = -20
+				JAP = {
+					add_manpower = -236
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_demand_alaska
+		icon = GFX_focus_SOV_recover_alaska
+		prerequisite = { focus = USA_disolve_the_bizone }
+		x = 0
+		y = 1
+		relative_position_id = USA_disolve_the_bizone
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			CAN = {
+				owns_state = 463
+			}
+		}
+		
+		bypass = {
+			NOT = {
+				CAN = {
+					owns_state = 463
+				}
+			}	
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			CAN = {
+				country_event = {
+					id = mod_usa.16
+				}
+			}
+			add_threat = 1
+			hidden_effect = {
+				country_event = {
+					id = mod_usa.20
+					days = 35
+					random_days = 25
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_reservation_development_program
+		icon = GFX_goal_continuous_restrict_freedom
+		prerequisite = { focus = USA_demand_alaska }
+		x = 0
+		y = 1
+		relative_position_id = USA_demand_alaska
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = USA_indian_reservation 
+					}
+				}
+				remove_dynamic_modifier = {
+					modifier = USA_indian_reservation 
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_punish_france
+		icon = GFX_focus_mex_jefe_maximo
+		prerequisite = { focus = USA_reservation_development_program }
+		x = 0
+		y = 1
+		relative_position_id = USA_reservation_development_program
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			311 = {
+				is_owned_by = FRA
+			}
+		}
+		
+		bypass = {
+			NOT = {
+				311 = {
+					is_owned_by = FRA
+				}
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			FRA = {
+				country_event = {
+					id = mod_usa.21
+					days = 7
+					random_days = 7
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_contact_business_leaders
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = USA_punish_france }
+		x = 0
+		y = 1
+		relative_position_id = USA_punish_france
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			MEX = {
+				add_popularity = {
+					ideology = corporatism 
+					popularity = 0.1
+				}
+			}
+			GUA = {
+				add_popularity = {
+					ideology = corporatism 
+					popularity = 0.15
+				}
+				swap_ideas = {
+					remove_idea = fruit_companies_influence
+					add_idea = fruit_companies_influence1
+				}
+			}
+			HON = {
+				add_popularity = {
+					ideology = corporatism 
+					popularity = 0.15
+				}
+				swap_ideas = {
+					remove_idea = fruit_companies_influence
+					add_idea = fruit_companies_influence1
+				}
+			}
+			ELS = {
+				add_popularity = {
+					ideology = corporatism 
+					popularity = 0.15
+				}
+				swap_ideas = {
+					remove_idea = fruit_companies_influence
+					add_idea = fruit_companies_influence1
+				}
+			}
+			NIC = {
+				add_popularity = {
+					ideology = corporatism 
+					popularity = 0.15
+				}
+				swap_ideas = {
+					remove_idea = fruit_companies_influence
+					add_idea = fruit_companies_influence1
+				}
+			}
+			COS = {
+				add_popularity = {
+					ideology = corporatism 
+					popularity = 0.15
+				}
+				swap_ideas = {
+					remove_idea = fruit_companies_influence
+					add_idea = fruit_companies_influence1
+				}
+			}
+			PAN = {
+				add_popularity = {
+					ideology = corporatism 
+					popularity = 0.15
+				}
+				swap_ideas = {
+					remove_idea = fruit_companies_influence
+					add_idea = fruit_companies_influence1
+				}
+			}
+			COL = {
+				add_popularity = {
+					ideology = corporatism 
+					popularity = 0.15
+				}
+				swap_ideas = {
+					remove_idea = fruit_companies_influence
+					add_idea = fruit_companies_influence1
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_meet_with_prosperity_gospel_pastors
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = USA_march_on_washington }
+		x = 4
+		y = 1
+		relative_position_id = USA_march_on_washington
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = protestant_work_ethic
+		}
+	}
+	
+	focus = {
+		id = USA_start_american_charismatics
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = USA_meet_with_prosperity_gospel_pastors }
+		x = 0
+		y = 1
+		relative_position_id = USA_meet_with_prosperity_gospel_pastors
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			NOT = {
+				has_country_leader_with_trait = secretary_of_general_affairs
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_country_leader_trait = unconstitutional_president
+		}
+	}
+	
+	focus = {
+		id = USA_implement_wasp_ideal
+		icon = GFX_focus_up_joan_of_arc
+		prerequisite = { focus = USA_start_american_charismatics }
+		x = 0
+		y = 1
+		relative_position_id = USA_start_american_charismatics
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = true_wasps
+		}
+	}
+	
+	focus = {
+		id = USA_marlborough_men
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = USA_implement_wasp_ideal }
+		x = -1
+		y = 1
+		relative_position_id = USA_implement_wasp_ideal
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = marlborough_men
+		}
+	}
+	
+	focus = {
+		id = USA_stinging_wasp
+		icon = GFX_focus_generic_manpower
+		prerequisite = { focus = USA_implement_wasp_ideal }
+		prerequisite = { focus = USA_invite_giovanni_gentile }
+		x = 2
+		y = 2
+		relative_position_id = USA_implement_wasp_ideal
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 80
+		}
+
+		available = {
+			has_capitulated = no
+			surrender_progress > 0.25
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = true_wasps
+				add_idea = true_wasps_sting
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_freemason_scape_goat
+		icon = GFX_focus_CZE_german_puppet
+		prerequisite = { focus = USA_march_on_washington }
+		x = 8
+		y = 1
+		relative_position_id = USA_march_on_washington
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+			retire_character = USA_joseph_stilwell
+			retire_character = USA_russell_hartle
+		}
+	}
+	
+	focus = {
+		id = USA_fate_of_al_smith
+		icon = GFX_focus_mex_arrest_general_cedillo
+		prerequisite = { focus = USA_freemason_scape_goat }
+		x = 0
+		y = 1
+		relative_position_id = USA_freemason_scape_goat
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			country_event = {
+				id = mod_usa.22
+				days = 3
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_catholic_to_evangelican_baptism
+		icon = GFX_focus_mex_restore_the_army_of_christ
+		prerequisite = { focus = USA_fate_of_al_smith }
+		x = -2
+		y = 1
+		relative_position_id = USA_fate_of_al_smith
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			367 = {
+				add_dynamic_modifier = {
+					modifier = USA_bible_belt1
+					scope = USA
+				}
+			}
+			370 = {
+				add_dynamic_modifier = {
+					modifier = USA_bible_belt1
+					scope = USA
+				}
+			}
+			368 = {
+				add_dynamic_modifier = {
+					modifier = USA_bible_belt1
+					scope = USA
+				}
+			}
+			372 = {
+				add_dynamic_modifier = {
+					modifier = USA_bible_belt1
+					scope = USA
+				}
+			}
+			392 = {
+				add_dynamic_modifier = {
+					modifier = USA_bible_belt2
+					scope = USA
+				}
+			}
+			363 = {
+				add_dynamic_modifier = {
+					modifier = USA_bible_belt1
+					scope = USA
+				}
+			}
+			364 = {
+				add_dynamic_modifier = {
+					modifier = USA_bible_belt1
+					scope = USA
+				}
+			}
+			365 = {
+				add_dynamic_modifier = {
+					modifier = USA_bible_belt1
+					scope = USA
+				}
+			}
+			set_nationality = {
+				target_country = CUB
+				character = USA_terry_de_la_mesa_allen_sr
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_invite_giovanni_gentile
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = USA_fate_of_al_smith }
+		x = 0
+		y = 1
+		relative_position_id = USA_fate_of_al_smith
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.05
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = -0.05
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_paul_reverse_mothers_movement
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		prerequisite = { focus = USA_invite_giovanni_gentile }
+		x = 1
+		y = 1
+		relative_position_id = USA_invite_giovanni_gentile
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = mothers_movement
+		}
+	}
+	
+	focus = {
+		id = USA_reinforce_caribbean_squadrons
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = -10
+		y = 0
+		relative_position_id = USA_railroad_anti_trust
+
+		cost = 2.8
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			has_completed_focus = USA_inaugurate_smith
+		}
+		
+		bypass = {
+			NOT = { is_in_faction_with = CUB }
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			CUB = {
+				add_offsite_building = { type = dockyard level = 3 }
+			}
+			custom_effect_tooltip = caribbean_squadron_reinforcement_tt
+			### Battleships ###
+			transfer_ship = {
+				type = battleship
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = battleship
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = battleship
+				target = CUB
+				exclude_refitting = no
+			}
+			### Heavy Cruisers ###
+			transfer_ship = {
+				type = heavy_cruiser  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = heavy_cruiser  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = heavy_cruiser  
+				target = CUB
+				exclude_refitting = no
+			}
+			### Light Cruisers ###
+			transfer_ship = {
+				type = light_cruiser  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = light_cruiser  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = light_cruiser  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = light_cruiser  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = light_cruiser  
+				target = CUB
+				exclude_refitting = no
+			}
+			### Destroyers ###
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = CUB
+				exclude_refitting = no
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_send_junior_white_fleet_to_china
+		icon = GFX_focus_chi_one_china_policy
+		prerequisite = { focus = USA_reinforce_caribbean_squadrons }
+		x = 0
+		y = 1
+		relative_position_id = USA_reinforce_caribbean_squadrons
+
+		cost = 2.8
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			NOT = { has_war_with = JAP }
+		}
+		
+		bypass = {
+			has_war_with = JAP
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			navy_experience = 25
+			add_opinion_modifier = {
+				target = JAP
+				modifier = medium_increase 
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = SHX
+				exclude_refitting = no
+			}
+			transfer_ship = {
+				type = destroyer  
+				target = SHX
+				exclude_refitting = no
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_review_dockyard_schemes
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = USA_send_junior_white_fleet_to_china }
+		x = 0
+		y = 1
+		relative_position_id = USA_send_junior_white_fleet_to_china
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			OR = {
+				has_government = fascism
+				has_government = corporatism
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			361 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			365 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			386 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			473 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_refitting_navy_scheme
+		icon = GFX_focus_SOV_organize_wreckers
+		prerequisite = { focus = USA_review_dockyard_schemes }
+		x = -3
+		y = 1
+		relative_position_id = USA_review_dockyard_schemes
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = refitting_scheme_speed
+		}
+	}
+	
+	focus = {
+		id = USA_kidnapp_japanese_submarines
+		icon = GFX_focus_jap_cast_the_die
+		prerequisite = { focus = USA_review_dockyard_schemes }
+		x = -1
+		y = 1
+		relative_position_id = USA_review_dockyard_schemes
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			controls_state = 743
+			NOT = { has_war_with = JAP }
+		}
+		
+		bypass = {
+			NOT = {
+				controls_state = 743
+				NOT = { has_war_with = JAP }
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = ss_tech
+				category = ship_modules_tech 
+			}
+			random_list = {
+				95 = {
+					
+				}
+				5 = {
+					country_event = {
+						id = mod_usa.26
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_war_against_the_rising_sun
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = USA_kidnapp_japanese_submarines }
+		x = 0
+		y = 1
+		relative_position_id = USA_kidnapp_japanese_submarines
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = ship_modules_tech 
+			}
+			set_technology = {
+				cruiser_submarines  = 1
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_prepare_to_cut_british_support_for_can
+		icon = GFX_goal_generic_wolf_pack
+		prerequisite = { focus = USA_war_against_the_rising_sun }
+		x = 0
+		y = 1
+		relative_position_id = USA_war_against_the_rising_sun
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			NOT = { has_war_with = CAN }
+			can_declare_war_on = CAN
+			can_declare_war_on = ENG
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = cut_the_vains_of_trade
+			CAN = {
+				add_ideas = can_supply_problems
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_needed_international_trade_protection
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = USA_review_dockyard_schemes }
+		x = 1
+		y = 1
+		relative_position_id = USA_review_dockyard_schemes
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = focus_on_trade_protect
+			navy_experience = 25
+		}
+	}
+	
+	focus = {
+		id = USA_protect_coastal_trade
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = USA_needed_international_trade_protection }
+		x = 1
+		y = 1
+		relative_position_id = USA_needed_international_trade_protection
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = focus_on_trade_protect
+				add_idea = focus_on_trade_protect1
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = asw_tech
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_modern_carrier
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = USA_needed_international_trade_protection }
+		x = 3
+		y = 1
+		relative_position_id = USA_needed_international_trade_protection
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			country_event = {
+				id = mod_usa.27
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cv_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_widen_panama_canal
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = USA_modern_carrier focus = USA_protect_coastal_trade }
+		x = -1
+		y = 2
+		relative_position_id = USA_modern_carrier
+
+		cost = 20
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			controls_state = 685
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_ideas = slim_ships
+		}
+	}
+	
+	focus = {
+		id = USA_bigger_ships_for_bigger_canal
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = USA_widen_panama_canal }
+		x = 0
+		y = 2
+		relative_position_id = USA_widen_panama_canal
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = bb_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 3
+				category = ship_modules_tech
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	focus = {
+		id = USA_brand_new_rifle
+		icon = GFX_goal_generic_small_arms
+		#prerequisite = { focus = USA_remove_ban_iww }
+		x = 6
+		y = 0
+		relative_position_id = USA_railroad_anti_trust
+
+		cost = 2.8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			has_completed_focus = USA_inaugurate_smith
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_global_military	
+		icon = GFX_focus_usa_build_the_pentagon
+		prerequisite = { focus = USA_brand_new_rifle }
+		x = 0
+		y = 1
+		relative_position_id = USA_brand_new_rifle
+
+		cost = 2.8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = global_military
+		}
+	}
+	
+	focus = {
+		id = USA_complex_division_support
+		icon = GFX_goal_panzerwaffe
+		prerequisite = { focus = USA_global_military }
+		x = 2
+		y = 2
+		relative_position_id = USA_global_military
+
+		cost = 2.8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = support_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_fully_desegregate_army
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = USA_global_military }
+		x = 0
+		y = 1
+		relative_position_id = USA_global_military
+
+		cost = 2.8
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = fully_desegregate_the_army
+		}
+	}
+	
+	focus = {
+		id = USA_texas_maine_exercises
+		icon = GFX_focus_generic_provoke_border_clashes
+		prerequisite = { focus = USA_fully_desegregate_army }
+		x = 0
+		y = 2
+		relative_position_id = USA_fully_desegregate_army
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available = {
+			has_capitulated = no
+			OR = {
+				has_government = fascism
+				has_government = corporatism
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 25
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_armor_experiments
+		icon = GFX_focus_generic_army_tanks2
+		prerequisite = { focus = USA_texas_maine_exercises }
+		x = 2
+		y = 1
+		relative_position_id = USA_texas_maine_exercises
+		mutually_exclusive = { focus = USA_fighter_assembly_plant }
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_pump_out_gmc_trucks
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = USA_armor_experiments }
+		x = 0
+		y = 1
+		relative_position_id = USA_armor_experiments
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = gmc_assembly_boost
+				days = 240
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_fortify_the_infantry
+		icon = GFX_goal_panzerwaffe
+		prerequisite = { focus = USA_pump_out_gmc_trucks }
+		x = 0
+		y = 1
+		relative_position_id = USA_pump_out_gmc_trucks
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 2
+				category = cat_mechanized_equipment
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_streamline_armor
+		icon = GFX_goal_continuous_armor_production
+		prerequisite = { focus = USA_fortify_the_infantry }
+		x = 0
+		y = 1
+		relative_position_id = USA_fortify_the_infantry
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = streamlined_armor
+		}
+	}
+	
+	focus = {
+		id = USA_reports_from_military_schools
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = USA_texas_maine_exercises }
+		x = 0
+		y = 1
+		relative_position_id = USA_texas_maine_exercises
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = foreign_military_schools_tt
+		
+			if = {
+				limit = {
+					NOT = {
+						any_other_country = {
+							OR = {
+								has_government = fascism
+								has_government = corporatism
+							}
+							is_major = yes
+							NOT = { original_tag = USA }
+						}
+					}
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 1
+					category = infantry_weapons
+				}
+			}
+			if = {
+				limit = {
+					any_other_country = {
+						OR = {
+							has_government = fascism
+							has_government = corporatism
+						}
+						is_major = yes
+						NOT = { original_tag = USA }
+					}
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 2
+					category = infantry_weapons
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_revise_desegregation
+		icon = GFX_focus_usa_honor_the_confederacy
+		prerequisite = { focus = USA_reports_from_military_schools }
+		x = 0
+		y = 1
+		relative_position_id = USA_reports_from_military_schools
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = fully_desegregate_the_army
+				add_idea = african_american_support_roles
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_school_artillery
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = USA_revise_desegregation }
+		x = 0
+		y = 1
+		relative_position_id = USA_revise_desegregation
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = american_school_of_artillery
+		}
+	}
+	
+	
+	
+	
+	focus = {
+		id = USA_plane_competition
+		icon = GFX_goal_generic_air_production
+		#prerequisite = { focus = USA_remove_ban_iww }
+		x = 11
+		y = 0
+		relative_position_id = USA_railroad_anti_trust
+
+		cost = 2.8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			has_completed_focus = USA_inaugurate_smith
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			country_event = {
+				id = mod_usa.6
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_fill_the_decks
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = USA_plane_competition }
+		x = 0
+		y = 2
+		relative_position_id = USA_plane_competition
+
+		cost = 2.8
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = naval_air
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_fighter_competition
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = USA_fill_the_decks }
+		x = 0
+		y = 2
+		relative_position_id = USA_fill_the_decks
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			OR = {
+				has_government = fascism
+				has_government = corporatism
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = light_air
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_fighter_assembly_plant
+		icon = GFX_goal_continuous_air_production
+		prerequisite = { focus = USA_fighter_competition }
+		x = -1
+		y = 1
+		mutually_exclusive = { focus = USA_armor_experiments }
+		relative_position_id = USA_fighter_competition
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = fighter_assembly_line
+		}
+	}
+	
+	focus = {
+		id = USA_direct_fire_support
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = USA_fighter_competition }
+		x = 0
+		y = 1
+		mutually_exclusive = { focus = USA_fighter_assembly_plant }
+		relative_position_id = USA_fighter_assembly_plant
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_invest_into_kelly_johnson
+		icon = GFX_focus_usa_escort_fighters
+		prerequisite = { focus = USA_fighter_competition }
+		x = 1
+		y = 1
+		relative_position_id = USA_fighter_competition
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = cat_heavy_fighter
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_flexible_bombers
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = USA_invest_into_kelly_johnson }
+		x = 0
+		y = 1
+		relative_position_id = USA_invest_into_kelly_johnson
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_jet_advancements
+		icon = GFX_goal_generic_air_production
+		prerequisite = { focus = USA_flexible_bombers }
+		prerequisite = { focus = USA_direct_fire_support }
+		x = -1
+		y = 1
+		relative_position_id = USA_flexible_bombers
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			date > 1942.1.1
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = jet_technology
+			}
+		}
+	}
+	
+	
+	
+	####### USA-USC WAR FOCUSES ########
+	
+	
+	focus = {
+		id = USA_CaribbeanWar_Starts
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = 0
+		y = 2
+		relative_position_id = USA_contact_business_leaders
+
+		cost = 1
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			has_global_flag = USA_CaribbeanWar_Started 
+		}
+		
+		bypass = {
+			has_global_flag = USA_CaribbeanWar_Started 
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			
+		}
+	}
+	
+	focus = {
+		id = USA_fortify_pacific
+		icon = GFX_focus_generic_coastal_fort
+		x = -1
+		y = 1
+		relative_position_id = USA_CaribbeanWar_Starts
+		prerequisite = { focus = USA_CaribbeanWar_Starts }
+		mutually_exclusive = { focus = USA_fortify_mexican_golf }
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			743 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+			}
+			684 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+			}
+			646 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+			}
+			633 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+			}
+			639 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+			}
+			642 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+			}
+			632 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+			}
+			727 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+			}
+			631 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+			}
+			650 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+			}
+			739 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+			}
+			629 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+                    type = coastal_bunker
+                    province = {
+                        all_provinces = yes
+                        limit_to_coastal = yes
+                    }
+                    level = 1
+                    instant_build = yes
+                }
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_fortify_mexican_golf
+		icon = GFX_focus_generic_coastal_fort
+		x = 1
+		y = 1
+		relative_position_id = USA_CaribbeanWar_Starts
+		prerequisite = { focus = USA_CaribbeanWar_Starts }
+		mutually_exclusive = { focus = USA_fortify_pacific }
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_mines = { region = 52 amount = 150 }
+			366 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+                    type = coastal_bunker
+                    province = {
+                        all_provinces = yes
+                        limit_to_coastal = yes
+                    }
+                    level = 1
+                    instant_build = yes
+                }
+			}
+			367 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+                    type = coastal_bunker
+                    province = {
+                        all_provinces = yes
+                        limit_to_coastal = yes
+                    }
+                    level = 1
+                    instant_build = yes
+                }
+			}
+			370 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+                    type = coastal_bunker
+                    province = {
+                        all_provinces = yes
+                        limit_to_coastal = yes
+                    }
+                    level = 1
+                    instant_build = yes
+                }
+			}
+			371 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+                    type = coastal_bunker
+                    province = {
+                        all_provinces = yes
+                        limit_to_coastal = yes
+                    }
+                    level = 1
+                    instant_build = yes
+                }
+			}
+			375 = {
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+                    type = coastal_bunker
+                    province = {
+                        all_provinces = yes
+                        limit_to_coastal = yes
+                    }
+                    level = 1
+                    instant_build = yes
+                }
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_invite_anti_japanese_soldiers
+		icon = GFX_focus_generic_military_mission
+		x = -3
+		y = 1
+		relative_position_id = USA_fortify_mexican_golf
+		prerequisite = { focus = USA_fortify_mexican_golf focus = USA_fortify_pacific }
+
+		cost = 1.8
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		available = {
+			has_capitulated = no
+			controls_state = 743
+			has_war_with = JAP
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			division_template = {
+				name = "Anti-Japanese Regiment"
+				is_locked = yes
+				#division_names_group = USA_INF_01
+				priority = 0
+				template_counter = 27
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 0 y = 3 }
+				}
+				support = { 
+					artillery = { x = 0 y = 0 }
+					maintenance_company = { x = 0 y = 1 }
+					engineer = { x = 0 y = 2 }
+				} 
+			}
+			743 = {
+				create_unit = {
+					division = "name = \"I. Anti-Japanese Regiment\" division_template = \"Anti-Japanese Regiment\" start_experience_factor = 0.75" 
+					owner = USA
+				}
+				create_unit = {
+					division = "name = \"II. Anti-Japanese Regiment\" division_template = \"Anti-Japanese Regiment\" start_experience_factor = 0.75" 
+					owner = USA
+				}
+			}
+			add_corps_commander_role = {
+				Character = USA_vasily_flug
+				traits = { BALTIC_ex_russian  }
+				skill = 1
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 2
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_fortify_columbia_river
+		icon = GFX_goal_fortify_the_westwall
+		x = 4
+		y = 1
+		relative_position_id = USA_fortify_mexican_golf
+		prerequisite = { focus = USA_fortify_mexican_golf focus = USA_fortify_pacific }
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			OR = {
+				NOT = {	
+					has_full_control_of_state = 473
+					has_full_control_of_state = 386
+					has_full_control_of_state = 385
+					has_full_control_of_state = 378
+				}
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_war_support = -0.02
+			add_ideas = american_fortification1
+			386 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 4747
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 12673
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 10327
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 1690
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 10693
+				}
+			}
+			473 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 12578
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 4877
+				}
+			}
+			387 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 4778
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 9616
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 10556
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 1789
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 10672
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_fortify_arkansas_missouri_river
+		icon = GFX_goal_fortify_the_westwall
+		x = 0
+		y = 1
+		relative_position_id = USA_fortify_columbia_river
+		prerequisite = { focus = USA_fortify_columbia_river }
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			OR = {
+				NOT = {	
+					has_full_control_of_state = 379
+					has_full_control_of_state = 387
+				}
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_war_support = -0.04
+			swap_ideas = {
+				remove_idea = american_fortification1
+				add_idea = american_fortification2
+			}
+			373 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 1523
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 7607
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 10391
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 10333
+				}
+			}
+			392 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 9892
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 10666
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 12646
+				}
+			}
+			390 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 10595
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 10569
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 12620
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 7862
+				}
+			}
+			389 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 1836
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 10709
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 4759
+				}
+			}
+			372 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 4444
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 10477
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 4597
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 4567
+				}
+			}
+			374 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 2043
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 1806
+				}
+			}
+			383 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 4811
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 7892
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 12024
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_fortify_mississippi_river
+		icon = GFX_goal_fortify_the_westwall
+		x = 2
+		y = 1
+		relative_position_id = USA_fortify_arkansas_missouri_river
+		prerequisite = { focus = USA_fortify_arkansas_missouri_river }
+		mutually_exclusive = { focus = USA_abandon_west }
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			OR = {
+				NOT = {	
+					has_full_control_of_state = 388
+					has_full_control_of_state = 381
+					has_full_control_of_state = 382
+					has_full_control_of_state = 376
+					has_full_control_of_state = 380
+				}
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_war_support = -0.05
+			swap_ideas = {
+				remove_idea = american_fortification2
+				add_idea = american_fortification3
+			}
+			371 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 7552
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 1453
+				}
+			}
+			370 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 10449
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 10410
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 4510
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 7464
+				}
+			}
+			368 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 7797
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 7615
+				}
+			}
+			369 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 10586
+				}
+			}
+			395 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 7831
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 12305
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 10457
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 12365
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 4590
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 10393
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 11589
+				}
+			}
+			394 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 1560
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 10341
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 10526
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 3699
+				}
+			}
+			391 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 1719
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 6827
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 12550
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 1734
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_fortify_mobile_river
+		icon = GFX_goal_fortify_the_westwall
+		x = 0
+		y = 1
+		relative_position_id = USA_fortify_mississippi_river
+		prerequisite = { focus = USA_fortify_mississippi_river }
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			OR = {
+				NOT = {	
+					has_full_control_of_state = 370
+					has_full_control_of_state = 368
+					has_full_control_of_state = 395
+					has_full_control_of_state = 373
+					has_full_control_of_state = 392
+					has_full_control_of_state = 391
+					has_full_control_of_state = 394
+				}
+			}
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_war_support = -0.05
+			swap_ideas = {
+				remove_idea = american_fortification3
+				add_idea = american_fortification4
+			}
+			367 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 10520
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 492
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 860
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 11509
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 4594
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 12803
+				}
+			}
+			365 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 968
+				}
+			}
+			360 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 3802
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 11789
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 880
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 6899
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 3880
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 9836
+				}
+			}
+			358 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 9664
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 11654
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_abandon_west
+		icon = GFX_goal_generic_fortify_city
+		x = 0
+		y = 1
+		relative_position_id = USA_fortify_arkansas_missouri_river
+		prerequisite = { focus = USA_fortify_arkansas_missouri_river }
+		mutually_exclusive = { focus = USA_fortify_mississippi_river }
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		available = {
+			has_capitulated = no
+			OR = {
+				NOT = {	
+					has_full_control_of_state = 388
+					has_full_control_of_state = 381
+					has_full_control_of_state = 382
+					has_full_control_of_state = 376
+					has_full_control_of_state = 380
+				}
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_war_support = -0.05
+			remove_ideas = american_fortification2
+			add_timed_idea = {
+				idea = the_west_abandoned
+				days = 140
+			}
+			371 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 7552
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 1453
+				}
+			}
+			370 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 10449
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 10410
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 4510
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 7464
+				}
+			}
+			368 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 7797
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 7615
+				}
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 12501
+				}
+			}
+			369 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 10586
+				}
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 6696
+				}
+			}
+			395 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 9450
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 7831
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 12305
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 10457
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 12365
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 4590
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 10393
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 11589
+				}
+			}
+			394 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 1560
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 10341
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 10526
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 3699
+				}
+			}
+			391 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 1719
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 6827
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 12550
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 1734
+				}
+			}
+			365 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 12384
+				}
+			}
+			367 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 12735
+				}
+			}
+			393 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 6710
+				}
+			}
+			261 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 6855
+				}
+			}
+			816 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 7588
+				}
+			}
+			363 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 7138
+				}
+			}
+			362 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 10412
+				}
+			}
+			360 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 6845
+				}
+			}
+			361 = {
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 3957
+				}
+			}
+			358 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 11654
+				}
+			}
+			357 = {
+				add_building_construction = {
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 6732
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_drastic_solutions
+		icon = GFX_focus_wonderweapons
+		x = -1
+		y = 1
+		relative_position_id = USA_fortify_mexican_golf
+		prerequisite = { focus = USA_fortify_mexican_golf focus = USA_fortify_pacific }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = { has_completed_focus = USA_freemason_scape_goat }
+				}
+				add_tech_bonus = {
+					bonus = 0.5
+					uses = 2
+					category = nuclear
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = USA_freemason_scape_goat
+				}
+				add_tech_bonus = {
+					bonus = 0.75
+					uses = 1
+					category = nuclear
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_revive_golden_circle
+		icon = GFX_focus_usa_honor_the_confederacy
+		x = 0
+		y = 2
+		relative_position_id = USA_drastic_solutions
+		prerequisite = { focus = USA_drastic_solutions }
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			OR = {
+				CUB = { is_puppet_of = USA }
+				AND = {
+					NOT = { country_exists = CUB }
+					owns_state = 315
+				}
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			release_autonomy = {
+				target = CUB
+				autonomy_state = autonomy_integrated_puppet
+				freedom_level = 0.65
+			}
+			CUB = {
+				set_cosmetic_tag = CUB_GoldenCircle
+				hidden_effect = {
+					retire_character = CUB_smedley_butler
+					retire_character = CUB_smedley_butler_d
+				}
+				add_ideas = confederate_state_reborn
+				add_ideas = confederate_state_white_democracy
+				set_politics = {
+					ruling_party = fascism
+					long_name = CUB_fascism_golden_long
+					name = CUB_fascism_golden
+				}
+				set_party_name = { 
+					ideology = corporatism 
+					long_name = CUB_corporatism_golden_long 
+					name = CUB_corporatism_golden
+				}
+				add_country_leader_role = {
+					character = CUB_george_patton
+					promote_leader = yes
+					country_leader = {
+						ideology = imperial_extremeism 
+						expire = "1965.1.1.1"
+						traits = { dictator }
+					}
+				}
+				add_country_leader_role = {
+					character = CUB_george_patton
+					promote_leader = yes
+					country_leader = {
+						ideology = imperial_corporatism  
+						expire = "1965.1.1.1"
+						traits = { dictator }
+					}
+				}
+				set_popularities = {
+					fascism = 40
+					corporatism = 40
+					democratic = 15
+					communism = 5
+				}
+				load_focus_tree = generic
+			}
+			MEX = {
+				every_core_state = {
+					add_claim_by = CUB
+				}
+			}
+			GUA = {
+				every_core_state = {
+					add_claim_by = CUB
+				}
+			}
+			ELS = {
+				every_core_state = {
+					add_claim_by = CUB
+				}
+			}
+			HON = {
+				every_core_state = {
+					add_claim_by = CUB
+				}
+			}
+			NIC = {
+				every_core_state = {
+					add_claim_by = CUB
+				}
+			}
+			COS = {
+				every_core_state = {
+					add_claim_by = CUB
+				}
+			}
+			PAN = {
+				every_core_state = {
+					add_claim_by = CUB
+				}
+			}
+			493 = { add_claim_by = CUB }
+		}
+	}
+	
+	focus = {
+		id = USA_carnegie_university
+		icon = GFX_focus_research2
+		x = 0
+		y = 2
+		relative_position_id = USA_revive_golden_circle
+		prerequisite = { focus = USA_revive_golden_circle }
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	
+	focus = {
+		id = USA_patton_personality_cult
+		icon = GFX_goal_generic_propaganda
+		x = 2
+		y = 1
+		relative_position_id = USA_revive_golden_circle
+		prerequisite = { focus = USA_revive_golden_circle }
+		mutually_exclusive = { focus = USA_figureface_needed_no_more }
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			has_country_leader = {
+				name = "George S. Patton"
+				ruling_only = yes
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.15
+			}
+			add_popularity = {
+				ideology = corporatism
+				popularity = -0.05
+			}
+			if = {
+				limit = {
+					has_idea = total_state_controlled_unions
+				}
+				swap_ideas = {
+					remove_idea = total_state_controlled_unions
+					add_idea = total_state_controlled_unions_f
+				}
+			}
+			if = {
+				limit = {
+					has_idea = hollywood_support
+				}
+				swap_ideas = {
+					remove_idea = hollywood_support
+					add_idea = hollywood_support_f
+				}
+			}
+			set_province_name = { id = 9814 name = "Patton" }
+		}
+	}
+	
+	focus = {
+		id = USA_patton_secretary_of_party
+		icon = GFX_goal_support_fascism
+		x = 0
+		y = 1
+		relative_position_id = USA_patton_personality_cult
+		prerequisite = { focus = USA_patton_personality_cult }
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			has_country_leader = {
+				name = "George S. Patton"
+				ruling_only = yes
+			}
+			has_completed_focus = USA_all_american_solidarity_party
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			add_country_leader_trait = american_secretary_party
+		}
+	}
+	
+	focus = {
+		id = USA_demand_canadian_demilitarization
+		icon = GFX_goal_generic_demand_territory
+		x = 1
+		y = 2
+		relative_position_id = USA_patton_personality_cult
+		prerequisite = { focus = USA_patton_personality_cult }
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			has_country_leader = {
+				name = "George S. Patton"
+				ruling_only = yes
+			}
+			has_completed_focus = USA_demand_alaska
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			CAN = {
+				country_event = {
+					id = mod_usa.28
+					days = 3
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_figureface_needed_no_more
+		icon = GFX_focus_spa_the_spanish_miracle
+		x = -2
+		y = 1
+		relative_position_id = USA_revive_golden_circle
+		prerequisite = { focus = USA_revive_golden_circle }
+		mutually_exclusive = { focus = USA_patton_personality_cult }
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			has_country_leader = {
+				name = "George S. Patton"
+				ruling_only = yes
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_country_leader_role = {
+			  character = USA_george_patton
+			  ideology = extreme_corporatism
+			}
+			add_country_leader_role = {
+				character = USA_the_group
+				promote_leader = yes
+				country_leader = {
+					ideology = extreme_corporatism
+					expire = "1965.1.1.1"
+					traits = { shadow_council }
+				}
+			}
+			add_advisor_role = {
+				character = USA_george_patton
+				advisor = {
+					idea_token = douglas_macarthur
+					slot = political_advisor
+					cost = 5
+					traits = {
+						popular_figurehead
+					}
+					traits = {
+						great_war_hero
+					}
+				}
+				activate = yes
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_eic_partnership
+		icon = GFX_focus_RAJ_all_india_forward_bloc
+		x = 0
+		y = 1
+		relative_position_id = USA_figureface_needed_no_more
+		prerequisite = { focus = USA_figureface_needed_no_more }
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			has_government = corporatism
+			RAJ = { 
+				has_government = corporatism
+				is_puppet = no
+			}
+		}
+		
+		bypass = {
+			RAJ = {
+				OR = {
+					NOT = { has_government = corporatism }
+					exists = no
+					is_puppet = yes
+				}
+			}
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_opinion_modifier = {
+				target = RAJ
+				modifier = huge_increase 
+			}
+			create_faction = USA_business_axis
+			USA = {
+				add_to_faction = RAJ
+			}
+			custom_effect_tooltip = eic_business_axis_expansion_tt
+			
+			hidden_effect = {
+				ULJ = {
+					every_core_state = {
+						add_core_of = RAJ
+					}
+				}
+				NMR = {
+					every_core_state = {
+						add_core_of = RAJ
+					}
+				}
+				SKE = {
+					every_core_state = {
+						add_core_of = RAJ
+					}
+				}
+				BOM = {
+					every_core_state = {
+						add_core_of = RAJ
+					}
+				}
+				HYD = {
+					every_core_state = {
+						add_core_of = RAJ
+					}
+				}
+				MYS = {
+					every_core_state = {
+						add_core_of = RAJ
+					}
+				}
+				RAJ = {
+					add_state_core = 445
+					add_state_core = 423
+					add_state_claim = 324
+					add_state_claim = 323
+					add_state_claim = 724
+					add_state_claim = 336
+					add_state_claim = 672
+					add_state_claim = 335
+					add_state_claim = 334
+					add_state_claim = 333
+				}
+				
+			}
+		}
+	}
+	
+	focus = {
+		id = USA_there_is_no_such_a_thing_as_illegal_goods
+		icon = GFX_focus_mex_privatisation
+		x = -1
+		y = 2
+		relative_position_id = USA_figureface_needed_no_more
+		prerequisite = { focus = USA_figureface_needed_no_more }
+
+		cost = 7
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			has_government = corporatism
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = USA_illegal_goods_tt
+		}
+	}
+	
+	focus = {
+		id = USA_circle_core
+		icon = GFX_focus_mex_redeem_aztlan
+		x = 2
+		y = 1
+		relative_position_id = USA_eic_partnership
+		prerequisite = { focus = USA_eic_partnership focus = USA_patton_secretary_of_party }
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			493 = {
+				OR = {
+					is_owned_by = USA
+					is_owned_by = CUB
+				}
+			}
+			304 = {
+				OR = {
+					is_owned_by = USA
+					is_owned_by = CUB
+				}
+			}
+			316 = {
+				OR = {
+					is_owned_by = USA
+					is_owned_by = CUB
+				}
+			}
+			317 = {
+				OR = {
+					is_owned_by = USA
+					is_owned_by = CUB
+				}
+			}
+			312 = {
+				OR = {
+					is_owned_by = USA
+					is_owned_by = CUB
+				}
+			}
+			314 = {
+				OR = {
+					is_owned_by = USA
+					is_owned_by = CUB
+				}
+			}
+			313 = {
+				OR = {
+					is_owned_by = USA
+					is_owned_by = CUB
+				}
+			}
+			311 = {
+				OR = {
+					is_owned_by = USA
+					is_owned_by = CUB
+				}
+			}
+			474 = {
+				OR = {
+					is_owned_by = USA
+					is_owned_by = CUB
+				}
+			}
+			475 = {
+				OR = {
+					is_owned_by = USA
+					is_owned_by = CUB
+				}
+			}
+			476 = {
+				OR = {
+					is_owned_by = USA
+					is_owned_by = CUB
+				}
+			}
+			477 = {
+				OR = {
+					is_owned_by = USA
+					is_owned_by = CUB
+				}
+			}
+			485 = {
+				OR = {
+					is_owned_by = USA
+					is_owned_by = CUB
+				}
+			}
+			277 = {
+				OR = {
+					is_owned_by = USA
+					is_owned_by = CUB
+				}
+			}
+			478 = {
+				OR = {
+					is_owned_by = USA
+					is_owned_by = CUB
+				}
+			}
+			479 = {
+				OR = {
+					is_owned_by = USA
+					is_owned_by = CUB
+				}
+			}
+			480 = {
+				OR = {
+					is_owned_by = USA
+					is_owned_by = CUB
+				}
+			}
+			481 = {
+				OR = {
+					is_owned_by = USA
+					is_owned_by = CUB
+				}
+			}
+			482 = {
+				OR = {
+					is_owned_by = USA
+					is_owned_by = CUB
+				}
+			}
+			483 = {
+				OR = {
+					is_owned_by = USA
+					is_owned_by = CUB
+				}
+			}
+			484 = {
+				OR = {
+					is_owned_by = USA
+					is_owned_by = CUB
+				}
+			}
+		}
+		
+		bypass = {
+			
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			CUB = {
+				add_state_core = 493
+				add_state_core = 304
+				add_state_core = 316
+				add_state_core = 317
+				add_state_core = 312
+				add_state_core = 314
+				add_state_core = 313
+				add_state_core = 311
+				add_state_core = 474
+				add_state_core = 475
+				add_state_core = 476
+				add_state_core = 477
+				add_state_core = 485
+				add_state_core = 277
+				add_state_core = 478
+				add_state_core = 479
+				add_state_core = 480
+				add_state_core = 481
+				add_state_core = 482
+				add_state_core = 483
+				add_state_core = 484
+			}
+		}
+	}
+	
+	
+	
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

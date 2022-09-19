@@ -1,0 +1,4527 @@
+foreign_politics = {
+	
+	USA_finally_peace_with_japan = {
+	
+		icon = GFX_decision_jap_pacific_guardian
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+		}
+		
+		available = {
+			has_war_with = CUB
+			CUB = { 
+				has_completed_focus = CUB_havana_uprising 
+				days_since_capitulated > 50
+				NOT = {
+					all_core_state = {
+						is_controlled_by = CUB
+					}
+				}
+			}
+			
+		}
+		
+		visible = {
+			has_war_with = CUB
+			CUB = { has_completed_focus = CUB_havana_uprising }
+		}
+		
+		complete_effect = {
+			JAP = {
+				country_event = {
+					id = mod_usa.65
+				}
+			}
+		}
+	}
+}
+
+
+
+
+USA_smith_strongholds = { # each mission gets two decisions to end it good
+
+	new_york_stronghold = {
+		
+		icon = GFX_decision_eng_blackshirt_march
+		
+		activation = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		visible = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		available = {
+			has_war = yes
+		}
+		
+		days_mission_timeout = 15
+		is_good = no
+		fire_only_once = yes
+		
+		cancel_trigger = {
+			has_country_flag = USA_new_york_pacified
+		}
+		
+		timeout_effect = {
+			358 = {
+				set_demilitarized_zone = yes
+				add_dynamic_modifier = {
+					modifier = USA_smith_state_resistance
+				}
+				
+			}
+		}
+	}
+	
+	USA_new_york_eagles_march = {
+	
+		icon = GFX_decision_oppression
+		
+		available = {
+			has_completed_focus = USA_eagles_and_fasces_march
+			has_active_mission = new_york_stronghold
+		}
+		
+		visible = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		modifier = {
+			weekly_manpower = -125
+		}
+		
+		days_remove = 12
+		
+		remove_effect = {
+			random_list = {
+				50 = {
+					add_manpower = -250
+				}
+				50 = {
+					set_country_flag = USA_new_york_pacified
+					remove_mission = new_york_stronghold
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	new_england_stronghold = {
+		
+		icon = GFX_decision_eng_blackshirt_march
+		
+		activation = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		visible = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		available = {
+			has_war = yes
+		}
+		
+		days_mission_timeout = 30
+		is_good = no
+		fire_only_once = yes
+		
+		cancel_trigger = {
+			has_country_flag = USA_new_england_pacified
+		}
+		
+		timeout_effect = {
+			357 = {
+				set_demilitarized_zone = yes
+				add_dynamic_modifier = {
+					modifier = USA_smith_state_resistance
+				}
+				
+			}
+		}
+	}
+	
+	USA_new_england_eagles_march = {
+	
+		icon = GFX_decision_oppression
+		
+		available = {
+			has_completed_focus = USA_eagles_and_fasces_march
+			has_active_mission = new_england_stronghold
+		}
+		
+		visible = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		modifier = {
+			weekly_manpower = -125
+		}
+		
+		days_remove = 12
+		
+		remove_effect = {
+			random_list = {
+				50 = {
+					add_manpower = -250
+				}
+				50 = {
+					set_country_flag = USA_new_england_pacified
+					remove_mission = new_england_stronghold
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	south_carolina_stronghold = {
+		
+		icon = GFX_decision_eng_blackshirt_march
+		
+		activation = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		visible = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		available = {
+			has_war = yes
+		}
+		
+		days_mission_timeout = 30
+		is_good = no
+		fire_only_once = yes
+		
+		cancel_trigger = {
+			has_country_flag = USA_south_carolina_pacified
+		}
+		
+		timeout_effect = {
+			364 = {
+				set_demilitarized_zone = yes
+				add_dynamic_modifier = {
+					modifier = USA_smith_state_resistance
+				}
+				
+			}
+		}
+	}
+	
+	USA_south_carolina_eagles_march = {
+	
+		icon = GFX_decision_oppression
+		
+		available = {
+			has_completed_focus = USA_eagles_and_fasces_march
+			has_active_mission = south_carolina_stronghold
+		}
+		
+		visible = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		modifier = {
+			weekly_manpower = -125
+		}
+		
+		days_remove = 12
+		
+		remove_effect = {
+			random_list = {
+				50 = {
+					add_manpower = -250
+				}
+				50 = {
+					set_country_flag = USA_south_carolina_pacified
+					remove_mission = south_carolina_stronghold
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	georgia_stronghold = {
+		
+		icon = GFX_decision_eng_blackshirt_march
+		
+		activation = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		visible = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		available = {
+			has_war = yes
+		}
+		
+		days_mission_timeout = 30
+		is_good = no
+		fire_only_once = yes
+		
+		cancel_trigger = {
+			has_country_flag = USA_georgia_pacified
+		}
+		
+		timeout_effect = {
+			365 = {
+				set_demilitarized_zone = yes
+				add_dynamic_modifier = {
+					modifier = USA_smith_state_resistance
+				}
+				
+			}
+		}
+	}
+	
+	USA_georgia_eagles_march = {
+	
+		icon = GFX_decision_oppression
+		
+		available = {
+			has_completed_focus = USA_eagles_and_fasces_march
+			has_active_mission = georgia_stronghold
+		}
+		
+		visible = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		modifier = {
+			weekly_manpower = -125
+		}
+		
+		days_remove = 12
+		
+		remove_effect = {
+			random_list = {
+				50 = {
+					add_manpower = -250
+				}
+				50 = {
+					set_country_flag = USA_georgia_pacified
+					remove_mission = georgia_stronghold
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	alabama_stronghold = {
+		
+		icon = GFX_decision_eng_blackshirt_march
+		
+		activation = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		visible = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		available = {
+			has_war = yes
+		}
+		
+		days_mission_timeout = 30
+		is_good = no
+		fire_only_once = yes
+		
+		cancel_trigger = {
+			has_country_flag = USA_alabama_pacified
+		}
+		
+		timeout_effect = {
+			367 = {
+				set_demilitarized_zone = yes
+				add_dynamic_modifier = {
+					modifier = USA_smith_state_resistance
+				}
+				
+			}
+		}
+	}
+	
+	USA_alabama_eagles_march = {
+	
+		icon = GFX_decision_oppression
+		
+		available = {
+			has_completed_focus = USA_eagles_and_fasces_march
+			has_active_mission = alabama_stronghold
+		}
+		
+		visible = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		modifier = {
+			weekly_manpower = -125
+		}
+		
+		days_remove = 12
+		
+		remove_effect = {
+			random_list = {
+				50 = {
+					add_manpower = -250
+				}
+				50 = {
+					set_country_flag = USA_alabama_pacified
+					remove_mission = alabama_stronghold
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	mississippi_stronghold = {
+		
+		icon = GFX_decision_eng_blackshirt_march
+		
+		activation = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		visible = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		available = {
+			has_war = yes
+		}
+		
+		days_mission_timeout = 30
+		is_good = no
+		fire_only_once = yes
+		
+		cancel_trigger = {
+			has_country_flag = USA_mississippi_pacified
+		}
+		
+		timeout_effect = {
+			370 = {
+				set_demilitarized_zone = yes
+				add_dynamic_modifier = {
+					modifier = USA_smith_state_resistance
+				}
+				
+			}
+		}
+	}
+	
+	USA_mississippi_eagles_march = {
+	
+		icon = GFX_decision_oppression
+		
+		available = {
+			has_completed_focus = USA_eagles_and_fasces_march
+			has_active_mission = mississippi_stronghold
+		}
+		
+		visible = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		modifier = {
+			weekly_manpower = -125
+		}
+		
+		days_remove = 12
+		
+		remove_effect = {
+			random_list = {
+				50 = {
+					add_manpower = -250
+				}
+				50 = {
+					set_country_flag = USA_mississippi_pacified
+					remove_mission = mississippi_stronghold
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	louisiana_stronghold = {
+		
+		icon = GFX_decision_eng_blackshirt_march
+		
+		activation = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		visible = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		available = {
+			has_war = yes
+		}
+		
+		days_mission_timeout = 15
+		is_good = no
+		fire_only_once = yes
+		
+		cancel_trigger = {
+			has_country_flag = USA_louisiana_pacified
+		}
+		
+		timeout_effect = {
+			371 = {
+				set_demilitarized_zone = yes
+				add_dynamic_modifier = {
+					modifier = USA_smith_state_resistance
+				}
+				
+			}
+		}
+	}
+	
+	USA_louisiana_eagles_march = {
+	
+		icon = GFX_decision_oppression
+		
+		available = {
+			has_completed_focus = USA_eagles_and_fasces_march
+			has_active_mission = louisiana_stronghold
+		}
+		
+		visible = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		modifier = {
+			weekly_manpower = -125
+		}
+		
+		days_remove = 12
+		
+		remove_effect = {
+			random_list = {
+				50 = {
+					add_manpower = -250
+				}
+				50 = {
+					set_country_flag = USA_louisiana_pacified
+					remove_mission = louisiana_stronghold
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+	
+	arkansas_stronghold = {
+		
+		icon = GFX_decision_eng_blackshirt_march
+		
+		activation = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		visible = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		available = {
+			has_war = yes
+		}
+		
+		days_mission_timeout = 30
+		is_good = no
+		fire_only_once = yes
+		
+		cancel_trigger = {
+			has_country_flag = USA_arkansas_pacified
+		}
+		
+		timeout_effect = {
+			372 = {
+				set_demilitarized_zone = yes
+				add_dynamic_modifier = {
+					modifier = USA_smith_state_resistance
+				}
+				
+			}
+		}
+	}
+	
+	USA_arkansas_eagles_march = {
+	
+		icon = GFX_decision_oppression
+		
+		available = {
+			has_completed_focus = USA_eagles_and_fasces_march
+			has_active_mission = arkansas_stronghold
+		}
+		
+		visible = {
+			has_completed_focus = USA_eagles_and_fasces_march
+		}
+		
+		modifier = {
+			weekly_manpower = -125
+		}
+		
+		days_remove = 12
+		
+		remove_effect = {
+			random_list = {
+				50 = {
+					add_manpower = -250
+				}
+				50 = {
+					set_country_flag = USA_arkansas_pacified
+					remove_mission = arkansas_stronghold
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 20
+		}
+	}
+}
+
+USA_illegal_goods_trade = {
+
+	USA_illegal_goods_trade_cocaine = {
+	
+		icon = GFX_decision_generic_operation
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_there_is_no_such_a_thing_as_illegal_goods
+			has_government = corporatism
+		}
+		
+		available = {
+			has_government = corporatism
+			NOT = { has_country_flag = USA_illegal_goods_shipments }
+		}
+
+		visible = {
+			has_completed_focus = USA_there_is_no_such_a_thing_as_illegal_goods
+		}
+		
+		cost = 25
+		
+		modifier = {
+			civilian_factory_use = 5
+		}
+		
+		complete_effect = {
+			set_country_flag = USA_illegal_goods_shipments
+		}
+		
+		days_remove = 21
+		remove_effect = {
+			add_political_power = 75
+			add_offsite_building = { type = industrial_complex level = 2 }
+			hidden_effect = {
+				clr_country_flag = USA_illegal_goods_shipments
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = increased_drug_use
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = increased_drug_use
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = increased_drug_use
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = increased_drug_use
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = increased_drug_use
+					days = 75
+				}
+			}
+		}
+	}
+	
+	USA_illegal_goods_trade_brothels = {
+	
+		icon = GFX_decision_generic_operation
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_there_is_no_such_a_thing_as_illegal_goods
+		}
+		
+		available = {
+			has_government = corporatism
+			NOT = { has_country_flag = USA_illegal_goods_shipments }
+		}
+
+		visible = {
+			has_completed_focus = USA_there_is_no_such_a_thing_as_illegal_goods
+		}
+		
+		cost = 25
+		
+		modifier = {
+			civilian_factory_use = 5
+		}
+		
+		complete_effect = {
+			set_country_flag = USA_illegal_goods_shipments
+		}
+		
+		days_remove = 21
+		remove_effect = {
+			add_political_power = 75
+			add_offsite_building = { type = industrial_complex level = 2 }
+			hidden_effect = {
+				clr_country_flag = USA_illegal_goods_shipments
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = brothels_on_every_corner
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = brothels_on_every_corner
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = brothels_on_every_corner
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = brothels_on_every_corner
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = brothels_on_every_corner
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = brothels_on_every_corner
+					days = 75
+				}
+			}
+		}
+	}
+	
+	USA_illegal_goods_trade_moonshine = {
+	
+		icon = GFX_decision_generic_operation
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_there_is_no_such_a_thing_as_illegal_goods
+		}
+		
+		available = {
+			has_government = corporatism
+			NOT = { has_country_flag = USA_illegal_goods_shipments }
+		}
+
+		visible = {
+			has_completed_focus = USA_there_is_no_such_a_thing_as_illegal_goods
+		}
+		
+		cost = 25
+		
+		modifier = {
+			civilian_factory_use = 5
+		}
+		
+		complete_effect = {
+			set_country_flag = USA_illegal_goods_shipments
+		}
+		
+		days_remove = 21
+		remove_effect = {
+			add_political_power = 75
+			add_offsite_building = { type = industrial_complex level = 2 }
+			hidden_effect = {
+				clr_country_flag = USA_illegal_goods_shipments
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = cheap_moonshine
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = cheap_moonshine
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = cheap_moonshine
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = cheap_moonshine
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = cheap_moonshine
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = cheap_moonshine
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = cheap_moonshine
+					days = 75
+				}
+			}
+		}
+	}
+	
+	USA_illegal_goods_trade_organs = {
+	
+		icon = GFX_decision_generic_operation
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_there_is_no_such_a_thing_as_illegal_goods
+		}
+		
+		available = {
+			has_government = corporatism
+			NOT = { has_country_flag = USA_illegal_goods_shipments }
+		}
+
+		visible = {
+			has_completed_focus = USA_there_is_no_such_a_thing_as_illegal_goods
+		}
+		
+		cost = 25
+		
+		modifier = {
+			civilian_factory_use = 5
+		}
+		
+		complete_effect = {
+			set_country_flag = USA_illegal_goods_shipments
+		}
+		
+		days_remove = 21
+		remove_effect = {
+			add_political_power = 75
+			add_offsite_building = { type = industrial_complex level = 2 }
+			hidden_effect = {
+				clr_country_flag = USA_illegal_goods_shipments
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = organ_trade
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = organ_trade
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = organ_trade
+					days = 75
+				}
+			}
+		}
+	}
+	
+	USA_illegal_goods_trade_counterfeit_money = {
+	
+		icon = GFX_decision_generic_operation
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_there_is_no_such_a_thing_as_illegal_goods
+		}
+		
+		available = {
+			has_government = corporatism
+			NOT = { has_country_flag = USA_illegal_goods_shipments }
+		}
+
+		visible = {
+			has_completed_focus = USA_there_is_no_such_a_thing_as_illegal_goods
+		}
+		
+		cost = 25
+		
+		modifier = {
+			civilian_factory_use = 5
+		}
+		
+		complete_effect = {
+			set_country_flag = USA_illegal_goods_shipments
+		}
+		
+		days_remove = 21
+		remove_effect = {
+			add_political_power = 75
+			add_offsite_building = { type = industrial_complex level = 2 }
+			hidden_effect = {
+				clr_country_flag = USA_illegal_goods_shipments
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = counterfeit_money
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = counterfeit_money
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = counterfeit_money
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = counterfeit_money
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = counterfeit_money
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = counterfeit_money
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = counterfeit_money
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = counterfeit_money
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = counterfeit_money
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = counterfeit_money
+					days = 75
+				}
+			}
+		}
+	}
+	
+	USA_illegal_goods_trade_counterfeit_guns = {
+	
+		icon = GFX_decision_generic_operation
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_there_is_no_such_a_thing_as_illegal_goods
+		}
+		
+		available = {
+			has_government = corporatism
+			NOT = { has_country_flag = USA_illegal_goods_shipments }
+		}
+
+		visible = {
+			has_completed_focus = USA_there_is_no_such_a_thing_as_illegal_goods
+		}
+		
+		cost = 25
+		
+		modifier = {
+			civilian_factory_use = 5
+		}
+		
+		complete_effect = {
+			set_country_flag = USA_illegal_goods_shipments
+		}
+		
+		days_remove = 21
+		remove_effect = {
+			add_political_power = 75
+			add_offsite_building = { type = industrial_complex level = 2 }
+			hidden_effect = {
+				clr_country_flag = USA_illegal_goods_shipments
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = foreign_build_guns_in_civilian_hand
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = foreign_build_guns_in_civilian_hand
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = foreign_build_guns_in_civilian_hand
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = foreign_build_guns_in_civilian_hand
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = foreign_build_guns_in_civilian_hand
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = foreign_build_guns_in_civilian_hand
+					days = 75
+				}
+			}
+			random_other_country = {
+				add_timed_idea = {
+					idea = foreign_build_guns_in_civilian_hand
+					days = 75
+				}
+			}
+		}
+	}
+	
+}
+
+
+
+
+USA_golden_circle_conquest = {
+
+	USA_gold_circ_GUA = {
+	
+		icon = GFX_decision_infiltrate_state
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_revive_golden_circle
+		}
+		
+		available = {
+			can_declare_war_on = GUA
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { state = 313 }
+		}
+
+		visible = {
+			has_completed_focus = USA_revive_golden_circle
+		}
+		
+		cost = 25
+		
+		war_with_on_remove = GUA
+		
+		modifier = {
+			industrial_capacity_factory = -0.1
+			training_time_factor = -0.05
+		}
+		
+		days_remove = 40
+		remove_effect = {
+			declare_war_on = {
+				target = GUA
+				type = annex_everything
+			}
+		}
+	}
+	
+	USA_gold_circ_HON = {
+	
+		icon = GFX_decision_infiltrate_state
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_revive_golden_circle
+		}
+		
+		available = {
+			can_declare_war_on = HON
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { state = 312 }
+		}
+
+		visible = {
+			has_completed_focus = USA_revive_golden_circle
+		}
+		
+		cost = 25
+		
+		war_with_on_remove = HON
+		
+		modifier = {
+			industrial_capacity_factory = -0.1
+			training_time_factor = -0.05
+		}
+		
+		days_remove = 40
+		remove_effect = {
+			declare_war_on = {
+				target = HON
+				type = annex_everything
+			}
+		}
+	}
+	
+	USA_gold_circ_ELS = {
+	
+		icon = GFX_decision_infiltrate_state
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_revive_golden_circle
+		}
+		
+		available = {
+			can_declare_war_on = ELS
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { state = 314 }
+		}
+
+		visible = {
+			has_completed_focus = USA_revive_golden_circle
+		}
+		
+		cost = 25
+		
+		war_with_on_remove = ELS
+		
+		modifier = {
+			industrial_capacity_factory = -0.1
+			training_time_factor = -0.05
+		}
+		
+		days_remove = 40
+		remove_effect = {
+			declare_war_on = {
+				target = ELS
+				type = annex_everything
+			}
+		}
+	}
+	
+	USA_gold_circ_NIC = {
+	
+		icon = GFX_decision_infiltrate_state
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_revive_golden_circle
+		}
+		
+		available = {
+			can_declare_war_on = NIC
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { state = 317 }
+		}
+
+		visible = {
+			has_completed_focus = USA_revive_golden_circle
+		}
+		
+		cost = 25
+		
+		war_with_on_remove = NIC
+		
+		modifier = {
+			industrial_capacity_factory = -0.1
+			training_time_factor = -0.05
+		}
+		
+		days_remove = 40
+		remove_effect = {
+			declare_war_on = {
+				target = NIC
+				type = annex_everything
+			}
+		}
+	}
+	
+	USA_gold_circ_COS = {
+	
+		icon = GFX_decision_infiltrate_state
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_revive_golden_circle
+		}
+		
+		available = {
+			can_declare_war_on = COS
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { state = 316 }
+		}
+
+		visible = {
+			has_completed_focus = USA_revive_golden_circle
+		}
+		
+		cost = 25
+		
+		war_with_on_remove = COS
+		
+		modifier = {
+			industrial_capacity_factory = -0.1
+			training_time_factor = -0.05
+		}
+		
+		days_remove = 40
+		remove_effect = {
+			declare_war_on = {
+				target = COS
+				type = annex_everything
+			}
+		}
+	}
+	
+	USA_gold_circ_PAN = {
+	
+		icon = GFX_decision_infiltrate_state
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_revive_golden_circle
+		}
+		
+		available = {
+			can_declare_war_on = PAN
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { state = 304 }
+		}
+
+		visible = {
+			has_completed_focus = USA_revive_golden_circle
+		}
+		
+		cost = 25
+		
+		war_with_on_remove = PAN
+		
+		modifier = {
+			industrial_capacity_factory = -0.1
+			training_time_factor = -0.05
+		}
+		
+		days_remove = 40
+		remove_effect = {
+			declare_war_on = {
+				target = PAN
+				type = annex_everything
+			}
+		}
+	}
+	
+	USA_gold_circ_COL = {
+	
+		icon = GFX_decision_infiltrate_state
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_revive_golden_circle
+		}
+		
+		available = {
+			can_declare_war_on = COL
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { state = 493 }
+		}
+
+		visible = {
+			has_completed_focus = USA_revive_golden_circle
+		}
+		
+		cost = 50
+		
+		war_with_on_remove = COL
+		
+		modifier = {
+			industrial_capacity_factory = -0.15
+			training_time_factor = -0.1
+		}
+		
+		days_remove = 60
+		remove_effect = {
+			declare_war_on = {
+				target = COL
+				type = annex_everything
+			}
+		}
+	}
+	
+	USA_gold_circ_MEX = {
+	
+		icon = GFX_decision_infiltrate_state
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_revive_golden_circle
+		}
+		
+		available = {
+			can_declare_war_on = MEX
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { state = 277 }
+		}
+
+		visible = {
+			has_completed_focus = USA_revive_golden_circle
+		}
+		
+		cost = 75
+		
+		war_with_on_remove = MEX
+		
+		modifier = {
+			industrial_capacity_factory = -0.15
+			training_time_factor = -0.1
+		}
+		
+		days_remove = 75
+		remove_effect = {
+			declare_war_on = {
+				target = MEX
+				type = annex_everything
+			}
+		}
+	}
+
+
+
+
+}
+
+USA_49th_degree_resource_expedition = {
+
+	USA_american_columbia_resources = {
+	
+		icon = GFX_decision_steel
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_send_geo_survey_north
+			controls_state = 473
+		}
+		
+		available = {
+			controls_state = 473
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { state = 473 }
+		}
+		
+		visible = {
+			has_completed_focus = USA_send_geo_survey_north
+		}
+		
+		modifier = {
+			civilian_factory_use = 6
+		}
+		
+		days_remove = 60
+		remove_effect = {
+			473 = {
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+			}
+		}
+	}
+	
+	USA_northwestern_resources = {
+	
+		icon = GFX_decision_steel
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_send_geo_survey_north
+			controls_state = 471
+		}
+		
+		available = {
+			controls_state = 471
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { state = 471 }
+		}
+		
+		visible = {
+			has_completed_focus = USA_send_geo_survey_north
+		}
+		
+		modifier = {
+			civilian_factory_use = 3
+		}
+		
+		days_remove = 30
+		remove_effect = {
+			471 = {
+				add_resource = {
+					type = steel
+					amount = 3
+				}
+			}
+		}
+	}
+	
+	USA_alaska_resources = {
+	
+		icon = GFX_decision_oil
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_send_geo_survey_north
+			controls_state = 463
+		}
+		
+		available = {
+			controls_state = 463
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { state = 463 }
+		}
+		
+		visible = {
+			has_completed_focus = USA_send_geo_survey_north
+		}
+		
+		modifier = {
+			civilian_factory_use = 10
+		}
+		
+		days_remove = 100
+		remove_effect = {
+			463 = {
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+			}
+		}
+	}
+	
+	USA_alberta_resources = {
+	
+		icon = GFX_decision_oil
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_send_geo_survey_north
+			controls_state = 470
+		}
+		
+		available = {
+			controls_state = 470
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { state = 470 }
+		}
+		
+		visible = {
+			has_completed_focus = USA_send_geo_survey_north
+		}
+		
+		modifier = {
+			civilian_factory_use = 8
+		}
+		
+		days_remove = 80
+		remove_effect = {
+			470 = {
+				add_resource = {
+					type = oil
+					amount = 12
+				}
+			}
+		}
+	}
+	
+	USA_saskatchewan_resources = {
+	
+		icon = GFX_decision_oil
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_send_geo_survey_north
+			controls_state = 469
+		}
+		
+		available = {
+			controls_state = 469
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { state = 469 }
+		}
+		
+		visible = {
+			has_completed_focus = USA_send_geo_survey_north
+		}
+		
+		modifier = {
+			civilian_factory_use = 7
+		}
+		
+		days_remove = 70
+		remove_effect = {
+			469 = {
+				add_resource = {
+					type = oil
+					amount = 3
+				}
+				add_resource = {
+					type = aluminium
+					amount = 2
+				}
+			}
+		}
+	}
+	
+	USA_northernontario_resources = {
+	
+		icon = GFX_decision_steel
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_send_geo_survey_north
+			controls_state = 682
+		}
+		
+		available = {
+			controls_state = 682
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { state = 682 }
+		}
+		
+		visible = {
+			has_completed_focus = USA_send_geo_survey_north
+		}
+		
+		modifier = {
+			civilian_factory_use = 11
+		}
+		
+		days_remove = 110
+		remove_effect = {
+			682 = {
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+				add_resource = {
+					type = aluminium
+					amount = 15
+				}
+			}
+		}
+	}
+	
+	USA_quebec_resources = {
+	
+		icon = GFX_decision_aluminium
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_send_geo_survey_north
+			controls_state = 466
+		}
+		
+		available = {
+			controls_state = 466
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { state = 466 }
+		}
+		
+		visible = {
+			has_completed_focus = USA_send_geo_survey_north
+		}
+		
+		modifier = {
+			civilian_factory_use = 12
+		}
+		
+		days_remove = 120
+		remove_effect = {
+			466 = {
+				add_resource = {
+					type = aluminium
+					amount = 40
+				}
+			}
+		}
+	}
+	
+	USA_saint_lawrence_resources = {
+	
+		icon = GFX_decision_aluminium
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_send_geo_survey_north
+			controls_state = 468
+		}
+		
+		available = {
+			controls_state = 468
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { state = 468 }
+		}
+		
+		visible = {
+			has_completed_focus = USA_send_geo_survey_north
+		}
+		
+		modifier = {
+			civilian_factory_use = 4
+		}
+		
+		days_remove = 40
+		remove_effect = {
+			468 = {
+				add_resource = {
+					type = aluminium
+					amount = 7
+				}
+			}
+		}
+	}
+	
+	USA_new_foundland_resources = {
+	
+		icon = GFX_decision_steel
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_send_geo_survey_north
+			controls_state = 331
+		}
+		
+		available = {
+			controls_state = 331
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { state = 331 }
+		}
+		
+		visible = {
+			has_completed_focus = USA_send_geo_survey_north
+		}
+		
+		modifier = {
+			civilian_factory_use = 4
+		}
+		
+		days_remove = 40
+		remove_effect = {
+			331 = {
+				add_resource = {
+					type = steel
+					amount = 2
+				}
+			}
+		}
+	}
+	
+	USA_greenland_resources = {
+	
+		icon = GFX_decision_steel
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_send_geo_survey_north
+			controls_state = 101
+		}
+		
+		available = {
+			controls_state = 101
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { state = 101 }
+		}
+		
+		visible = {
+			has_completed_focus = USA_send_geo_survey_north
+		}
+		
+		modifier = {
+			civilian_factory_use = 3
+		}
+		
+		days_remove = 250
+		remove_effect = {
+			101 = {
+				add_resource = {
+					type = steel
+					amount = 1
+				}
+			}
+		}
+	}
+	
+	USA_northern_canada_resources = {
+	
+		icon = GFX_decision_tungsten
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+			has_completed_focus = USA_send_geo_survey_north
+			controls_state = 472
+		}
+		
+		available = {
+			controls_state = 472
+		}
+		
+		highlight_states = {
+			highlight_state_targets = { state = 472 }
+		}
+		
+		visible = {
+			has_completed_focus = USA_send_geo_survey_north
+		}
+		
+		modifier = {
+			civilian_factory_use = 7
+		}
+		
+		days_remove = 70
+		remove_effect = {
+			472 = {
+				add_resource = {
+					type = tungsten
+					amount = 14
+				}
+			}
+		}
+	}
+}
+
+USA_balance_out_ford_electricboat = {  
+
+	USA_slash_battleship_funding = {
+	
+		icon = GFX_decision_generic_naval
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+		}
+		
+		available = {
+			has_country_flag = USA_favor_FORD
+			NOT = { has_country_flag = USA_FORD_domination_decisions }
+		}
+		
+		visible = {
+			has_country_flag = USA_favor_FORD
+		}
+		
+		complete_effect = {
+			set_country_flag = USA_FORD_domination_decisions
+		}
+		
+		days_remove = 45
+		remove_effect = {
+			add_ideas = USA_FORD_battleship_program_slashed
+			clr_country_flag = USA_FORD_domination_decisions
+			hidden_effect = {
+				country_event = {
+					id = mod_usa.59
+					days = 22
+				}
+			}
+		}
+	}
+
+	USA_prioritize_steel_for_tanks = {
+	
+		icon = GFX_decision_generic_tank
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+		}
+		
+		available = {
+			has_country_flag = USA_favor_FORD
+			NOT = { has_country_flag = USA_FORD_domination_decisions }
+		}
+		
+		visible = {
+			has_country_flag = USA_favor_FORD
+		}
+		
+		complete_effect = {
+			set_country_flag = USA_FORD_domination_decisions
+		}
+		
+		days_remove = 45
+		remove_effect = {
+			if = {
+				limit = {
+					has_idea = USA_FORD_funds_artillery1
+				}
+				swap_ideas = {
+					remove_idea = USA_FORD_funds_artillery1
+					add_idea = USA_FORD_funds_artillery_tank1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = USA_FORD_funds_planes1
+				}
+				swap_ideas = {
+					remove_idea = USA_FORD_funds_planes1
+					add_idea = USA_FORD_funds_planes_tank1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = USA_FORD_funds_artillery_planes1
+				}
+				swap_ideas = {
+					remove_idea = USA_FORD_funds_artillery_planes1
+					add_idea = USA_FORD_funds_planes_tank_artillery1
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = FORD_Electric_Boat_Struggle
+					add_idea = USA_FORD_funds_tanks1
+				}
+			}
+			clr_country_flag = USA_FORD_domination_decisions
+			hidden_effect = {
+				country_event = {
+					id = mod_usa.58
+					days = 12
+				}
+			}
+		}
+	}
+	
+	USA_fund_Artillery_schools = {
+	
+		icon = GFX_decision_gre_faction_management
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+		}
+		
+		available = {
+			has_country_flag = USA_favor_FORD
+			NOT = { has_country_flag = USA_FORD_domination_decisions }
+		}
+		
+		visible = {
+			has_country_flag = USA_favor_FORD
+		}
+		
+		complete_effect = {
+			set_country_flag = USA_FORD_domination_decisions
+		}
+		
+		days_remove = 45
+		remove_effect = {
+			if = {
+				limit = {
+					has_idea = USA_FORD_funds_tanks1
+				}
+				swap_ideas = {
+					remove_idea = USA_FORD_funds_tanks1
+					add_idea = USA_FORD_funds_artillery_tank1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = USA_FORD_funds_planes_tank1
+				}
+				swap_ideas = {
+					remove_idea = USA_FORD_funds_planes_tank1
+					add_idea = USA_FORD_funds_planes_tank_artillery1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = USA_FORD_funds_planes1
+				}
+				swap_ideas = {
+					remove_idea = USA_FORD_funds_planes1
+					add_idea = USA_FORD_funds_artillery_planes1
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = FORD_Electric_Boat_Struggle
+					add_idea = USA_FORD_funds_artillery1
+				}
+			}
+			clr_country_flag = USA_FORD_domination_decisions
+		}
+	}
+	
+	USA_pivot_from_ship_planes_to_land_planes = {
+	
+		icon = GFX_decision_generic_air
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+		}
+		
+		available = {
+			has_country_flag = USA_favor_FORD
+			NOT = { has_country_flag = USA_FORD_domination_decisions }
+		}
+		
+		visible = {
+			has_country_flag = USA_favor_FORD
+		}
+		
+		complete_effect = {
+			set_country_flag = USA_FORD_domination_decisions
+		}
+		
+		days_remove = 45
+		remove_effect = {
+			if = {
+				limit = {
+					has_idea = USA_FORD_funds_tanks1
+				}
+				swap_ideas = {
+					remove_idea = USA_FORD_funds_tanks1
+					add_idea = USA_FORD_funds_planes_tank1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = USA_FORD_funds_artillery1
+				}
+				swap_ideas = {
+					remove_idea = USA_FORD_funds_artillery1
+					add_idea = USA_FORD_funds_artillery_planes1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = USA_FORD_funds_artillery_tank1
+				}
+				swap_ideas = {
+					remove_idea = USA_FORD_funds_artillery_tank1
+					add_idea = USA_FORD_funds_planes_tank_artillery1
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = FORD_Electric_Boat_Struggle
+					add_idea = USA_FORD_funds_planes1
+				}
+			}
+			clr_country_flag = USA_FORD_domination_decisions
+		}
+	}
+	
+	USA_Ford_for_secretary_of_war = {
+	
+		icon = GFX_decision_SOV_place_hq
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+		}
+		
+		available = {
+			has_country_flag = USA_favor_FORD
+			has_idea = USA_FORD_funds_planes_tank_artillery1
+			has_idea = USA_FORD_battleship_program_slashed
+		}
+		
+		visible = {
+			has_country_flag = USA_favor_FORD
+		}
+		
+		complete_effect = {
+			
+		}
+		
+		days_remove = 14
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = USA_FORD_funds_planes_tank_artillery1
+				add_idea = USA_Ford_secretary_of_war
+			}
+		}
+	}
+	
+	USA_allow_Ford_to_buy_electric_boat = {
+	
+		icon = GFX_decision_gre_paying_ifc_debt
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+		}
+		
+		available = {
+			has_country_flag = USA_favor_FORD
+			has_idea = USA_FORD_funds_planes_tank_artillery1
+			has_idea = USA_FORD_battleship_program_slashed
+		}
+		
+		visible = {
+			has_country_flag = USA_favor_FORD
+		}
+		
+		complete_effect = {
+			
+		}
+		
+		days_remove = 14
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = USA_FORD_funds_planes_tank_artillery1
+				add_idea = USA_Ford_bought_general_dynamic
+			}
+		}
+	}
+	
+	
+	USA_slash_rock_island_funding = {
+	
+		icon = GFX_decision_generic_break_treaty
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+		}
+		
+		available = {
+			has_country_flag = USA_favor_electric_boat
+			NOT = { has_country_flag = USA_EB_domination_decisions }
+		}
+		
+		visible = {
+			has_country_flag = USA_favor_electric_boat
+		}
+		
+		complete_effect = {
+			set_country_flag = USA_EB_domination_decisions
+		}
+		
+		days_remove = 45
+		remove_effect = {
+			add_ideas = USA_EB_rock_island_arsenal_slashed
+			clr_country_flag = USA_EB_domination_decisions
+		}
+	}
+	
+	
+	USA_prioritize_steel_for_ships = {
+	
+		icon = GFX_decision_generic_naval
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+		}
+		
+		available = {
+			has_country_flag = USA_favor_electric_boat
+			NOT = { has_country_flag = USA_EB_domination_decisions }
+		}
+		
+		visible = {
+			has_country_flag = USA_favor_electric_boat
+		}
+		
+		complete_effect = {
+			set_country_flag = USA_EB_domination_decisions
+		}
+		
+		days_remove = 45
+		remove_effect = {
+			if = {
+				limit = {
+					has_idea = USA_EB_funds_naval_guns1
+				}
+				swap_ideas = {
+					remove_idea = USA_EB_funds_naval_guns1
+					add_idea = USA_EB_funds_ships_naval_guns1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = USA_EB_funds_nav_bomber1
+				}
+				swap_ideas = {
+					remove_idea = USA_EB_funds_nav_bomber1
+					add_idea = USA_EB_funds_ships_nav_bomber1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = USA_EB_funds_naval_guns_nav_bomber1
+				}
+				swap_ideas = {
+					remove_idea = USA_EB_funds_naval_guns_nav_bomber1
+					add_idea = USA_EB_funds_ships_naval_guns_nav_bomber1
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = FORD_Electric_Boat_Struggle
+					add_idea = USA_EB_funds_ships1
+				}
+			}
+			clr_country_flag = USA_EB_domination_decisions
+			hidden_effect = {
+				country_event = {
+					id = mod_usa.60
+					days = 12
+				}
+			}
+		}
+	}
+	
+	USA_fund_Naval_Artillery_schools = {
+	
+		icon = GFX_decision_generic_merge_plant_ship
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+		}
+		
+		available = {
+			has_country_flag = USA_favor_electric_boat
+			NOT = { has_country_flag = USA_EB_domination_decisions }
+		}
+		
+		visible = {
+			has_country_flag = USA_favor_electric_boat
+		}
+		
+		complete_effect = {
+			set_country_flag = USA_EB_domination_decisions
+		}
+		
+		days_remove = 45
+		remove_effect = {
+			if = {
+				limit = {
+					has_idea = USA_EB_funds_ships1
+				}
+				swap_ideas = {
+					remove_idea = USA_EB_funds_ships1
+					add_idea = USA_EB_funds_ships_naval_guns1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = USA_EB_funds_nav_bomber1
+				}
+				swap_ideas = {
+					remove_idea = USA_EB_funds_nav_bomber1
+					add_idea = USA_EB_funds_naval_guns_nav_bomber1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = USA_EB_funds_ships_nav_bomber1
+				}
+				swap_ideas = {
+					remove_idea = USA_EB_funds_ships_nav_bomber1
+					add_idea = USA_EB_funds_ships_naval_guns_nav_bomber1
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = FORD_Electric_Boat_Struggle
+					add_idea = USA_EB_funds_naval_guns1
+				}
+			}
+			clr_country_flag = USA_EB_domination_decisions
+		}
+	}
+	
+	USA_pivot_from_cas_to_nav_bombers = {
+	
+		icon = GFX_decision_generic_air
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+		}
+		
+		available = {
+			has_country_flag = USA_favor_electric_boat
+			NOT = { has_country_flag = USA_EB_domination_decisions }
+		}
+		
+		visible = {
+			has_country_flag = USA_favor_electric_boat
+		}
+		
+		complete_effect = {
+			set_country_flag = USA_EB_domination_decisions
+		}
+		
+		days_remove = 45
+		remove_effect = {
+			if = {
+				limit = {
+					has_idea = USA_EB_funds_ships1
+				}
+				swap_ideas = {
+					remove_idea = USA_EB_funds_ships1
+					add_idea = USA_EB_funds_ships_nav_bomber1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = USA_EB_funds_naval_guns1
+				}
+				swap_ideas = {
+					remove_idea = USA_EB_funds_naval_guns1
+					add_idea = USA_EB_funds_naval_guns_nav_bomber1
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = USA_EB_funds_ships_naval_guns1
+				}
+				swap_ideas = {
+					remove_idea = USA_EB_funds_ships_naval_guns1
+					add_idea = USA_EB_funds_ships_naval_guns_nav_bomber1
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = FORD_Electric_Boat_Struggle
+					add_idea = USA_EB_funds_nav_bomber1
+				}
+			}
+			clr_country_flag = USA_EB_domination_decisions
+			hidden_effect = {
+				country_event = {
+					id = mod_usa.61
+					days = 16
+				}
+			}
+		}
+	}
+	
+	USA_Hopkins_for_secretary_of_war = {
+	
+		icon = GFX_decision_SOV_place_hq
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+		}
+		
+		available = {
+			has_country_flag = USA_favor_electric_boat
+			has_idea = USA_EB_funds_ships_naval_guns_nav_bomber1
+			has_idea = USA_EB_rock_island_arsenal_slashed
+		}
+		
+		visible = {
+			has_country_flag = USA_favor_electric_boat
+		}
+		
+		complete_effect = {
+			
+		}
+		
+		days_remove = 14
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = USA_EB_funds_ships_naval_guns_nav_bomber1
+				add_idea = USA_Hopkins_secretary_of_war
+			}
+		}
+	}
+	
+	USA_allow_EB_to_buy_FORD = {
+	
+		icon = GFX_decision_gre_paying_ifc_debt
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+		}
+		
+		available = {
+			has_country_flag = USA_favor_electric_boat
+			has_idea = USA_EB_funds_ships_naval_guns_nav_bomber1
+			has_idea = USA_EB_rock_island_arsenal_slashed
+		}
+		
+		visible = {
+			has_country_flag = USA_favor_electric_boat
+		}
+		
+		complete_effect = {
+			
+		}
+		
+		days_remove = 14
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = USA_EB_funds_ships_naval_guns_nav_bomber1
+				add_idea = USA_General_dynamics_bought_ford
+			}
+		}
+	}
+	
+	### BALANCE PATH ###
+	
+	USA_balance_plane_research = {
+	
+		icon = GFX_decision_generic_air
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+		}
+		
+		available = {
+			has_country_flag = USA_favor_balance
+			NOT = { has_country_flag = USA_balance_domination_decisions }
+			custom_trigger_tooltip = {
+				tooltip = balance_plane_research_tt
+			}
+			OR = {
+				has_tech = CAS2
+				has_tech = naval_bomber2 
+				has_tech = heavy_fighter2
+				has_tech = scout_plane2
+				has_tech = tactical_bomber2
+				has_tech = strategic_bomber2
+				has_tech = fighter2 
+			}
+		}
+		
+		visible = {
+			has_country_flag = USA_favor_balance
+		}
+		
+		cost = 25
+		
+		complete_effect = {
+			set_country_flag = USA_balance_domination_decisions
+		}
+		
+		days_remove = 20
+		remove_effect = {
+			if = {
+				limit = {
+					has_idea = FORD_EB_Balance_navy_level_1
+				}
+				swap_ideas = {
+					remove_idea = FORD_EB_Balance_navy_level_1
+					add_idea = FORD_EB_Balance_army_navy_level_1
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = FORD_Electric_Boat_Struggle
+					add_idea = FORD_EB_Balance_army_level_1
+				}
+			}
+			clr_country_flag = USA_balance_domination_decisions
+		}
+	}
+	
+	USA_balance_ship_research = {
+	
+		icon = GFX_decision_generic_naval
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+		}
+		
+		available = {
+			has_country_flag = USA_favor_balance
+			NOT = { has_country_flag = USA_balance_domination_decisions }
+			custom_trigger_tooltip = {
+				tooltip = balance_navy_research_tt
+			}
+			OR = {
+				has_tech = improved_ship_hull_light 
+				has_tech = improved_ship_hull_cruiser  
+				has_tech = improved_ship_hull_heavy 
+				has_tech = improved_ship_hull_carrier 
+				has_tech = improved_ship_hull_submarine
+			}
+		}
+		
+		visible = {
+			has_country_flag = USA_favor_balance
+		}
+		
+		cost = 25
+		
+		complete_effect = {
+			set_country_flag = USA_balance_domination_decisions
+		}
+		
+		days_remove = 20
+		remove_effect = {
+			if = {
+				limit = {
+					has_idea = FORD_EB_Balance_army_level_1
+				}
+				swap_ideas = {
+					remove_idea = FORD_EB_Balance_army_level_1
+					add_idea = FORD_EB_Balance_army_navy_level_1
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = FORD_Electric_Boat_Struggle
+					add_idea = FORD_EB_Balance_navy_level_1
+				}
+			}
+			clr_country_flag = USA_balance_domination_decisions
+		}
+	}
+	
+	USA_balance_mils_number = {
+	
+		icon = GFX_decision_ger_military_buildup
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+		}
+		
+		available = {
+			has_country_flag = USA_favor_balance
+			NOT = { has_country_flag = USA_balance_domination_decisions }
+			num_of_military_factories > 30
+		}
+		
+		visible = {
+			has_country_flag = USA_favor_balance
+		}
+		
+		cost = 50
+		
+		complete_effect = {
+			set_country_flag = USA_balance_domination_decisions
+			if = { 
+				limit = {
+					has_idea = FORD_EB_Balance_army_level_1
+				}
+				hidden_effect = {
+					country_event = {
+						id = mod_usa.62
+						days = 3
+					}
+				}
+			}
+		}
+		
+		days_remove = 20
+		remove_effect = {
+			if = {
+				limit = {
+					has_idea = FORD_EB_Balance_navy_level_2
+				}
+				swap_ideas = {
+					remove_idea = FORD_EB_Balance_navy_level_2
+					add_idea = FORD_EB_Balance_army_navy_level_2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = FORD_EB_Balance_army_navy_level_1
+					add_idea = FORD_EB_Balance_army_level_2
+				}
+			}
+			clr_country_flag = USA_balance_domination_decisions
+		}
+	}
+	
+	USA_balance_dock_number = {
+	
+		icon = GFX_decision_generic_construction
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+		}
+		
+		available = {
+			has_country_flag = USA_favor_balance
+			NOT = { has_country_flag = USA_balance_domination_decisions }
+			num_of_naval_factories > 30
+		}
+		
+		visible = {
+			has_country_flag = USA_favor_balance
+		}
+		
+		cost = 50
+		
+		complete_effect = {
+			set_country_flag = USA_balance_domination_decisions
+			if = { 
+				limit = {
+					has_idea = FORD_EB_Balance_navy_level_1
+				}
+				hidden_effect = {
+					country_event = {
+						id = mod_usa.62
+						days = 3
+					}
+				}
+			}
+		}
+		
+		days_remove = 20
+		remove_effect = {
+			if = {
+				limit = {
+					has_idea = FORD_EB_Balance_army_level_2
+				}
+				swap_ideas = {
+					remove_idea = FORD_EB_Balance_army_level_2
+					add_idea = FORD_EB_Balance_army_navy_level_2
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = FORD_EB_Balance_army_navy_level_1
+					add_idea = FORD_EB_Balance_navy_level_2
+				}
+			}
+			clr_country_flag = USA_balance_domination_decisions
+		}
+	}
+	
+	USA_balance_deployed_manpower = {
+	
+		icon = GFX_decision_eng_blackshirt_march
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+		}
+		
+		available = {
+			has_country_flag = USA_favor_balance
+			NOT = { has_country_flag = USA_balance_domination_decisions }
+			has_army_manpower = {
+				size > 1000000
+			}
+		}
+		
+		visible = {
+			has_country_flag = USA_favor_balance
+		}
+		
+		cost = 50
+		
+		complete_effect = {
+			set_country_flag = USA_balance_domination_decisions
+			if = { 
+				limit = {
+					has_idea = FORD_EB_Balance_army_level_2
+				}
+				hidden_effect = {
+					country_event = {
+						id = mod_usa.62
+						days = 3
+					}
+				}
+			}
+		}
+		
+		days_remove = 20
+		remove_effect = {
+			if = {
+				limit = {
+					has_idea = FORD_EB_Balance_navy_level_3
+				}
+				swap_ideas = {
+					remove_idea = FORD_EB_Balance_navy_level_3
+					add_idea = FORD_EB_Balance_army_navy_level_3
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = FORD_EB_Balance_army_navy_level_2
+					add_idea = FORD_EB_Balance_army_level_3
+				}
+			}
+			clr_country_flag = USA_balance_domination_decisions
+		}
+	}
+	
+	USA_balance_capital_ships = {
+	
+		icon = GFX_decision_generic_naval
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+		}
+		
+		available = {
+			has_country_flag = USA_favor_balance
+			NOT = { has_country_flag = USA_balance_domination_decisions }
+			has_navy_size = {
+				size > 39
+				type = capital_ship
+				archetype = ship_hull_heavy
+			}
+		}
+		
+		visible = {
+			has_country_flag = USA_favor_balance
+		}
+		
+		cost = 50
+		
+		complete_effect = {
+			set_country_flag = USA_balance_domination_decisions
+			if = { 
+				limit = {
+					has_idea = FORD_EB_Balance_navy_level_2
+				}
+				hidden_effect = {
+					country_event = {
+						id = mod_usa.62
+						days = 3
+					}
+				}
+			}
+		}
+		
+		days_remove = 20
+		remove_effect = {
+			if = {
+				limit = {
+					has_idea = FORD_EB_Balance_army_level_3
+				}
+				swap_ideas = {
+					remove_idea = FORD_EB_Balance_army_level_3
+					add_idea = FORD_EB_Balance_army_navy_level_3
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = FORD_EB_Balance_army_navy_level_2
+					add_idea = FORD_EB_Balance_navy_level_3
+				}
+			}
+			clr_country_flag = USA_balance_domination_decisions
+		}
+	}
+	
+	USA_balance_fruitful_togetherness = {
+	
+		icon = GFX_decision_gre_paying_ifc_debt
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+		}
+		
+		available = {
+			has_country_flag = USA_favor_balance
+			NOT = { has_country_flag = USA_balance_domination_decisions }
+			has_idea = FORD_EB_Balance_army_navy_level_3
+		}
+		
+		visible = {
+			has_country_flag = USA_favor_balance
+		}
+		
+		cost = 20
+		
+		complete_effect = {
+			swap_ideas = {
+				remove_idea = FORD_EB_Balance_army_navy_level_3
+				add_idea = FORD_EB_Balance_achieved
+			}
+		}
+	}
+}
+
+USA_company_sponsored_army = {
+
+	USA_company_sponsored_ford = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 50
+		remove_effect = {
+			division_template = {
+				name = "Ford Motor Company®-Sponsored Motorized Division"
+				division_names_group = USA_MOT_01
+				regiments = {
+					motorized  = { x = 0 y = 0 }
+					motorized  = { x = 0 y = 1 }
+					motorized  = { x = 0 y = 2 }
+						
+					motorized  = { x = 1 y = 0 }
+					motorized  = { x = 1 y = 1 }
+					motorized  = { x = 1 y = 2 }
+					
+					motorized  = { x = 2 y = 0 }
+					motorized  = { x = 2 y = 1 }
+					motorized  = { x = 2 y = 2 }
+				}
+				support = { 
+					mot_recon = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Ford Motor Company®-Sponsored Motorized Division\" division_template = \"Ford Motor Company®-Sponsored Motorized Division\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_dupont = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 50
+		remove_effect = {
+			division_template = {
+				name = "DuPont®-Sponsored Motorized Division"
+				division_names_group = USA_MOT_01
+				regiments = {
+					motorized  = { x = 0 y = 0 }
+					motorized  = { x = 0 y = 1 }
+					motorized  = { x = 0 y = 2 }
+						
+					motorized  = { x = 1 y = 0 }
+					motorized  = { x = 1 y = 1 }
+					motorized  = { x = 1 y = 2 }
+					
+					motorized  = { x = 2 y = 0 }
+					motorized  = { x = 2 y = 1 }
+					motorized  = { x = 2 y = 2 }
+				}
+				support = { 
+					mot_recon = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"DuPont®-Sponsored Motorized Division\" division_template = \"DuPont®-Sponsored Motorized Division\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_general_motors = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 50
+		remove_effect = {
+			division_template = {
+				name = "General Motors®-Sponsored Motorized Division"
+				division_names_group = USA_MOT_01
+				regiments = {
+					motorized  = { x = 0 y = 0 }
+					motorized  = { x = 0 y = 1 }
+					motorized  = { x = 0 y = 2 }
+						
+					motorized  = { x = 1 y = 0 }
+					motorized  = { x = 1 y = 1 }
+					motorized  = { x = 1 y = 2 }
+					
+					motorized  = { x = 2 y = 0 }
+					motorized  = { x = 2 y = 1 }
+					motorized  = { x = 2 y = 2 }
+				}
+				support = { 
+					mot_recon = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"General Motors®-Sponsored Motorized Division\" division_template = \"General Motors®-Sponsored Motorized Division\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_buick = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 50
+		remove_effect = {
+			division_template = {
+				name = "Buick®-Sponsored Motorized Division"
+				division_names_group = USA_MOT_01
+				regiments = {
+					motorized  = { x = 0 y = 0 }
+					motorized  = { x = 0 y = 1 }
+					motorized  = { x = 0 y = 2 }
+						
+					motorized  = { x = 1 y = 0 }
+					motorized  = { x = 1 y = 1 }
+					motorized  = { x = 1 y = 2 }
+					
+					motorized  = { x = 2 y = 0 }
+					motorized  = { x = 2 y = 1 }
+					motorized  = { x = 2 y = 2 }
+				}
+				support = { 
+					mot_recon = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Buick®-Sponsored Motorized Division\" division_template = \"Buick®-Sponsored Motorized Division\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_cadillac = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 50
+		remove_effect = {
+			division_template = {
+				name = "Cadillac®-Sponsored Motorized Division"
+				division_names_group = USA_MOT_01
+				regiments = {
+					motorized  = { x = 0 y = 0 }
+					motorized  = { x = 0 y = 1 }
+					motorized  = { x = 0 y = 2 }
+						
+					motorized  = { x = 1 y = 0 }
+					motorized  = { x = 1 y = 1 }
+					motorized  = { x = 1 y = 2 }
+					
+					motorized  = { x = 2 y = 0 }
+					motorized  = { x = 2 y = 1 }
+					motorized  = { x = 2 y = 2 }
+				}
+				support = { 
+					mot_recon = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Cadillac®-Sponsored Motorized Division\" division_template = \"Cadillac®-Sponsored Motorized Division\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_chrysler = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 50
+		remove_effect = {
+			division_template = {
+				name = "Chrysler®-Sponsored Motorized Division"
+				division_names_group = USA_MOT_01
+				regiments = {
+					motorized  = { x = 0 y = 0 }
+					motorized  = { x = 0 y = 1 }
+					motorized  = { x = 0 y = 2 }
+						
+					motorized  = { x = 1 y = 0 }
+					motorized  = { x = 1 y = 1 }
+					motorized  = { x = 1 y = 2 }
+					
+					motorized  = { x = 2 y = 0 }
+					motorized  = { x = 2 y = 1 }
+					motorized  = { x = 2 y = 2 }
+				}
+				support = { 
+					mot_recon = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Chrysler®-Sponsored Motorized Division\" division_template = \"Chrysler®-Sponsored Motorized Division\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_standard_oil = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 50
+		remove_effect = {
+			division_template = {
+				name = "Standard Oil®-Sponsored Infantry Division"
+				division_names_group = USA_INF_01
+				regiments = {
+					infantry   = { x = 0 y = 0 }
+					infantry   = { x = 0 y = 1 }
+						
+					infantry   = { x = 1 y = 0 }
+					infantry   = { x = 1 y = 1 }
+					
+					infantry   = { x = 2 y = 0 }
+					infantry   = { x = 2 y = 1 }
+				}
+				support = { 
+					recon = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Standard Oil®-Sponsored Infantry Division\" division_template = \"Standard Oil®-Sponsored Infantry Division\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_texas_fuel_company = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 50
+		remove_effect = {
+			division_template = {
+				name = "Texas Fuel Company®-Sponsored Infantry Division"
+				division_names_group = USA_INF_01
+				regiments = {
+					infantry   = { x = 0 y = 0 }
+					infantry   = { x = 0 y = 1 }
+						
+					infantry   = { x = 1 y = 0 }
+					infantry   = { x = 1 y = 1 }
+					
+					infantry   = { x = 2 y = 0 }
+					infantry   = { x = 2 y = 1 }
+				}
+				support = { 
+					recon = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Texas Fuel Company®-Sponsored Infantry Division\" division_template = \"Texas Fuel Company®-Sponsored Infantry Division\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_gulf_oil = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 50
+		remove_effect = {
+			division_template = {
+				name = "Gulf Oil Company®-Sponsored Infantry Division"
+				division_names_group = USA_INF_01
+				regiments = {
+					infantry   = { x = 0 y = 0 }
+					infantry   = { x = 0 y = 1 }
+						
+					infantry   = { x = 1 y = 0 }
+					infantry   = { x = 1 y = 1 }
+					
+					infantry   = { x = 2 y = 0 }
+					infantry   = { x = 2 y = 1 }
+				}
+				support = { 
+					recon = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Gulf Oil Company®-Sponsored Infantry Division\" division_template = \"Gulf Oil Company®-Sponsored Infantry Division\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_att = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+			has_tech = tech_signal_company 
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 50
+		remove_effect = {
+			division_template = {
+				name = "AT&T®-Sponsored Infantry Division"
+				division_names_group = USA_INF_01
+				regiments = {
+					infantry   = { x = 0 y = 0 }
+					infantry   = { x = 0 y = 1 }
+						
+					infantry   = { x = 1 y = 0 }
+					infantry   = { x = 1 y = 1 }
+					
+					infantry   = { x = 2 y = 0 }
+					infantry   = { x = 2 y = 1 }
+				}
+				support = { 
+					signal_company = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"AT&T®-Sponsored Infantry Division\" division_template = \"AT&T®-Sponsored Infantry Division\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_raytheon = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+			has_tech = motorized_rocket_unit  
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 50
+		remove_effect = {
+			division_template = {
+				name = "Raytheon®-Sponsored Infantry Division"
+				division_names_group = USA_MOT_01
+				regiments = {
+					motorized_rocket_brigade   = { x = 0 y = 0 }
+					motorized_rocket_brigade   = { x = 0 y = 1 }
+					
+					motorized_rocket_brigade   = { x = 1 y = 0 }
+					motorized_rocket_brigade   = { x = 1 y = 1 }
+					
+					motorized_rocket_brigade   = { x = 2 y = 0 }
+					motorized_rocket_brigade   = { x = 2 y = 1 }
+					motorized_rocket_brigade   = { x = 2 y = 2 }
+					motorized_rocket_brigade   = { x = 2 y = 2 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Raytheon®-Sponsored Infantry Division\" division_template = \"Raytheon®-Sponsored Infantry Division\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_ibm = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+			has_tech = tech_signal_company 
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 50
+		remove_effect = {
+			division_template = {
+				name = "IBM®-Sponsored Infantry Division"
+				division_names_group = USA_INF_01
+				regiments = {
+					infantry   = { x = 0 y = 0 }
+					infantry   = { x = 0 y = 1 }
+						
+					infantry   = { x = 1 y = 0 }
+					infantry   = { x = 1 y = 1 }
+					
+					infantry   = { x = 2 y = 0 }
+					infantry   = { x = 2 y = 1 }
+				}
+				support = { 
+					signal_company = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"IBM®-Sponsored Infantry Division\" division_template = \"IBM®-Sponsored Infantry Division\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_general_electric = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+			has_tech = tech_signal_company 
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 50
+		remove_effect = {
+			division_template = {
+				name = "General Electric®-Sponsored Infantry Division"
+				division_names_group = USA_INF_01
+				regiments = {
+					infantry   = { x = 0 y = 0 }
+					infantry   = { x = 0 y = 1 }
+						
+					infantry   = { x = 1 y = 0 }
+					infantry   = { x = 1 y = 1 }
+					
+					infantry   = { x = 2 y = 0 }
+					infantry   = { x = 2 y = 1 }
+				}
+				support = { 
+					signal_company = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"General Electric®-Sponsored Infantry Division\" division_template = \"General Electric®-Sponsored Infantry Division\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_national_biscuit = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+			has_tech = tech_logistics_company  
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+			
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 50
+		remove_effect = {
+			division_template = {
+				name = "National Biscuit®-Sponsored Infantry Division"
+				division_names_group = USA_INF_01
+				regiments = {
+					infantry   = { x = 0 y = 0 }
+					infantry   = { x = 0 y = 1 }
+						
+					infantry   = { x = 1 y = 0 }
+					infantry   = { x = 1 y = 1 }
+					
+					infantry   = { x = 2 y = 0 }
+					infantry   = { x = 2 y = 1 }
+				}
+				support = { 
+					logistics_company = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"National Biscuit®-Sponsored Infantry Division\" division_template = \"National Biscuit®-Sponsored Infantry Division\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_american_sugar = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+			has_tech = tech_logistics_company  
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 50
+		remove_effect = {
+			division_template = {
+				name = "American Sugar®-Sponsored Infantry Division"
+				division_names_group = USA_INF_01
+				regiments = {
+					infantry   = { x = 0 y = 0 }
+					infantry   = { x = 0 y = 1 }
+						
+					infantry   = { x = 1 y = 0 }
+					infantry   = { x = 1 y = 1 }
+					
+					infantry   = { x = 2 y = 0 }
+					infantry   = { x = 2 y = 1 }
+				}
+				support = { 
+					logistics_company = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"American Sugar®-Sponsored Infantry Division\" division_template = \"American Sugar®-Sponsored Infantry Division\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_kelloggs = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+			has_tech = tech_logistics_company  
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 50
+		remove_effect = {
+			division_template = {
+				name = "Kellogg's®-Sponsored Infantry Division"
+				division_names_group = USA_INF_01
+				regiments = {
+					infantry   = { x = 0 y = 0 }
+					infantry   = { x = 0 y = 1 }
+						
+					infantry   = { x = 1 y = 0 }
+					infantry   = { x = 1 y = 1 }
+					
+					infantry   = { x = 2 y = 0 }
+					infantry   = { x = 2 y = 1 }
+				}
+				support = { 
+					logistics_company = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Kellogg's®-Sponsored Infantry Division\" division_template = \"Kellogg's®-Sponsored Infantry Division\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_great_atlantic_pacific_tea = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+			has_tech = tech_logistics_company  
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 50
+		remove_effect = {
+			division_template = {
+				name = "Great Atlantic & Pacific Tea Company®-Sponsored Infantry Division"
+				division_names_group = USA_INF_01
+				regiments = {
+					infantry   = { x = 0 y = 0 }
+					infantry   = { x = 0 y = 1 }
+						
+					infantry   = { x = 1 y = 0 }
+					infantry   = { x = 1 y = 1 }
+					
+					infantry   = { x = 2 y = 0 }
+					infantry   = { x = 2 y = 1 }
+				}
+				support = { 
+					logistics_company = { x = 0 y = 0 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Great Atlantic & Pacific Tea Company®-Sponsored Infantry Division\" division_template = \"Great Atlantic & Pacific Tea Company®-Sponsored Infantry Division\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_reynolds_tobacco = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			} 
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 50
+		remove_effect = {
+			division_template = {
+				name = "Reynolds Tobacco®-Sponsored Infantry Division"
+				division_names_group = USA_INF_01
+				regiments = {
+					infantry   = { x = 0 y = 0 }
+					infantry   = { x = 0 y = 1 }
+						
+					infantry   = { x = 1 y = 0 }
+					infantry   = { x = 1 y = 1 }
+					
+					infantry   = { x = 2 y = 0 }
+					infantry   = { x = 2 y = 1 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Reynolds Tobacco®-Sponsored Infantry Division\" division_template = \"Reynolds Tobacco®-Sponsored Infantry Division\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_camel = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			} 
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 50
+		remove_effect = {
+			division_template = {
+				name = "Camel®-Sponsored Camel Regiment"
+				division_names_group = USA_CAM_01 
+				regiments = {
+					camelry = { x = 0 y = 0 }
+					camelry = { x = 0 y = 1 }
+					camelry = { x = 0 y = 2 }
+					camelry = { x = 0 y = 3 }
+					
+					camelry = { x = 1 y = 0 }
+					camelry = { x = 1 y = 1 }
+					camelry = { x = 1 y = 2 }
+					camelry = { x = 1 y = 3 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Camel®-Sponsored Camel Regiment\" division_template = \"Camel®-Sponsored Camel Regiment\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_american_tobacco = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			} 
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 50
+		remove_effect = {
+			division_template = {
+				name = "American Tobacco®-Sponsored Infantry Division"
+				division_names_group = USA_INF_01
+				regiments = {
+					infantry   = { x = 0 y = 0 }
+					infantry   = { x = 0 y = 1 }
+						
+					infantry   = { x = 1 y = 0 }
+					infantry   = { x = 1 y = 1 }
+					
+					infantry   = { x = 2 y = 0 }
+					infantry   = { x = 2 y = 1 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"American Tobacco®-Sponsored Infantry Division\" division_template = \"American Tobacco®-Sponsored Infantry Division\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_wr_grace = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			} 
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 50
+		remove_effect = {
+			division_template = {
+				name = "W.R. Grace Company®-Sponsored Infantry Division"
+				division_names_group = USA_INF_01
+				regiments = {
+					infantry   = { x = 0 y = 0 }
+					infantry   = { x = 0 y = 1 }
+					infantry   = { x = 0 y = 2 }
+					infantry   = { x = 0 y = 3 }
+						
+					infantry   = { x = 1 y = 0 }
+					infantry   = { x = 1 y = 1 }
+					infantry   = { x = 1 y = 2 }
+					infantry   = { x = 1 y = 3 }
+					
+					infantry   = { x = 2 y = 0 }
+					infantry   = { x = 2 y = 1 }
+					infantry   = { x = 2 y = 2 }
+					infantry   = { x = 2 y = 3 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"W.R. Grace Company®-Sponsored Infantry Division\" division_template = \"W.R. Grace Company®-Sponsored Infantry Division\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_pacific_car_and_foundry = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			} 
+			has_tech = tech_logistics_company 
+			has_tech = tech_maintenance_company
+			has_tech = super_heavy_tank_chassis 
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_Ford_bought_general_dynamic
+				has_idea = USA_Ford_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			training_time_army_factor = 0.05
+			civilian_factory_use = 2
+		}
+			
+		days_remove = 60
+		remove_effect = {
+			division_template = {
+				name = "Pacific Car and Foundry®-Sponsored Armored Division"
+				division_names_group = USA_ARM_01
+				regiments = {
+					super_heavy_armor   = { x = 0 y = 0 }
+					super_heavy_armor   = { x = 0 y = 1 }
+					super_heavy_armor   = { x = 0 y = 2 }
+					super_heavy_armor   = { x = 0 y = 3 }
+						
+					motorized   = { x = 1 y = 0 }
+					motorized   = { x = 1 y = 1 }
+					motorized   = { x = 1 y = 2 }
+					motorized   = { x = 1 y = 3 }
+					
+					motorized   = { x = 2 y = 0 }
+					motorized   = { x = 2 y = 1 }
+					motorized   = { x = 2 y = 2 }
+					motorized   = { x = 2 y = 3 }
+				}
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"Pacific Car and Foundry®-Sponsored Armored Division\" division_template = \"Pacific Car and Foundry®-Sponsored Armored Division\" start_experience_factor = 0"
+					owner = ROOT
+					allow_spawning_on_enemy_provs = no
+				}
+			}
+		}
+	}
+	
+	USA_company_sponsored_higgins_industries = {
+		
+		icon = GFX_decision_generic_industry
+		
+		#fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+		
+		days_re_enable = 50
+			
+		available = {
+			OR = {
+				has_idea = USA_General_dynamics_bought_ford
+				has_idea = USA_Hopkins_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+			has_tech = improved_ship_hull_light 
+		}
+			
+		visible = {
+			OR = {
+				has_idea = USA_General_dynamics_bought_ford
+				has_idea = USA_Hopkins_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			civilian_factory_use = 5
+		}
+			
+		days_remove = 65
+		remove_effect = {
+			create_equipment_variant = {
+				name = "Higgins®-Sponsored Class"								
+				type = ship_hull_light_3 
+				name_group = USA_DD_HISTORICAL
+				modules = {
+					fixed_ship_battery_slot = ship_light_battery_2 
+					fixed_ship_anti_air_slot = ship_anti_air_1 
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_0 
+					fixed_ship_radar_slot = empty
+					fixed_ship_torpedo_slot = ship_torpedo_2 
+					fixed_ship_engine_slot = light_ship_engine_3 
+					front_1_custom_slot = ship_depth_charge_1 
+					mid_1_custom_slot = ship_anti_air_1 
+					rear_1_custom_slot = ship_light_battery_1
+				}
+			}
+			create_ship = {
+				type = ship_hull_light_3
+				equipment_variant = "Higgins®-Sponsored Class"
+				creator = USA
+				name = "USS Andrew Higgins"
+			}
+			create_ship = {
+				type = ship_hull_light_3
+				equipment_variant = "Higgins®-Sponsored Class"
+				creator = USA
+				name = "USS Colsson"
+			}
+			create_ship = {
+				type = ship_hull_light_3
+				equipment_variant = "Higgins®-Sponsored Class"
+				creator = USA
+				name = "USS John Gonegle Higgins"
+			}
+		}
+	}
+	
+	USA_company_sponsored_kaiser_shipyards = {
+		
+		icon = GFX_decision_generic_industry
+		
+		#fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_General_dynamics_bought_ford
+				has_idea = USA_Hopkins_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+			has_tech = mtg_landing_craft  
+		}
+		
+		days_re_enable = 50
+			
+		visible = {
+			OR = {
+				has_idea = USA_General_dynamics_bought_ford
+				has_idea = USA_Hopkins_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			civilian_factory_use = 5
+		}
+			
+		days_remove = 30
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 135
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = floating_harbor_equipment
+				amount = 15
+				producer = USA
+			}
+		}
+	}
+	
+	USA_company_sponsored_ingalls_shipbuilding1 = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_General_dynamics_bought_ford
+				has_idea = USA_Hopkins_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+			has_tech = basic_ship_hull_cruiser    
+		}
+		
+		days_re_enable = 70
+			
+		visible = {
+			OR = {
+				has_idea = USA_General_dynamics_bought_ford
+				has_idea = USA_Hopkins_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			civilian_factory_use = 5
+		}
+			
+		days_remove = 30
+		remove_effect = {
+			create_equipment_variant = {
+				name = "Ingalls®-Sponsored Class" 
+				type = ship_hull_cruiser_2
+				name_group = USA_CA_HISTORICAL 
+				parent_version = 0
+				modules = {
+					fixed_ship_battery_slot = ship_medium_battery_2
+					fixed_ship_anti_air_slot = ship_anti_air_1
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+					fixed_ship_radar_slot = empty
+					fixed_ship_engine_slot = cruiser_ship_engine_1
+					fixed_ship_armor_slot = ship_armor_cruiser_2
+					front_1_custom_slot = ship_anti_air_1
+					mid_1_custom_slot = ship_torpedo_1
+					mid_2_custom_slot = ship_airplane_launcher_1
+					rear_1_custom_slot = ship_medium_battery_2
+				}
+			}
+			create_ship = {
+				type = ship_hull_cruiser_2
+				equipment_variant = "Ingalls®-Sponsored Class"
+				creator = USA
+				name = "USS Robert Ingersoll Ingalls"
+			}
+		}
+	}
+	
+	USA_company_sponsored_ingalls_shipbuilding2 = {
+		
+		icon = GFX_decision_generic_industry
+		
+		fire_only_once = yes
+			
+		allowed = {
+			tag = USA
+		}
+			
+		available = {
+			OR = {
+				has_idea = USA_General_dynamics_bought_ford
+				has_idea = USA_Hopkins_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+			has_tech = basic_ship_hull_cruiser    
+		}
+		
+		days_re_enable = 70
+			
+		visible = {
+			OR = {
+				has_idea = USA_General_dynamics_bought_ford
+				has_idea = USA_Hopkins_secretary_of_war
+				has_idea = FORD_EB_Balance_achieved
+			}
+		}
+		
+		cost = 40
+			
+		modifier = {
+			civilian_factory_use = 5
+		}
+			
+		days_remove = 30
+		remove_effect = {
+			create_equipment_variant = {
+				name = "Ingalls®-Sponsored II Class" 
+				type = ship_hull_cruiser_2
+				name_group = USA_CL_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_battery_slot = ship_light_medium_battery_1
+					fixed_ship_anti_air_slot = ship_anti_air_1
+					fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+					fixed_ship_radar_slot = empty
+					fixed_ship_engine_slot = cruiser_ship_engine_1
+					fixed_ship_armor_slot = ship_armor_cruiser_1
+					front_1_custom_slot = ship_anti_air_1
+					mid_1_custom_slot = ship_torpedo_1
+					mid_2_custom_slot = ship_light_medium_battery_1
+					rear_1_custom_slot = ship_airplane_launcher_1
+				}
+			}
+			create_ship = {
+				type = ship_hull_cruiser_2
+				equipment_variant = "Ingalls®-Sponsored II Class"
+				creator = USA
+			}
+		}
+	}
+	
+	
+	
+}
+
+
+foreign_politics = {
+
+	USA_peace_with_japan = {
+	
+		icon = GFX_decision_jap_pacific_guardian
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = USA
+		}
+		
+		available = {
+			has_war_with = JAP
+			CUB = {
+				has_capitulated = yes
+				days_since_capitulated > 30
+			}
+		}
+		
+		visible = {
+			has_war_with = JAP
+		}
+		
+		complete_effect = {
+			country_event = {
+				id = mod_usa.31
+			}
+		}
+	}	
+}

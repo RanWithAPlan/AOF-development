@@ -5,17 +5,332 @@ characters={
 		portraits = {
 			civilian = {
 				large = "gfx/leaders/USA/Portrait_Smedley_Butler.dds"
+				small = "GFX_idea_USA_generic_navy_1"
 			}
 		}
 		country_leader = {
-			ideology = despotism
+			ideology = despotism 
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+		country_leader = {
+			ideology = social_democracy  
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+		advisor={
+			slot = high_command
+			idea_token = CUB_smedley_butler
+			ledger = army
+			allowed = {
+				original_tag = CUB
+			}
+			traits = {
+				navy_amphibious_assault_3
+			}
+			cost = 75
+			ai_will_do = {
+				factor = 10
+			}
+		}
+	}
+	
+	### Use for later
+	
+	CUB_george_patton = {
+		name = "George S. Patton"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/USA/Portrait_George_Patton.dds"
+			}
+		}
+	}
+	
+	### GENERALS ###
+	
+	CUB_george_marshall={
+		name = "George C. Marshall"
+		portraits={
+			army={
+				small="GFX_idea_george_marshall"
+				large = "gfx/leaders/USA/Portrait_USA_Generic_land_2.dds"
+			}
+		}
+		field_marshal={
+			traits={ career_officer politically_connected organizer }
+			skill = 4
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 2
+		}
+		advisor={
+			slot = army_chief
+			idea_token = george_marshall
+			allowed = {
+				original_tag = CUB
+			}
+			traits = {
+				army_chief_drill_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		country_leader = {
+			ideology = despotism 
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+		country_leader = {
+			ideology = social_democracy  
 			traits = {  }
 			expire = "1965.1.1.1"
 			id = 1
 		}
 	}
+	
+	CUB_alexander_patch={
+		name= "Alexander Patch"
+		portraits={
+			army={
+				large=GFX_portrait_USA_alexander_patch
+				small=GFX_portrait_USA_alexander_patch_small
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer commando naval_invader  }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=3
+		}
+	}
+	
+	CUB_daniel_van_voorhis = {
+		name = "Daniel Van Voorhis"
+		portraits = {
+			army = {
+				large = "gfx/leaders/USA/Portrait_USA_Daniel_Van_Voorhis.png"
+			}
+		}
+		corps_commander = {
+			traits = { commando naval_invader  }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	CUB_malin_craig = {
+		name = "Malin Craig"
+		portraits = {
+			army = {
+				large = "GFX_Portrait_USA_Generic_land_5"
+				small = "GFX_idea_USA_generic_land_5"
+			}
+		}
+		field_marshal = {
+			traits = { trait_cautious organizer }
+			skill = 3
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 4
+		}
+		advisor = {
+			slot = army_chief
+			idea_token = CUB_malin_craig_army_chief
+			traits = { army_chief_planning_2 }
+			available = { not_already_hired_except_as = air_chief }
+			cost = 100
+		}
+		advisor = {
+			slot = air_chief
+			idea_token = CUB_malin_craig_air_chief
+			traits = { air_chief_ground_support_2 }
+			available = { not_already_hired_except_as = army_chief }
+			cost = 100
+		}
+	
+	}
+	
+	CUB_harry_liversedge={
+		name= "Harry B. Liversedge"
+		portraits={
+			army={
+				large = "GFX_Portrait_USA_Generic_land_3"
+				small = "GFX_idea_USA_generic_land_3"
+			}
+		}
+		corps_commander={
+			traits={ infantry_leader commando jungle_rat  }
+			skill=2
+			attack_skill=4
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=4
+		}
+	}
+	
+	CUB_lewis_hyde_brereton = {
+		name = "Lewis H. Brereton"
+		portraits = {
+			army={
+				large = "GFX_Portrait_USA_Generic_land_4"
+				small = "GFX_idea_USA_generic_land_4"
+			}
+		}
+		corps_commander = {
+			traits = { career_officer  }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+	
+	CUB_lewis_burwell_puller = {
+		name = "Lewis Burwell Puller"
+		portraits = {
+			army={
+				large = "GFX_Portrait_USA_Generic_land_1"
+				small = "GFX_idea_USA_generic_land_1"
+			}
+		}
+		corps_commander = {
+			traits = { career_officer harsh_leader commando }
+			skill = 2
+			attack_skill = 4
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		advisor = {
+			slot = high_command
+			idea_token = USA_lewis_burwell_puller_commando
+			ledger = army
+			traits = { army_commando_2 }
+			cost = 100
+		}
+	}
+	
+	### ADMIRALS ###
 
-
+	CUB_daniel_edward_barbey = {
+		name = "Daniel Edward Barbey"
+		portraits = {
+			army={
+				large = "GFX_Portrait_USA_Generic_navy_1"
+				small = "GFX_idea_USA_generic_navy_1"
+			}
+		}
+		navy_leader = {
+			traits = { fleet_protector navy_career_officer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			maneuvering_skill = 2
+			coordination_skill = 2
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = CUB_daniel_edward_barbey
+			traits = { navy_chief_naval_aviation_1 }
+			cost = 50
+		}
+	}
+	
+	CUB_john_sidney_mccain_jr = { 
+		name = "John S. McCain Jr." # Will leave for US
+		portraits = {
+			army={
+				large = "GFX_Portrait_USA_Generic_navy_3"
+				small = "GFX_idea_USA_generic_navy_3"
+			}
+		}
+		navy_leader = {
+			traits = { seawolf superior_tactician }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 1
+			maneuvering_skill = 2
+			coordination_skill = 2
+		}
+	}
+	
+	CUB_hugh_nathaniel_mulzac = {
+		name = "Hugh 'Native Admiral' Mulzac"
+		portraits = {
+			army={
+				large = "GFX_Portrait_Africa_Generic_navy_3"
+				small = "GFX_idea_Africa_generic_navy_3"
+			}
+		}
+		advisor = {
+			slot = navy_chief
+			idea_token = CUB_hugh_nathaniel_mulzac_navy_chief
+			available = { not_already_hired_except_as = high_command }
+			traits = { navy_chief_commerce_raiding_1 }
+			cost = 50
+		}
+		navy_leader = {
+			traits = { navy_media_personality blockade_runner }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+		advisor = {
+			slot = high_command
+			idea_token = CUB_hugh_nathaniel_mulzac_theorist
+			ledger = navy
+			available = { not_already_hired_except_as = navy_chief }
+			traits = { navy_submarine_3 }
+			cost = 150
+		}
+	}
+	
+	CUB_raymond_a_spruance={
+		name= "Raymond A. Spruance"
+		portraits={
+			army={
+				large=GFX_portrait_USA_raymond_a_spruance
+				small=GFX_portrait_USA_raymond_a_spruance_small
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = raymond_spruance
+			ledger = navy
+			allowed = {
+				original_tag = CUB
+			}
+			traits = {
+				navy_naval_air_defense_2
+			}
+			cost = 100
+		}
+		navy_leader={
+			traits={ gentlemanly navy_career_officer superior_tactician }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			maneuvering_skill=3
+			coordination_skill=3
+		}
+	}
+	
+	
+	
 
 	CUB_josé_agripino_barnet={
 		name="José Agripino Barnet"
@@ -25,7 +340,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=classical_liberalism
+			ideology=liberalism
 			expire="1965.1.1.1"
 			id=-1
 		}
@@ -38,7 +353,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=vanguard_socialism
+			ideology=stalinism
 			traits={ reluctant_interventionist }
 			expire="1941.1.1.12"
 			id=-1
@@ -52,7 +367,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=imperial_extremeism
+			ideology=rexism
 			expire="1952.1.1.12"
 			id=-1
 		}
@@ -65,7 +380,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=despotism
+			ideology=oligarchism
 			traits={ economist }
 			expire="1947.1.1.12"
 			id=-1
@@ -82,83 +397,6 @@ characters={
 			ideology=socialism
 			expire="1965.1.1.1"
 			id=-1
-		}
-	}
-	CUB_fidel_castro={
-		advisor={
-			
-			
-			slot = high_command
-			idea_token = CUB_fidel_castro
-			ledger = army
-				allowed = {
-					original_tag = CUB
-				}
-				traits = {
-					army_commando_2
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
-				}
-		}
-# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
-		name="Fidél Castro"
-		portraits={
-			army={
-				small="GFX_idea_generic_army_south_america_3"
-			}
-		}
-	}
-	CUB_enrique_c_rolas={
-		advisor={
-			
-			
-			slot = high_command
-			idea_token = CUB_enrique_c_rolas
-			ledger = navy
-				allowed = {
-					original_tag = CUB
-				}
-				traits = {
-					air_naval_strike_2
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
-				}
-		}
-# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
-		name="Enrique C. Rolas"
-		portraits={
-			army={
-				small="GFX_idea_generic_air_south_america_1"
-			}
-		}
-	}
-	CUB_palaez_menendez={
-		advisor={
-			
-			
-			slot = air_chief
-			idea_token = CUB_palaez_menendez
-			allowed = {
-					original_tag = CUB
-				}
-				traits = {
-					air_chief_ground_support_2
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
-				}
-		}
-# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
-		name="Palaez Menendez"
-		portraits={
-			army={
-				small="GFX_idea_generic_air_south_america_3"
-			}
 		}
 	}
 	CUB_domingo_r_del_toro={
@@ -201,37 +439,10 @@ characters={
 					military_theorist
 				}
 		}
-# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
-		name="Eduardo Chibas"
+		name="Troy H. Middleton"
 		portraits={
 			army={
 				small="GFX_idea_generic_army_south_america_3"
-			}
-		}
-	}
-	CUB_juan_blas_hernandez={
-		advisor={
-			
-			
-			slot = high_command
-			idea_token = CUB_juan_blas_hernandez
-			ledger = army
-				allowed = {
-					original_tag = CUB
-				}
-				traits = {
-					army_concealment_2
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
-				}
-		}
-# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
-		name="Juan Blas Hernandez"
-		portraits={
-			army={
-				small="GFX_idea_generic_army_south_america_1"
 			}
 		}
 	}
@@ -250,8 +461,7 @@ characters={
 					air_warfare_theorist
 				}
 		}
-# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
-		name="Sergio Carbo"
+		name="Ben Hebard Fuller"
 		portraits={
 			army={
 				small="GFX_idea_generic_air_south_america_2"
@@ -268,7 +478,7 @@ characters={
 					original_tag = CUB
 				}
 				traits = {
-					army_chief_offensive_2
+					army_chief_offensive_1
 				}
 				cost = 100
 				ai_will_do = {
@@ -280,31 +490,6 @@ characters={
 		portraits={
 			army={
 				small="GFX_idea_generic_army_south_america_5"
-			}
-		}
-	}
-	CUB_rodrigo_a_fuentes={
-		advisor={
-			
-			
-			slot = navy_chief
-			idea_token = CUB_rodrigo_a_fuentes
-			allowed = {
-					original_tag = CUB
-				}
-				traits = {
-					navy_chief_maneuver_2
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
-				}
-		}
-# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
-		name="Rodrigo A. Fuentes"
-		portraits={
-			army={
-				small="GFX_idea_generic_navy_south_america_3"
 			}
 		}
 	}
@@ -333,57 +518,6 @@ characters={
 			}
 		}
 	}
-	CUB_salvador_castaneda_castro={
-		advisor={
-			
-			
-			slot = army_chief
-			idea_token = CUB_salvador_castaneda_castro
-			allowed = {
-					original_tag = CUB
-				}
-				traits = {
-					army_chief_defensive_2
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
-				}
-		}
-# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
-		name="Salvador Castaneda Castro"
-		portraits={
-			army={
-				small="GFX_idea_generic_army_south_america_4"
-			}
-		}
-	}
-	CUB_angel_gonzalez={
-		advisor={
-			
-			
-			slot = high_command
-			idea_token = CUB_angel_gonzalez
-			ledger = army
-				allowed = {
-					original_tag = CUB
-				}
-				traits = {
-					navy_amphibious_assault_2
-				}
-				cost = 100
-				ai_will_do = {
-					factor = 1.000
-				}
-		}
-# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
-		name="Angel Gonzalez"
-		portraits={
-			army={
-				small="GFX_idea_generic_navy_south_america_2"
-			}
-		}
-	}
 	CUB_julio_sanguily={
 		advisor={
 			cost = 100
@@ -399,8 +533,7 @@ characters={
 					naval_theorist
 				}
 		}
-# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
-		name="Julio Sanguily"
+		name="Henry K. Hewitt"
 		portraits={
 			army={
 				small="GFX_idea_generic_navy_south_america_3"
@@ -437,8 +570,7 @@ characters={
 					silent_workhorse 
 				}
 		}
-# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
-		name="Gerardo Machado"
+		name="Paul French"
 		portraits={
 			army={
 				small="GFX_idea_generic_political_advisor_south_america_3"

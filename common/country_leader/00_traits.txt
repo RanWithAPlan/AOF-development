@@ -173,7 +173,92 @@ leader_traits = {
 		}
 	}
 
-
+	vp = {
+		random = no
+		stability_factor = 0.03
+		political_power_gain = 0.05
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	unconstitutional_president = {
+		random = no
+		stability_factor = -0.15
+		war_support_factor = -0.1
+		political_power_gain = -0.1
+		opinion_gain_monthly_same_ideology_factor = -0.5
+		surrender_limit = -0.3
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	secretary_of_general_affairs = {
+		random = no
+		war_support_factor = 0.05
+		political_power_factor = 0.05
+		stability_weekly = 0.005
+		drift_defence_factor = 0.2
+		max_command_power = 10
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	american_pompey = {
+		random = no
+		war_stability_factor = 0.3
+		surrender_limit = 0.75
+		required_garrison_factor = -0.25
+		experience_gain_army_factor = 0.25
+		resistance_damage_to_garrison_on_our_occupied_states = 0.25
+		ai_focus_aggressive_factor = 0.5
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	american_secretary_party = {
+		random = no
+		stability_factor = 0.15
+		drift_defence_factor = 0.75
+		ai_focus_aggressive_factor = 0.25
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	shadow_council = {
+		random = no
+		research_speed_factor = 0.05
+		production_speed_buildings_factor = 0.1
+		corporatism_drift = 0.1
+		global_building_slots_factor = 0.05
+		fascism_acceptance = 60
+		trade_laws_cost_factor = -0.4
+		economy_cost_factor = -0.4
+		
+		political_advisor_cost_factor = 0.25
+		high_command_cost_factor = 0.25
+		air_chief_cost_factor = 0.25
+		army_chief_cost_factor = 0.25
+		navy_chief_cost_factor = 0.25
+		stability_factor = -0.1
+		war_support_factor = -0.05
+		political_power_factor = -0.15
+		
+		
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
 
 
 

@@ -43,3 +43,1275 @@ country_event = { # Butler begins writing War is a Racket
 		add_political_power = 5
 	}
 }
+
+country_event = { # USA notices the change in wording from USC
+	id = mod_usc.3
+	title = mod_usc.3.t
+	desc = mod_usc.3.d
+	picture = GFX_report_event_generic_sign_treaty1
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.3.a
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -1
+	}
+}
+
+country_event = { # USC approaches GER
+	id = mod_usc.4
+	title = mod_usc.4.t
+	desc = mod_usc.4.d
+	picture = GFX_report_event_german_advisors_remain
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.4.a # GER sends USC Artillery
+		ai_chance = {
+			factor = 90
+		}
+		CUB = {
+			country_event = {
+				id = mod_usc.5
+				days = 15
+			}
+		}
+		add_timed_idea = {
+			idea = diverted_factory_production
+			days = 60
+		}
+	}
+	option = {
+		name = mod_usc.4.b # GER won't send anything, sorry
+		ai_chance = {
+			factor = 10
+		}
+		CUB = {
+			country_event = {
+				id = mod_usc.6
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = { # GER sends Artillery
+	id = mod_usc.5
+	title = mod_usc.5.t
+	desc = mod_usc.5.d
+	picture = GFX_report_event_british_artillery
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.5.a
+		ai_chance = {
+			factor = 10
+		}
+		add_equipment_to_stockpile = {
+			type = artillery_equipment
+			amount = 400
+			producer = GER
+		}
+	}
+}
+
+country_event = { # GER sends nothing
+	id = mod_usc.6
+	title = mod_usc.6.t
+	desc = mod_usc.6.d
+	picture = GFX_report_event_tur_cakmak_general_staff
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.6.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = { # USC approaches FRA
+	id = mod_usc.7
+	title = mod_usc.7.t
+	desc = mod_usc.7.d
+	picture = GFX_report_event_german_advisors_remain
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.7.a # FRA sends USC Tanks
+		ai_chance = {
+			factor = 90
+		}
+		CUB = {
+			country_event = {
+				id = mod_usc.8
+				days = 15
+			}
+		}
+		add_timed_idea = {
+			idea = diverted_factory_production
+			days = 60
+		}
+	}
+	option = {
+		name = mod_usc.7.b # FRA won't send anything, sorry
+		ai_chance = {
+			factor = 10
+		}
+		CUB = {
+			country_event = {
+				id = mod_usc.9
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = { # FRA sends Tanks
+	id = mod_usc.8
+	title = mod_usc.8.t
+	desc = mod_usc.8.d
+	picture = GFX_report_event_french_tanks
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					has_tech = basic_medium_tank_chassis
+				}
+			}
+			hidden_effect = { set_technology = { basic_medium_tank_chassis = 1 } }
+		}
+	}
+	
+	
+	option = {
+		name = mod_usc.8.a
+		ai_chance = {
+			factor = 10
+		}
+		add_equipment_to_stockpile = { # Light
+			type = light_tank_chassis_1
+			amount = 350
+			producer = FRA
+		}
+		add_equipment_to_stockpile = { # Medium
+			type = medium_tank_chassis_1 
+			amount = 50
+			producer = FRA
+		}
+	}
+}
+
+country_event = { # FRA sends nothing
+	id = mod_usc.9
+	title = mod_usc.9.t
+	desc = mod_usc.9.d
+	picture = GFX_report_event_french_tanks
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.9.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = { # USC approaches SWE
+	id = mod_usc.10
+	title = mod_usc.10.t
+	desc = mod_usc.10.d
+	picture = GFX_report_event_german_advisors_remain
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.10.a # SWE sends USC Guns
+		ai_chance = {
+			factor = 90
+		}
+		country_event = {
+			id = mod_usc.11
+			days = 15
+		}
+		add_timed_idea = {
+			idea = diverted_factory_production
+			days = 60
+		}
+	}
+	option = {
+		name = mod_usc.10.b # SWE won't send anything, sorry
+		ai_chance = {
+			factor = 10
+		}
+		country_event = {
+			id = mod_usc.12
+			days = 2
+		}
+	}
+}
+
+country_event = { # SWE sends Guns
+	id = mod_usc.11
+	title = mod_usc.11.t
+	desc = mod_usc.11.d
+	picture = GFX_report_event_generic_rifles
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.11.a
+		ai_chance = {
+			factor = 10
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_1
+			amount = 4000
+			producer = SWE
+		}
+	}
+}
+
+country_event = { # SWE sends nothing
+	id = mod_usc.12
+	title = mod_usc.12.t
+	desc = mod_usc.12.d
+	picture = GFX_report_event_generic_rifles
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.12.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = { # USC approaches MEX
+	id = mod_usc.13
+	title = mod_usc.13.t
+	desc = mod_usc.13.d
+	picture = GFX_report_event_german_advisors_remain
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.13.a # MEX sends USC Planes
+		ai_chance = {
+			factor = 90
+		}
+		country_event = {
+			id = mod_usc.14
+			days = 15
+		}
+		add_timed_idea = {
+			idea = diverted_factory_production
+			days = 60
+		}
+	}
+	option = {
+		name = mod_usc.13.b # MEX won't send anything, sorry
+		ai_chance = {
+			factor = 10
+		}
+		country_event = {
+			id = mod_usc.15
+			days = 2
+		}
+	}
+}
+
+country_event = { # MEX sends Planes
+	id = mod_usc.14
+	title = mod_usc.14.t
+	desc = mod_usc.14.d
+	picture = GFX_report_event_usa_amelia_earhart_airplane
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.14.a
+		ai_chance = {
+			factor = 10
+		}
+		add_equipment_to_stockpile = {
+			type = fighter_equipment_1
+			amount = 75
+			producer = MEX
+		}
+	}
+}
+
+country_event = { # MEX sends nothing
+	id = mod_usc.15
+	title = mod_usc.15.t
+	desc = mod_usc.15.d
+	picture = GFX_report_event_usa_amelia_earhart_airplane
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.15.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = { # USC sends Paul Comly French to USA
+	id = mod_usc.16
+	title = mod_usc.16.t
+	desc = mod_usc.16.d
+	picture = GFX_report_event_SOV_atomic_program_caught
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.16.a
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = 20
+		hidden_effect = {
+			USA = {
+				country_event = {
+					id = mod_usc.17
+					days = 45
+					random_days = 15
+				}
+			}
+		}
+	}
+}
+
+country_event = { # Paul Comly French leaks secrets
+	id = mod_usc.17
+	title = mod_usc.17.t
+	desc = mod_usc.17.d
+	picture = GFX_report_event_usa_election_generic
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.17.a
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -20
+		add_ideas = secretary_spy
+	}
+}
+
+country_event = { # Bermuda Navy is insubordinate
+	id = mod_usc.18
+	title = mod_usc.18.t
+	desc = mod_usc.18.d
+	picture = GFX_report_event_merchant_ship_01
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.18.a
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -5
+	}
+}
+
+country_event = { # Japan and USC meet
+	id = mod_usc.19
+	title = mod_usc.19.t
+	desc = mod_usc.19.d
+	picture = GFX_report_event_japan_europe_pact
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.19.a
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = 15
+	}
+}
+
+country_event = { # Buffalo Soldier
+	id = mod_usc.20
+	title = mod_usc.20.t
+	desc = mod_usc.20.d
+	picture = GFX_report_event_saf_soldiers_2
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.20.a
+		ai_chance = {
+			factor = 10
+		}
+		division_template = {
+			name = "Buffalo Soldier"
+			is_locked = yes
+			priority = 2
+			template_counter = 26
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				infantry = { x = 0 y = 3 }
+				
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				infantry = { x = 1 y = 2 }
+				infantry = { x = 1 y = 3 }
+				
+				cavalry = { x = 2 y = 0 }
+				cavalry = { x = 2 y = 1 }
+				marine = { x = 2 y = 2 }
+			}
+			support = { 
+				recon = { x = 0 y = 0 }
+				artillery = { x = 0 y = 1 }
+			}
+		}
+		689 = {
+			create_unit = {
+				division = "name = \"Buffalo Soldier\" division_template = \"Buffalo Soldier\" start_experience_factor = 0.75" 
+				owner = CUB
+			}
+		}
+	}
+}
+
+country_event = { # Ask ENG for stuff?
+	id = mod_usc.21
+	title = mod_usc.21.t
+	desc = mod_usc.21.d
+	picture = GFX_report_event_usa_destroyers
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.21.a #Yes use
+		ai_chance = {
+			factor = 30
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.05
+		}
+		add_tech_bonus = {
+			bonus = 1
+			uses = 1
+			category = dd_tech
+		}
+		add_ideas = british_naval_support_caribbean
+	}
+	option = {
+		name = mod_usc.21.b #No don't use
+		ai_chance = {
+			factor = 10
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.1
+		}
+	}
+}
+
+country_event = { # Ask CAN for stuff?
+	id = mod_usc.22
+	title = mod_usc.22.t
+	desc = mod_usc.22.d
+	picture = GFX_report_event_SOV_purge_navy
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.22.a #Yes use
+		ai_chance = {
+			factor = 30
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.05
+		}
+		add_tech_bonus = {
+			bonus = 0.5
+			uses = 2
+			category = excavation_tech
+		}
+		add_ideas = canadian_support_caribbean
+	}
+	option = {
+		name = mod_usc.22.b #No don't use
+		ai_chance = {
+			factor = 10
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.1
+		}
+	}
+}
+
+country_event = { # Bomb Pattons Car
+	id = mod_usc.23
+	title = mod_usc.23.t
+	desc = mod_usc.23.d
+	picture = GFX_report_event_mussolini_hotel
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.23.a 
+		ai_chance = {
+			factor = 10
+		}
+		random_list = {
+			95 = {
+				
+			}
+			5 = {
+				USA = {
+					add_timed_idea = {
+						idea = patton_wounded_in_bomb
+						days = 120
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { # Super Heavy Pirate Battleship 
+	id = mod_usc.24
+	title = mod_usc.24.t
+	desc = mod_usc.24.d
+	picture = GFX_report_event_usa_heavy_cruiser
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.24.a # Blackbeard
+		ai_chance = {
+			factor = 10
+		}
+		create_equipment_variant = {
+			name = "Blackbeard Class"								
+			type = ship_hull_super_heavy_1
+			modules = {
+				fixed_ship_battery_slot = ship_super_heavy_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = heavy_ship_engine_2
+				fixed_ship_secondaries_slot = ship_secondaries_2
+				fixed_ship_armor_slot = ship_armor_shbb
+				front_1_custom_slot = ship_anti_air_1
+				front_2_custom_slot = ship_super_heavy_battery_1
+				mid_1_custom_slot = ship_secondaries_2
+				mid_2_custom_slot = ship_secondaries_2
+				mid_3_custom_slot = ship_secondaries_2
+				rear_1_custom_slot = ship_super_heavy_battery_1
+				rear_2_custom_slot = ship_airplane_launcher_1
+			}
+		}
+		create_ship = {
+			type = ship_hull_super_heavy_1
+			equipment_variant = "Blackbeard Class"
+			creator = CUB
+			name = "USS Blackbeard"
+		}
+	}
+	option = {
+		name = mod_usc.24.b # Henry Every
+		ai_chance = {
+			factor = 10
+		}
+		create_equipment_variant = {
+			name = "Henry Every Class"								
+			type = ship_hull_super_heavy_1
+			modules = {
+				fixed_ship_battery_slot = ship_super_heavy_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = heavy_ship_engine_2
+				fixed_ship_secondaries_slot = ship_secondaries_2
+				fixed_ship_armor_slot = ship_armor_shbb
+				front_1_custom_slot = ship_anti_air_1
+				front_2_custom_slot = ship_super_heavy_battery_1
+				mid_1_custom_slot = ship_secondaries_2
+				mid_2_custom_slot = ship_secondaries_2
+				mid_3_custom_slot = ship_secondaries_2
+				rear_1_custom_slot = ship_super_heavy_battery_1
+				rear_2_custom_slot = ship_airplane_launcher_1
+			}
+		}
+		create_ship = {
+			type = ship_hull_super_heavy_1
+			equipment_variant = "Henry Every Class"
+			creator = CUB
+			name = "USS Henry Every"
+		}
+	}
+	option = {
+		name = mod_usc.24.c # Samuel Bellamy
+		ai_chance = {
+			factor = 40
+		}
+		create_equipment_variant = {
+			name = "Samuel Bellamy Class"								
+			type = ship_hull_super_heavy_1
+			modules = {
+				fixed_ship_battery_slot = ship_super_heavy_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = heavy_ship_engine_2
+				fixed_ship_secondaries_slot = ship_secondaries_2
+				fixed_ship_armor_slot = ship_armor_shbb
+				front_1_custom_slot = ship_anti_air_1
+				front_2_custom_slot = ship_super_heavy_battery_1
+				mid_1_custom_slot = ship_secondaries_2
+				mid_2_custom_slot = ship_secondaries_2
+				mid_3_custom_slot = ship_secondaries_2
+				rear_1_custom_slot = ship_super_heavy_battery_1
+				rear_2_custom_slot = ship_airplane_launcher_1
+			}
+		}
+		create_ship = {
+			type = ship_hull_super_heavy_1
+			equipment_variant = "Samuel Bellamy Class"
+			creator = CUB
+			name = "USS Samuel Bellamy"
+		}
+	}
+	option = {
+		name = mod_usc.24.e # Captain Kidd
+		ai_chance = {
+			factor = 10
+		}
+		create_equipment_variant = {
+			name = "Captain Kidd Class"								
+			type = ship_hull_super_heavy_1
+			modules = {
+				fixed_ship_battery_slot = ship_super_heavy_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = heavy_ship_engine_2
+				fixed_ship_secondaries_slot = ship_secondaries_2
+				fixed_ship_armor_slot = ship_armor_shbb
+				front_1_custom_slot = ship_anti_air_1
+				front_2_custom_slot = ship_super_heavy_battery_1
+				mid_1_custom_slot = ship_secondaries_2
+				mid_2_custom_slot = ship_secondaries_2
+				mid_3_custom_slot = ship_secondaries_2
+				rear_1_custom_slot = ship_super_heavy_battery_1
+				rear_2_custom_slot = ship_airplane_launcher_1
+			}
+		}
+		create_ship = {
+			type = ship_hull_super_heavy_1
+			equipment_variant = "Captain Kidd Class"
+			creator = CUB
+			name = "USS Captain Kidd"
+		}
+	}
+	option = {
+		name = mod_usc.24.f # Zheng Yi Sao
+		ai_chance = {
+			factor = 10
+		}
+		create_equipment_variant = {
+			name = "Zheng Yi Sao Class"								
+			type = ship_hull_super_heavy_1
+			modules = {
+				fixed_ship_battery_slot = ship_super_heavy_battery_1
+				fixed_ship_anti_air_slot = ship_anti_air_2
+				fixed_ship_fire_control_system_slot = ship_fire_control_system_1
+				fixed_ship_radar_slot = empty
+				fixed_ship_engine_slot = heavy_ship_engine_2
+				fixed_ship_secondaries_slot = ship_secondaries_2
+				fixed_ship_armor_slot = ship_armor_shbb
+				front_1_custom_slot = ship_anti_air_1
+				front_2_custom_slot = ship_super_heavy_battery_1
+				mid_1_custom_slot = ship_secondaries_2
+				mid_2_custom_slot = ship_secondaries_2
+				mid_3_custom_slot = ship_secondaries_2
+				rear_1_custom_slot = ship_super_heavy_battery_1
+				rear_2_custom_slot = ship_airplane_launcher_1
+			}
+		}
+		create_ship = {
+			type = ship_hull_super_heavy_1
+			equipment_variant = "Zheng Yi Sao Class"
+			creator = CUB
+			name = "USS Zheng Yi Sao"
+		}
+	}
+}
+
+country_event = { # USC organized strikes
+	id = mod_usc.25
+	title = mod_usc.25.t
+	desc = mod_usc.25.d
+	picture = GFX_report_event_usa_election_generic
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.25.a
+		ai_chance = {
+			factor = 10
+		}
+		add_popularity = {
+			ideology = communism 
+			popularity = -0.05
+		}
+	}
+}
+
+country_event = { # USC lands in TX
+	id = mod_usc.26
+	title = mod_usc.26.t
+	desc = mod_usc.26.d
+	picture = GFX_report_event_usa_election_generic
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.26.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+	
+}
+
+country_event = { # USC lands in MS
+	id = mod_usc.27
+	title = mod_usc.27.t
+	desc = mod_usc.27.d
+	picture = GFX_report_event_usa_election_generic
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.27.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+	
+}
+
+country_event = { # USC lands in SC
+	id = mod_usc.28
+	title = mod_usc.28.t
+	desc = mod_usc.28.d
+	picture = GFX_report_event_usa_election_generic
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.28.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = { # Second '48ers rise up Trigger
+	id = mod_usc.29
+	
+	fire_only_once = yes
+	hidden = yes
+	
+	trigger = {
+		tag = CUB
+		has_war_with = USA
+		USA = {
+			any_core_state = {
+				is_controlled_by = CUB
+			}
+		}
+	}
+	
+	immediate = {
+		country_event = { id = mod_usc.30 days = 1 }
+	}
+	
+	option = {
+		name = mod_usc.1.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = { # Second '48ers rise up
+	id = mod_usc.30
+	title = mod_usc.30.t
+	desc = mod_usc.30.d
+	picture = GFX_report_event_spr_spanish_civil_war
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.30.a
+		ai_chance = {
+			factor = 10
+		}
+		division_template = {
+			name = "Second Forty-Eighters"
+			division_names_group = CUB_INF_01
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+			}
+		}
+		394 = {
+			create_unit = {
+				division = "name = \"Second Forty-Eighters\" division_template = \"Second Forty-Eighters\" start_equipment_factor = 0.75"
+				owner = ROOT
+				prioritize_location = 12357
+				allow_spawning_on_enemy_provs = yes
+			}
+			create_unit = {
+				division = "name = \"Second Forty-Eighters\" division_template = \"Second Forty-Eighters\" start_equipment_factor = 0.75"
+				owner = ROOT
+				prioritize_location = 12357
+				allow_spawning_on_enemy_provs = yes
+			}
+			create_unit = {
+				division = "name = \"Second Forty-Eighters\" division_template = \"Second Forty-Eighters\" start_equipment_factor = 0.75"
+				owner = ROOT
+				prioritize_location = 12357
+				allow_spawning_on_enemy_provs = yes
+			}
+			create_unit = {
+				division = "name = \"Second Forty-Eighters\" division_template = \"Second Forty-Eighters\" start_equipment_factor = 0.75"
+				owner = ROOT
+				prioritize_location = 12357
+				allow_spawning_on_enemy_provs = yes
+			}
+			create_unit = {
+				division = "name = \"Second Forty-Eighters\" division_template = \"Second Forty-Eighters\" start_equipment_factor = 0.75"
+				owner = ROOT
+				prioritize_location = 12357
+				allow_spawning_on_enemy_provs = yes
+			}
+		}
+	}
+}
+
+country_event = { # Second '48ers rise up - USA info
+	id = mod_usc.31
+	title = mod_usc.31.t
+	desc = mod_usc.31.d
+	picture = GFX_report_event_spr_spanish_civil_war
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.31.a
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -10
+	}
+}
+
+country_event = { # McCain leaves for USA
+	id = mod_usc.32
+	title = mod_usc.32.t
+	desc = mod_usc.32.d
+	picture = GFX_report_event_spr_spanish_civil_war
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.32.a
+		ai_chance = {
+			factor = 10
+		}
+		navy_experience = -5
+		set_nationality = {
+			target_country = USA
+			character = CUB_john_sidney_mccain_jr
+		}
+	}
+}
+
+country_event = { # Air Prod Decision
+	id = mod_usc.33
+	title = mod_usc.33.t
+	desc = mod_usc.33.d
+	picture = GFX_report_event_airplane_factory
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.33.a # Fighter
+		ai_chance = {
+			factor = 10
+		}
+		add_tech_bonus = {
+			bonus = 1
+			uses = 1
+			category = light_fighter
+			category = cat_heavy_fighter
+		}
+		add_ideas = usc_fighter_path
+	}
+	option = {
+		name = mod_usc.33.b # CAS/Naval Bomber
+		ai_chance = {
+			factor = 10
+		}
+		add_tech_bonus = {
+			bonus = 1
+			uses = 1
+			category = cas_bomber
+			category = naval_bomber
+		}
+		add_ideas = usc_cas_path
+	}
+	option = {
+		name = mod_usc.33.c # Bombers
+		ai_chance = {
+			factor = 10
+		}
+		add_tech_bonus = {
+			bonus = 1
+			uses = 1
+			category = tactical_bomber
+			category = cat_strategic_bomber
+		}
+		add_ideas = usc_bomber_path
+	}
+}
+
+country_event = { # Marines have won
+	id = mod_usc.34
+	
+	fire_only_once = yes
+	hidden = yes
+	
+	trigger = {
+		tag = CUB
+		has_war_with = USA
+		USA = {
+			surrender_progress > 0.91 
+		}
+	}
+	
+	immediate = {
+		country_event = { id = mod_usc.35 hours = 4 }
+		white_peace = {
+			tag = USA
+			message = "American Democracy isn't buried yet!"
+		}
+		USA = {
+			transfer_navy = {
+				target = CUB
+			}
+		}
+		annex_country = {
+			target = USA
+			transfer_troops = yes
+		}
+	}
+	
+	option = {
+		name = mod_usc.34.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = { # Marines have won
+	id = mod_usc.35
+	title = mod_usc.35.t
+	desc = mod_usc.35.d
+	picture = GFX_report_event_generic_conference
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.35.a
+		ai_chance = {
+			factor = 10
+		}
+		JAP = {
+			transfer_state = 642
+			transfer_state = 638
+			transfer_state = 646
+			transfer_state = 632
+			transfer_state = 631
+			transfer_state = 630
+			transfer_state = 650
+			transfer_state = 629
+		}
+		629 = {
+			add_dynamic_modifier = {
+				modifier = autonomous_state
+			}
+		}
+		361 = {
+			add_core_of = CUB
+		}
+		set_capital = {
+			state = 361
+			remember_old_capital = no
+		}
+	}
+}
+
+country_event = { # Butler has promised Caribbean
+	id = mod_usc.36
+	title = mod_usc.36.t
+	desc = mod_usc.36.d
+	picture = GFX_report_event_generic_conference
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.36.a
+		ai_chance = {
+			factor = 10
+		}
+		
+	}
+}
+
+country_event = { # Cuba stays with America
+	id = mod_usc.37
+	title = mod_usc.37.t
+	desc = mod_usc.37.d
+	picture = GFX_report_event_imperial_conference
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.37.a
+		ai_chance = {
+			factor = 10
+		}
+		315 = {
+			add_core_of = CUB
+		}
+	}
+}
+
+country_event = { # Butler retires in protest
+	id = mod_usc.38
+	title = mod_usc.38.t
+	desc = mod_usc.38.d
+	picture = GFX_report_event_saf_civil_war
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.38.a
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = -0.1
+	}
+}
+
+country_event = { # American Natives demand expanded reservations
+	id = mod_usc.39
+	title = mod_usc.39.t
+	desc = mod_usc.39.d
+	picture = GFX_report_event_usa_election_generic
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.39.a # Keep promise
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -75
+		377 = {
+			add_dynamic_modifier = { modifier = USA_indian_reservation }
+		}
+		376 = {
+			add_dynamic_modifier = { modifier = USA_indian_reservation }
+		}
+		374 = {
+			add_dynamic_modifier = { modifier = USA_indian_reservation }
+		}
+		390 = {
+			add_dynamic_modifier = { modifier = USA_indian_reservation }
+		}
+		388 = {
+			add_dynamic_modifier = { modifier = USA_indian_reservation }
+		}
+		739 = {
+			add_dynamic_modifier = { modifier = USA_indian_reservation }
+		}
+	}
+	option = {
+		name = mod_usc.39.b Break promise
+		ai_chance = {
+			factor = 10
+			modifier = {
+				has_country_leader = {
+					character = CUB_smedley_butler
+					ruling_only = yes
+				}
+				factor = 0
+			}
+		}
+		add_political_power = 25
+		hidden_effect = {
+			country_event = { 
+				id = mod_usc.40
+				days = 20
+				random_days = 30
+			}
+		}
+	}
+}
+
+country_event = { # Fort Laramie Protest
+	id = mod_usc.40
+	title = mod_usc.40.t
+	desc = mod_usc.40.d
+	picture = GFX_report_event_gathering_protest
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.40.a
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = -0.02
+		add_political_power = -20
+		hidden_effect = {
+			country_event = { 
+				id = mod_usc.41
+				days = 20
+				random_days = 30
+			}
+		}
+	}
+}
+
+country_event = { # Native Finance Campaign
+	id = mod_usc.41
+	title = mod_usc.41.t
+	desc = mod_usc.41.d
+	picture = GFX_report_event_american_hunger_march
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.41.a
+		ai_chance = {
+			factor = 10
+		}
+		add_war_support = -0.03
+		add_political_power = -12
+		hidden_effect = {
+			country_event = { 
+				id = mod_usc.42
+				days = 20
+				random_days = 30
+			}
+		}
+	}
+}
+
+country_event = { # Native Raid Weapons Depot
+	id = mod_usc.42
+	title = mod_usc.42.t
+	desc = mod_usc.42.d
+	picture = GFX_report_event_tur_kurdish_guerillas
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = mod_usc.42.a
+		ai_chance = {
+			factor = 10
+		}
+		add_war_support = -0.02
+		add_political_power = -40
+		set_equipment_fraction = 0.99
+		hidden_effect = {
+			country_event = { 
+				id = mod_usc.43
+				days = 5
+				random_days = 3
+			}
+		}
+	}
+}
+
+
+
+
+

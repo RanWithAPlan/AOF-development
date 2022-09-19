@@ -1,0 +1,1735 @@
+CUB_march_in_dixie = {
+
+	CUB_march_in_dixie_florida = {
+	
+		icon = GFX_decision_infiltrate_state
+		
+		activation = {
+			has_war_with = USA
+			has_global_flag = USA_CaribbeanWar_Started
+		}
+		available = {
+			has_war_with = USA
+			controls_state = 366
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 366 }
+		}
+		cancel_trigger = {
+			has_war = no
+		}
+		is_good = yes
+		days_mission_timeout = 50
+		complete_effect = {
+			366 = { add_compliance = 50 }
+			create_railway_gun = {
+				equipment = railway_gun_equipment_1
+				name = "Stripped 8-inch Mk. VI Railway Gun 'Fort Taylor'"
+				location = 1843
+			}
+		}
+		timeout_effect = {
+			add_command_power = -5
+		}
+	}
+	
+	CUB_march_in_dixie_georgia = {
+	
+		icon = GFX_decision_infiltrate_state
+		
+		activation = {
+			has_war_with = USA
+			has_global_flag = USA_CaribbeanWar_Started
+		}
+		available = {
+			has_war_with = USA
+			controls_state = 365
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 365 }
+		}
+		cancel_trigger = {
+			has_war = no
+		}
+		is_good = yes
+		days_mission_timeout = 50
+		complete_effect = {
+			365 = { add_compliance = 50 }
+			create_railway_gun = {
+				equipment = railway_gun_equipment_1
+				name = "Stripped 8-inch Mk. VI Railway Gun 'Fort Pulaski'"
+				location = 11975
+			}
+		}
+		timeout_effect = {
+			add_command_power = -5
+		}
+	}
+	
+	CUB_march_in_dixie_alabama = {
+	
+		icon = GFX_decision_infiltrate_state
+		
+		activation = {
+			has_war_with = USA
+			has_global_flag = USA_CaribbeanWar_Started
+		}
+		available = {
+			has_war_with = USA
+			controls_state = 367
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 367 }
+		}
+		cancel_trigger = {
+			 has_war = no
+		}
+		is_good = yes
+		days_mission_timeout = 50
+		complete_effect = {
+			367 = { add_compliance = 50 }
+			create_railway_gun = {
+				equipment = railway_gun_equipment_1
+				name = "Stripped 8-inch Mk. VI Railway Gun 'Fort Morgan'"
+				location = 11975
+			}
+		}
+		timeout_effect = {
+			add_command_power = -5
+		}
+	}
+	
+	CUB_march_in_dixie_texas = {
+	
+		icon = GFX_decision_infiltrate_state
+		
+		activation = {
+			has_war_with = USA
+			has_global_flag = USA_CaribbeanWar_Started
+		}
+		available = {
+			has_war_with = USA
+			controls_state = 375
+		}
+		cancel_trigger = {
+			 has_war = no
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 375 }
+		}
+		is_good = yes
+		days_mission_timeout = 50
+		complete_effect = {
+			375 = { add_compliance = 50 }
+			create_railway_gun = {
+				equipment = railway_gun_equipment_1
+				name = "Stripped 8-inch Mk. VI Railway Gun 'Fort Crockett'"
+				location = 10337
+			}
+		}
+		timeout_effect = {
+			add_command_power = -5
+		}
+	}
+	
+	CUB_march_in_dixie_south_carolina = {
+	
+		icon = GFX_decision_infiltrate_state
+		
+		activation = {
+			has_war_with = USA
+			has_global_flag = USA_CaribbeanWar_Started
+		}
+		available = {
+			has_war_with = USA
+			controls_state = 364
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 364 }
+		}
+		cancel_trigger = {
+			 has_war = no
+		}
+		is_good = yes
+		days_mission_timeout = 50
+		complete_effect = {
+			364 = { add_compliance = 50 }
+		}
+		timeout_effect = {
+			add_command_power = -5
+		}
+	}
+	
+	CUB_march_in_dixie_mississippi = {
+	
+		icon = GFX_decision_infiltrate_state
+		
+		activation = {
+			has_war_with = USA
+			has_global_flag = USA_CaribbeanWar_Started
+		}
+		available = {
+			has_war_with = USA
+			controls_state = 370
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 370 }
+		}
+		cancel_trigger = {
+			 has_war = no
+		}
+		is_good = yes
+		days_mission_timeout = 50
+		complete_effect = {
+			370 = { add_compliance = 50 }
+		}
+		timeout_effect = {
+			add_command_power = -5
+		}
+	}
+	
+	CUB_march_in_dixie_louisiana = {
+	
+		icon = GFX_decision_infiltrate_state
+		
+		activation = {
+			has_war_with = USA
+			has_global_flag = USA_CaribbeanWar_Started
+		}
+		available = {
+			has_war_with = USA
+			controls_state = 371
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 371 }
+		}
+		cancel_trigger = {
+			 has_war = no
+		}
+		is_good = yes
+		days_mission_timeout = 50
+		complete_effect = {
+			371 = { add_compliance = 50 }
+		}
+		timeout_effect = {
+			add_command_power = -5
+		}
+	}
+	
+	CUB_march_in_dixie_north_carolina = {
+	
+		icon = GFX_decision_infiltrate_state
+		
+		activation = {
+			has_war_with = USA
+			has_global_flag = USA_CaribbeanWar_Started
+		}
+		available = {
+			has_war_with = USA
+			controls_state = 363
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 363 }
+		}
+		cancel_trigger = {
+			 has_war = no
+		}
+		is_good = yes
+		days_mission_timeout = 50
+		complete_effect = {
+			363 = { add_compliance = 50 }
+		}
+		timeout_effect = {
+			add_command_power = -5
+		}
+	}
+	
+	CUB_march_in_dixie_oklahoma = {
+	
+		icon = GFX_decision_infiltrate_state
+		
+		activation = {
+			has_war_with = USA
+			has_global_flag = USA_CaribbeanWar_Started
+		}
+		available = {
+			has_war_with = USA
+			controls_state = 374
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 374 }
+		}
+		cancel_trigger = {
+			 has_war = no
+		}
+		is_good = yes
+		days_mission_timeout = 50
+		complete_effect = {
+			374 = { add_compliance = 50 }
+		}
+		timeout_effect = {
+			add_command_power = -5
+		}
+	}
+	
+	CUB_march_in_dixie_arkansas = {
+	
+		icon = GFX_decision_infiltrate_state
+		
+		activation = {
+			has_war_with = USA
+			has_global_flag = USA_CaribbeanWar_Started
+		}
+		available = {
+			has_war_with = USA
+			controls_state = 372
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 372 }
+		}
+		cancel_trigger = {
+			 has_war = no
+		}
+		is_good = yes
+		days_mission_timeout = 50
+		complete_effect = {
+			372 = { add_compliance = 50 }
+		}
+		timeout_effect = {
+			add_command_power = -5
+		}
+	}
+	
+	CUB_march_in_dixie_tennessee = {
+	
+		icon = GFX_decision_infiltrate_state
+		
+		activation = {
+			has_war_with = USA
+			has_global_flag = USA_CaribbeanWar_Started
+		}
+		available = {
+			has_war_with = USA
+			controls_state = 368
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 368 }
+		}
+		cancel_trigger = {
+			 has_war = no
+		}
+		is_good = yes
+		days_mission_timeout = 50
+		complete_effect = {
+			368 = { add_compliance = 50 }
+		}
+		timeout_effect = {
+			add_command_power = -5
+		}
+	}
+	
+	CUB_march_in_dixie_virginia = {
+	
+		icon = GFX_decision_infiltrate_state
+		
+		activation = {
+			has_war_with = USA
+			has_global_flag = USA_CaribbeanWar_Started
+		}
+		available = {
+			has_war_with = USA
+			controls_state = 362
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 362 }
+		}
+		cancel_trigger = {
+			 has_war = no
+		}
+		is_good = yes
+		days_mission_timeout = 50
+		complete_effect = {
+			362 = { add_compliance = 50 }
+		}
+		timeout_effect = {
+			add_command_power = -5
+		}
+	}
+	
+	CUB_march_in_dixie_west_virginia = {
+	
+		icon = GFX_decision_infiltrate_state
+		
+		activation = {
+			has_war_with = USA
+			has_global_flag = USA_CaribbeanWar_Started
+		}
+		available = {
+			has_war_with = USA
+			controls_state = 816
+		}
+		highlight_states = {
+			highlight_state_targets = { state = 816 }
+		}
+		cancel_trigger = {
+			 has_war = no
+		}
+		is_good = yes
+		days_mission_timeout = 50
+		complete_effect = {
+			816 = { add_compliance = 50 }
+		}
+		timeout_effect = {
+			add_command_power = -5
+		}
+	}
+}
+
+CUB_free_the_union = {
+
+	CUB_free_the_union_new_england = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = CUB
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 357
+			}
+		}
+		
+		available = {
+			has_war_with = USA
+			controls_state = 357
+		}
+		
+		visible = {
+			has_global_flag = USA_CaribbeanWar_Started
+			has_war_with = USA
+		}
+		
+		complete_effect = {
+			357 = { add_compliance = 50 }
+			create_railway_gun = {
+				equipment = railway_gun_equipment_1
+				name = "Stripped 8-inch Mk. VI Railway Gun 'Fort Independence'"
+				location = 6732
+			}
+		}
+	}
+	
+	CUB_free_the_union_maryland = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = CUB
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 361
+			}
+		}
+		
+		available = {
+			has_war_with = USA
+			controls_state = 361
+		}
+		
+		visible = {
+			has_global_flag = USA_CaribbeanWar_Started
+			has_war_with = USA
+		}
+		
+		complete_effect = {
+			361 = { add_compliance = 50 }
+			USA = {
+				add_ideas = usc_white_house_fallen
+			}
+		}
+	}
+	
+	CUB_free_the_union_pennsylvania = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = CUB
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 360
+			}
+		}
+		
+		available = {
+			has_war_with = USA
+			controls_state = 360
+		}
+		
+		visible = {
+			has_global_flag = USA_CaribbeanWar_Started
+			has_war_with = USA
+		}
+		
+		complete_effect = {
+			360 = { add_compliance = 50 }
+		}
+	}
+	
+	CUB_free_the_union_new_jersey = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = CUB
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 359
+			}
+		}
+		
+		available = {
+			has_war_with = USA
+			controls_state = 359
+		}
+		
+		visible = {
+			has_global_flag = USA_CaribbeanWar_Started
+			has_war_with = USA
+		}
+		
+		complete_effect = {
+			359 = { add_compliance = 50 }
+		}
+	}
+	
+	CUB_free_the_union_new_york = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = CUB
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 358
+			}
+		}
+		
+		available = {
+			has_war_with = USA
+			controls_state = 358
+		}
+		
+		visible = {
+			has_global_flag = USA_CaribbeanWar_Started
+			has_war_with = USA
+		}
+		
+		complete_effect = {
+			358 = { add_compliance = 50 }
+		}
+	}
+	
+	CUB_free_the_union_ohio = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = CUB
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 261
+			}
+		}
+		
+		available = {
+			has_war_with = USA
+			controls_state = 261
+		}
+		
+		visible = {
+			has_global_flag = USA_CaribbeanWar_Started
+			has_war_with = USA
+		}
+		
+		complete_effect = {
+			261 = { add_compliance = 50 }
+		}
+	}
+	
+	CUB_free_the_union_michigan = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = CUB
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 393
+			}
+		}
+		
+		available = {
+			has_war_with = USA
+			controls_state = 393
+		}
+		
+		visible = {
+			has_global_flag = USA_CaribbeanWar_Started
+			has_war_with = USA
+		}
+		
+		complete_effect = {
+			393 = { add_compliance = 50 }
+		}
+	}
+	
+	CUB_free_the_union_indiana = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = CUB
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 396
+			}
+		}
+		
+		available = {
+			has_war_with = USA
+			controls_state = 396
+		}
+		
+		visible = {
+			has_global_flag = USA_CaribbeanWar_Started
+			has_war_with = USA
+		}
+		
+		complete_effect = {
+			396 = { add_compliance = 50 }
+		}
+	}
+	
+	CUB_free_the_union_illinois = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = CUB
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 395
+			}
+		}
+		
+		available = {
+			has_war_with = USA
+			controls_state = 395
+		}
+		
+		visible = {
+			has_global_flag = USA_CaribbeanWar_Started
+			has_war_with = USA
+		}
+		
+		complete_effect = {
+			395 = { add_compliance = 50 }
+		}
+	}
+	
+	CUB_free_the_union_wisconsin = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = CUB
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 394
+			}
+		}
+		
+		available = {
+			has_war_with = USA
+			controls_state = 394
+		}
+		
+		visible = {
+			has_global_flag = USA_CaribbeanWar_Started
+			has_war_with = USA
+		}
+		
+		complete_effect = {
+			394 = { add_compliance = 50 }
+		}
+	}
+	
+	CUB_free_the_union_kentucky = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = CUB
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 369
+			}
+		}
+		
+		available = {
+			has_war_with = USA
+			controls_state = 369
+		}
+		
+		visible = {
+			has_global_flag = USA_CaribbeanWar_Started
+			has_war_with = USA
+		}
+		
+		complete_effect = {
+			369 = { add_compliance = 50 }
+		}
+	}
+	
+	CUB_free_the_union_missouri = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = CUB
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 373
+			}
+		}
+		
+		available = {
+			has_war_with = USA
+			controls_state = 373
+		}
+		
+		visible = {
+			has_global_flag = USA_CaribbeanWar_Started
+			has_war_with = USA
+		}
+		
+		complete_effect = {
+			373 = { add_compliance = 50 }
+		}
+	}
+	
+	CUB_free_the_union_iowa = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = CUB
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 392
+			}
+		}
+		
+		available = {
+			has_war_with = USA
+			controls_state = 392
+		}
+		
+		visible = {
+			has_global_flag = USA_CaribbeanWar_Started
+			has_war_with = USA
+		}
+		
+		complete_effect = {
+			392 = { add_compliance = 50 }
+		}
+	}
+	
+	CUB_free_the_union_minnesota = {
+	
+		icon = GFX_decision_generic_nationalism
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = CUB
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 391
+			}
+		}
+		
+		available = {
+			has_war_with = USA
+			controls_state = 391
+		}
+		
+		visible = {
+			has_global_flag = USA_CaribbeanWar_Started
+			has_war_with = USA
+		}
+		
+		complete_effect = {
+			391 = { add_compliance = 50 }
+		}
+	}
+
+
+}
+
+CUB_prepared_landings = {
+
+	CUB_texas_landings_choice = {
+	
+		icon = GFX_decision_generic_intelligence_operation
+		
+		ai_will_do = {
+			base = 2
+		}
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = CUB
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 375
+			}
+		}
+		
+		available = {
+			has_completed_focus = CUB_allegance_to_republic
+			NOT = {
+				AND = {
+					has_country_flag = CUB_landing_spot_1
+					has_country_flag = CUB_landing_spot_2
+				}
+			}
+			NOT = { has_country_flag = CUB_landing_spot_ongoing_planning }
+		}
+		
+		visible = {
+			has_completed_focus = CUB_allegance_to_republic
+		}
+		
+		complete_effect = {
+			add_command_power = -5
+			set_country_flag = CUB_landing_spot_ongoing_planning
+			hidden_effect = {
+				set_country_flag = CUB_landing_spot_texas
+			}
+		}
+		
+		days_remove = 10
+		remove_effect = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = CUB_landing_spot_1 }
+				}
+				set_country_flag = CUB_landing_spot_1
+			}
+			else = {
+				set_country_flag = CUB_landing_spot_2
+			}
+			add_command_power = 15
+			clr_country_flag = CUB_landing_spot_ongoing_planning
+		}
+	}
+	
+	CUB_texas_landings_execution = {
+	
+		icon = GFX_decision_generic_intelligence_operation
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = CUB
+			has_country_flag = CUB_landing_spot_texas
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 375
+			}
+		}
+		
+		available = {
+			has_completed_focus = CUB_allegance_to_republic
+			has_country_flag = CUB_landing_spot_texas
+			has_war_with = USA
+		}
+		
+		visible = {
+			has_country_flag = CUB_landing_spot_texas
+		}
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		complete_effect = {
+			USA = {
+				country_event = {
+					id = mod_usc.26
+					days = 2
+				}
+			}
+		}
+		
+		days_remove = 10
+		remove_effect = {
+			hidden_effect = {
+				division_template = {
+					name = "Marine Division (TX)" 
+
+					division_names_group = CUB_MAR_01
+
+					regiments = {
+						marine = { x = 0 y = 0 }
+						marine = { x = 0 y = 1 }
+						marine = { x = 0 y = 2 }
+						
+						marine = { x = 1 y = 0 }
+						marine = { x = 1 y = 1 }
+						marine = { x = 1 y = 2 }
+						
+						marine = { x = 2 y = 0 }
+						artillery_brigade = { x = 2 y = 1 }
+						artillery_brigade = { x = 2 y = 2 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }   
+					}
+					priority = 2
+				}
+				division_template = {
+					name = "Infantry Division (TX)"
+					division_names_group = CUB_INF_01
+
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+					}
+					support = {
+						artillery = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }  
+					}
+				}
+			}
+			375 = {
+				create_unit = {
+					division = "name = \"I. Marine Division (TX)\" division_template = \"Marine Division (TX)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 6785
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"II. Marine Division (TX)\" division_template = \"Marine Division (TX)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 6785
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"III. Marine Division (TX)\" division_template = \"Marine Division (TX)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 10337
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"IV. Marine Division (TX)\" division_template = \"Marine Division (TX)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 10337
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"I. Infantry Division (TX)\" division_template = \"Infantry Division (TX)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 12369
+					allow_spawning_on_enemy_provs = yes
+					}
+				create_unit = {
+					division = "name = \"II. Infantry Division (TX)\" division_template = \"Infantry Division (TX)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 2042
+					allow_spawning_on_enemy_provs = yes
+					}
+				create_unit = {
+					division = "name = \"III. Infantry Division (TX)\" division_template = \"Infantry Division (TX)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 12410
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"IV. Infantry Division (TX)\" division_template = \"Infantry Division (TX)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 1500
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+			357 = {
+				teleport_armies = {
+					limit = { tag = USA }
+					to_state = 374
+				}
+			}
+		}
+	}
+	
+	CUB_mississippi_landings_choice = {
+	
+		icon = GFX_decision_generic_intelligence_operation
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			base = 4
+		}
+		
+		allowed = {
+			tag = CUB
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 370
+			}
+		}
+		
+		available = {
+			has_completed_focus = CUB_allegance_to_republic
+			NOT = {
+				AND = {
+					has_country_flag = CUB_landing_spot_1
+					has_country_flag = CUB_landing_spot_2
+				}
+			}
+			NOT = { has_country_flag = CUB_landing_spot_ongoing_planning }
+		}
+		
+		visible = {
+			has_completed_focus = CUB_allegance_to_republic
+		}
+		
+		complete_effect = {
+			add_command_power = -5
+			hidden_effect = {
+				set_country_flag = CUB_landing_spot_mississippi
+			}
+			set_country_flag = CUB_landing_spot_ongoing_planning
+		}
+		
+		days_remove = 10
+		remove_effect = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = CUB_landing_spot_1 }
+				}
+				set_country_flag = CUB_landing_spot_1
+			}
+			else = {
+				set_country_flag = CUB_landing_spot_2
+			}
+			add_command_power = 15
+			clr_country_flag = CUB_landing_spot_ongoing_planning
+		}
+	}
+	
+	CUB_mississippi_landings_execution = {
+	
+		icon = GFX_decision_generic_intelligence_operation
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = CUB
+			has_country_flag = CUB_landing_spot_mississippi
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 370
+			}
+		}
+		
+		available = {
+			has_completed_focus = CUB_allegance_to_republic
+			has_country_flag = CUB_landing_spot_mississippi
+			has_war_with = USA
+		}
+		
+		visible = {
+			has_country_flag = CUB_landing_spot_mississippi
+		}
+		
+		complete_effect = {
+			USA = {
+				country_event = {
+					id = mod_usc.27
+					days = 2
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		days_remove = 10
+		remove_effect = {
+			hidden_effect = {
+				division_template = {
+					name = "Marine Division (MS)" 
+
+					division_names_group = CUB_MAR_01
+
+					regiments = {
+						marine = { x = 0 y = 0 }
+						marine = { x = 0 y = 1 }
+						marine = { x = 0 y = 2 }
+						
+						marine = { x = 1 y = 0 }
+						marine = { x = 1 y = 1 }
+						marine = { x = 1 y = 2 }
+						
+						marine = { x = 2 y = 0 }
+						artillery_brigade = { x = 2 y = 1 }
+						artillery_brigade = { x = 2 y = 2 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }   
+					}
+					priority = 2
+				}
+				division_template = {
+					name = "Infantry Division (MS)"
+					division_names_group = CUB_INF_01
+
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+					}
+					support = {
+						artillery = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }  
+					}
+				}
+			}
+			371 = {
+				create_unit = {
+					division = "name = \"I. Marine Division (MS)\" division_template = \"Marine Division (MS)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 7552
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"II. Marine Division (MS)\" division_template = \"Marine Division (MS)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 7552
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"I. Infantry Division (MS)\" division_template = \"Infantry Division (MS)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 12398
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"II. Infantry Division (MS)\" division_template = \"Infantry Division (MS)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 7524
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+			370 = {
+				create_unit = {
+					division = "name = \"III. Marine Division (MS)\" division_template = \"Marine Division (MS)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 4464
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"IV. Marine Division (MS)\" division_template = \"Marine Division (MS)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 4464
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"III. Infantry Division (MS)\" division_template = \"Infantry Division (MS)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 7524
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"IV. Infantry Division (MS)\" division_template = \"Infantry Division (MS)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 7668
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+			370 = {
+				teleport_armies = {
+					limit = { tag = USA }
+					to_state = 368
+				}
+			}
+			371 = {
+				teleport_armies = {
+					limit = { tag = USA }
+					to_state = 372
+				}
+			}
+		}
+	}
+	
+	CUB_carolina_landings_choice = {
+	
+		icon = GFX_decision_generic_intelligence_operation
+		
+		fire_only_once = yes
+		
+		ai_will_do = {
+			base = 2
+		}
+		
+		allowed = {
+			tag = CUB
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 364
+			}
+		}
+		
+		available = {
+			has_completed_focus = CUB_allegance_to_republic
+			NOT = {
+				AND = {
+					has_country_flag = CUB_landing_spot_1
+					has_country_flag = CUB_landing_spot_2
+				}
+			}
+			NOT = { has_country_flag = CUB_landing_spot_ongoing_planning }
+		}
+		
+		visible = {
+			has_completed_focus = CUB_allegance_to_republic
+		}
+		
+		complete_effect = {
+			add_command_power = -5
+			hidden_effect = {
+				set_country_flag = CUB_landing_spot_carolinas
+			}
+		}
+	
+		days_remove = 10
+		remove_effect = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = CUB_landing_spot_1 }
+				}
+				set_country_flag = CUB_landing_spot_1
+			}
+			else = {
+				set_country_flag = CUB_landing_spot_2
+			}
+			add_command_power = 15
+			clr_country_flag = CUB_landing_spot_ongoing_planning
+		}
+	
+	}
+	
+	CUB_carolina_landings_execution = {
+	
+		icon = GFX_decision_generic_intelligence_operation
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = CUB
+			has_country_flag = CUB_landing_spot_carolinas
+		}
+		
+		highlight_states = {
+			highlight_state_targets = {
+				state = 364
+			}
+		}
+		
+		available = {
+			has_completed_focus = CUB_allegance_to_republic
+			has_country_flag = CUB_landing_spot_carolinas
+			has_war_with = USA
+		}
+		
+		visible = {
+			has_country_flag = CUB_landing_spot_carolinas
+		}
+		
+		complete_effect = {
+			USA = {
+				country_event = {
+					id = mod_usc.28
+					days = 2
+				}
+			}
+		}
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		days_remove = 10
+		remove_effect = {
+			hidden_effect = {
+				division_template = {
+					name = "Marine Division (SC)" 
+
+					division_names_group = CUB_MAR_01
+
+					regiments = {
+						marine = { x = 0 y = 0 }
+						marine = { x = 0 y = 1 }
+						marine = { x = 0 y = 2 }
+						
+						marine = { x = 1 y = 0 }
+						marine = { x = 1 y = 1 }
+						marine = { x = 1 y = 2 }
+						
+						marine = { x = 2 y = 0 }
+						artillery_brigade = { x = 2 y = 1 }
+						artillery_brigade = { x = 2 y = 2 }
+					}
+					support = {
+						engineer = { x = 0 y = 0 }   
+					}
+					priority = 2
+				}
+				division_template = {
+					name = "Infantry Division (SC)"
+					division_names_group = CUB_INF_01
+
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+					}
+					support = {
+						artillery = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }  
+					}
+				}
+			}
+			364 = {
+				create_unit = {
+					division = "name = \"I. Marine Division (SC)\" division_template = \"Marine Division (SC)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 7202
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"II. Marine Division (SC)\" division_template = \"Marine Division (SC)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 7202
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"I. Infantry Division (SC)\" division_template = \"Infantry Division (SC)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 10047
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"II. Infantry Division (SC)\" division_template = \"Infantry Division (SC)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 1547
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+			365 = {
+				create_unit = {
+					division = "name = \"III. Marine Division (SC)\" division_template = \"Marine Division (SC)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 11975
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"IV. Marine Division (SC)\" division_template = \"Marine Division (SC)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 11975
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"III. Infantry Division (SC)\" division_template = \"Infantry Division (SC)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 1480
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"IV. Infantry Division (SC)\" division_template = \"Infantry Division (SC)\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 1547
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+			364 = {
+				teleport_armies = {
+					limit = { tag = USA }
+					to_state = 363
+				}
+			}
+			365 = {
+				teleport_armies = {
+					limit = { tag = USA }
+					to_state = 368
+				}
+			}
+		}
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+foreign_politics = {
+
+	iww_strike_action = {
+	
+		icon = GFX_decision_generic_wreckers
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = CUB
+		}
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		available = {
+			has_war_with = USA
+			has_completed_focus = CUB_apporach_iww
+		}
+		
+		visible = {
+			has_completed_focus = CUB_apporach_iww
+		}
+		
+		complete_effect = {
+			USA = {
+				country_event = {
+					id = mod_usc.25
+				}
+			}
+			395 = {
+				damage_building = {
+					type = infrastructure
+					damage = 3
+				}
+				damage_building = {
+					type = industrial_complex
+					damage = 5
+				}
+				damage_building = {
+					type = arms_factory
+					damage = 4
+				}
+				damage_building = {
+					type = rail_way
+					damage = 3
+				}
+			}
+			393 = {
+				damage_building = {
+					type = infrastructure
+					damage = 3
+				}
+				damage_building = {
+					type = industrial_complex
+					damage = 5
+				}
+				damage_building = {
+					type = arms_factory
+					damage = 4
+				}
+				damage_building = {
+					type = rail_way
+					damage = 3
+				}
+			}
+			396 = {
+				damage_building = {
+					type = infrastructure
+					damage = 3
+				}
+				damage_building = {
+					type = industrial_complex
+					damage = 5
+				}
+				damage_building = {
+					type = arms_factory
+					damage = 4
+				}
+				damage_building = {
+					type = rail_way
+					damage = 3
+				}
+			}
+			261 = {
+				damage_building = {
+					type = infrastructure
+					damage = 3
+				}
+				damage_building = {
+					type = industrial_complex
+					damage = 5
+				}
+				damage_building = {
+					type = arms_factory
+					damage = 4
+				}
+				damage_building = {
+					type = rail_way
+					damage = 3
+				}
+			}
+			358 = {
+				damage_building = {
+					type = infrastructure
+					damage = 3
+				}
+				damage_building = {
+					type = industrial_complex
+					damage = 5
+				}
+				damage_building = {
+					type = arms_factory
+					damage = 4
+				}
+				damage_building = {
+					type = dockyard
+					damage = 3
+				}
+				damage_building = {
+					type = rail_way
+					damage = 3
+				}
+			}
+			360 = {
+				damage_building = {
+					type = infrastructure
+					damage = 3
+				}
+				damage_building = {
+					type = industrial_complex
+					damage = 5
+				}
+				damage_building = {
+					type = arms_factory
+					damage = 4
+				}
+				damage_building = {
+					type = dockyard
+					damage = 3
+				}
+				damage_building = {
+					type = rail_way
+					damage = 3
+				}
+			}
+		}
+	}
+	
+	afl_strike_action = {
+	
+		icon = GFX_decision_generic_wreckers
+		
+		fire_only_once = yes
+		
+		allowed = {
+			tag = CUB
+		}
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		available = {
+			has_war_with = USA
+			has_completed_focus = CUB_apporach_afl
+		}
+		
+		visible = {
+			has_completed_focus = CUB_apporach_afl
+		}
+		
+		complete_effect = {
+			USA = {
+				add_timed_idea = {
+					idea = strikes_3
+					days = 150
+				}
+				country_event = {
+					id = mod_usc.25
+				}
+			} 
+		}
+	}
+
+
+
+
+
+}

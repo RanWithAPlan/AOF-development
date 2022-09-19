@@ -17,7 +17,7 @@
  
  Allies:0 "Triple Alliance"
  Axis:0 "The Kiel Accords"
- FRA_accord:0 "Entente Du Soleil"
+ FRA_accord:0 "Entente du Soleil"
  TUR_alliance:0 "Constantinople System"
  USA_united:0 "United American Bloc"
  GER_forward:0 "Forward Front"
@@ -28,6 +28,9 @@
  PER_anti_russian_defense_league:0 "Anti-Russian Defense League"
  BOL_guardian:0 "Pacific Guardian"
  ARG_plata:0 "Silver Alliance"
+ CUB_anti_US_alliance:0 "Coalition of the Able"
+ USA_business_axis:0 "Business Axis"
+ 
  
  
  

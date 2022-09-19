@@ -14,14 +14,15 @@ focus_tree = {
 			original_tag = CUB
 		}
 	}
-	continuous_focus_position = { x = 50 y = 1600 }
+	continuous_focus_position = { x = 50 y = 300 }
 	default = no
+	
 	
 	
 	focus = {
 		id = CUB_marine_nation
 		icon = GFX_focus_usa_recruit_the_free_corps
-		x = 30
+		x = 20
 		y = 0
 
 		cost = 10
@@ -44,6 +45,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = idea_marine_nation
+			add_command_power = 50
 		}
 	}
 	
@@ -128,12 +130,17 @@ focus_tree = {
 			add_ideas = idea_independent_usmc_aviation
 			add_equipment_to_stockpile = {
 				type = nav_bomber_equipment_1
-				amount = 32
+				amount = 64
 				producer = USA
 			}
 			add_equipment_to_stockpile = {
 				type = fighter_equipment_0
-				amount = 64
+				amount = 212
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = transport_plane_equipment_1
+				amount = 60
 				producer = USA
 			}
 			315 = {
@@ -324,10 +331,4437 @@ focus_tree = {
 		}
 	}
 	
+	focus = {
+		id = CUB_i_swore_on_democracy
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = CUB_sell_hispaniola_chromium }
+		x = 0
+		y = 2
+		relative_position_id = CUB_sell_hispaniola_chromium
 
+		cost = 5
 
+		ai_will_do = {
+			factor = 10
+		}
 
+		available = {
+			has_capitulated = no
+			NOT = {
+				USA = {
+					has_government = democratic
+				}
+			}
+		}
+		
+		bypass = {
+		}
 
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = idea_caribbean_bastion_of_democracy
+			add_popularity = {
+				ideology = democratic 
+				popularity = 0.35
+			}
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+				last_election = "1934.11.8"
+				election_frequency = 48
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_popular_front_of_the_caribbean
+		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+		prerequisite = { focus = CUB_i_swore_on_democracy }
+		x = -3
+		y = 1
+		relative_position_id = CUB_i_swore_on_democracy
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			set_stability = 0.75
+			set_war_support = 0.65
+			add_political_power = 50
+			add_ideas = idea_caribbean_popular_front
+			add_popularity = {
+				ideology = democratic 
+				popularity = 0.15
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_democrats_flee_continent
+		icon = GFX_focus_prc_infiltration
+		prerequisite = { focus = CUB_i_swore_on_democracy }
+		x = 3
+		y = 1
+		relative_position_id = CUB_i_swore_on_democracy
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = idea_democrat_flight
+			add_manpower = 75000
+			USA = {
+				add_timed_idea = {
+					idea = idea_democrat_flight_away
+					days = 540
+				}
+			}
+		}
+	}
+	
+	
+	
+	focus = {
+		id = CUB_secretly_approach_democracies
+		icon = GFX_goal_tripartite_pact
+		prerequisite = { focus = CUB_i_swore_on_democracy }
+		x = -1
+		y = 1
+		relative_position_id = CUB_i_swore_on_democracy
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					GER = { has_government = democratic }
+				}
+				GER = {
+					country_event = {
+						id = mod_usc.4
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					FRA = { has_government = democratic }
+				}
+				FRA = {
+					country_event = {
+						id = mod_usc.7
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					SWE = { has_government = democratic }
+				}
+				SWE = {
+					country_event = {
+						id = mod_usc.10
+					}
+				}
+			}
+			
+			if = {
+				limit = {
+					MEX = { has_government = democratic }
+				}
+				MEX = {
+					country_event = {
+						id = mod_usc.13
+					}
+				}
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = CUB_promise_local_freedom_after_war
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = CUB_i_swore_on_democracy }
+		x = 1
+		y = 1
+		relative_position_id = CUB_i_swore_on_democracy
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = idea_native_support_for_struggle
+			add_manpower = 35000
+		}
+	}
+	
+	focus = {
+		id = CUB_acting_president_patton
+		icon = GFX_goal_continuous_boost_freedom
+		prerequisite = { focus = CUB_i_swore_on_democracy }
+		x = 0
+		y = 2
+		relative_position_id = CUB_i_swore_on_democracy
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			USA = {
+				end_puppet = CUB
+				country_event = {
+					id = mod_usc.3
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = mod_usc.32
+					days = 40
+					random_days = 16
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_smuggle_paul_french
+		icon = GFX_goal_generic_dangerous_deal
+		prerequisite = { focus = CUB_acting_president_patton }
+		x = 0
+		y = 1
+		relative_position_id = CUB_acting_president_patton
+
+		cost = 4
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 100
+				date > 1938.6.1
+			}
+		}
+
+		available = {
+			has_capitulated = no
+			
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			USA = {
+				country_event = {
+					id = mod_usc.16
+				}
+			}
+			retire_character = CUB_gerardo_machado
+		}
+	}
+	
+	focus = {
+		id = CUB_sell_war_bonds
+		icon = GFX_focus_mex_privatisation
+		prerequisite = { focus = CUB_acting_president_patton }
+		x = -2
+		y = 2
+		relative_position_id = CUB_acting_president_patton
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = caribbean_special_war_bonds
+		}
+	}
+	
+	focus = {
+		id = CUB_quickly_take_fruit
+		icon = GFX_focus_spr_class_war
+		prerequisite = { focus = CUB_smuggle_paul_french }
+		x = 0
+		y = 1
+		relative_position_id = CUB_smuggle_paul_french
+
+		cost = 4
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 100
+				date > 1938.6.1
+			}
+		}
+
+		available = {
+			has_capitulated = no
+			has_idea = fruit_companies_influence
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_ideas = fruit_companies_influence
+			add_popularity = {
+				ideology = corporatism 
+				popularity = -0.2
+			}
+			add_offsite_building = { type = industrial_complex level = 1 }
+			315 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			318 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			319 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			686 = { set_state_category = town }
+			add_equipment_to_stockpile = {
+				type = convoy_1
+				amount = 250
+				producer = USA
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_american_knowledge
+		icon = GFX_focus_research
+		prerequisite = { focus = CUB_quickly_take_fruit }
+		x = 2
+		y = 1
+		relative_position_id = CUB_quickly_take_fruit
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+			if = {
+				limit = {
+					has_dlc = "La Resistance"
+				}
+				gain_random_agency_upgrade = yes
+				gain_random_agency_upgrade = yes
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_sell_chromium_rights
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = CUB_quickly_take_fruit }
+		x = -2
+		y = 1
+		relative_position_id = CUB_quickly_take_fruit
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 50
+			add_resource = {
+				type = chromium
+				amount = -50
+				state = 315
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_apporach_native_code_talkers
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = CUB_smuggle_paul_french }
+		x = 2
+		y = 1
+		relative_position_id = CUB_smuggle_paul_french
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			custom_effect_tooltip = finish_before_usa_tip_tt
+			if = {
+				limit = {
+					has_completed_focus = USA_reservation_development_program
+				}
+				add_ideas = usc_native_code_talker2
+			}
+			if = {
+				limit = {
+					NOT = { has_completed_focus = USA_reservation_development_program }
+				}
+				add_ideas = usc_native_code_talker1
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = CUB_coup_bermuda
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = CUB_quickly_take_fruit }
+		x = 0
+		y = 1
+		relative_position_id = CUB_quickly_take_fruit
+
+		cost = 4
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 100
+				date > 1938.6.1
+			}
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			696 = {
+				transfer_state_to = CUB
+				add_core_of = CUB
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				create_equipment_variant = {
+					name = "Farragut Class"				
+					type = ship_hull_light_1
+					name_group = USA_DD_HISTORICAL
+					parent_version = 0
+					modules = {
+						fixed_ship_battery_slot = ship_light_battery_2
+						fixed_ship_anti_air_slot = ship_anti_air_1
+						fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+						fixed_ship_radar_slot = ship_sonar_1
+						fixed_ship_engine_slot = light_ship_engine_2
+						fixed_ship_torpedo_slot = ship_torpedo_1
+						mid_1_custom_slot = ship_torpedo_1
+						rear_1_custom_slot = ship_depth_charge_1
+					}
+				}
+				create_equipment_variant = {
+					name = "New Orleans Class"
+					type = ship_hull_cruiser_2
+					name_group = USA_CA_HISTORICAL
+					parent_version = 0
+					modules = {
+						fixed_ship_battery_slot = ship_medium_battery_2
+						fixed_ship_anti_air_slot = ship_anti_air_1
+						fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+						fixed_ship_radar_slot = empty
+						fixed_ship_engine_slot = cruiser_ship_engine_1
+						fixed_ship_secondaries_slot = ship_secondaries_1
+						fixed_ship_armor_slot = ship_armor_cruiser_2
+						mid_1_custom_slot = ship_airplane_launcher_1
+						mid_2_custom_slot = ship_anti_air_1
+						rear_1_custom_slot = ship_medium_battery_2
+					}
+				}
+				create_equipment_variant = {
+					name = "Pensacola Class"
+					type = ship_hull_cruiser_1
+					name_group = USA_CA_HISTORICAL
+					parent_version = 0
+					modules = {
+						fixed_ship_battery_slot = ship_medium_battery_1
+						fixed_ship_anti_air_slot = ship_anti_air_1
+						fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+						fixed_ship_radar_slot = empty
+						fixed_ship_engine_slot = cruiser_ship_engine_1
+						fixed_ship_secondaries_slot = ship_secondaries_1
+						fixed_ship_armor_slot = ship_armor_cruiser_1
+						mid_1_custom_slot = ship_medium_battery_1
+						mid_2_custom_slot = empty
+						rear_1_custom_slot = ship_airplane_launcher_1
+					}
+					obsolete = yes
+				}
+			}
+			
+			create_ship = {
+				type = ship_hull_cruiser_2
+				equipment_variant = "New Orleans Class"
+				creator = USA
+				name = "USS Quincy"
+			}
+			create_ship = {
+				type = ship_hull_cruiser_1
+				equipment_variant = "Pensacola Class"
+				creator = USA
+				name = "USS Pensacola"
+			}
+			create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "Farragut Class"
+				creator = USA
+				name = "USS Hull"
+			}
+			create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "Farragut Class"
+				creator = USA
+				name = "USS Aylwin"
+			}
+			create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "Farragut Class"
+				creator = USA
+				name = "USS Worden"
+			}
+			create_ship = {
+				type = ship_hull_light_1
+				equipment_variant = "Farragut Class"
+				creator = USA
+				name = "USS Dale"
+			}
+			
+			
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_cruiser_2
+				}
+				requested_factories = 3
+				progress = 0.75
+				amount = 1
+			}
+			navy_experience = 20
+			USA = {
+				country_event = {
+					id = mod_usc.18
+					days = 2
+				}
+			}
+			hidden_effect = {
+				ai_strategy = {
+					type = prepare_for_war
+					id = USA
+					value = 100
+				}
+				ai_strategy = {
+					type = ignore_army_incompetence
+					value = 100
+				}
+				ai_strategy = {
+					type = invade
+					id = USA
+					value = 100
+				}
+				ai_strategy = {
+					type = naval_invasion_focus
+					value = 100
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_ancient_ships_turned_hospitals
+		icon = GFX_focus_generic_cruiser2
+		prerequisite = { focus = CUB_coup_bermuda }
+		x = -2
+		y = 1
+		relative_position_id = CUB_coup_bermuda
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = ancient_hospital_ships
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = hospital_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_approach_japan
+		icon = GFX_focus_chi_collaboration_with_the_japanese
+		prerequisite = { focus = CUB_coup_bermuda }
+		x = 0
+		y = 1
+		relative_position_id = CUB_coup_bermuda
+
+		cost = 4
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 100
+				date > 1938.6.1
+			}
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_opinion_modifier = {
+				target = JAP
+				modifier = in_faction 
+			}
+			country_event = {
+				id = mod_usc.19
+			}
+			JAP = {
+				add_opinion_modifier = {
+					target = CUB
+					modifier = in_faction 
+				}
+				country_event = {
+					id = mod_usc.19
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_sponsored_tuskege_desertion
+		icon = GFX_focus_usa_tank_destroyer_doctrine
+		prerequisite = { focus = CUB_coup_bermuda }
+		x = 2
+		y = 1
+		relative_position_id = CUB_coup_bermuda
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			USA = {
+				has_completed_focus = USA_revise_desegregation
+			}
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					USA = { has_researched = fighter1 }
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_1
+					amount = 60
+					producer = USA
+				}
+			}
+			if = {
+				limit = {
+					USA = { 
+						NOT = {
+							has_researched = fighter1 
+						}
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_0
+					amount = 90
+					producer = USA
+				}
+			}
+			add_ace = {
+				name = "Roger"
+				surname = "Terry"
+				callsign = "Bill"
+				type = support_good 
+				is_female = no
+			}
+			add_ace = {
+				name = "Lee"
+				surname = "Archer"
+				callsign = "Buddy"
+				type = fighter_genius  
+				is_female = no
+			}
+			add_manpower = 350
+			hidden_effect = {
+				country_event = {
+					id = mod_usc.20
+					days = 8
+					random_days = 12
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_japanese_marine_support
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = CUB_approach_japan }
+		x = -3
+		y = 1
+		relative_position_id = CUB_approach_japan
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = motorized_equipment
+				category = marine_tech
+				category = tp_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_cover_factories
+		icon = GFX_goal_fortify_the_westwall
+		prerequisite = { focus = CUB_approach_japan }
+		x = 0
+		y = 1
+		relative_position_id = CUB_approach_japan
+
+		cost = 4
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 100
+				date > 1938.6.1
+			}
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = covered_factories
+			315 = {
+				add_building_construction = {
+					type = anti_air_building 
+					level = 2
+					instant_build = yes
+				}
+			}
+			318 = {
+				add_building_construction = {
+					type = anti_air_building 
+					level = 2
+					instant_build = yes
+				}
+			}
+			319 = {
+				add_building_construction = {
+					type = anti_air_building 
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_celebrate_opha_johnson
+		icon = GFX_focus_generic_women_in_military
+		prerequisite = { focus = CUB_approach_japan }
+		x = 4
+		y = 1
+		relative_position_id = CUB_approach_japan
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			hidden_effect = {
+				add_manpower = 50000
+			}
+			custom_effect_tooltip = opha_johnson_manpower_tt
+			add_stability = -0.05
+		}
+	}
+	
+	focus = {
+		id = CUB_usmc_womens_reserve
+		icon = GFX_focus_focus_fra_revolution_utmost
+		prerequisite = { focus = CUB_celebrate_opha_johnson }
+		x = -1
+		y = 1
+		relative_position_id = CUB_celebrate_opha_johnson
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = usmc_womens_reserve
+		}
+	}
+	
+	focus = {
+		id = CUB_mule_regiments
+		icon = GFX_goal_generic_cavalry
+		prerequisite = { focus = CUB_celebrate_opha_johnson }
+		x = 1
+		y = 1
+		relative_position_id = CUB_celebrate_opha_johnson
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = mule_regiments
+		}
+	}
+	
+	focus = {
+		id = CUB_agents_of_freedom
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = CUB_cover_factories }
+		x = 0
+		y = 1
+		relative_position_id = CUB_cover_factories
+
+		cost = 4
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 100
+				date > 1938.6.1
+			}
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = 0.05
+			add_ideas = agents_of_freedom
+			add_ideas = soldier_fair_pay
+		}
+	}
+	
+	focus = {
+		id = CUB_allegance_to_republic
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = CUB_agents_of_freedom }
+		x = 0
+		y = 1
+		relative_position_id = CUB_agents_of_freedom
+
+		cost = 2
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 100
+				date > 1938.6.1
+			}
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			leave_faction = yes
+			set_cosmetic_tag = CUB_USA_betsy_ross
+			add_country_leader_trait = american_pompey
+			add_command_power = 25
+			set_rule = {
+				can_create_factions = yes
+			}
+			create_faction = CUB_anti_US_alliance
+			CUB = {
+				add_to_faction = JAP
+			}
+			USA = {
+				every_core_state = {
+					add_claim_by = CUB
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_approach_moderate_communists
+		icon = GFX_focus_hol_legacy_of_the_de_zeven_provincien_mutiny
+		prerequisite = { focus = CUB_allegance_to_republic }
+		x = -3
+		y = 1
+		relative_position_id = CUB_allegance_to_republic
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			is_puppet = no
+			OR = {
+				ENG = {
+					has_government = communism
+				}
+				CAN = {
+					has_government = communism
+				}
+			}
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					ENG = {
+						has_government = communism
+					}
+				}
+				country_event = {
+					id = mod_usc.21
+				}
+			}
+			if = {
+				limit = {
+					CAN = {
+						has_government = communism
+					}
+				}
+				country_event = {
+					id = mod_usc.22
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_raid_charleston
+		icon = GFX_focus_POL_develop_polish_shipbuilding
+		prerequisite = { focus = CUB_allegance_to_republic }
+		x = -2
+		y = 2
+		relative_position_id = CUB_allegance_to_republic
+
+		cost = 2
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 100
+				date > 1938.6.1
+			}
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_list = {
+				70 = {
+					add_equipment_production = {
+						equipment = {
+							type = light_cruiser_1
+							creator = USA
+						}
+						requested_factories = 3
+						progress = 0.46
+						amount = 1
+					}
+					add_equipment_production = {
+						equipment = {
+							type = heavy_cruiser_1
+							creator = USA
+						}
+						requested_factories = 4
+						progress = 0.61
+						amount = 1
+					}
+					add_equipment_production = {
+						equipment = {
+							type = light_cruiser_1
+							creator = USA
+						}
+						requested_factories = 3
+						progress = 0.82
+						amount = 1
+					}
+					add_equipment_production = {
+						equipment = {
+							type = destroyer_1
+							creator = USA
+						}
+						requested_factories = 2
+						progress = 0.5
+						amount = 1
+					}
+					add_equipment_production = {
+						equipment = {
+							type = destroyer_1
+							creator = USA
+						}
+						requested_factories = 2
+						progress = 0.36
+						amount = 1
+					}
+					add_equipment_production = {
+						equipment = {
+							type = destroyer_2
+							creator = USA
+						}
+						requested_factories = 2
+						progress = 0.62
+						amount = 1
+					}
+					add_equipment_production = {
+						equipment = {
+							type = destroyer_2
+							creator = USA
+						}
+						requested_factories = 2
+						progress = 0.97
+						amount = 1
+					}
+					add_equipment_production = {
+						equipment = {
+							type = destroyer_2
+							creator = USA
+						}
+						requested_factories = 2
+						progress = 0.29
+						amount = 1
+					}
+				}
+				30 = {
+					add_manpower = -2000
+					add_equipment_to_stockpile = {
+						type = convoy
+						amount = -25
+						producer = USA
+					}
+				}
+			}
+			damage_units = {
+				province = 7202
+				state = 364
+				region = 117
+				damage = 0.25
+				org_damage = 0.25
+				str_damage = 0.25
+				ratio = yes
+				army = yes
+				navy = yes
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_raid_east_coast_airbases
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = CUB_allegance_to_republic }
+		x = 0
+		y = 2
+		relative_position_id = CUB_allegance_to_republic
+
+		cost = 2
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 100
+				date > 1938.6.1
+			}
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_list = {
+				70 = {
+					add_equipment_to_stockpile = {
+						type = nav_bomber_equipment_1
+						amount = 40
+						producer = USA
+					}
+					if = {
+						limit = {
+							USA = { has_researched = fighter1 }
+						}
+						add_equipment_to_stockpile = {
+							type = fighter_equipment_1
+							amount = 250
+							producer = USA
+						}
+					}
+					if = {
+						limit = {
+							USA = { 
+								NOT = {
+									has_researched = fighter1 
+								}
+							}
+						}
+						add_equipment_to_stockpile = {
+							type = fighter_equipment_0
+							amount = 250
+							producer = USA
+						}
+					}
+					add_equipment_to_stockpile = {
+						type = CAS_equipment_1
+						amount = 100
+						producer = USA
+					}
+				}
+				30 = {
+					add_manpower = -2000
+					add_equipment_to_stockpile = {
+						type = convoy
+						amount = -25
+						producer = USA
+					}
+				}
+			}
+			damage_units = {
+				province = 10753
+				state = 370
+				region = 211
+				damage = 0.2
+				org_damage = 0.2
+				str_damage = 0.2
+				ratio = yes
+				army = yes
+				navy = yes
+			}
+			damage_units = {
+				province = 9996
+				state = 365
+				region = 211
+				damage = 0.2
+				org_damage = 0.2
+				str_damage = 0.2
+				ratio = yes
+				army = yes
+				navy = yes
+			}
+			damage_units = {
+				province = 11783
+				state = 363
+				region = 117
+				damage = 0.2
+				org_damage = 0.2
+				str_damage = 0.2
+				ratio = yes
+				army = yes
+				navy = yes
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_raid_naval_station_norfolk
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = CUB_allegance_to_republic }
+		x = 2
+		y = 2
+		relative_position_id = CUB_allegance_to_republic
+
+		cost = 2
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 100
+				date > 1938.6.1
+			}
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_list = {
+				70 = {
+					create_ship = {
+						type = ship_hull_cruiser_2
+						equipment_variant = "New Orleans Class"
+						creator = CUB
+						name = "USS George McClellan"
+					}
+					create_ship = {
+						type = ship_hull_light_1
+						equipment_variant = "Farragut Class"
+						creator = CUB
+						name = "USS Henry Halleck"
+					}
+					create_ship = {
+						type = ship_hull_light_1
+						equipment_variant = "Farragut Class"
+						creator = CUB
+						name = "USS Abner Doubleday"
+					}
+					create_ship = {
+						type = ship_hull_light_1
+						equipment_variant = "Farragut Class"
+						creator = CUB
+						name = "USS Ambrose Burnside"
+					}
+					create_ship = {
+						type = ship_hull_light_1
+						equipment_variant = "Farragut Class"
+						creator = CUB
+						name = "USS Andrew Jackson Smith"
+					}
+					create_ship = {
+						type = ship_hull_light_1
+						equipment_variant = "Farragut Class"
+						creator = CUB
+						name = "USS Edwin Sumner"
+					}
+					random_list = {
+						80 = {
+							add_manpower = -150
+							add_equipment_to_stockpile = {
+								type = convoy
+								amount = -5
+								producer = USA
+							}
+						}
+						20 = {
+							create_ship = {
+								type = ship_hull_heavy_1
+								equipment_variant = "Pennsylvania Class"
+								creator = CUB
+								name = "USS William Sherman"
+							}
+						}
+					}
+				}
+				30 = {
+					add_manpower = -2000
+					add_equipment_to_stockpile = {
+						type = convoy
+						amount = -25
+						producer = USA
+					}
+				}
+			}
+			damage_units = {
+				province = 788
+				state = 362
+				region = 117
+				damage = 0.3
+				org_damage = 0.3
+				str_damage = 0.3
+				ratio = yes
+				army = yes
+				navy = yes
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_sic_semper_tyrannis
+		icon = GFX_focus_focus_fra_fascist_threat
+		prerequisite = { focus = CUB_raid_east_coast_airbases }
+		prerequisite = { focus = CUB_raid_charleston }
+		prerequisite = { focus = CUB_raid_naval_station_norfolk }
+		x = 0
+		y = 1
+		relative_position_id = CUB_raid_east_coast_airbases
+		
+
+		cost = 3
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 100
+				date > 1938.6.1
+			}
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			country_event = {
+				id = mod_usc.23
+			}
+			USA = {
+				remove_ideas = secretary_spy
+			}
+			add_threat = 2
+		}
+	}
+	
+	focus = {
+		id = CUB_blow_panama_canal
+		icon = GFX_focus_wonderweapons
+		prerequisite = { focus = CUB_sic_semper_tyrannis }
+		x = 0
+		y = 2
+		relative_position_id = CUB_sic_semper_tyrannis
+
+		cost = 1.8
+		will_lead_to_war_with = USA
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 100
+				date > 1938.6.1
+			}
+		}
+
+		available = {
+			has_capitulated = no
+			NOT = {	has_global_flag = USA_CaribbeanWar_Started }
+		}
+		
+		bypass = {
+			has_global_flag = USA_CaribbeanWar_Started
+		}
+		will_lead_to_war_with = USA
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			set_country_flag = blew_up_panama
+			set_global_flag = PANAMA_CANAL_BLOCKED
+			custom_effect_tooltip = blow_panama_canal_tt
+			random_list = {
+				50 = {
+					
+				}
+				50 = {
+					CUB = {
+						declare_war_on = {
+							target = USA
+							type = civil_war  
+						}
+					}
+					set_global_flag = USA_CaribbeanWar_Started 
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_block_guam_relieve_force
+		icon = GFX_focus_generic_provoke_border_clashes
+		prerequisite = { focus = CUB_sic_semper_tyrannis }
+		x = 2
+		y = 2
+		relative_position_id = CUB_sic_semper_tyrannis
+
+		cost = 1.8
+		will_lead_to_war_with = USA
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 100
+				date > 1938.6.1
+			}
+		}
+
+		available = {
+			has_capitulated = no
+			NOT = {	has_global_flag = USA_CaribbeanWar_Started }
+		}
+		
+		bypass = {
+			has_global_flag = USA_CaribbeanWar_Started
+		}
+		will_lead_to_war_with = USA
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			JAP = { set_state_owner = 638 }
+			random_list = {
+				50 = {
+					
+				}
+				50 = {
+					CUB = {
+						declare_war_on = {
+							target = USA
+							type = civil_war  
+						}
+					}
+					set_global_flag = USA_CaribbeanWar_Started 
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_leak_us_navy_codes
+		icon = GFX_focus_generic_cryptologic_bomb
+		prerequisite = { focus = CUB_sic_semper_tyrannis }
+		x = -2
+		y = 2
+		relative_position_id = CUB_sic_semper_tyrannis
+
+		cost = 1.8
+		will_lead_to_war_with = USA
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 100
+				date > 1938.6.1
+			}
+		}
+		will_lead_to_war_with = USA
+
+		available = {
+			has_capitulated = no
+			NOT = {	has_global_flag = USA_CaribbeanWar_Started }
+		}
+		
+		bypass = {
+			has_global_flag = USA_CaribbeanWar_Started
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			USA = {
+				add_timed_idea = {
+					idea = leaked_us_navy_codes
+					days = 50
+				}
+			}
+			
+			random_list = {
+				50 = {
+					
+				}
+				50 = {
+					CUB = {
+						declare_war_on = {
+							target = USA
+							type = civil_war  
+						}
+					}
+					set_global_flag = USA_CaribbeanWar_Started 
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_we_bring_the_jubilee
+		icon = GFX_focus_generic_strike_at_democracy3
+		prerequisite = { focus = CUB_blow_panama_canal }
+		prerequisite = { focus = CUB_block_guam_relieve_force }
+		prerequisite = { focus = CUB_leak_us_navy_codes }
+		x = 0
+		y = 1
+		relative_position_id = CUB_blow_panama_canal
+
+		cost = 1.8
+		will_lead_to_war_with = USA
+
+		ai_will_do = {
+			base = 10
+			modifier = {
+				factor = 100
+				date > 1938.6.1
+			}
+		}
+
+		available = {
+			has_capitulated = no
+			NOT = {	has_global_flag = USA_CaribbeanWar_Started }
+		}
+		
+		bypass = {
+			has_global_flag = USA_CaribbeanWar_Started
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			CUB = {
+				declare_war_on = {
+					target = USA
+					type = civil_war  
+				}
+			}
+			set_global_flag = USA_CaribbeanWar_Started
+		}
+	}
+	
+	#### AIR PATHS ####
+	
+	
+	focus = {
+		id = CUB_air_plan_omega
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = CUB_acting_president_patton }
+		x = -13
+		y = 1
+		relative_position_id = CUB_acting_president_patton
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			air_experience = 35
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_import_german_planes
+		icon = GFX_focus_ger_revive_kaiserreich
+		prerequisite = { focus = CUB_air_plan_omega }
+		x = -2
+		y = 1
+		relative_position_id = CUB_air_plan_omega
+		
+		mutually_exclusive = { focus = CUB_import_japanese_planes }
+		mutually_exclusive = { focus = CUB_native_designs }
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			air_experience = 10
+			add_equipment_to_stockpile = {
+				type = fighter_equipment_1
+				amount = 50
+				producer = GER
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_import_cas_license
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = CUB_import_german_planes }
+		x = 0
+		y = 1
+		relative_position_id = CUB_import_german_planes
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			NOT = { has_war_with = GER }
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			GER = {
+				if = {
+					limit = {
+						GER = {
+							has_tech = CAS3 
+						}
+					}
+					create_production_license = {
+						target = CUB
+						equipment = {
+							type = CAS_equipment_3
+							version = 0
+							new_prioritised = no
+						}
+						cost_factor = 0
+					}
+				}
+				else_if = {
+					limit = {
+						GER = {
+							has_tech = CAS2
+						}
+					}
+					create_production_license = {
+						target = CUB
+						equipment = {
+							type = CAS_equipment_2
+							version = 0
+							new_prioritised = no
+						}
+						cost_factor = 0
+					}
+				}
+				else = {
+					create_production_license = {
+						target = CUB
+						equipment = {
+							type = CAS_equipment_1
+							version = 0
+							new_prioritised = no
+						}
+						cost_factor = 0
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_search_for_german_volunteers
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = CUB_import_cas_license }
+		x = 0
+		y = 1
+		relative_position_id = CUB_import_cas_license
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			NOT = { has_war_with = GER }
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ace = {
+				name = "Marga"
+				surname = "von Etzdorf"
+				callsign = "Kieker"
+				type = support_unique 
+				is_female = yes
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_invite_german_engineers
+		icon = GFX_goal_generic_air_production
+		prerequisite = { focus = CUB_search_for_german_volunteers }
+		x = 0
+		y = 1
+		relative_position_id = CUB_search_for_german_volunteers
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			NOT = { has_war_with = GER }
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = usc_german_engineers
+		}
+	}
+	
+	focus = {
+		id = CUB_import_japanese_planes
+		icon = GFX_focus_jap_zaibatsu
+		prerequisite = { focus = CUB_air_plan_omega }
+		x = 2
+		y = 1
+		relative_position_id = CUB_air_plan_omega
+		
+		mutually_exclusive = { focus = CUB_import_german_planes }
+		mutually_exclusive = { focus = CUB_native_designs }
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			air_experience = 10
+			add_equipment_to_stockpile = {
+				type = fighter_equipment_0
+				amount = 100
+				producer = JAP
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_import_tac_license
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = CUB_import_japanese_planes }
+		x = 0
+		y = 1
+		relative_position_id = CUB_import_japanese_planes
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			NOT = { has_war_with = JAP }
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			JAP = {
+				if = {
+					limit = {
+						JAP = {
+							has_tech = tactical_bomber3   
+						}
+					}
+					create_production_license = {
+						target = CUB
+						equipment = {
+							type = tac_bomber_equipment_3
+							version = 0
+							new_prioritised = no
+						}
+						cost_factor = 0
+					}
+				}
+				else_if = {
+					limit = {
+						JAP = {
+							has_tech = tactical_bomber2
+						}
+					}
+					create_production_license = {
+						target = CUB
+						equipment = {
+							type = tac_bomber_equipment_2
+							version = 0
+							new_prioritised = no
+						}
+						cost_factor = 0
+					}
+				}
+				else = {
+					create_production_license = {
+						target = CUB
+						equipment = {
+							type = tac_bomber_equipment_1
+							version = 0
+							new_prioritised = no
+						}
+						cost_factor = 0
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_search_for_japanese_volunteers
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = CUB_import_tac_license }
+		x = 0
+		y = 1
+		relative_position_id = CUB_import_tac_license
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			NOT = { has_war_with = JAP }
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ace = {
+				name = "Naoshi"
+				surname = "Kanno"
+				callsign = "Kanno the Destroyer"
+				type = support_genius 
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_invite_japanese_engineers
+		icon = GFX_goal_generic_air_production
+		prerequisite = { focus = CUB_search_for_japanese_volunteers }
+		x = 0
+		y = 1
+		relative_position_id = CUB_search_for_japanese_volunteers
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			NOT = { has_war_with = JAP }
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = usc_japanese_engineers
+		}
+	}
+	
+	focus = {
+		id = CUB_native_designs
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = CUB_air_plan_omega }
+		x = 0
+		y = 1
+		relative_position_id = CUB_air_plan_omega
+		
+		mutually_exclusive = { focus = CUB_import_german_planes }
+		mutually_exclusive = { focus = CUB_import_japanese_planes }
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			air_experience = 25
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = light_fighter
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_shift_prod_to_air
+		icon = GFX_focus_generic_aircraft_production
+		prerequisite = { focus = CUB_native_designs }
+		x = 0
+		y = 1
+		relative_position_id = CUB_native_designs
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			air_experience = 15
+			add_ideas = usc_native_engineers
+		}
+	}
+	
+	focus = {
+		id = CUB_decide_out_path
+		icon = GFX_goal_continuous_air_production
+		prerequisite = { focus = CUB_shift_prod_to_air }
+		x = 0
+		y = 1
+		relative_position_id = CUB_shift_prod_to_air
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			air_experience = 15
+			country_event = {
+				id = mod_usc.33
+				days = 2
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_native_engineers
+		icon = GFX_goal_generic_air_production
+		prerequisite = { focus = CUB_decide_out_path }
+		x = 0
+		y = 1
+		relative_position_id = CUB_decide_out_path
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			air_experience = 15
+			swap_ideas = {
+				remove_idea = usc_native_engineers
+				add_idea = usc_native_engineers1
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_mare_terram_aerem
+		icon = GFX_focus_generic_paratrooper
+		prerequisite = { focus = CUB_native_engineers focus = CUB_invite_german_engineers focus = CUB_invite_japanese_engineers }
+		x = 0
+		y = 1
+		relative_position_id = CUB_native_engineers
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			air_experience = 25
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = para_tech
+			}
+			add_equipment_to_stockpile = {
+				type = transport_plane_equipment_1
+				amount = 20
+				producer = CUB
+			}
+		}
+	}
+	
+	
+	#### NAVAL PATHS ####
+	
+	
+	focus = {
+		id = CUB_accept_the_token_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = CUB_acting_president_patton }
+		x = -7
+		y = 1
+		relative_position_id = CUB_acting_president_patton
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			navy_experience = 40
+		}
+	}
+	
+	focus = {
+		id = CUB_fortify_the_pirate_republic
+		icon = GFX_focus_generic_coastal_fort
+		prerequisite = { focus = CUB_accept_the_token_navy }
+		x = -2
+		y = 1
+		relative_position_id = CUB_accept_the_token_navy
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			every_controlled_state = {
+				limit = {
+					is_fully_controlled_by = CUB
+					is_coastal = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_naval_base = yes
+					}
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = coastal_bunker
+					province = {
+						all_provinces = yes
+						limit_to_coastal = yes
+					}
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_import_japanese_submarines
+		icon = GFX_focus_jap_pacific_guardian
+		prerequisite = { focus = CUB_fortify_the_pirate_republic }
+		x = 0
+		y = 2
+		relative_position_id = CUB_fortify_the_pirate_republic
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			OR = {
+				is_in_faction_with = JAP
+				AND = {
+					NOT = { has_war_with = JAP }
+					has_opinion = {
+						target = JAP
+						value > 49
+					}
+				}
+			}
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = -100
+			add_ideas = usc_imported_torpedos
+			create_equipment_variant = {
+				name = "Kaidai Class"								
+				type = ship_hull_submarine_2
+				name_group = JAP_SS_HISTORICAL
+				role_icon_index = 8
+				modules = {
+					fixed_ship_torpedo_slot = ship_torpedo_sub_1
+					fixed_ship_engine_slot = sub_ship_engine_1
+					rear_1_custom_slot = ship_torpedo_sub_1
+				}
+			}
+			create_ship = {
+				type = ship_hull_submarine_2
+				equipment_variant = "Kaidai Class"
+				creator = CUB
+				name = "Yūjō"
+			}
+			create_ship = {
+				type = ship_hull_submarine_2
+				equipment_variant = "Kaidai Class"
+				creator = CUB
+				name = "I-1 (USC)"
+			}
+			create_ship = {
+				type = ship_hull_submarine_2
+				equipment_variant = "Kaidai Class"
+				creator = CUB
+				name = "I-2 (USC)"
+			}
+			create_ship = {
+				type = ship_hull_submarine_2
+				equipment_variant = "Kaidai Class"
+				creator = CUB
+				name = "I-3 (USC)"
+			}
+			create_ship = {
+				type = ship_hull_submarine_2
+				equipment_variant = "Kaidai Class"
+				creator = CUB
+				name = "I-4 (USC)"
+			}
+			create_ship = {
+				type = ship_hull_submarine_2
+				equipment_variant = "Kaidai Class"
+				creator = CUB
+				name = "I-5 (USC)"
+			}
+			create_ship = {
+				type = ship_hull_submarine_2
+				equipment_variant = "Kaidai Class"
+				creator = CUB
+				name = "I-6 (USC)"
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_pirates_of_the_caribbean
+		icon = GFX_goal_generic_wolf_pack
+		prerequisite = { focus = CUB_accept_the_token_navy }
+		x = 0
+		y = 1
+		relative_position_id = CUB_accept_the_token_navy
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = usc_pirates_of_the_caribbean
+			random_navy_leader = {
+				add_unit_leader_trait = inshore_fighter 
+			}
+			random_navy_leader = {
+				add_unit_leader_trait = inshore_fighter 
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_swallow_water_training
+		icon = GFX_focus_hol_prepare_the_inundation_lines
+		prerequisite = { focus = CUB_pirates_of_the_caribbean }
+		x = 1
+		y = 1
+		relative_position_id = CUB_pirates_of_the_caribbean
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = usc_pirates_of_the_caribbean
+				add_idea = usc_pirates_of_the_caribbean1
+			}
+			random_navy_leader = {
+				add_unit_leader_trait = green_water_expert  
+			}
+			random_navy_leader = {
+				add_unit_leader_trait = green_water_expert  
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_submarine_effort
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = CUB_pirates_of_the_caribbean }
+		x = -1
+		y = 1
+		relative_position_id = CUB_pirates_of_the_caribbean
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = usc_fully_focus_on_subs
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_air_based_navy
+		icon = GFX_goal_generic_air_naval_bomber
+		prerequisite = { focus = CUB_accept_the_token_navy }
+		x = 2
+		y = 1
+		relative_position_id = CUB_accept_the_token_navy
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = naval_bomber
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_revolutionized_coastal_patrol_crafts
+		icon = GFX_focus_jap_zero
+		prerequisite = { focus = CUB_air_based_navy }
+		x = 0
+		y = 2
+		relative_position_id = CUB_air_based_navy
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = revolutionize_coastal_patrol_crafts
+		}
+	}
+	
+	focus = {
+		id = CUB_naval_arms_quality_over_quantity
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = CUB_submarine_effort }
+		prerequisite = { focus = CUB_swallow_water_training }
+		x = 1
+		y = 1
+		relative_position_id = CUB_submarine_effort
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.25
+				uses = 4
+				category = ship_modules_tech
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_pirate_kings
+		icon = GFX_focus_generic_navy_battleship2
+		prerequisite = { focus = CUB_naval_arms_quality_over_quantity }
+		prerequisite = { focus = CUB_revolutionized_coastal_patrol_crafts }
+		x = 1
+		y = 1
+		relative_position_id = CUB_naval_arms_quality_over_quantity
+
+		cost = 6
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			has_navy_size = {
+				size > 99
+			}
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			set_technology = {
+				ship_hull_super_heavy = 1
+			}
+			add_ideas = usc_pirate_kings
+			country_event = { id = mod_usc.24 }
+		}
+	}
+	
+	
+	#### ECONOMY PATH ####
+	
+	
+	focus = {
+		id = CUB_bracero_program
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = CUB_acting_president_patton }
+		x = 7
+		y = 1
+		relative_position_id = CUB_acting_president_patton
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = caribbean_bracero_program
+		}
+	}
+	
+	focus = {
+		id = CUB_arsenal_of_democracy
+		icon = GFX_focus_generic_the_giant_wakes
+		prerequisite = { focus = CUB_bracero_program }
+		x = 0
+		y = 1
+		relative_position_id = CUB_bracero_program
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = infantry_weapons
+			}
+			add_timed_idea = {
+				idea = usc_arsenal_of_democracy
+				days = 540
+			}
+		}
+	}
+	
+	
+	
+	focus = {
+		id = CUB_well_rounded_equipment
+		icon = GFX_focus_generic_license_production
+		prerequisite = { focus = CUB_arsenal_of_democracy }
+		x = -2
+		y = 2
+		relative_position_id = CUB_arsenal_of_democracy
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				ahead_reduction = 1
+				technology = infantry_weapons
+			}
+			add_ideas = usc_well_rounded_equipment
+		}
+	}
+	
+	focus = {
+		id = CUB_invite_aeg
+		icon = GFX_focus_POL_warsaw_main_station
+		prerequisite = { focus = CUB_arsenal_of_democracy }
+		x = 2
+		y = 2
+		relative_position_id = CUB_arsenal_of_democracy
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			NOT = { has_war_with = GER }
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			318 = { 
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = train_equipment
+				amount = 30
+				producer = GER
+			}
+			add_tech_bonus = {
+				bonus = 1.0
+				ahead_reduction = 1
+				technology = wartime_train 
+			}
+			#TODO Add gifted car event
+		}
+	}
+	
+	focus = {
+		id = CUB_apporach_afl
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = CUB_arsenal_of_democracy }
+		x = 1
+		y = 1
+		relative_position_id = CUB_arsenal_of_democracy
+		mutually_exclusive = { focus = CUB_apporach_iww }
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		available = {
+			has_capitulated = no
+			NOT = { has_war_with = USA }
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.08
+			}
+			custom_effect_tooltip = afl_strike_action_tt
+		}
+	}
+	
+	focus = {
+		id = CUB_apporach_iww
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = CUB_arsenal_of_democracy }
+		x = -1
+		y = 1
+		relative_position_id = CUB_arsenal_of_democracy
+		mutually_exclusive = { focus = CUB_apporach_afl }
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 70
+		}
+
+		available = {
+			has_capitulated = no
+			NOT = { has_war_with = USA }
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.08
+			}
+			custom_effect_tooltip = iww_strike_action_tt
+			custom_effect_tooltip = iww_strike_action_future_tt
+		}
+	}
+	
+	focus = {
+		id = CUB_rubber_plantations
+		icon = GFX_focus_generic_rubber
+		prerequisite = { focus = CUB_bracero_program }
+		x = 4
+		y = 1
+		relative_position_id = CUB_bracero_program
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			controls_state = 689
+			controls_state = 315
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = -75
+			689 = {
+				add_resource = {
+					type = rubber
+					amount = 12
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			315 = {
+				add_resource = {
+					type = rubber
+					amount = 24
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_sell_freedom_cigars
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = CUB_bracero_program }
+		x = 3
+		y = 2
+		relative_position_id = CUB_bracero_program
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = freedom_cigars
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_german_japanese_meth_works
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = CUB_invite_aeg }
+		x = 0
+		y = 1
+		relative_position_id = CUB_invite_aeg
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_war = yes
+			NOT = { has_war_with = GER }
+			has_opinion = {
+				target = GER
+				value > 49
+			}
+			NOT = { has_war_with = JAP }
+			has_opinion = {
+				target = JAP
+				value > 49
+			}
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+					idea = pervitin_philoponus
+					days = 120
+				}
+		}
+	}
+	
+	focus = {
+		id = CUB_bulter_meets_butler
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = CUB_invite_aeg }
+		x = -2
+		y = 1
+		relative_position_id = CUB_invite_aeg
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = no
+			controls_state = 691
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_resource = {
+				type = oil
+				amount = 7
+				state = 691
+			}
+			691 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 3284
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 13012
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				set_state_category = town
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 820
+				producer = CUB
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 300
+				producer = CUB
+			}
+		}
+	}
+
+	
+	#### POST-CAPITUALTION FOCUSES #### 
+	
+	focus = {
+		id = CUB_havana_uprising
+		icon = GFX_focus_generic_support_the_left_right
+		#prerequisite = { focus = CUB_invite_aeg }
+		x = -4
+		y = 3
+		relative_position_id = CUB_pirate_kings
+
+		cost = 1.5
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_capitulated = yes
+			days_since_capitulated > 14
+			has_war_with = USA
+		}
+		
+		available_if_capitulated = yes
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+
+		completion_reward = {
+			random_army_leader = {
+				retire = yes
+			}
+			hidden_effect = {
+				division_template = {
+					name = "Regrouped Veterans"
+					is_locked = yes
+					division_names_group = CUB_INF_01
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+					}
+					support = { 
+						military_police = { x = 0 y = 0 }
+						artillery = { x = 0 y = 1 }
+					} 
+				}
+				division_template = {
+					name = "Regrouped Cavalry"
+					is_locked = yes
+					division_names_group = CUB_CAV_01
+					regiments = {
+						cavalry = { x = 0 y = 0 }
+						cavalry = { x = 0 y = 1 }
+						cavalry = { x = 0 y = 2 }
+						cavalry = { x = 0 y = 3 }
+						
+						cavalry = { x = 1 y = 0 }
+						cavalry = { x = 1 y = 1 }
+						cavalry = { x = 1 y = 2 }
+						cavalry = { x = 1 y = 3 }
+					}
+					support = { 
+						military_police = { x = 0 y = 0 }
+					}
+				}
+			}
+			315 = {
+				create_unit = {
+					division = "name = \"I. Regrouped Veterans\" division_template = \"Regrouped Veterans\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 7622
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"II. Regrouped Veterans\" division_template = \"Regrouped Veterans\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 7622
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"III. Regrouped Veterans\" division_template = \"Regrouped Veterans\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 7622
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"IV. Regrouped Veterans\" division_template = \"Regrouped Veterans\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 10498
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"V. Regrouped Veterans\" division_template = \"Regrouped Veterans\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 4600
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"VI. Regrouped Veterans\" division_template = \"Regrouped Veterans\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 7590
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"I. Regrouped Cavalry\" division_template = \"Regrouped Cavalry\" start_experience_factor = 0.3"
+					owner = ROOT
+					prioritize_location = 7622
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"II. Regrouped Cavalry\" division_template = \"Regrouped Cavalry\" start_experience_factor = 0.3"
+					owner = ROOT
+					prioritize_location = 1550
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = CUB_puerto_rico_uprising
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = CUB_havana_uprising }
+		x = -2
+		y = 1
+		relative_position_id = CUB_havana_uprising
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_full_control_of_state = 315
+			has_war_with = USA
+		}
+		
+		available_if_capitulated = yes
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+
+		completion_reward = {
+			686 = {
+				create_unit = {
+					division = "name = \"VII. Regrouped Veterans\" division_template = \"Regrouped Veterans\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 1440
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"VIII. Regrouped Veterans\" division_template = \"Regrouped Veterans\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 4155
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"IX. Regrouped Veterans\" division_template = \"Regrouped Veterans\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 1440
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+			
+		}
+	}
+	
+	focus = {
+		id = CUB_jamaica_uprising
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = CUB_havana_uprising }
+		x = 0
+		y = 1
+		relative_position_id = CUB_havana_uprising
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_full_control_of_state = 315
+			has_war_with = USA
+		}
+		
+		available_if_capitulated = yes
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+
+		completion_reward = {
+			689 = {
+				create_unit = {
+					division = "name = \"X. Regrouped Veterans\" division_template = \"Regrouped Veterans\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 12304
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"XI. Regrouped Veterans\" division_template = \"Regrouped Veterans\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 12477
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_hispaniola_uprising
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = CUB_puerto_rico_uprising }
+		prerequisite = { focus = CUB_jamaica_uprising }
+		x = 1
+		y = 1
+		relative_position_id = CUB_puerto_rico_uprising
+
+		cost = 3
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		available = {
+			has_full_control_of_state = 689
+			has_full_control_of_state = 686
+			has_war_with = USA
+		}
+		
+		available_if_capitulated = yes
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+
+		completion_reward = {
+			hidden_effect = {
+				division_template = {
+					name = "Thrown Together Armor"
+					is_locked = yes
+					division_names_group = CUB_ARM_01 
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+						
+						light_armor = { x = 1 y = 0 }
+						light_armor = { x = 1 y = 1 }
+					}
+					support = {
+						artillery = { x = 0 y = 0 }
+					} 
+				}
+			}
+			318 = {
+				create_unit = {
+					division = "name = \"Thrown Together Armor\" division_template = \"Thrown Together Armor\" start_experience_factor = 0.25"
+					owner = ROOT
+					prioritize_location = 4641
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"XII. Regrouped Veterans\" division_template = \"Regrouped Veterans\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 4641
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"XIV. Regrouped Veterans\" division_template = \"Regrouped Veterans\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 4641
+					allow_spawning_on_enemy_provs = yes
+				}
+				
+			}
+			319 = {
+				create_unit = {
+					division = "name = \"XIII. Regrouped Veterans\" division_template = \"Regrouped Veterans\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 7660
+					allow_spawning_on_enemy_provs = yes
+				}
+				create_unit = {
+					division = "name = \"XV. Regrouped Veterans\" division_template = \"Regrouped Veterans\" start_experience_factor = 0.2"
+					owner = ROOT
+					prioritize_location = 7660
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_raid_american_supply_deports
+		icon = GFX_focus_POL_riot_of_37
+		prerequisite = { focus = CUB_havana_uprising }
+		x = 2
+		y = 1
+		relative_position_id = CUB_havana_uprising
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available_if_capitulated = yes
+
+		available = {
+			has_full_control_of_state = 315
+			has_war_with = USA
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+
+		completion_reward = {
+			USA = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_1
+					amount = -6500
+					producer = USA
+				}
+			}
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 6500
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 1000
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_1
+				amount = 650
+				producer = USA
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_stalward_defense
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = CUB_raid_american_supply_deports }
+		x = 0
+		y = 1
+		relative_position_id = CUB_raid_american_supply_deports
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available_if_capitulated = yes
+
+		available = {
+			has_war_with = USA
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = usc_stalward_defense
+				days = 140
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_victory_or_tyranny 
+		icon = GFX_focus_chi_flying_tigers
+		prerequisite = { focus = CUB_stalward_defense }
+		prerequisite = { focus = CUB_hispaniola_uprising }
+		x = -2
+		y = 1
+		relative_position_id = CUB_stalward_defense
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available_if_capitulated = yes
+
+		available = {
+			has_war_with = USA
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_manpower = 6500
+			set_rule = {
+				can_use_kamikaze_pilots = yes
+			}
+		}
+	}
+
+	
+	#### END POST-CAPITUALTION FOCUSES ####
+
+	focus = {
+		id = CUB_second_reconstruction
+		icon = GFX_
+		x = 46
+		y = 1
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available_if_capitulated = yes
+
+		available = {
+			
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_ideas = USC_second_reconstruction
+			315 = {
+				remove_core_of = CUB
+			}
+			689 = {
+				remove_core_of = CUB
+			}
+			318 = {
+				remove_core_of = CUB
+			}
+			319 = {
+				remove_core_of = CUB
+			}
+			686 = {
+				remove_core_of = CUB
+			}
+			694 = {
+				remove_core_of = CUB
+			}
+			692 = {
+				remove_core_of = CUB
+			}
+			691 = {
+				remove_core_of = CUB
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_bulter_promise_natives
+		icon = GFX_
+		x = -6
+		y = 1
+		relative_position_id = CUB_second_reconstruction
+		prerequisite = { focus = CUB_second_reconstruction }
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available_if_capitulated = yes
+
+		available = {
+			has_completed_focus = CUB_promise_local_freedom_after_war
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+
+		completion_reward = {
+			country_event = { 
+				id = mod_usc.36
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_allow_referendums
+		icon = GFX_
+		x = -1
+		y = 1
+		relative_position_id = CUB_bulter_promise_natives
+		prerequisite = { focus = CUB_bulter_promise_natives }
+		mutually_exclusive = { focus = CUB_break_caribbean_promise }
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available_if_capitulated = yes
+
+		available = {
+			
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+
+		completion_reward = {
+			custom_effect_tooltip = caribbean_islands_referendum_tt
+			hidden_effect = {
+				country_event = { 
+					id = mod_usc.37
+					hours = 6
+				}
+				random_list = {
+					70 = {
+						689 = {
+							add_core_of = JAM
+						}
+						release = JAM
+						JAM = {
+							add_timed_idea = {
+								idea = USC_guided_democracy
+								days = 180
+							}
+							set_politics = {
+								ruling_party = democratic
+							}
+							add_popularity = {
+								ideology = democratic
+								popularity = 0.5
+							}
+						}
+						CUB = {
+							give_guarantee = JAM
+						}
+					}
+					30 = {
+						add_political_power = 15
+						689 = {
+							add_core_of = CUB
+						}
+					}
+				}
+				random_list = {
+					70 = {
+						318 = {
+							add_core_of = HAI
+						}
+						release = HAI
+						HAI = {
+							add_timed_idea = {
+								idea = USC_guided_democracy
+								days = 180
+							}
+							set_politics = {
+								ruling_party = democratic
+							}
+							add_popularity = {
+								ideology = democratic
+								popularity = 0.5
+							}
+						}
+						CUB = {
+							give_guarantee = HAI
+						}
+					}
+					30 = {
+						add_political_power = 15
+						318 = {
+							add_core_of = CUB
+						}
+					}
+				}
+				random_list = {
+					70 = {
+						319 = {
+							add_core_of = DOM
+						}
+						release = DOM
+						DOM = {
+							add_timed_idea = {
+								idea = USC_guided_democracy
+								days = 180
+							}
+							set_politics = {
+								ruling_party = democratic
+							}
+							add_popularity = {
+								ideology = democratic
+								popularity = 0.5
+							}
+						}
+						CUB = {
+							give_guarantee = DOM
+						}
+					}
+					30 = {
+						add_political_power = 15
+						319 = {
+							add_core_of = CUB
+						}
+					}
+				}
+				random_list = {
+					50 = {
+						686 = {
+							add_core_of = PUE
+						}
+						release = PUE
+						PUE = {
+							add_timed_idea = {
+								idea = USC_guided_democracy
+								days = 180
+							}
+							set_politics = {
+								ruling_party = democratic
+							}
+							add_popularity = {
+								ideology = democratic
+								popularity = 0.5
+							}
+						}
+						CUB = {
+							give_guarantee = PUE
+						}
+					}
+					50 = {
+						add_political_power = 15
+						686 = {
+							add_core_of = CUB
+						}
+					}
+				}
+				random_list = {
+					70 = {
+						694 = {
+							add_core_of = GDL
+						}
+						release = GDL
+						GDL = {
+							add_timed_idea = {
+								idea = USC_guided_democracy
+								days = 180
+							}
+							set_politics = {
+								ruling_party = democratic
+							}
+							add_popularity = {
+								ideology = democratic
+								popularity = 0.5
+							}
+						}
+						CUB = {
+							give_guarantee = GDL
+						}
+					}
+					30 = {
+						add_political_power = 15
+						694 = {
+							add_core_of = CUB
+						}
+					}
+				}
+				random_list = {
+					70 = {
+						692 = {
+							add_core_of = BAS
+						}
+						release = BAS
+						BAS = {
+							add_timed_idea = {
+								idea = USC_guided_democracy
+								days = 180
+							}
+							set_politics = {
+								ruling_party = democratic
+							}
+							add_popularity = {
+								ideology = democratic
+								popularity = 0.5
+							}
+						}
+						CUB = {
+							give_guarantee = BAS
+						}
+					}
+					30 = {
+						add_political_power = 15
+						692 = {
+							add_core_of = CUB
+						}
+					}
+				}
+				random_list = {
+					70 = {
+						691 = {
+							add_core_of = TRI
+						}
+						release = TRI
+						TRI = {
+							add_timed_idea = {
+								idea = USC_guided_democracy
+								days = 180
+							}
+							set_politics = {
+								ruling_party = democratic
+							}
+							add_popularity = {
+								ideology = democratic
+								popularity = 0.5
+							}
+						}
+						CUB = {
+							give_guarantee = TRI
+						}
+					}
+					30 = {
+						add_political_power = 15
+						691 = {
+							add_core_of = CUB
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_investment_opportunities
+		icon = GFX_
+		x = 0
+		y = 1
+		relative_position_id = CUB_allow_referendums
+		prerequisite = { focus = CUB_allow_referendums }
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available_if_capitulated = yes
+
+		available = {
+			
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+
+		completion_reward = {
+			TRI = {
+				add_ideas = USC_investment_opportunities
+			}
+			BAS = {
+				add_ideas = USC_investment_opportunities
+			}
+			GDL = {
+				add_ideas = USC_investment_opportunities
+			}
+			PUE = {
+				add_ideas = USC_investment_opportunities
+			}
+			DOM = {
+				add_ideas = USC_investment_opportunities
+			}
+			HAI = {
+				add_ideas = USC_investment_opportunities
+			}
+			JAM = {
+				add_ideas = USC_investment_opportunities
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_sponsor_joining_faction
+		icon = GFX_
+		x = 0
+		y = 1
+		relative_position_id = CUB_investment_opportunities
+		prerequisite = { focus = CUB_investment_opportunities }
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available_if_capitulated = yes
+
+		available = {
+			
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+
+		completion_reward = {
+			#TODO
+			TRI = {
+				
+			}
+			BAS = {
+				
+			}
+			GDL = {
+				
+			}
+			PUE = {
+				
+			}
+			DOM = {
+				
+			}
+			HAI = {
+				
+			}
+			JAM = {
+				
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_break_caribbean_promise
+		icon = GFX_
+		x = 1
+		y = 1
+		relative_position_id = CUB_bulter_promise_natives
+		prerequisite = { focus = CUB_bulter_promise_natives }
+		mutually_exclusive = { focus = CUB_allow_referendums }
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available_if_capitulated = yes
+
+		available = {
+			
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_stability = -0.05
+			hidden_effect = {
+				country_event = { 
+					id = mod_usc.38 
+					days = 2 
+				}
+				retire_character = CUB_smedley_butler
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_keep_caribbean_as_big_naval_base
+		icon = GFX_
+		x = 0
+		y = 1
+		relative_position_id = CUB_break_caribbean_promise
+		prerequisite = { focus = CUB_break_caribbean_promise }
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available_if_capitulated = yes
+
+		available = {
+			
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+
+		completion_reward = {
+			315 = {
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = 7622
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = 1550
+					instant_build = yes
+				}
+			}
+			690 = {
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = 10254
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = 7245
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = 4647
+					instant_build = yes
+				}
+			}
+			693 = {
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = 1513
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = 10440
+					instant_build = yes
+				}
+			}
+			689 = {
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = 12304
+					instant_build = yes
+				}
+			}
+			318 = {
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = 4641
+					instant_build = yes
+				}
+			}
+			319 = {
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = 7660
+					instant_build = yes
+				}
+			}
+			686 = {
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = 1440
+					instant_build = yes
+				}
+			}
+			694 = {
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = 9377
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = 177
+					instant_build = yes
+				}
+			}
+			692 = {
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = 11350
+					instant_build = yes
+				}
+			}
+			691 = {
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					province = 3284
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = CUB_island_training_ground
+		icon = GFX_
+		x = 0
+		y = 1
+		relative_position_id = CUB_keep_caribbean_as_big_naval_base
+		prerequisite = { focus = CUB_keep_caribbean_as_big_naval_base }
+
+		cost = 4
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available_if_capitulated = yes
+
+		available = {
+			
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+
+		completion_reward = {
+			add_ideas = USC_island_training_ground
+		}
+	}
+	
+	focus = {
+		id = CUB_butler_promise_natives
+		icon = GFX_
+		x = 6
+		y = 1
+		relative_position_id = CUB_second_reconstruction
+		prerequisite = { focus = CUB_second_reconstruction }
+
+		cost = 2
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available_if_capitulated = yes
+
+		available = {
+			has_completed_focus = CUB_apporach_native_code_talkers
+		}
+		
+		bypass = {
+		}
+
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+
+		completion_reward = {
+			country_event = { 
+				id = mod_usc.39
+			}
+		}
+	}
 
 
 

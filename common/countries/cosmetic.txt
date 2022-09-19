@@ -35,7 +35,14 @@ CRR_russian_union = {
 	color = rgb { 80 24 24 }
 	color_ui = rgb { 48 15 15 }
 }
-
+SHX_USA_occupation = {
+	color = rgb { 16 94 166 }
+	color_ui = rgb { 16 94 166 }
+}
+CUB_GoldenCircle = {
+	color = rgb { 212 233 239 }
+	color_ui = rgb { 212 233 239 }
+}
 
 
 
