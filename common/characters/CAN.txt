@@ -7,7 +7,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=classical_liberalism
+			ideology=cd
 			expire="1965.1.1.1"
 			id=-1
 		}
@@ -21,7 +21,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=pan-germanism
+			ideology=np
 			expire="1965.1.1.1"
 			id=-1
 		}
@@ -35,7 +35,17 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=marxism
+			ideology=so
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			ideology=vn
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			ideology=cm
 			expire="1965.1.1.1"
 			id=-1
 		}
@@ -49,7 +59,7 @@ characters={
 			}
 		}
 		country_leader={
-			ideology=centrism
+			ideology=sl
 			expire="1965.1.1.1"
 			id=-1
 		}

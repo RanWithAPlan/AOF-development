@@ -9,13 +9,25 @@ characters={
 			}
 		}
 		country_leader = {
-			ideology = despotism 
+			ideology = dp 
 			traits = {  }
 			expire = "1965.1.1.1"
 			id = 1
 		}
 		country_leader = {
-			ideology = social_democracy  
+			ideology = soclib  
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+		country_leader = {
+			ideology = fm  
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+		country_leader = {
+			ideology = cd  
 			traits = {  }
 			expire = "1965.1.1.1"
 			id = 1
@@ -81,13 +93,25 @@ characters={
 			}
 		}
 		country_leader = {
-			ideology = despotism 
+			ideology = dp 
 			traits = {  }
 			expire = "1965.1.1.1"
 			id = 1
 		}
 		country_leader = {
-			ideology = social_democracy  
+			ideology = soclib  
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+		country_leader = {
+			ideology = fm  
+			traits = {  }
+			expire = "1965.1.1.1"
+			id = 1
+		}
+		country_leader = {
+			ideology = cd  
 			traits = {  }
 			expire = "1965.1.1.1"
 			id = 1
@@ -330,75 +354,63 @@ characters={
 	}
 	
 	
-	
-
-	CUB_josé_agripino_barnet={
-		name="José Agripino Barnet"
+	CUB_josé_agripino_barnett={
+		name="Luisa Capetillo"
 		portraits={
 			civilian={
 				large="GFX_portrait_cuba_jose_barnet"
 			}
 		}
 		country_leader={
-			ideology=liberalism
+			ideology=cm
 			expire="1965.1.1.1"
 			id=-1
 		}
 	}
-	CUB_guillermo_cabral={
-		name="Guillermo Cabral"
+	CUB_robert_bradshaw={
+		name="Robert Llewellyn Bradshaw"
 		portraits={
 			civilian={
 				large=GFX_portrait_Guillermo_Cabral
 			}
 		}
 		country_leader={
-			ideology=stalinism
+			ideology=vn
 			traits={ reluctant_interventionist }
 			expire="1941.1.1.12"
 			id=-1
 		}
-	}
-	CUB_wenceslao_carmona={
-		name="Wenceslao Carmona"
-		portraits={
-			civilian={
-				large=GFX_portrait_Wenceslao_Carmona
-			}
-		}
 		country_leader={
-			ideology=rexism
+			ideology=so
 			expire="1952.1.1.12"
 			id=-1
 		}
 	}
+	
 	CUB_gregorio_morales={
-		name="Gregorio Morales"
+		name="Sam Zemurray"
 		portraits={
 			civilian={
 				large=GFX_portrait_Gregorio_Morales
 			}
 		}
 		country_leader={
-			ideology=oligarchism
+			ideology=cp
 			traits={ economist }
 			expire="1947.1.1.12"
 			id=-1
 		}
 	}
+	
 	CUB_federico_laredo_bru={
-		name="Federico Laredo Brú"
-		portraits={
-			civilian={
-				large=GFX_portrait_Federico_Laredo_Bru
-			}
-		}
+		name="Various Leaders"
 		country_leader={
-			ideology=socialism
+			ideology=np
 			expire="1965.1.1.1"
 			id=-1
 		}
 	}
+	
 	CUB_domingo_r_del_toro={
 		advisor={
 			
@@ -416,7 +428,6 @@ characters={
 					factor = 1.000
 				}
 		}
-# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
 		name="Domingo R. del Toro"
 		portraits={
 			army={

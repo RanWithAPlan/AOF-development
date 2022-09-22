@@ -8,7 +8,7 @@ characters={
 			}
 		}
 		country_leader = {
-			ideology = social_democracy 
+			ideology = sl 
 			traits = {  }
 			expire = "1965.1.1.1"
 			id = 1
@@ -23,7 +23,7 @@ characters={
 			}
 		}
 		country_leader = {
-			ideology = social_democracy 
+			ideology = sl 
 			traits = { former_vp }
 			expire = "1965.1.1.1"
 			id = 1
@@ -50,7 +50,7 @@ characters={
 			}
 		}
 		country_leader = {
-			ideology = classical_liberalism 
+			ideology = cd 
 			traits = { }
 			expire = "1965.1.1.1"
 			id = 1

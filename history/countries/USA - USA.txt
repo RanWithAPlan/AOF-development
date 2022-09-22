@@ -1,7 +1,7 @@
 ﻿capital = 361
 
 set_rule = {
-	can_join_factions = yes
+	can_join_factions = no
 }
 
 oob = "USA_1936"
@@ -46,6 +46,7 @@ set_technology = {
 	fuel_refining = 1
 	marines = 1
 	basic_train = 1
+	camelry = 1
 }
 
 if = {
@@ -131,24 +132,45 @@ set_convoys = 500
 
 
 set_politics = {
-	ruling_party = democratic
+	ruling_party = soclib
 	last_election = "1934.11.8"
 	election_frequency = 48
 	elections_allowed = yes
 }
+
 set_popularities = {
-	democratic = 88
-	communism = 12
+	soclib = 62
+	freemarket = 14
+	condem = 11
+	soc = 9
+	vanguardist = 2
+	communardien = 1
+	corporatism = 1
 }
 
 add_ideas = {
 	isolation
 	disarmed_nation
 	free_trade
-	home_of_the_free
 	planned_obsolescence
 	slim_ships
 	dwindling_recession
+}
+
+377 = {
+	add_dynamic_modifier = { modifier = USA_indian_reservation }
+}
+376 = {
+	add_dynamic_modifier = { modifier = USA_indian_reservation }
+}
+374 = {
+	add_dynamic_modifier = { modifier = USA_indian_reservation }
+}
+390 = {
+	add_dynamic_modifier = { modifier = USA_indian_reservation }
+}
+388 = {
+	add_dynamic_modifier = { modifier = USA_indian_reservation }
 }
 
 
@@ -164,6 +186,29 @@ set_autonomy = {
 
 recruit_character = USA_huey_long
 recruit_character = USA_al_smith
+recruit_character = USA_george_patton
+recruit_character = USA_charles_hughes
+recruit_character = USA_the_group
+
+
+
+
+
+# GENERALS & ADMIRALS
+
+recruit_character = USA_evan_fordyce_carlson
+recruit_character = USA_herman_greenberg
+recruit_character = USA_john_c_h_lee
+recruit_character = USA_vasily_flug
+recruit_character = USA_terry_de_la_mesa_allen_sr
+
+
+
+
+# ADVISOR
+recruit_character = USA_joseph_robinson # VP for Smith
+recruit_character = USA_bertrand_snell # Figurehead president for Patton
+
 
 
 
@@ -197,7 +242,6 @@ recruit_character = USA_ernest_king
 recruit_character = USA_chester_w_nimitz
 recruit_character = USA_william_halsey_jr
 recruit_character = USA_frank_jack_fletcher
-recruit_character = USA_raymond_a_spruance
 recruit_character = USA_harold_rainsford_stark
 recruit_character = USA_arleigh_burke
 recruit_character = USA_charles_m_cooke_jr
@@ -212,7 +256,6 @@ recruit_character = USA_harold_mcclelland
 recruit_character = USA_charles_lindbergh
 recruit_character = USA_george_kenney
 recruit_character = USA_john_cannon
-recruit_character = USA_george_marshall
 recruit_character = USA_carl_spaatz
 recruit_character = USA_marc_mitscher
 recruit_character = USA_jimmy_doolittle

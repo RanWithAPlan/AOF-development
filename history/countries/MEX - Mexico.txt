@@ -20,6 +20,7 @@ set_technology = {
 	interwar_antiair = 1
 	
 	early_fighter = 1
+	fighter1 = 1
 	early_bomber = 1
 	CAS1 = 1
 	fuel_silos = 1
@@ -69,7 +70,6 @@ recruit_character = MEX_lazaro_cardenas
 recruit_character = MEX_salvador_abascal
 recruit_character = MEX_adolfo_de_la_huerta
 recruit_character = MEX_dionisio_encina
-recruit_character = MEX_hernan_laborde
 recruit_character = MEX_heliodoro_charis
 recruit_character = MEX_luis_farell
 recruit_character = MEX_gildardo_magana
@@ -84,7 +84,6 @@ recruit_character = MEX_gilberto_limon
 recruit_character = MEX_pablo_macias
 recruit_character = MEX_jose_gonzalo_escobar
 recruit_character = MEX_agustin_olachea
-recruit_character = MEX_leon_trotsky
 recruit_character = MEX_saturnino_cedillo
 recruit_character = MEX_hector_meixueiro
 recruit_character = MEX_matias_santos_ramos
@@ -103,24 +102,25 @@ recruit_character = MEX_francisco_mugica
 recruit_character = MEX_jesus_degollado_guizar
 recruit_character = MEX_valentin_campa
 
-set_country_flag = monroe_doctrine
-
 set_convoys = 45
 set_stability = 0.2
 set_war_support = 0.1
 
 
 set_politics = {
-	ruling_party = democratic
+	ruling_party = condem
 	last_election = "1934.7.1"
 	election_frequency = 60
 	elections_allowed = yes
 }
 set_popularities = {
-	democratic = 43
-	fascism = 12
-	communism = 16
-	neutrality = 29
+	condem = 43
+	soclib = 7
+	freemarket = 5
+	natpop = 12
+	soc = 13
+	vanguardist = 3
+	authoritarian = 17
 }
 
 ### VARIANTS ###

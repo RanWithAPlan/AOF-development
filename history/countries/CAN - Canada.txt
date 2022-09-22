@@ -133,7 +133,7 @@ if = {
 }
 
 set_politics = {
-	ruling_party = demsoc 
+	ruling_party = soc 
 	last_election = "1935.10.14"
 	election_frequency = 36
 	elections_allowed = yes
@@ -141,8 +141,8 @@ set_politics = {
 
 set_popularities = {
 	soclib = 4
-	natsyn = 1
-	demsoc = 65
+	natpop = 1
+	soc = 65
 	vanguardist = 15
 	communardien = 15
 }
